@@ -121,7 +121,7 @@ interface Booking {
   vehicleSize?: 'standard' | 'oversized';
 }
 
-type TabType = "new" | "confirmed" | "arriving" | "leaving" | "exits" | "summary" | "revenue" | "all" | "calendar";
+type TabType = "new" | "confirmed" | "arriving" | "leaving" | "exits" | "departed" | "summary" | "revenue" | "all" | "calendar";
 type ShiftType = "day" | "night";
 
 interface OperatorDashboardProps {
@@ -617,6 +617,9 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
   // Filter for exits tab
   const [exitDate, setExitDate] = useState(getTodayDate());
 
+  // Filter for departed tab
+  const [departedDate, setDepartedDate] = useState(getTodayDate());
+
   // Pagination for "all" tab
   const [allTabPage, setAllTabPage] = useState(1);
   const ALL_TAB_PAGE_SIZE = 50;
@@ -1085,7 +1088,37 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
         return aTime - bTime; // Earliest first
       });
   }, [bookings, exitDate, searchQuery]);
-  
+
+  // Departed (checked-out) bookings for selected date
+  const departedBookings = useMemo(() => {
+    return bookings
+      .filter(b => {
+        if (b.status !== 'checked-out') return false;
+        const checkoutDate = b.checkedOutAt
+          ? new Date(b.checkedOutAt).toLocaleDateString('en-CA')
+          : b.departureDate;
+        return checkoutDate === departedDate && filterBySearch(b);
+      })
+      .sort((a, b) => {
+        const aTime = a.checkedOutAt ? new Date(a.checkedOutAt).getTime() : 0;
+        const bTime = b.checkedOutAt ? new Date(b.checkedOutAt).getTime() : 0;
+        return bTime - aTime; // Most recent first
+      });
+  }, [bookings, departedDate, searchQuery]);
+
+  const departedStats = useMemo(() => {
+    const totalCars = departedBookings.reduce((sum, b) => sum + (b.numberOfCars || 1), 0);
+    const totalRevenue = departedBookings.reduce((sum, b) => sum + (b.finalPrice || b.totalPrice), 0);
+    const cashRevenue = departedBookings
+      .filter(b => b.paymentMethod === 'cash')
+      .reduce((sum, b) => sum + (b.finalPrice || b.totalPrice), 0);
+    const cardRevenue = departedBookings
+      .filter(b => b.paymentMethod === 'card')
+      .reduce((sum, b) => sum + (b.finalPrice || b.totalPrice), 0);
+    const lateCount = departedBookings.filter(b => b.isLate && (b.lateSurcharge || 0) > 0).length;
+    return { totalCars, totalRevenue, cashRevenue, cardRevenue, lateCount };
+  }, [departedBookings]);
+
   // Calculate counts for each status
   const statusCounts = useMemo(() => {
     return {
@@ -2548,6 +2581,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
               { id: "confirmed", label: "Предстоящи резервации", count: confirmedBookings.length },
               { id: "arriving", label: "Пристигащи днес", count: arrivingToday.length },
               { id: "leaving", label: "Напускащи днес", count: leavingToday.length },
+              { id: "departed", label: "Заминали", count: departedBookings.length },
               { id: "all", label: "Всички", count: allBookings.length },
               { id: "revenue", label: "Приходи" },
               { id: "calendar", label: "Календар" },
@@ -2708,6 +2742,65 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                   </Card>
                 ) : (
                   exitingCustomers.map(booking => renderBookingCard(booking, "exits"))
+                )}
+              </div>
+            )}
+
+            {/* Departed */}
+            {activeTab === "departed" && (
+              <div className="space-y-5">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+                  <div>
+                    <h2 className="text-3xl font-semibold">Заминали</h2>
+                    <p className="text-lg text-gray-600 mt-1">Клиенти, напуснали паркинга</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <label className="text-lg font-medium text-gray-700">Дата:</label>
+                    <input
+                      type="date"
+                      value={departedDate}
+                      onChange={(e) => setDepartedDate(e.target.value)}
+                      className="px-4 py-2 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    />
+                    <Badge variant="secondary" className="text-lg py-2 px-4">{departedBookings.length} резервации</Badge>
+                  </div>
+                </div>
+
+                {/* Summary card */}
+                {departedBookings.length > 0 && (
+                  <Card className="p-5 bg-gray-50 border-2">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                      <div className="text-center">
+                        <div className="text-3xl font-black text-gray-900">{departedStats.totalCars}</div>
+                        <div className="text-sm text-gray-500 mt-1">🚗 Автомобили</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-3xl font-black text-green-700">€{departedStats.totalRevenue.toFixed(2)}</div>
+                        <div className="text-sm text-gray-500 mt-1">💰 Общо приходи</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-3xl font-black text-blue-700">€{departedStats.cashRevenue.toFixed(2)}</div>
+                        <div className="text-sm text-gray-500 mt-1">💵 В брой</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-3xl font-black text-purple-700">€{departedStats.cardRevenue.toFixed(2)}</div>
+                        <div className="text-sm text-gray-500 mt-1">💳 С карта</div>
+                      </div>
+                    </div>
+                    {departedStats.lateCount > 0 && (
+                      <div className="mt-3 pt-3 border-t border-gray-200 text-center text-sm text-orange-700 font-medium">
+                        ⏰ {departedStats.lateCount} резервации с доплащане за закъснение
+                      </div>
+                    )}
+                  </Card>
+                )}
+
+                {departedBookings.length === 0 ? (
+                  <Card className="p-16 text-center text-gray-500 text-xl">
+                    {searchQuery ? `Няма резултати за "${searchQuery}"` : `Няма заминали клиенти на ${departedDate}`}
+                  </Card>
+                ) : (
+                  departedBookings.map(booking => renderBookingCard(booking, "departed"))
                 )}
               </div>
             )}
