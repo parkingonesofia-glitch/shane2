@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
@@ -641,6 +641,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
   // Booking form state
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [editingBooking, setEditingBooking] = useState<Booking | null>(null);
+  const originalEditDates = useRef<{ arrivalDate: string; arrivalTime: string; departureDate: string; departureTime: string; numberOfCars: number; vehicleSize: string } | null>(null);
   const [bookingForm, setBookingForm] = useState({
     name: "",
     email: "",
@@ -882,8 +883,19 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
   // Auto-calculate price when dates/times/cars change
   useEffect(() => {
     const updatePrice = async () => {
-      if (bookingForm.arrivalDate && bookingForm.arrivalTime && 
+      if (bookingForm.arrivalDate && bookingForm.arrivalTime &&
           bookingForm.departureDate && bookingForm.departureTime) {
+        // When editing an existing booking, skip recalculation if nothing date-related changed
+        const orig = originalEditDates.current;
+        if (orig &&
+            bookingForm.arrivalDate === orig.arrivalDate &&
+            bookingForm.arrivalTime === orig.arrivalTime &&
+            bookingForm.departureDate === orig.departureDate &&
+            bookingForm.departureTime === orig.departureTime &&
+            bookingForm.numberOfCars === orig.numberOfCars &&
+            bookingForm.vehicleSize === orig.vehicleSize) {
+          return;
+        }
         const price = await calculatePrice(
           bookingForm.arrivalDate,
           bookingForm.arrivalTime,
@@ -893,7 +905,6 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
           bookingForm.vehicleSize
         );
         setCalculatedPrice(price);
-        // Always update the price field when dates change
         setManualPrice(price.toString());
       }
     };
@@ -1599,6 +1610,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
 
   // Open add manual reservation form
   const handleAddManualReservation = () => {
+    originalEditDates.current = null;
     setEditingBooking(null);
     setBookingForm({
       name: "",
@@ -1633,6 +1645,14 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
 
   // Open edit reservation form
   const handleEditReservation = (booking: Booking) => {
+    originalEditDates.current = {
+      arrivalDate: booking.arrivalDate,
+      arrivalTime: booking.arrivalTime,
+      departureDate: booking.departureDate,
+      departureTime: booking.departureTime,
+      numberOfCars: booking.numberOfCars || 1,
+      vehicleSize: booking.vehicleSize || 'standard',
+    };
     setEditingBooking(booking);
     setBookingForm({
       name: booking.name,

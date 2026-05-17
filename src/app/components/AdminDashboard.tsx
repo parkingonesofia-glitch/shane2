@@ -467,6 +467,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
   const [departureDateFilter, setDepartureDateFilter] = useState(""); // Filter by departure date
   const [isLoading, setIsLoading] = useState(true);
   const [editingBooking, setEditingBooking] = useState<Booking | null>(null);
+  const originalEditDates = useRef<{ arrivalDate: string; arrivalTime: string; departureDate: string; departureTime: string; numberOfCars: number; vehicleSize: string } | null>(null);
   const [isAddingNew, setIsAddingNew] = useState(false);
   const [formData, setFormData] = useState<Partial<Booking>>({});
   const [activeTab, setActiveTab] = useState<TabType>("new");
@@ -690,6 +691,17 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
   useEffect(() => {
     async function updatePrice() {
       if (formData.arrivalDate && formData.arrivalTime && formData.departureDate && formData.departureTime) {
+        // When editing an existing booking, skip recalculation if nothing date-related changed
+        const orig = originalEditDates.current;
+        if (orig &&
+            formData.arrivalDate === orig.arrivalDate &&
+            formData.arrivalTime === orig.arrivalTime &&
+            formData.departureDate === orig.departureDate &&
+            formData.departureTime === orig.departureTime &&
+            (formData.numberOfCars || 1) === orig.numberOfCars &&
+            (formData.vehicleSize || 'standard') === orig.vehicleSize) {
+          return;
+        }
         const numberOfCars = formData.numberOfCars || 1;
         const price = await calculatePrice(
           formData.arrivalDate,
@@ -1384,6 +1396,14 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
               variant="outline"
               className="font-bold text-base h-12 flex-1 border-2"
               onClick={() => {
+                originalEditDates.current = {
+                  arrivalDate: booking.arrivalDate,
+                  arrivalTime: booking.arrivalTime,
+                  departureDate: booking.departureDate,
+                  departureTime: booking.departureTime,
+                  numberOfCars: booking.numberOfCars || 1,
+                  vehicleSize: booking.vehicleSize || 'standard',
+                };
                 setEditingBooking(booking);
                 setFormData(booking);
               }}
@@ -3220,7 +3240,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
       {/* Floating Action Button (FAB) - Create Reservation */}
       {!["users", "settings", "pricing", "discounts", "calendar", "revenue"].includes(activeTab) && (
         <button
-          onClick={() => { setIsAddingNew(true); setFormData({ paymentStatus: "manual", status: "confirmed", passengers: 2, numberOfCars: 1 }); }}
+          onClick={() => { originalEditDates.current = null; setIsAddingNew(true); setFormData({ paymentStatus: "manual", status: "confirmed", passengers: 2, numberOfCars: 1 }); }}
           className="fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-[#073590] hover:bg-[#052558] active:bg-[#041a3d] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200 px-4 sm:px-6 py-3 sm:py-4 min-h-[56px] touch-manipulation"
           aria-label="Добави резервация"
         >
