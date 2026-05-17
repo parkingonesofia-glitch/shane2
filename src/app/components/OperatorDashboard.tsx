@@ -605,6 +605,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
   // Additional filters for "all" tab
   const [keysFilter, setKeysFilter] = useState<string>("all"); // "all", "with-keys", "without-keys"
   const [sizeFilter, setSizeFilter] = useState<string>("all"); // "all", "oversized"
+  const [multiCarFilter, setMultiCarFilter] = useState<string>("all"); // "all", "multi"
   const [invoiceFilter, setInvoiceFilter] = useState<string>("all"); // "all", "with-invoice", "without-invoice"
   const [arrivalDateFilter, setArrivalDateFilter] = useState<string>(""); // Date string for filtering by arrival date
   const [departureDateFilter, setDepartureDateFilter] = useState<string>(""); // Date string for filtering by departure date
@@ -1126,6 +1127,11 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       filtered = filtered.filter(b => b.vehicleSize === 'oversized');
     }
 
+    // Apply multi-car filter
+    if (multiCarFilter === "multi") {
+      filtered = filtered.filter(b => (b.numberOfCars || 1) > 1);
+    }
+
     // Apply invoice filter
     if (invoiceFilter === "with-invoice") {
       filtered = filtered.filter(b => b.needsInvoice === true);
@@ -1149,12 +1155,12 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       const bTime = new Date(`${b.arrivalDate}T${b.arrivalTime}`).getTime();
       return bTime - aTime; // Newest first
     });
-  }, [bookings, searchQuery, statusFilter, keysFilter, sizeFilter, invoiceFilter, arrivalDateFilter, departureDateFilter]);
+  }, [bookings, searchQuery, statusFilter, keysFilter, sizeFilter, multiCarFilter, invoiceFilter, arrivalDateFilter, departureDateFilter]);
 
   // Reset pagination when filters change
   useEffect(() => {
     setAllTabPage(1);
-  }, [searchQuery, statusFilter, keysFilter, sizeFilter, invoiceFilter, arrivalDateFilter, departureDateFilter]);
+  }, [searchQuery, statusFilter, keysFilter, sizeFilter, multiCarFilter, invoiceFilter, arrivalDateFilter, departureDateFilter]);
 
   // Render action buttons for operator
   const renderOperatorActions = (booking: Booking) => {
@@ -3030,6 +3036,21 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                     </select>
                   </div>
 
+                  {/* Multi-car Filter */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      🚗 Брой автомобили
+                    </label>
+                    <select
+                      value={multiCarFilter}
+                      onChange={(e) => setMultiCarFilter(e.target.value)}
+                      className="w-full px-4 py-2 text-base border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 bg-white"
+                    >
+                      <option value="all">Всички</option>
+                      <option value="multi">🚗🚗 Повече от 1 автомобил</option>
+                    </select>
+                  </div>
+
                   {/* Invoice Filter */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -3110,13 +3131,14 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                       </span>
                     )}
                   </div>
-                  {(statusFilter !== "all" || keysFilter !== "all" || sizeFilter !== "all" || invoiceFilter !== "all" || arrivalDateFilter || departureDateFilter) && (
+                  {(statusFilter !== "all" || keysFilter !== "all" || sizeFilter !== "all" || multiCarFilter !== "all" || invoiceFilter !== "all" || arrivalDateFilter || departureDateFilter) && (
                     <Button
                       variant="outline"
                       onClick={() => {
                         setStatusFilter("all");
                         setKeysFilter("all");
                         setSizeFilter("all");
+                        setMultiCarFilter("all");
                         setInvoiceFilter("all");
                         setArrivalDateFilter("");
                         setDepartureDateFilter("");
@@ -3132,7 +3154,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                 {allBookings.length === 0 ? (
                   <Card className="p-16 text-center text-gray-500 text-xl">
                     {searchQuery ? `Няма резултати за "${searchQuery}"` :
-                     (statusFilter !== "all" || keysFilter !== "all" || sizeFilter !== "all" || invoiceFilter !== "all" || arrivalDateFilter) ?
+                     (statusFilter !== "all" || keysFilter !== "all" || sizeFilter !== "all" || multiCarFilter !== "all" || invoiceFilter !== "all" || arrivalDateFilter) ?
                      "Няма резервации, които отговарят на избраните филтри" :
                      "Няма резервации"}
                   </Card>
