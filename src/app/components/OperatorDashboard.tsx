@@ -2026,6 +2026,15 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       // Late fees from bookings checked out this shift but paid in a previous shift
       lateFeeBookings.reduce((sum, b) => sum + (b.lateSurcharge || 0), 0);
 
+    // Combined late-fee breakdown for the UI (collected this shift)
+    const lateFeesBreakdown = [
+      ...paidBookings
+        .filter(b => b.isLate && (b.lateSurcharge || 0) > 0)
+        .map(b => ({ id: b.id, name: b.name, lateFee: b.lateSurcharge || 0 })),
+      ...lateFeeBookings
+        .map(b => ({ id: b.id, name: b.name, lateFee: b.lateSurcharge || 0 })),
+    ];
+
     const actualRevenue =
       paidBookings.reduce((sum, b) => sum + (b.finalPrice || b.totalPrice), 0) +
       lateFeeBookings.reduce((sum, b) => sum + (b.lateSurcharge || 0), 0);
@@ -2071,6 +2080,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       collected: actualRevenue, // Same as actual, for clarity in UI
       base: baseRevenue,
       lateFees: lateFees,
+      lateFeesBreakdown,
       cash: cashRevenue,
       card: cardRevenue,
       pending: pendingRevenue,
@@ -2983,6 +2993,23 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                           )}
                         </div>
                         
+                        {/* Late Fees Breakdown */}
+                        {revenueStats.lateFeesBreakdown.length > 0 && (
+                          <div>
+                            <h4 className="text-lg font-bold text-orange-700 mb-3 flex items-center gap-2">
+                              <span className="text-2xl">⏰</span> Такси закъснение ({revenueStats.lateFeesBreakdown.length})
+                            </h4>
+                            <div className="space-y-2 max-h-64 overflow-y-auto">
+                              {revenueStats.lateFeesBreakdown.map(item => (
+                                <div key={item.id} className="flex justify-between items-center bg-white p-3 rounded-lg border border-orange-200">
+                                  <span className="font-semibold text-base">{item.name}</span>
+                                  <span className="text-xl font-bold text-orange-700">+€{item.lateFee.toFixed(2)}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
                         {/* Pending Payments List */}
                         {revenueStats.pendingBookings.length > 0 && (
                           <div>
