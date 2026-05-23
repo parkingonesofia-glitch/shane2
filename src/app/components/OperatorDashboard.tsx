@@ -2192,7 +2192,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg h-14 w-full"
           >
             <CheckCircle className="w-6 h-6 mr-2" />
-            Напусна (доплащане €{booking.lateSurcharge || 0})
+            Напусна (доплащане €{(booking.lateSurcharge || 0).toFixed(2)})
           </Button>
         );
       }
@@ -2243,7 +2243,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg h-14 w-full"
           >
             <CheckCircle className="w-6 h-6 mr-2" />
-            Напусна (доплащане €{booking.lateSurcharge || 0})
+            Напусна (доплащане €{(booking.lateSurcharge || 0).toFixed(2)})
           </Button>
         );
       }
@@ -3737,7 +3737,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                   </div>
                 </div>
               ) : (
-                <p>€{selectedBooking?.totalPrice}</p>
+                <p>€{selectedBooking?.totalPrice?.toFixed(2)}</p>
               )}
             </div>
             

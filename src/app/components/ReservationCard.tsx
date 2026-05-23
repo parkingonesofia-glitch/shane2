@@ -280,7 +280,7 @@ export function ReservationCard({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Euro className="h-5 w-5 text-green-700" />
-            <span className="font-black text-2xl text-green-800">€{reservation.finalPrice || reservation.totalPrice}</span>
+            <span className="font-black text-2xl text-green-800">€{(reservation.finalPrice || reservation.totalPrice).toFixed(2)}</span>
           </div>
           {/* Simple Paid/Unpaid Status */}
           <div className="flex items-center gap-1">
@@ -323,7 +323,7 @@ export function ReservationCard({
             <AlertTriangle className="h-7 w-7 text-red-700 flex-shrink-0" />
             <div className="flex-1">
               <div className="font-black text-xl text-red-900">⚠️ ЗАКЪСНЯВА</div>
-              <div className="text-red-800 font-bold text-lg mt-1">Доплащане: €{reservation.lateSurcharge || 0}</div>
+              <div className="text-red-800 font-bold text-lg mt-1">Доплащане: €{(reservation.lateSurcharge || 0).toFixed(2)}</div>
             </div>
           </div>
         </div>
