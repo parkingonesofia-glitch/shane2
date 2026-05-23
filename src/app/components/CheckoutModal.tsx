@@ -43,54 +43,50 @@ export function CheckoutModal({
   useEffect(() => {
     const calculateExtraStay = async () => {
       setIsCalculating(true);
-      
-      // Calculate extra days using arrival-time-aware logic:
-      // An extra day starts when the current time passes the arrival time on the original
-      // departure date, and each subsequent same time the following days.
+
+      const CUTOFF_MINUTES = 3 * 60; // 3:00am
       const now = new Date();
+
+      // Helper: days from a date string to a given moment using 3am cutoff
+      const daysWithCutoff = (fromDate: string, to: Date): number => {
+        const fromMidnight = new Date(fromDate);
+        fromMidnight.setHours(0, 0, 0, 0);
+        const toMidnight = new Date(to);
+        toMidnight.setHours(0, 0, 0, 0);
+        const mc = Math.floor((toMidnight.getTime() - fromMidnight.getTime()) / (1000 * 60 * 60 * 24));
+        const toMin = to.getHours() * 60 + to.getMinutes();
+        if (mc === 0) return 1;
+        return Math.max(1, toMin > CUTOFF_MINUTES ? mc + 1 : mc);
+      };
+
+      // Days for the original booking (arrival → original departure time)
       const origDepDate = booking.originalDepartureDate || booking.departureDate;
-      const [arrH, arrM] = booking.arrivalTime.split(":").map(Number);
+      const origDepTime = booking.originalDepartureTime || booking.departureTime;
+      const [origH, origM] = origDepTime.split(":").map(Number);
+      const origDepDateTime = new Date(origDepDate);
+      origDepDateTime.setHours(origH, origM, 0, 0);
+      const originalDays = daysWithCutoff(booking.arrivalDate, origDepDateTime);
 
-      // The threshold for the first extra day is the original departure date at arrival time
-      const thresholdOnDepDay = new Date(origDepDate);
-      thresholdOnDepDay.setHours(arrH, arrM, 0, 0);
+      // Days from arrival to NOW
+      const totalDays = daysWithCutoff(booking.arrivalDate, now);
 
-      let daysLate = 0;
-      if (now >= thresholdOnDepDay) {
-        const msSinceThreshold = now.getTime() - thresholdOnDepDay.getTime();
-        daysLate = Math.floor(msSinceThreshold / (1000 * 60 * 60 * 24)) + 1;
-      }
+      const extraDaysCount = Math.max(0, totalDays - originalDays);
+      setExtraDays(extraDaysCount);
 
-      setExtraDays(Math.max(0, daysLate));
-      
-      if (daysLate > 0) {
-        // Total days = original days + extra days
-        const arrivalMidnight = new Date(booking.arrivalDate);
-        arrivalMidnight.setHours(0, 0, 0, 0);
-        const origDepMidnight = new Date(origDepDate);
-        origDepMidnight.setHours(0, 0, 0, 0);
-        const origDays = Math.floor(
-          (origDepMidnight.getTime() - arrivalMidnight.getTime()) / (1000 * 60 * 60 * 24)
-        );
-        const totalDays = origDays + daysLate;
-        
-        // Calculate what the price SHOULD be for the total duration
-        const totalPrice = await calculateLateFee(totalDays, booking.numberOfCars);
-        
-        // The late surcharge is the difference between total price and original price
-        const lateSurcharge = totalPrice - booking.totalPrice;
-        
-        const fee = Math.max(0, lateSurcharge);
+      if (extraDaysCount > 0) {
+        // Price for the full extended duration, surcharge = difference from original
+        const extendedPrice = await calculateLateFee(totalDays, booking.numberOfCars);
+        const fee = Math.max(0, extendedPrice - booking.totalPrice);
         setAutoCalculatedFee(fee);
         setAdjustedFee(fee);
       } else {
         setAutoCalculatedFee(0);
         setAdjustedFee(0);
       }
-      
+
       setIsCalculating(false);
     };
-    
+
     calculateExtraStay();
   }, [booking, calculateLateFee]);
 
