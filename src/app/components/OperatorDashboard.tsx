@@ -769,32 +769,23 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
         const now = new Date();
         const bookingsWithUpdatedSurcharges = await Promise.all(
           data.bookings.map(async (b: Booking) => {
-            if (b.isLate && (b.originalDepartureDate || b.departureDate) && b.status !== 'checked-out') {
-              const origDepDate = b.originalDepartureDate || b.departureDate;
-              const arrivalTime = b.arrivalTime || "11:00";
-              const [arrH, arrM] = arrivalTime.split(":").map(Number);
-              const thresholdOnDepDay = new Date(origDepDate);
-              thresholdOnDepDay.setHours(arrH, arrM, 0, 0);
-
-              let daysLate = 0;
-              if (now >= thresholdOnDepDay) {
-                const msSinceThreshold = now.getTime() - thresholdOnDepDay.getTime();
-                daysLate = Math.floor(msSinceThreshold / (1000 * 60 * 60 * 24)) + 1;
-              }
-
-              if (daysLate <= 0) return { ...b, lateSurcharge: 0 };
-
-              // Total days = original booking days + extra days
-              const arrivalMidnight = new Date(b.arrivalDate);
-              arrivalMidnight.setHours(0, 0, 0, 0);
-              const origDepMidnight = new Date(origDepDate);
-              origDepMidnight.setHours(0, 0, 0, 0);
-              const origDays = Math.floor(
-                (origDepMidnight.getTime() - arrivalMidnight.getTime()) / (1000 * 60 * 60 * 24)
+            if (b.isLate && b.status !== 'checked-out') {
+              // Use 3am-cutoff pricing logic (same as pricing.ts) to compute
+              // total days from arrival to now, then surcharge = extendedPrice - originalPrice
+              const CUTOFF_MINUTES = 3 * 60;
+              const arrMidnight = new Date(b.arrivalDate);
+              arrMidnight.setHours(0, 0, 0, 0);
+              const nowMidnight = new Date(now);
+              nowMidnight.setHours(0, 0, 0, 0);
+              const midnightsCrossed = Math.floor(
+                (nowMidnight.getTime() - arrMidnight.getTime()) / (1000 * 60 * 60 * 24)
               );
-              const totalDays = origDays + daysLate;
+              const nowMinutes = now.getHours() * 60 + now.getMinutes();
+              const totalDays = midnightsCrossed === 0
+                ? 1
+                : Math.max(1, nowMinutes > CUTOFF_MINUTES ? midnightsCrossed + 1 : midnightsCrossed);
 
-              let lateSurcharge = daysLate * 5 * (b.numberOfCars || 1); // fallback
+              let lateSurcharge = 0;
               try {
                 const priceRes = await fetch(
                   `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/pricing/calculate?days=${totalDays}`,
@@ -803,8 +794,8 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                 if (priceRes.ok) {
                   const priceData = await priceRes.json();
                   if (priceData.success && priceData.price) {
-                    const totalPrice = priceData.price * (b.numberOfCars || 1);
-                    lateSurcharge = Math.max(0, totalPrice - b.totalPrice);
+                    const extendedPrice = priceData.price * (b.numberOfCars || 1);
+                    lateSurcharge = Math.max(0, extendedPrice - b.totalPrice);
                   }
                 }
               } catch (e) {
@@ -2065,6 +2056,15 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     );
     const lostRevenue = lostBookings.reduce((sum, b) => sum + b.totalPrice, 0);
 
+    // Active late fees: currently-parked bookings that are late and have a pending surcharge
+    const activeLateBookings = bookings.filter(b =>
+      b.isLate &&
+      (b.lateSurcharge || 0) > 0 &&
+      b.status === 'arrived' &&
+      isInShift(b.arrivalDate, b.arrivalTime, shiftRange)
+    );
+    const activeLateRevenue = activeLateBookings.reduce((sum, b) => sum + (b.lateSurcharge || 0), 0);
+
     return {
       expected: expectedRevenue,
       actual: actualRevenue,
@@ -2076,8 +2076,10 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       pending: pendingRevenue,
       pendingCount: pendingCount,
       lost: lostRevenue,
+      activeLateRevenue,
+      activeLateCount: activeLateBookings.length,
       breakdown: breakdown,
-      
+
       // Detailed breakdowns for new UI
       collectedBookings: paidBookings.map(b => ({
         id: b.id,
@@ -2087,14 +2089,20 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
         isLate: b.isLate || false,
         lateFee: b.isLate ? (b.lateSurcharge || 0) : 0
       })),
-      
+
       pendingBookings: pendingPaymentBookings.map(b => ({
         id: b.id,
         name: b.name,
         amount: b.totalPrice,
         status: b.status
       })),
-      
+
+      activeLateBookings: activeLateBookings.map(b => ({
+        id: b.id,
+        name: b.name,
+        lateFee: b.lateSurcharge || 0
+      })),
+
       lostBookings: lostBookings.map(b => ({
         id: b.id,
         name: b.name,
@@ -2902,6 +2910,27 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                     </div>
                   </div>
                   
+                  {/* Active Late Fees (only show if there are any) */}
+                  {revenueStats.activeLateRevenue > 0 && (
+                    <div className="mb-6 p-4 bg-orange-50 border-2 border-orange-400 rounded-lg">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <span className="text-lg font-bold text-orange-800">⏰ Такса закъснение (в паркинга)</span>
+                        </div>
+                        <span className="text-2xl font-black text-orange-700">€{revenueStats.activeLateRevenue.toFixed(2)}</span>
+                      </div>
+                      <div className="text-sm text-orange-700 mt-1">{revenueStats.activeLateCount} резервации · не са напуснали</div>
+                      <div className="mt-2 space-y-1">
+                        {revenueStats.activeLateBookings.map(item => (
+                          <div key={item.id} className="flex justify-between text-sm text-orange-800">
+                            <span>{item.name}</span>
+                            <span className="font-semibold">+€{item.lateFee.toFixed(2)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Lost Revenue Section (only show if there's lost revenue) */}
                   {revenueStats.lost > 0 && (
                     <div className="mb-6 p-4 bg-red-50 border-2 border-red-300 rounded-lg">

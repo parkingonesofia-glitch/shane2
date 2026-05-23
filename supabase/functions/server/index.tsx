@@ -113,6 +113,20 @@ async function calculatePrice(days: number): Promise<number> {
   return day30Price + (additionalDays * pricing.longTermRate);
 }
 
+// Calculate parking days from arrivalDate to a given moment using the 3am cutoff rule.
+// Mirrors the same logic as pricing.ts on the client.
+function calculateDaysUsingCutoff(arrivalDate: string, to: Date): number {
+  const CUTOFF_MINUTES = 3 * 60; // 3:00am
+  const arrMidnight = new Date(arrivalDate);
+  arrMidnight.setHours(0, 0, 0, 0);
+  const toMidnight = new Date(to);
+  toMidnight.setHours(0, 0, 0, 0);
+  const midnightsCrossed = Math.floor((toMidnight.getTime() - arrMidnight.getTime()) / (1000 * 60 * 60 * 24));
+  const toMinutes = to.getHours() * 60 + to.getMinutes();
+  if (midnightsCrossed === 0) return 1;
+  return Math.max(1, toMinutes > CUTOFF_MINUTES ? midnightsCrossed + 1 : midnightsCrossed);
+}
+
 // Status transition rules
 const ALLOWED_TRANSITIONS: Record<string, string[]> = {
   'new': ['confirmed', 'cancelled', 'declined'],
@@ -1192,30 +1206,11 @@ app.put("/make-server-47a4914e/bookings/:id/mark-late", async (c) => {
       }, 400);
     }
     
-    // Calculate late surcharge using standard pricing as extension (not separate days)
+    // Calculate late surcharge: price for arrival→now (3am cutoff) minus original price
     const now = new Date();
-    const originalDeparture = new Date(booking.departureDate);
-    const arrival = new Date(booking.arrivalDate);
-    
-    // Set all to midnight for accurate day calculation
-    now.setHours(0, 0, 0, 0);
-    originalDeparture.setHours(0, 0, 0, 0);
-    arrival.setHours(0, 0, 0, 0);
-    
-    const daysLate = Math.floor((now.getTime() - originalDeparture.getTime()) / (1000 * 60 * 60 * 24));
-    
-    // Calculate late surcharge as: (total duration price) - (original price)
-    let lateSurcharge = 0;
-    if (daysLate > 0) {
-      // Calculate total days from arrival to now
-      const totalDays = Math.floor((now.getTime() - arrival.getTime()) / (1000 * 60 * 60 * 24));
-      
-      // Calculate what the price SHOULD be for the total duration
-      const totalPrice = await calculatePrice(totalDays) * (booking.numberOfCars || 1);
-      
-      // The surcharge is the difference
-      lateSurcharge = Math.max(0, totalPrice - booking.totalPrice);
-    }
+    const totalDays = calculateDaysUsingCutoff(booking.arrivalDate, now);
+    const extendedPrice = await calculatePrice(totalDays) * (booking.numberOfCars || 1);
+    const lateSurcharge = Math.max(0, extendedPrice - booking.totalPrice);
     
     const statusHistory = booking.statusHistory || [];
     statusHistory.push({
@@ -2097,28 +2092,10 @@ app.post("/make-server-47a4914e/update-late-surcharges", async (c) => {
       if (booking.isLate && booking.status === 'arrived') {
         // Recalculate late surcharge using extension-based pricing
         const now = new Date();
-        const originalDeparture = new Date(booking.originalDepartureDate || booking.departureDate);
-        const arrival = new Date(booking.arrivalDate);
-        
-        // Set all to midnight for accurate day calculation
-        now.setHours(0, 0, 0, 0);
-        originalDeparture.setHours(0, 0, 0, 0);
-        arrival.setHours(0, 0, 0, 0);
-        
-        const daysLate = Math.floor((now.getTime() - originalDeparture.getTime()) / (1000 * 60 * 60 * 24));
-        
-        // Calculate late surcharge as: (total duration price) - (original price)
-        let newSurcharge = 0;
-        if (daysLate > 0) {
-          // Calculate total days from arrival to now
-          const totalDays = Math.floor((now.getTime() - arrival.getTime()) / (1000 * 60 * 60 * 24));
-          
-          // Calculate what the price SHOULD be for the total duration
-          const totalPrice = await calculatePrice(totalDays) * (booking.numberOfCars || 1);
-          
-          // The surcharge is the difference
-          newSurcharge = Math.max(0, totalPrice - booking.totalPrice);
-        }
+        // Calculate late surcharge: price for arrival→now (3am cutoff) minus original price
+        const totalDays = calculateDaysUsingCutoff(booking.arrivalDate, now);
+        const extendedPrice = await calculatePrice(totalDays) * (booking.numberOfCars || 1);
+        const newSurcharge = Math.max(0, extendedPrice - booking.totalPrice);
         
         // Only update if surcharge changed
         if (newSurcharge !== booking.lateSurcharge) {
@@ -2176,28 +2153,10 @@ app.post("/make-server-47a4914e/admin/recalculate-late-fees", async (c) => {
       if (booking.isLate && booking.status === 'arrived') {
         // Recalculate late surcharge using extension-based pricing
         const now = new Date();
-        const originalDeparture = new Date(booking.originalDepartureDate || booking.departureDate);
-        const arrival = new Date(booking.arrivalDate);
-        
-        // Set all to midnight for accurate day calculation
-        now.setHours(0, 0, 0, 0);
-        originalDeparture.setHours(0, 0, 0, 0);
-        arrival.setHours(0, 0, 0, 0);
-        
-        const daysLate = Math.floor((now.getTime() - originalDeparture.getTime()) / (1000 * 60 * 60 * 24));
-        
-        // Calculate late surcharge as: (total duration price) - (original price)
-        let newSurcharge = 0;
-        if (daysLate > 0) {
-          // Calculate total days from arrival to now
-          const totalDays = Math.floor((now.getTime() - arrival.getTime()) / (1000 * 60 * 60 * 24));
-          
-          // Calculate what the price SHOULD be for the total duration
-          const totalPrice = await calculatePrice(totalDays) * (booking.numberOfCars || 1);
-          
-          // The surcharge is the difference
-          newSurcharge = Math.max(0, totalPrice - booking.totalPrice);
-        }
+        // Calculate late surcharge: price for arrival→now (3am cutoff) minus original price
+        const totalDays = calculateDaysUsingCutoff(booking.arrivalDate, now);
+        const extendedPrice = await calculatePrice(totalDays) * (booking.numberOfCars || 1);
+        const newSurcharge = Math.max(0, extendedPrice - booking.totalPrice);
         
         // Update with new surcharge
         const updated = {
