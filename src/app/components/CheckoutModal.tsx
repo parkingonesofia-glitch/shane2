@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X, Calendar, Clock, Car, User, Euro, AlertCircle } from "lucide-react";
+import { X, AlertCircle, Banknote, CreditCard } from "lucide-react";
 import { Button } from "./ui/button";
 
 interface CheckoutModalProps {
@@ -20,11 +20,12 @@ interface CheckoutModalProps {
   };
   onConfirm: (data: {
     lateFee: number;
+    paymentMethod: string;
     adjustmentReason?: string;
     adjustmentNote?: string;
   }) => void;
   onCancel: () => void;
-  calculateLateFee: (extraDays: number, numberOfCars: number) => Promise<number>;
+  calculateLateFee: (days: number, numberOfCars: number) => Promise<number>;
 }
 
 export function CheckoutModal({
@@ -33,21 +34,21 @@ export function CheckoutModal({
   onCancel,
   calculateLateFee,
 }: CheckoutModalProps) {
+  const [step, setStep] = useState<1 | 2>(1);
   const [autoCalculatedFee, setAutoCalculatedFee] = useState<number>(0);
   const [adjustedFee, setAdjustedFee] = useState<number | string>(0);
   const [adjustmentReason, setAdjustmentReason] = useState<string>("");
-  const [adjustmentNote, setAdjustmentNote] = useState<string>("");
   const [extraDays, setExtraDays] = useState<number>(0);
   const [isCalculating, setIsCalculating] = useState(true);
+  const [paymentMethod, setPaymentMethod] = useState<string>("");
 
   useEffect(() => {
-    const calculateExtraStay = async () => {
+    const calculate = async () => {
       setIsCalculating(true);
 
-      const CUTOFF_MINUTES = 3 * 60; // 3:00am
+      const CUTOFF_MINUTES = 3 * 60;
       const now = new Date();
 
-      // Helper: days from a date string to a given moment using 3am cutoff
       const daysWithCutoff = (fromDate: string, to: Date): number => {
         const fromMidnight = new Date(fromDate);
         fromMidnight.setHours(0, 0, 0, 0);
@@ -59,24 +60,23 @@ export function CheckoutModal({
         return Math.max(1, toMin > CUTOFF_MINUTES ? mc + 1 : mc);
       };
 
-      // Days for the original booking (arrival → original departure time)
       const origDepDate = booking.originalDepartureDate || booking.departureDate;
       const origDepTime = booking.originalDepartureTime || booking.departureTime;
       const [origH, origM] = origDepTime.split(":").map(Number);
       const origDepDateTime = new Date(origDepDate);
       origDepDateTime.setHours(origH, origM, 0, 0);
+
       const originalDays = daysWithCutoff(booking.arrivalDate, origDepDateTime);
-
-      // Days from arrival to NOW
       const totalDays = daysWithCutoff(booking.arrivalDate, now);
+      const extra = Math.max(0, totalDays - originalDays);
+      setExtraDays(extra);
 
-      const extraDaysCount = Math.max(0, totalDays - originalDays);
-      setExtraDays(extraDaysCount);
-
-      if (extraDaysCount > 0) {
-        // Price for the full extended duration, surcharge = difference from original
-        const extendedPrice = await calculateLateFee(totalDays, booking.numberOfCars);
-        const fee = Math.max(0, extendedPrice - booking.totalPrice);
+      if (extra > 0) {
+        const [origPrice, extPrice] = await Promise.all([
+          calculateLateFee(originalDays, booking.numberOfCars),
+          calculateLateFee(totalDays, booking.numberOfCars),
+        ]);
+        const fee = Math.max(0, extPrice - origPrice);
         setAutoCalculatedFee(fee);
         setAdjustedFee(fee);
       } else {
@@ -87,228 +87,193 @@ export function CheckoutModal({
       setIsCalculating(false);
     };
 
-    calculateExtraStay();
+    calculate();
   }, [booking, calculateLateFee]);
 
-  const handleConfirm = () => {
-    onConfirm({
-      lateFee: typeof adjustedFee === 'string' ? parseFloat(adjustedFee) || 0 : adjustedFee,
-      adjustmentReason: adjustmentReason || undefined,
-      adjustmentNote: adjustmentNote || undefined,
-    });
-  };
+  const adjustedFeeNum = typeof adjustedFee === "string" ? parseFloat(adjustedFee) || 0 : adjustedFee;
+  const isAdjusted = Math.abs(adjustedFeeNum - autoCalculatedFee) > 0.01;
+  const totalDue = booking.totalPrice + adjustedFeeNum;
 
   const formatDate = (dateStr: string) => {
     if (!dateStr) return "";
-    const [year, month, day] = dateStr.split("-");
-    return `${day}/${month}/${year}`;
+    const [y, m, d] = dateStr.split("-");
+    return `${d}/${m}/${y}`;
   };
 
-  const adjustedFeeNum = typeof adjustedFee === 'string' ? parseFloat(adjustedFee) || 0 : adjustedFee;
-  const isAdjusted = Math.abs(adjustedFeeNum - autoCalculatedFee) > 0.01;
+  const origDepDate = booking.originalDepartureDate || booking.departureDate;
+  const origDepTime = booking.originalDepartureTime || booking.departureTime;
+  const todayStr = new Date().toISOString().split("T")[0];
+
+  const handleNext = () => setStep(2);
+
+  const handleConfirm = () => {
+    onConfirm({
+      lateFee: adjustedFeeNum,
+      paymentMethod,
+      adjustmentReason: adjustmentReason || undefined,
+    });
+  };
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-xl shadow-2xl w-full max-w-sm">
         {/* Header */}
-        <div className="bg-[#073590] text-white p-6 flex items-center justify-between sticky top-0">
-          <h2 className="text-2xl font-bold">Напускане на паркинга</h2>
-          <button
-            onClick={onCancel}
-            className="text-white hover:text-gray-200 transition-colors"
-          >
-            <X className="w-6 h-6" />
+        <div className="bg-[#073590] text-white px-5 py-4 rounded-t-xl flex items-center justify-between">
+          <h2 className="text-lg font-bold">Напускане на паркинга</h2>
+          <button onClick={onCancel} className="text-white/80 hover:text-white">
+            <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-6">
-          {/* Section 1: Reservation Info */}
-          <div className="bg-gray-50 rounded-lg p-5">
-            <h3 className="font-semibold text-lg text-gray-800 mb-4 flex items-center gap-2">
-              <User className="w-5 h-5 text-[#073590]" />
-              Информация за резервацията
-            </h3>
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div>
-                <span className="text-gray-600">Клиент:</span>
-                <p className="font-medium text-gray-900">{booking.name}</p>
+        {step === 1 ? (
+          <div className="p-5 space-y-4">
+            {/* Client info */}
+            <div>
+              <p className="text-xl font-bold text-gray-900">{booking.name}</p>
+              <p className="text-sm text-gray-500">{booking.licensePlate}</p>
+            </div>
+
+            {/* Departure comparison */}
+            <div className="grid grid-cols-2 gap-3 text-sm">
+              <div className="bg-gray-50 rounded-lg p-3">
+                <p className="text-gray-500 text-xs mb-1">Планирано заминаване</p>
+                <p className="font-semibold text-gray-900">{formatDate(origDepDate)}</p>
+                <p className="text-gray-600">{origDepTime}</p>
               </div>
-              <div>
-                <span className="text-gray-600">Рег. номер:</span>
-                <p className="font-medium text-gray-900">{booking.licensePlate}</p>
-              </div>
-              <div>
-                <span className="text-gray-600">Планирано заминаване:</span>
-                <p className="font-medium text-gray-900">
-                  {formatDate(booking.originalDepartureDate || booking.departureDate)} в{" "}
-                  {booking.originalDepartureTime || booking.departureTime}
-                </p>
-              </div>
-              <div>
-                <span className="text-gray-600">Действително заминаване:</span>
-                <p className="font-medium text-gray-900">
-                  {formatDate(new Date().toISOString().split("T")[0])} (днес)
-                </p>
+              <div className="bg-gray-50 rounded-lg p-3">
+                <p className="text-gray-500 text-xs mb-1">Действително заминаване</p>
+                <p className="font-semibold text-gray-900">{formatDate(todayStr)}</p>
+                <p className="text-gray-600">днес</p>
               </div>
             </div>
-          </div>
 
-          {/* Section 2: Additional Stay Calculation */}
-          {extraDays > 0 ? (
-            <div className="bg-amber-50 border border-amber-200 rounded-lg p-5">
-              <h3 className="font-semibold text-lg text-amber-900 mb-4 flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-amber-600" />
-                Допълнителен престой
-              </h3>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-700">Допълнителни дни:</span>
-                  <span className="font-bold text-lg text-amber-900">
-                    {extraDays} {extraDays === 1 ? "ден" : "дни"}
-                  </span>
+            {/* Late fee */}
+            {isCalculating ? (
+              <div className="text-center py-3 text-gray-500 text-sm">Изчислява се...</div>
+            ) : extraDays > 0 ? (
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 space-y-3">
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-700">Закъснение:</span>
+                  <span className="font-bold text-amber-900">{extraDays} {extraDays === 1 ? "ден" : "дни"}</span>
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-700">Автоматично изчислена такса:</span>
-                  <span className="font-bold text-lg text-amber-900">
-                    {isCalculating ? "Изчислява се..." : `€${autoCalculatedFee.toFixed(2)}`}
-                  </span>
-                </div>
-                <p className="text-xs text-amber-800 mt-2 bg-amber-100 p-2 rounded">
-                  💡 Таксата е изчислена с използване на стандартния ценоразпис за {extraDays}{" "}
-                  {extraDays === 1 ? "ден" : "дни"} престой за {booking.numberOfCars}{" "}
-                  {booking.numberOfCars === 1 ? "автомобил" : "автомобила"}.
-                </p>
-              </div>
-            </div>
-          ) : (
-            <div className="bg-green-50 border border-green-200 rounded-lg p-5">
-              <h3 className="font-semibold text-lg text-green-900 mb-2 flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-green-600" />
-                Без допълнителен престой
-              </h3>
-              <p className="text-green-800">
-                Клиентът напуска в рамките на първоначалната резервация.
-              </p>
-            </div>
-          )}
-
-          {/* Section 3: Operator Adjustment */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-5">
-            <h3 className="font-semibold text-lg text-blue-900 mb-4 flex items-center gap-2">
-              <Euro className="w-5 h-5 text-blue-600" />
-              Корекция от оператор
-            </h3>
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Крайна такса за допълнителен престой (€)
-                </label>
-                <input
-                  type="number"
-                  step="0.01"
-                  min="0"
-                  value={adjustedFee}
-                  onChange={(e) => setAdjustedFee(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#073590] focus:border-transparent text-lg font-medium"
-                  disabled={isCalculating}
-                />
-                {isAdjusted && (
-                  <p className="text-xs text-blue-600 mt-1 flex items-center gap-1">
-                    <AlertCircle className="w-3 h-3" />
-                    Коригирана от автоматичната сума (€{autoCalculatedFee.toFixed(2)})
-                  </p>
-                )}
-              </div>
-
-              {isAdjusted && (
-                <>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Причина за корекция
-                    </label>
+                <div>
+                  <label className="block text-xs font-medium text-gray-600 mb-1">
+                    Такса за закъснение (€)
+                  </label>
+                  <input
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={adjustedFee}
+                    onChange={(e) => setAdjustedFee(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#073590] text-lg font-bold text-center"
+                  />
+                  {isAdjusted && (
+                    <p className="text-xs text-amber-700 mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3 flex-shrink-0" />
+                      Автоматична сума: €{autoCalculatedFee.toFixed(2)}
+                    </p>
+                  )}
+                  {isAdjusted && (
                     <select
                       value={adjustmentReason}
                       onChange={(e) => setAdjustmentReason(e.target.value)}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#073590] focus:border-transparent"
+                      className="w-full mt-2 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#073590]"
                     >
-                      <option value="">Изберете причина...</option>
+                      <option value="">Причина за корекция...</option>
                       <option value="goodwill">Отстъпка от добра воля</option>
                       <option value="correction">Оператор корекция</option>
                       <option value="special-case">Специален случай</option>
                       <option value="waived">Анулирана такса</option>
                       <option value="custom">Друга причина</option>
                     </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Бележка (опционално)
-                    </label>
-                    <textarea
-                      value={adjustmentNote}
-                      onChange={(e) => setAdjustmentNote(e.target.value)}
-                      placeholder="Добавете допълнителна информация за корекцията..."
-                      rows={3}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#073590] focus:border-transparent resize-none"
-                    />
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
-
-          {/* Section 4: Final Summary */}
-          <div className="bg-gray-100 rounded-lg p-5 border-2 border-gray-300">
-            <h3 className="font-semibold text-lg text-gray-800 mb-4">Обобщение</h3>
-            <div className="space-y-2 text-base">
-              <div className="flex justify-between">
-                <span className="text-gray-700">Първоначална цена:</span>
-                <span className="font-medium">€{booking.totalPrice.toFixed(2)}</span>
+                  )}
+                </div>
               </div>
+            ) : (
+              <div className="bg-green-50 border border-green-200 rounded-lg p-3 text-sm text-green-800">
+                Без допълнителен престой
+              </div>
+            )}
+
+            {/* Total */}
+            <div className="flex justify-between items-center pt-1 border-t">
+              <span className="text-gray-700 font-medium">Общо за плащане:</span>
+              <span className="text-2xl font-black text-[#073590]">€{totalDue.toFixed(2)}</span>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex gap-3">
+              <Button onClick={onCancel} variant="outline" className="flex-1">
+                Отказ
+              </Button>
+              <Button
+                onClick={handleNext}
+                disabled={isCalculating || (isAdjusted && !adjustmentReason) || adjustedFee === ""}
+                className="flex-1 bg-[#073590] hover:bg-[#052560] text-white font-bold"
+              >
+                Напред →
+              </Button>
+            </div>
+            {isAdjusted && !adjustmentReason && (
+              <p className="text-xs text-red-600 text-center -mt-2">Изберете причина за корекцията</p>
+            )}
+          </div>
+        ) : (
+          <div className="p-5 space-y-4">
+            <div>
+              <p className="text-sm text-gray-500 mb-1">Метод на плащане за</p>
+              <p className="font-bold text-gray-900">{booking.name}</p>
               {extraDays > 0 && (
-                <div className="flex justify-between">
-                  <span className="text-gray-700">Допълнителен престой:</span>
-                  <span className="font-medium text-amber-700">
-                    €{adjustedFeeNum.toFixed(2)}
-                    {isAdjusted && <span className="text-xs ml-1">(коригирано)</span>}
-                  </span>
-                </div>
+                <p className="text-sm text-amber-700 mt-1">
+                  Включва доплащане €{adjustedFeeNum.toFixed(2)} за закъснение
+                </p>
               )}
-              <div className="border-t-2 border-gray-400 pt-2 mt-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-900 font-bold text-lg">Обща сума:</span>
-                  <span className="font-bold text-2xl text-[#073590]">
-                    €{(booking.totalPrice + adjustedFeeNum).toFixed(2)}
-                  </span>
-                </div>
-              </div>
+            </div>
+
+            <div className="text-center py-1">
+              <span className="text-3xl font-black text-[#073590]">€{totalDue.toFixed(2)}</span>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              <button
+                onClick={() => setPaymentMethod("cash")}
+                className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 font-bold transition-all ${
+                  paymentMethod === "cash"
+                    ? "border-green-500 bg-green-50 text-green-800"
+                    : "border-gray-200 text-gray-600 hover:border-gray-300"
+                }`}
+              >
+                <Banknote className="w-8 h-8" />
+                Кеш
+              </button>
+              <button
+                onClick={() => setPaymentMethod("card")}
+                className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 font-bold transition-all ${
+                  paymentMethod === "card"
+                    ? "border-blue-500 bg-blue-50 text-blue-800"
+                    : "border-gray-200 text-gray-600 hover:border-gray-300"
+                }`}
+              >
+                <CreditCard className="w-8 h-8" />
+                Карта
+              </button>
+            </div>
+
+            <div className="flex gap-3">
+              <Button onClick={() => setStep(1)} variant="outline" className="flex-1">
+                ← Назад
+              </Button>
+              <Button
+                onClick={handleConfirm}
+                disabled={!paymentMethod}
+                className="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold"
+              >
+                Потвърди
+              </Button>
             </div>
           </div>
-
-          {/* Action Buttons */}
-          <div className="flex gap-3 pt-2">
-            <Button
-              onClick={onCancel}
-              variant="outline"
-              className="flex-1 h-12 text-base font-medium"
-            >
-              Отказ
-            </Button>
-            <Button
-              onClick={handleConfirm}
-              disabled={isCalculating || (isAdjusted && !adjustmentReason) || adjustedFee === ''}
-              className="flex-1 h-12 bg-green-600 hover:bg-green-700 text-white text-base font-bold"
-            >
-              {isCalculating ? "Изчислява се..." : "Потвърди напускане"}
-            </Button>
-          </div>
-          
-          {isAdjusted && !adjustmentReason && (
-            <p className="text-xs text-red-600 text-center mt-2">
-              Моля, изберете причина за корекцията
-            </p>
-          )}
-        </div>
+        )}
       </div>
     </div>
   );

@@ -127,6 +127,28 @@ function calculateDaysUsingCutoff(arrivalDate: string, to: Date): number {
   return Math.max(1, toMinutes > CUTOFF_MINUTES ? midnightsCrossed + 1 : midnightsCrossed);
 }
 
+// Calculate incremental late surcharge: price(extendedDays) - price(originalDays)
+// This avoids using booking.totalPrice as baseline (brittle when pricing changes)
+async function calculateIncrementalSurcharge(booking: any, now: Date): Promise<number> {
+  const origDepDate = booking.originalDepartureDate || booking.departureDate;
+  const origDepTime = booking.originalDepartureTime || booking.departureTime;
+  const [origH, origM] = (origDepTime as string).split(":").map(Number);
+  const origDepDateTime = new Date(origDepDate);
+  origDepDateTime.setHours(origH, origM, 0, 0);
+
+  const originalDays = calculateDaysUsingCutoff(booking.arrivalDate, origDepDateTime);
+  const extendedDays = calculateDaysUsingCutoff(booking.arrivalDate, now);
+
+  if (extendedDays <= originalDays) return 0;
+
+  const [origPrice, extPrice] = await Promise.all([
+    calculatePrice(originalDays),
+    calculatePrice(extendedDays),
+  ]);
+  const cars = booking.numberOfCars || 1;
+  return Math.max(0, (extPrice - origPrice) * cars);
+}
+
 // Status transition rules
 const ALLOWED_TRANSITIONS: Record<string, string[]> = {
   'new': ['confirmed', 'cancelled', 'declined'],
@@ -1206,12 +1228,10 @@ app.put("/make-server-47a4914e/bookings/:id/mark-late", async (c) => {
       }, 400);
     }
     
-    // Calculate late surcharge: price for arrival→now (3am cutoff) minus original price
+    // Calculate late surcharge: price(extendedDays) - price(originalDays) — incremental
     const now = new Date();
-    const totalDays = calculateDaysUsingCutoff(booking.arrivalDate, now);
-    const extendedPrice = await calculatePrice(totalDays) * (booking.numberOfCars || 1);
-    const lateSurcharge = Math.max(0, extendedPrice - booking.totalPrice);
-    
+    const lateSurcharge = await calculateIncrementalSurcharge(booking, now);
+
     const statusHistory = booking.statusHistory || [];
     statusHistory.push({
       from: booking.status,
@@ -2090,13 +2110,10 @@ app.post("/make-server-47a4914e/update-late-surcharges", async (c) => {
     
     for (const booking of allBookings) {
       if (booking.isLate && booking.status === 'arrived') {
-        // Recalculate late surcharge using extension-based pricing
+        // Recalculate late surcharge: price(extendedDays) - price(originalDays) — incremental
         const now = new Date();
-        // Calculate late surcharge: price for arrival→now (3am cutoff) minus original price
-        const totalDays = calculateDaysUsingCutoff(booking.arrivalDate, now);
-        const extendedPrice = await calculatePrice(totalDays) * (booking.numberOfCars || 1);
-        const newSurcharge = Math.max(0, extendedPrice - booking.totalPrice);
-        
+        const newSurcharge = await calculateIncrementalSurcharge(booking, now);
+
         // Only update if surcharge changed
         if (newSurcharge !== booking.lateSurcharge) {
           const updated = {
@@ -2151,13 +2168,10 @@ app.post("/make-server-47a4914e/admin/recalculate-late-fees", async (c) => {
     for (const booking of allBookings) {
       // Update late bookings that are still in "arrived" status
       if (booking.isLate && booking.status === 'arrived') {
-        // Recalculate late surcharge using extension-based pricing
+        // Recalculate late surcharge: price(extendedDays) - price(originalDays) — incremental
         const now = new Date();
-        // Calculate late surcharge: price for arrival→now (3am cutoff) minus original price
-        const totalDays = calculateDaysUsingCutoff(booking.arrivalDate, now);
-        const extendedPrice = await calculatePrice(totalDays) * (booking.numberOfCars || 1);
-        const newSurcharge = Math.max(0, extendedPrice - booking.totalPrice);
-        
+        const newSurcharge = await calculateIncrementalSurcharge(booking, now);
+
         // Update with new surcharge
         const updated = {
           ...booking,

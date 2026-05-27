@@ -770,36 +770,46 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
         const bookingsWithUpdatedSurcharges = await Promise.all(
           data.bookings.map(async (b: Booking) => {
             if (b.isLate && b.status !== 'checked-out') {
-              // Use 3am-cutoff pricing logic (same as pricing.ts) to compute
-              // total days from arrival to now, then surcharge = extendedPrice - originalPrice
+              // Incremental formula: price(extendedDays) - price(originalDays)
               const CUTOFF_MINUTES = 3 * 60;
-              const arrMidnight = new Date(b.arrivalDate);
-              arrMidnight.setHours(0, 0, 0, 0);
-              const nowMidnight = new Date(now);
-              nowMidnight.setHours(0, 0, 0, 0);
-              const midnightsCrossed = Math.floor(
-                (nowMidnight.getTime() - arrMidnight.getTime()) / (1000 * 60 * 60 * 24)
-              );
-              const nowMinutes = now.getHours() * 60 + now.getMinutes();
-              const totalDays = midnightsCrossed === 0
-                ? 1
-                : Math.max(1, nowMinutes > CUTOFF_MINUTES ? midnightsCrossed + 1 : midnightsCrossed);
+
+              const daysWithCutoff = (fromDate: string, to: Date): number => {
+                const fromMidnight = new Date(fromDate);
+                fromMidnight.setHours(0, 0, 0, 0);
+                const toMidnight = new Date(to);
+                toMidnight.setHours(0, 0, 0, 0);
+                const mc = Math.floor((toMidnight.getTime() - fromMidnight.getTime()) / (1000 * 60 * 60 * 24));
+                const toMin = to.getHours() * 60 + to.getMinutes();
+                if (mc === 0) return 1;
+                return Math.max(1, toMin > CUTOFF_MINUTES ? mc + 1 : mc);
+              };
+
+              const origDepDate = b.originalDepartureDate || b.departureDate;
+              const origDepTime = b.originalDepartureTime || b.departureTime;
+              const [origH, origM] = origDepTime.split(":").map(Number);
+              const origDepDateTime = new Date(origDepDate);
+              origDepDateTime.setHours(origH, origM, 0, 0);
+
+              const originalDays = daysWithCutoff(b.arrivalDate, origDepDateTime);
+              const extendedDays = daysWithCutoff(b.arrivalDate, now);
 
               let lateSurcharge = 0;
-              try {
-                const priceRes = await fetch(
-                  `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/pricing/calculate?days=${totalDays}`,
-                  { headers: { "Authorization": `Bearer ${publicAnonKey}` } }
-                );
-                if (priceRes.ok) {
-                  const priceData = await priceRes.json();
-                  if (priceData.success && priceData.price) {
-                    const extendedPrice = priceData.price * (b.numberOfCars || 1);
-                    lateSurcharge = Math.max(0, extendedPrice - b.totalPrice);
+              if (extendedDays > originalDays) {
+                try {
+                  const [origRes, extRes] = await Promise.all([
+                    fetch(`https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/pricing/calculate?days=${originalDays}`, { headers: { "Authorization": `Bearer ${publicAnonKey}` } }),
+                    fetch(`https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/pricing/calculate?days=${extendedDays}`, { headers: { "Authorization": `Bearer ${publicAnonKey}` } }),
+                  ]);
+                  if (origRes.ok && extRes.ok) {
+                    const [origData, extData] = await Promise.all([origRes.json(), extRes.json()]);
+                    if (origData.success && extData.success) {
+                      const cars = b.numberOfCars || 1;
+                      lateSurcharge = Math.max(0, (extData.price - origData.price) * cars);
+                    }
                   }
+                } catch (e) {
+                  console.error("Error calculating late surcharge for", b.id, e);
                 }
-              } catch (e) {
-                console.error("Error calculating late surcharge for", b.id, e);
               }
 
               return { ...b, lateSurcharge };
@@ -1473,49 +1483,39 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     }
   };
 
-  // Handle checkout confirmation from modal
+  // Handle checkout confirmation from modal (payment method is already selected inside the modal)
   const handleCheckoutConfirm = async (data: {
     lateFee: number;
+    paymentMethod: string;
     adjustmentReason?: string;
     adjustmentNote?: string;
   }) => {
     if (!checkoutBooking) return;
-    
     setCheckoutModalOpen(false);
-    
-    // If payment is pending, ask for payment method
-    if (checkoutBooking.paymentMethod === "pay-on-leave" || checkoutBooking.paymentStatus === "pending") {
-      setSelectedBooking(checkoutBooking);
-      setConfirmedLateFee(data.lateFee);
-      setAction("checkout");
-      setPaymentDialog(true);
-      setPaymentMethod("");
-      // Store adjustment details temporarily
-      (checkoutBooking as any)._adjustmentReason = data.adjustmentReason;
-      (checkoutBooking as any)._adjustmentNote = data.adjustmentNote;
-    } else {
-      // Already paid, checkout directly
-      await confirmCheckout(checkoutBooking, data.lateFee, data.adjustmentReason, data.adjustmentNote);
-    }
+    // Use the payment method selected in the modal
+    setPaymentMethod(data.paymentMethod);
+    await confirmCheckout(checkoutBooking, data.lateFee, data.adjustmentReason, data.adjustmentNote, data.paymentMethod);
   };
 
   // Confirm checkout
   const confirmCheckout = async (
-    booking?: Booking, 
+    booking?: Booking,
     lateFee?: number,
     adjustmentReason?: string,
-    adjustmentNote?: string
+    adjustmentNote?: string,
+    explicitPaymentMethod?: string
   ) => {
     const targetBooking = booking || selectedBooking;
     if (!targetBooking) return;
 
+    const finalPaymentMethod = explicitPaymentMethod || paymentMethod || targetBooking.paymentMethod;
+
     // If payment was pending and no method selected
-    if ((targetBooking.paymentMethod === "pay-on-leave" || targetBooking.paymentStatus === "pending") && !paymentMethod && !booking) {
+    if ((targetBooking.paymentMethod === "pay-on-leave" || targetBooking.paymentStatus === "pending") && !finalPaymentMethod) {
       toast.error("Моля изберете метод на плащане");
       return;
     }
-    
-    // Get adjustment details from temporary storage if available
+
     const finalAdjustmentReason = adjustmentReason || (targetBooking as any)._adjustmentReason;
     const finalAdjustmentNote = adjustmentNote || (targetBooking as any)._adjustmentNote;
     const finalLateFee = lateFee !== undefined ? lateFee : confirmedLateFee;
@@ -1533,7 +1533,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
           },
           body: JSON.stringify({
             operator: currentUser.fullName,
-            paymentMethod: paymentMethod || targetBooking.paymentMethod,
+            paymentMethod: finalPaymentMethod,
             confirmedLateFee: targetBooking.isLate ? finalLateFee : undefined,
             adjustmentReason: finalAdjustmentReason,
             adjustmentNote: finalAdjustmentNote,
@@ -1985,7 +1985,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       (b.status === "confirmed" || b.status === "arrived" || b.status === "checked-out") &&
       isInShift(b.arrivalDate, b.arrivalTime, shiftRange)
     );
-    const expectedRevenue = expectedBookings.reduce((sum, b) => sum + b.totalPrice, 0);
+    const expectedRevenue = expectedBookings.reduce((sum, b) => sum + b.totalPrice + (b.isLate && b.status === 'arrived' ? (b.lateSurcharge || 0) : 0), 0);
     
     // Actual collected: paid bookings where payment was MADE during this shift (by paidAt timestamp)
     // This ensures payments collected during a shift show up in that shift's revenue
