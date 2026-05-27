@@ -1985,7 +1985,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       (b.status === "confirmed" || b.status === "arrived" || b.status === "checked-out") &&
       isInShift(b.arrivalDate, b.arrivalTime, shiftRange)
     );
-    const expectedRevenue = expectedBookings.reduce((sum, b) => sum + b.totalPrice, 0);
+    const expectedRevenue = expectedBookings.reduce((sum, b) => sum + (b.finalPrice || b.totalPrice), 0);
     
     // Actual collected: paid bookings where payment was MADE during this shift (by paidAt timestamp)
     // This ensures payments collected during a shift show up in that shift's revenue
