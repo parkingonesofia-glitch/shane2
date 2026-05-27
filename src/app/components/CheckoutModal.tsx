@@ -104,7 +104,14 @@ export function CheckoutModal({
   const origDepTime = booking.originalDepartureTime || booking.departureTime;
   const todayStr = new Date().toISOString().split("T")[0];
 
-  const handleNext = () => setStep(2);
+  const handleNext = () => {
+    if (adjustedFeeNum <= 0) {
+      // No extra fee — no need to ask payment method
+      onConfirm({ lateFee: 0, paymentMethod: booking.isLate ? "" : "" });
+    } else {
+      setStep(2);
+    }
+  };
 
   const handleConfirm = () => {
     onConfirm({
@@ -212,7 +219,7 @@ export function CheckoutModal({
                 disabled={isCalculating || (isAdjusted && !adjustmentReason) || adjustedFee === ""}
                 className="flex-1 bg-[#073590] hover:bg-[#052560] text-white font-bold"
               >
-                Напред →
+                {adjustedFeeNum > 0 ? "Напред →" : "Потвърди"}
               </Button>
             </div>
             {isAdjusted && !adjustmentReason && (
