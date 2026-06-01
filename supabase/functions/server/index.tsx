@@ -628,7 +628,7 @@ app.post("/make-server-47a4914e/bookings", async (c) => {
       const shouldSendEmail = emailNotificationsEnabled !== false; // Default to true if not set
       
       if (shouldSendEmail) {
-        console.log(`📧 Sending admin notification email to reservations@skyparking.bg...`);
+        console.log(`📧 Sending admin notification email — booking language: "${bookingData.language || 'bg (fallback)'}"`);
         const adminEmailResult = await sendAdminNotificationEmail({
           name: bookingData.name,
           email: bookingData.email,

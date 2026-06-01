@@ -1161,7 +1161,17 @@ Email: reservations@skyparking.bg
 Web: https://www.skyparking.bg
     `.trim();
 
-    const plainText = language === 'bg' ? textBG : textEN;
+    const plainTextByLang: Record<string, string> = {
+      bg: textBG,
+      en: textEN,
+      el: `Γεια σας ${data.name},\n\nΗ κράτησή σας στο πάρκινγκ κοντά στο αεροδρόμιο Σόφιας επιβεβαιώθηκε.\n\nΑριθμός κράτησης: ${data.bookingId}\nΆφιξη: ${formatDateDisplay(data.arrivalDate)} στις ${data.arrivalTime}\nΑναχώρηση: ${formatDateDisplay(data.departureDate)} στις ${data.departureTime}\nΠινακίδα: ${data.licensePlate}\nΤιμή: €${data.totalPrice}\n\nΠληρωμή κατά την άφιξη.\n\nΕυχαριστούμε που επιλέξατε το SkyParking!\nEmail: reservations@skyparking.bg`,
+      tr: `Merhaba ${data.name},\n\nSofya Havalimanı yakınındaki otopark rezervasyonunuz onaylandı.\n\nRezervason No: ${data.bookingId}\nGiriş: ${formatDateDisplay(data.arrivalDate)} saat ${data.arrivalTime}\nÇıkış: ${formatDateDisplay(data.departureDate)} saat ${data.departureTime}\nPlaka: ${data.licensePlate}\nÜcret: €${data.totalPrice}\n\nGelişte ödeme.\n\nSkyParking'i seçtiğiniz için teşekkür ederiz!\nEmail: reservations@skyparking.bg`,
+      sr: `Zdravo ${data.name},\n\nVaša rezervacija parkinga kod Aerodroma Sofija je potvrđena.\n\nBroj rezervacije: ${data.bookingId}\nDolazak: ${formatDateDisplay(data.arrivalDate)} u ${data.arrivalTime}\nOdlazak: ${formatDateDisplay(data.departureDate)} u ${data.departureTime}\nRegistarski broj: ${data.licensePlate}\nCena: €${data.totalPrice}\n\nPlaćanje po dolasku.\n\nHvala što ste izabrali SkyParking!\nEmail: reservations@skyparking.bg`,
+      mk: `Здраво ${data.name},\n\nВашата резервација за паркинг кај Аеродромот во Софија е потврдена.\n\nБрој на резервација: ${data.bookingId}\nПристигнување: ${formatDateDisplay(data.arrivalDate)} во ${data.arrivalTime}\nЗаминување: ${formatDateDisplay(data.departureDate)} во ${data.departureTime}\nРегистарски број: ${data.licensePlate}\nЦена: €${data.totalPrice}\n\nПлаќање при пристигнување.\n\nБлагодариме што го избравте SkyParking!\nEmail: reservations@skyparking.bg`,
+      ro: `Bună ziua ${data.name},\n\nRezervarea dvs. la parcarea de lângă Aeroportul Sofia a fost confirmată.\n\nNumăr rezervare: ${data.bookingId}\nSosire: ${formatDateDisplay(data.arrivalDate)} la ${data.arrivalTime}\nPlecare: ${formatDateDisplay(data.departureDate)} la ${data.departureTime}\nNr. înmatriculare: ${data.licensePlate}\nPreț: €${data.totalPrice}\n\nPlată la sosire.\n\nVă mulțumim că ați ales SkyParking!\nEmail: reservations@skyparking.bg`,
+      uk: `Доброго дня ${data.name},\n\nВаше бронювання паркінгу біля аеропорту Софії підтверджено.\n\nНомер бронювання: ${data.bookingId}\nПрибуття: ${formatDateDisplay(data.arrivalDate)} о ${data.arrivalTime}\nВід'їзд: ${formatDateDisplay(data.departureDate)} о ${data.departureTime}\nНомерний знак: ${data.licensePlate}\nЦіна: €${data.totalPrice}\n\nОплата при прибутті.\n\nДякуємо, що обрали SkyParking!\nEmail: reservations@skyparking.bg`,
+    };
+    const plainText = plainTextByLang[language] ?? textEN;
 
     console.log(`Sending ${language.toUpperCase()} confirmation email to ${data.email} for booking ${data.bookingId}`);
 
@@ -1530,7 +1540,7 @@ ${data.needsInvoice ? `Фактура за: ${data.companyName || 'фирма'}`
 Цена: €${data.totalPrice}
     `.trim();
 
-    console.log(`Sending admin notification email to ${adminEmail} for booking ${data.bookingId}`);
+    console.log(`Sending admin notification email to ${adminEmail} for booking ${data.bookingId} — Viber language: "${data.language || 'bg (fallback)'}"`);
 
     const result = await resend.emails.send({
       from: fromEmail,
