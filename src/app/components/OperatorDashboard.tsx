@@ -1493,8 +1493,8 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       </tr>`;
     }).join('');
 
-    // Add empty rows to fill the page (target ~30 rows total)
-    const emptyRowCount = Math.max(0, 28 - arrivingToday.length);
+    // Add empty rows to fill the page (target ~25 rows total)
+    const emptyRowCount = Math.max(0, 23 - arrivingToday.length);
     const emptyRows = Array.from({ length: emptyRowCount }, () => `<tr>
         <td>&nbsp;</td><td></td><td></td><td></td><td></td>
         <td class="notes-cell"></td><td></td><td></td>
@@ -1505,27 +1505,29 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Разписание – ${dateStr} ${shiftLabel}</title>
 <style>
-  @page { size: A4 landscape; margin: 10mm 12mm; }
-  body { font-family: Arial, sans-serif; font-size: 11px; color: #000; }
-  h1 { font-size: 15px; margin: 0 0 2px 0; }
-  .subtitle { font-size: 11px; color: #555; margin-bottom: 8px; }
+  @page { size: A4 landscape; margin: 8mm 10mm; }
+  body { font-family: Arial, sans-serif; font-size: 13px; color: #000; }
+  h1 { font-size: 16px; margin: 0 0 2px 0; }
+  .subtitle { font-size: 12px; color: #555; margin-bottom: 8px; }
   table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-  th { background: #073590; color: #fff; padding: 5px 4px; font-size: 10px; text-align: left; }
-  td { border: 1px solid #ccc; padding: 4px; vertical-align: top; font-size: 10px; white-space: nowrap; overflow: hidden; }
+  th { background: #073590; color: #fff; padding: 6px 5px; font-size: 12px; text-align: left; }
+  td { border: 1px solid #ccc; padding: 5px; vertical-align: top; font-size: 12px; white-space: nowrap; overflow: hidden; }
+  tr { page-break-inside: avoid; }
   tr:nth-child(even) td { background: #f5f7fc; }
-  .notes-cell { white-space: normal; word-break: break-word; }
-  input[type=checkbox] { width: 14px; height: 14px; cursor: pointer; }
-  th:nth-child(1), td:nth-child(1) { width: 52px; }
-  th:nth-child(2), td:nth-child(2) { width: 140px; }
-  th:nth-child(3), td:nth-child(3) { width: 110px; }
-  th:nth-child(4), td:nth-child(4) { width: 42px; }
-  th:nth-child(5), td:nth-child(5) { width: 42px; }
-  th:nth-child(6), td:nth-child(6) { width: auto; }
-  th:nth-child(7), td:nth-child(7) { width: 48px; }
-  th:nth-child(8), td:nth-child(8) { width: 58px; }
-  th:nth-child(9), td:nth-child(9) { width: 46px; }
+  .notes-cell { white-space: normal; word-break: break-word; min-width: 80px; }
+  input[type=checkbox] { width: 15px; height: 15px; cursor: pointer; }
+  th:nth-child(1), td:nth-child(1) { width: 55px; }
+  th:nth-child(2), td:nth-child(2) { width: 145px; }
+  th:nth-child(3), td:nth-child(3) { width: 115px; }
+  th:nth-child(4), td:nth-child(4) { width: 44px; text-align: center; }
+  th:nth-child(5), td:nth-child(5) { width: 44px; text-align: center; }
+  th:nth-child(6), td:nth-child(6) { width: 160px; }
+  th:nth-child(7), td:nth-child(7) { width: 64px; text-align: center; }
+  th:nth-child(8), td:nth-child(8) { width: 62px; text-align: right; }
+  th:nth-child(9), td:nth-child(9) { width: 50px; text-align: center; }
 </style>
 </head>
 <body>
