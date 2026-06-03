@@ -1505,32 +1505,31 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=960">
 <title>Разписание – ${dateStr} ${shiftLabel}</title>
 <style>
-  @page { size: A4 landscape; margin: 8mm 10mm; }
+  @page { margin: 10mm; }
   * { box-sizing: border-box; }
-  body { font-family: Arial, sans-serif; font-size: 13px; color: #000; margin: 0; }
-  h1 { font-size: 16px; margin: 0 0 3px 0; }
-  .subtitle { font-size: 12px; color: #555; margin-bottom: 8px; }
-  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-  th { background: #073590; color: #fff; padding: 7px 5px; font-size: 12px; text-align: left; }
-  td { border: 1px solid #ccc; padding: 8px 5px; vertical-align: middle; font-size: 13px; white-space: nowrap; overflow: hidden; }
+  body { font-family: Arial, sans-serif; font-size: 14px; color: #000; margin: 0; width: 960px; }
+  h1 { font-size: 18px; margin: 0 0 3px 0; }
+  .subtitle { font-size: 13px; color: #555; margin-bottom: 10px; }
+  table { width: 960px; border-collapse: collapse; table-layout: fixed; }
+  th { background: #073590; color: #fff; padding: 8px 6px; font-size: 13px; text-align: left; }
+  td { border: 1px solid #ccc; padding: 9px 6px; vertical-align: middle; font-size: 14px; white-space: nowrap; overflow: hidden; }
   tr { page-break-inside: avoid; break-inside: avoid; }
   tr:nth-child(even) td { background: #f5f7fc; }
   .notes-cell { white-space: normal; word-break: break-word; }
   input[type=checkbox] { width: 16px; height: 16px; margin: 0; }
-  th:nth-child(1), td:nth-child(1) { width: 58px; }
-  th:nth-child(2), td:nth-child(2) { width: 150px; }
-  th:nth-child(3), td:nth-child(3) { width: 115px; }
-  th:nth-child(4), td:nth-child(4) { width: 44px; text-align: center; }
-  th:nth-child(5), td:nth-child(5) { width: 44px; text-align: center; }
-  th:nth-child(6), td:nth-child(6) { width: 150px; }
-  th:nth-child(7), td:nth-child(7) { width: 65px; text-align: center; }
-  th:nth-child(8), td:nth-child(8) { width: 65px; text-align: right; }
-  th:nth-child(9), td:nth-child(9) { width: 50px; text-align: center; }
+  th:nth-child(1), td:nth-child(1) { width: 65px; }
+  th:nth-child(2), td:nth-child(2) { width: 175px; }
+  th:nth-child(3), td:nth-child(3) { width: 130px; }
+  th:nth-child(4), td:nth-child(4) { width: 50px; text-align: center; }
+  th:nth-child(5), td:nth-child(5) { width: 50px; text-align: center; }
+  th:nth-child(6), td:nth-child(6) { width: 185px; }
+  th:nth-child(7), td:nth-child(7) { width: 75px; text-align: center; }
+  th:nth-child(8), td:nth-child(8) { width: 75px; text-align: right; }
+  th:nth-child(9), td:nth-child(9) { width: 55px; text-align: center; }
   @media print {
-    html, body { width: 277mm; }
     table { page-break-inside: auto; }
     thead { display: table-header-group; }
   }
