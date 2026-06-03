@@ -1493,8 +1493,8 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       </tr>`;
     }).join('');
 
-    // Add empty rows to fill the page (target ~25 rows total)
-    const emptyRowCount = Math.max(0, 23 - arrivingToday.length);
+    // Add empty rows to fill the page (target ~22 rows total)
+    const emptyRowCount = Math.max(0, 20 - arrivingToday.length);
     const emptyRows = Array.from({ length: emptyRowCount }, () => `<tr>
         <td>&nbsp;</td><td></td><td></td><td></td><td></td>
         <td class="notes-cell"></td><td></td><td></td>
@@ -1508,29 +1508,29 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Разписание – ${dateStr} ${shiftLabel}</title>
 <style>
-  @page { size: A4 landscape; margin: 6mm 8mm; }
+  @page { size: A4 landscape; margin: 8mm 10mm; }
   * { box-sizing: border-box; }
-  body { font-family: Arial, sans-serif; font-size: 11px; line-height: 1.2; color: #000; margin: 0; }
-  h1 { font-size: 14px; margin: 0 0 1px 0; }
-  .subtitle { font-size: 10px; color: #555; margin-bottom: 5px; }
+  body { font-family: Arial, sans-serif; font-size: 13px; color: #000; margin: 0; }
+  h1 { font-size: 16px; margin: 0 0 3px 0; }
+  .subtitle { font-size: 12px; color: #555; margin-bottom: 8px; }
   table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-  th { background: #073590; color: #fff; padding: 4px 4px; font-size: 10px; text-align: left; line-height: 1.2; }
-  td { border: 1px solid #ccc; padding: 3px 4px; vertical-align: middle; font-size: 11px; line-height: 1.2; white-space: nowrap; overflow: hidden; height: 22px; }
+  th { background: #073590; color: #fff; padding: 7px 5px; font-size: 12px; text-align: left; }
+  td { border: 1px solid #ccc; padding: 8px 5px; vertical-align: middle; font-size: 13px; white-space: nowrap; overflow: hidden; }
   tr { page-break-inside: avoid; break-inside: avoid; }
   tr:nth-child(even) td { background: #f5f7fc; }
   .notes-cell { white-space: normal; word-break: break-word; }
-  input[type=checkbox] { width: 14px; height: 14px; margin: 0; }
-  th:nth-child(1), td:nth-child(1) { width: 52px; }
-  th:nth-child(2), td:nth-child(2) { width: 140px; }
-  th:nth-child(3), td:nth-child(3) { width: 110px; }
-  th:nth-child(4), td:nth-child(4) { width: 40px; text-align: center; }
-  th:nth-child(5), td:nth-child(5) { width: 40px; text-align: center; }
-  th:nth-child(6), td:nth-child(6) { width: 155px; }
-  th:nth-child(7), td:nth-child(7) { width: 60px; text-align: center; }
-  th:nth-child(8), td:nth-child(8) { width: 60px; text-align: right; }
-  th:nth-child(9), td:nth-child(9) { width: 46px; text-align: center; }
+  input[type=checkbox] { width: 16px; height: 16px; margin: 0; }
+  th:nth-child(1), td:nth-child(1) { width: 58px; }
+  th:nth-child(2), td:nth-child(2) { width: 150px; }
+  th:nth-child(3), td:nth-child(3) { width: 115px; }
+  th:nth-child(4), td:nth-child(4) { width: 44px; text-align: center; }
+  th:nth-child(5), td:nth-child(5) { width: 44px; text-align: center; }
+  th:nth-child(6), td:nth-child(6) { width: 150px; }
+  th:nth-child(7), td:nth-child(7) { width: 65px; text-align: center; }
+  th:nth-child(8), td:nth-child(8) { width: 65px; text-align: right; }
+  th:nth-child(9), td:nth-child(9) { width: 50px; text-align: center; }
   @media print {
-    html, body { width: 297mm; }
+    html, body { width: 277mm; }
     table { page-break-inside: auto; }
     thead { display: table-header-group; }
   }
