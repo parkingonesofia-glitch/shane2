@@ -1467,6 +1467,99 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     setCheckoutBooking(booking);
     setCheckoutModalOpen(true);
   };
+
+  // Print arriving timetable
+  const printArrivingTimetable = () => {
+    const shiftLabel = shiftRange.shift === "day" ? "Дневна смяна" : "Нощна смяна";
+    const dateStr = `${String(shiftRange.start.getDate()).padStart(2,'0')}/${String(shiftRange.start.getMonth()+1).padStart(2,'0')}/${shiftRange.start.getFullYear()}`;
+    const shiftTime = `${String(shiftRange.start.getHours()).padStart(2,'0')}:00 – ${String(shiftRange.end.getHours()).padStart(2,'0')}:00`;
+
+    const rows = arrivingToday.map(b => {
+      const plates = [b.licensePlate, b.licensePlate2, b.licensePlate3, b.licensePlate4, b.licensePlate5]
+        .filter(Boolean).join(', ');
+      const price = (b.finalPrice ?? b.totalPrice).toFixed(2);
+      const invoice = b.needsInvoice ? 'ДА' : 'НЕ';
+      const notes = b.carKeysNotes || '';
+      return `<tr>
+        <td>${b.arrivalTime}</td>
+        <td>${b.name}</td>
+        <td>${plates}</td>
+        <td style="text-align:center">${b.numberOfCars ?? 1}</td>
+        <td style="text-align:center">${b.passengers ?? 0}</td>
+        <td class="notes-cell">${notes}</td>
+        <td style="text-align:center">${invoice}</td>
+        <td style="text-align:right">€${price}</td>
+        <td style="text-align:center"><input type="checkbox" /></td>
+      </tr>`;
+    }).join('');
+
+    // Add empty rows to fill the page (target ~30 rows total)
+    const emptyRowCount = Math.max(0, 28 - arrivingToday.length);
+    const emptyRows = Array.from({ length: emptyRowCount }, () => `<tr>
+        <td>&nbsp;</td><td></td><td></td><td></td><td></td>
+        <td class="notes-cell"></td><td></td><td></td>
+        <td style="text-align:center"><input type="checkbox" /></td>
+      </tr>`).join('');
+
+    const html = `<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<title>Разписание – ${dateStr} ${shiftLabel}</title>
+<style>
+  @page { size: A4 landscape; margin: 10mm 12mm; }
+  body { font-family: Arial, sans-serif; font-size: 11px; color: #000; }
+  h1 { font-size: 15px; margin: 0 0 2px 0; }
+  .subtitle { font-size: 11px; color: #555; margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  th { background: #073590; color: #fff; padding: 5px 4px; font-size: 10px; text-align: left; }
+  td { border: 1px solid #ccc; padding: 4px; vertical-align: top; font-size: 10px; white-space: nowrap; overflow: hidden; }
+  tr:nth-child(even) td { background: #f5f7fc; }
+  .notes-cell { white-space: normal; word-break: break-word; }
+  input[type=checkbox] { width: 14px; height: 14px; cursor: pointer; }
+  th:nth-child(1), td:nth-child(1) { width: 52px; }
+  th:nth-child(2), td:nth-child(2) { width: 140px; }
+  th:nth-child(3), td:nth-child(3) { width: 110px; }
+  th:nth-child(4), td:nth-child(4) { width: 42px; }
+  th:nth-child(5), td:nth-child(5) { width: 42px; }
+  th:nth-child(6), td:nth-child(6) { width: auto; }
+  th:nth-child(7), td:nth-child(7) { width: 48px; }
+  th:nth-child(8), td:nth-child(8) { width: 58px; }
+  th:nth-child(9), td:nth-child(9) { width: 46px; }
+</style>
+</head>
+<body>
+<h1>SkyParking – Пристигащи клиенти</h1>
+<div class="subtitle">${shiftLabel} &nbsp;|&nbsp; ${dateStr} &nbsp;|&nbsp; ${shiftTime} &nbsp;|&nbsp; ${arrivingToday.length} резервации</div>
+<table>
+  <thead>
+    <tr>
+      <th>Час</th>
+      <th>Клиент</th>
+      <th>Рег. номер</th>
+      <th style="text-align:center">Коли</th>
+      <th style="text-align:center">Пас.</th>
+      <th>Бележки</th>
+      <th style="text-align:center">Фактура</th>
+      <th style="text-align:right">Цена</th>
+      <th style="text-align:center">Карта</th>
+    </tr>
+  </thead>
+  <tbody>
+    ${rows}
+    ${emptyRows}
+  </tbody>
+</table>
+</body>
+</html>`;
+
+    const win = window.open('', '_blank');
+    if (!win) return;
+    win.document.write(html);
+    win.document.close();
+    win.focus();
+    setTimeout(() => win.print(), 400);
+  };
   
   // Confirm late fee and proceed to checkout
   const confirmLateFeeAndCheckout = () => {
@@ -2693,7 +2786,17 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
               <div className="space-y-5">
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-3xl font-semibold">Пристигащи днес</h2>
-                  <Badge variant="secondary" className="text-lg py-2 px-4">{arrivingToday.length} резервации</Badge>
+                  <div className="flex items-center gap-3">
+                    <Badge variant="secondary" className="text-lg py-2 px-4">{arrivingToday.length} резервации</Badge>
+                    <Button
+                      variant="outline"
+                      onClick={printArrivingTimetable}
+                      className="flex items-center gap-2 border-[#073590] text-[#073590] hover:bg-[#073590] hover:text-white"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Разпечатай
+                    </Button>
+                  </div>
                 </div>
                 {arrivingToday.length === 0 ? (
                   <Card className="p-16 text-center text-gray-500 text-xl">
