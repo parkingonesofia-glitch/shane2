@@ -2400,7 +2400,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* Hamburger Menu Drawer */}
       {menuOpen && (
         <>
@@ -2791,9 +2791,9 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
             {/* Arriving Today */}
             {activeTab === "arriving" && (
               <div className="space-y-5">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-3xl font-semibold">Пристигащи днес</h2>
-                  <div className="flex items-center gap-3">
+                <div className="flex items-center justify-between gap-2 mb-6">
+                  <h2 className="text-3xl font-semibold shrink-0">Пристигащи днес</h2>
+                  <div className="flex items-center gap-2 shrink-0">
                     <Badge variant="secondary" className="text-lg py-2 px-4">{arrivingToday.length} резервации</Badge>
                     <Button
                       variant="outline"
@@ -2801,7 +2801,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                       className="flex items-center gap-2 border-[#073590] text-[#073590] hover:bg-[#073590] hover:text-white"
                     >
                       <FileText className="w-4 h-4" />
-                      Разпечатай
+                      <span className="hidden sm:inline">Разпечатай</span>
                     </Button>
                   </div>
                 </div>
