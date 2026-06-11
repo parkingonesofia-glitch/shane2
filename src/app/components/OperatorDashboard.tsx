@@ -1571,7 +1571,115 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     win.focus();
     setTimeout(() => win.print(), 400);
   };
-  
+
+  // Print leaving timetable
+  const printLeavingTimetable = () => {
+    const shiftLabel = shiftRange.shift === "day" ? "Дневна смяна" : "Нощна смяна";
+    const dateStr = `${String(shiftRange.start.getDate()).padStart(2,'0')}/${String(shiftRange.start.getMonth()+1).padStart(2,'0')}/${shiftRange.start.getFullYear()}`;
+    const shiftTime = `${String(shiftRange.start.getHours()).padStart(2,'0')}:00 – ${String(shiftRange.end.getHours()).padStart(2,'0')}:00`;
+
+    const lateCount = leavingToday.filter(b => b.isLate).length;
+
+    const rows = leavingToday.map(b => {
+      const depDate = `${b.departureDate.split('-')[2]}/${b.departureDate.split('-')[1]}`;
+      const isPaid = b.paymentStatus === 'paid';
+      const hasLateFee = b.isLate;
+      const invoice = b.needsInvoice ? 'ДА' : 'НЕ';
+      const paidCell = isPaid ? '✓' : '—';
+
+      // Show amount only if unpaid or has a late fee
+      let amountCell = '';
+      if (hasLateFee && b.lateSurcharge && b.lateSurcharge > 0) {
+        amountCell = `+€${b.lateSurcharge.toFixed(2)}`;
+      } else if (!isPaid) {
+        amountCell = `€${b.totalPrice.toFixed(2)}`;
+      }
+
+      const rowStyle = hasLateFee ? ' style="background:#fff7ed"' : '';
+      const lateTag = hasLateFee ? ' <span style="color:#c2410c;font-weight:bold;font-size:11px">⏰</span>' : '';
+
+      return `<tr${rowStyle}>
+        <td>${b.departureTime}${lateTag}</td>
+        <td>${depDate}</td>
+        <td>${b.name}</td>
+        <td style="text-align:center">${b.numberOfCars ?? 1}</td>
+        <td style="text-align:center">${b.passengers ?? 0}</td>
+        <td style="text-align:center">${invoice}</td>
+        <td style="text-align:center">${paidCell}</td>
+        <td style="text-align:right;font-weight:${amountCell ? 'bold' : 'normal'};color:${hasLateFee && amountCell ? '#c2410c' : 'inherit'}">${amountCell}</td>
+      </tr>`;
+    }).join('');
+
+    const emptyRowCount = Math.max(0, 18 - leavingToday.length);
+    const emptyRows = Array.from({ length: emptyRowCount }, () => `<tr>
+        <td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>`).join('');
+
+    const html = `<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=960">
+<title>Напускащи – ${dateStr} ${shiftLabel}</title>
+<style>
+  @page { margin: 10mm; }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; font-size: 14px; color: #000; margin: 0; width: 960px; }
+  h1 { font-size: 18px; margin: 0 0 3px 0; }
+  .subtitle { font-size: 13px; color: #555; margin-bottom: 10px; }
+  table { width: 960px; border-collapse: collapse; table-layout: fixed; }
+  th { background: #073590; color: #fff; padding: 8px 6px; font-size: 13px; text-align: left; }
+  td { border: 1px solid #ccc; padding: 9px 6px; vertical-align: middle; font-size: 14px; white-space: nowrap; overflow: hidden; }
+  tr { page-break-inside: avoid; break-inside: avoid; }
+  tr:nth-child(even) td { background: #f5f7fc; }
+  tr[style*="background:#fff7ed"]:nth-child(even) td { background: #fff7ed; }
+  input[type=checkbox] { width: 16px; height: 16px; margin: 0; }
+  th:nth-child(1), td:nth-child(1) { width: 80px; }
+  th:nth-child(2), td:nth-child(2) { width: 75px; }
+  th:nth-child(3), td:nth-child(3) { width: 220px; }
+  th:nth-child(4), td:nth-child(4) { width: 55px; text-align: center; }
+  th:nth-child(5), td:nth-child(5) { width: 55px; text-align: center; }
+  th:nth-child(6), td:nth-child(6) { width: 80px; text-align: center; }
+  th:nth-child(7), td:nth-child(7) { width: 80px; text-align: center; }
+  th:nth-child(8), td:nth-child(8) { width: auto; text-align: right; }
+  @media print {
+    table { page-break-inside: auto; }
+    thead { display: table-header-group; }
+  }
+</style>
+</head>
+<body>
+<h1>SkyParking – Напускащи клиенти</h1>
+<div class="subtitle">${shiftLabel} &nbsp;|&nbsp; ${dateStr} &nbsp;|&nbsp; ${shiftTime} &nbsp;|&nbsp; ${leavingToday.length} резервации${lateCount > 0 ? ` &nbsp;|&nbsp; <span style="color:#c2410c;font-weight:bold">⏰ ${lateCount} закъснели</span>` : ''}</div>
+<table>
+  <thead>
+    <tr>
+      <th>Час</th>
+      <th>Дата</th>
+      <th>Клиент</th>
+      <th style="text-align:center">Коли</th>
+      <th style="text-align:center">Пас.</th>
+      <th style="text-align:center">Фактура</th>
+      <th style="text-align:center">Платено</th>
+      <th style="text-align:right">Дължимо</th>
+    </tr>
+  </thead>
+  <tbody>
+    ${rows}
+    ${emptyRows}
+  </tbody>
+</table>
+</body>
+</html>`;
+
+    const win = window.open('', '_blank');
+    if (!win) return;
+    win.document.write(html);
+    win.document.close();
+    win.focus();
+    setTimeout(() => win.print(), 400);
+  };
+
   // Confirm late fee and proceed to checkout
   const confirmLateFeeAndCheckout = () => {
     setLateFeeDialog(false);
@@ -2822,9 +2930,19 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
             {/* Leaving Today */}
             {activeTab === "leaving" && (
               <div className="space-y-5">
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
                   <h2 className="text-3xl font-semibold">Напускащи днес</h2>
-                  <Badge variant="secondary" className="text-lg py-2 px-4">{leavingToday.length} резе��вации</Badge>
+                  <div className="flex items-center gap-2">
+                    <Badge variant="secondary" className="text-lg py-2 px-4">{leavingToday.length} резервации</Badge>
+                    <Button
+                      variant="outline"
+                      onClick={printLeavingTimetable}
+                      className="flex items-center gap-2 border-[#073590] text-[#073590] hover:bg-[#073590] hover:text-white"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Разпечатай
+                    </Button>
+                  </div>
                 </div>
                 {leavingToday.length === 0 ? (
                   <Card className="p-16 text-center text-gray-500 text-xl">
