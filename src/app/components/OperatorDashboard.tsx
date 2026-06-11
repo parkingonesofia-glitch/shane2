@@ -1480,12 +1480,14 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       const price = (b.finalPrice ?? b.totalPrice).toFixed(2);
       const invoice = b.needsInvoice ? 'ДА' : 'НЕ';
       const notes = b.carKeysNotes || '';
+      const depDate = `${b.departureDate.split('-')[2]}/${b.departureDate.split('-')[1]}`;
       return `<tr>
         <td>${b.arrivalTime}</td>
         <td>${b.name}</td>
         <td>${plates}</td>
         <td style="text-align:center">${b.numberOfCars ?? 1}</td>
         <td style="text-align:center">${b.passengers ?? 0}</td>
+        <td style="text-align:center">${depDate}</td>
         <td class="notes-cell">${notes}</td>
         <td style="text-align:center">${invoice}</td>
         <td style="text-align:right">€${price}</td>
@@ -1497,7 +1499,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     const emptyRowCount = Math.max(0, 20 - arrivingToday.length);
     const emptyRows = Array.from({ length: emptyRowCount }, () => `<tr>
         <td>&nbsp;</td><td></td><td></td><td></td><td></td>
-        <td class="notes-cell"></td><td></td><td></td>
+        <td></td><td class="notes-cell"></td><td></td><td></td>
         <td style="text-align:center"><input type="checkbox" /></td>
       </tr>`).join('');
 
@@ -1520,15 +1522,16 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
   tr:nth-child(even) td { background: #f5f7fc; }
   .notes-cell { white-space: normal; word-break: break-word; }
   input[type=checkbox] { width: 16px; height: 16px; margin: 0; }
-  th:nth-child(1), td:nth-child(1) { width: 65px; }
-  th:nth-child(2), td:nth-child(2) { width: 175px; }
-  th:nth-child(3), td:nth-child(3) { width: 130px; }
-  th:nth-child(4), td:nth-child(4) { width: 50px; text-align: center; }
-  th:nth-child(5), td:nth-child(5) { width: 50px; text-align: center; }
-  th:nth-child(6), td:nth-child(6) { width: 185px; }
-  th:nth-child(7), td:nth-child(7) { width: 75px; text-align: center; }
-  th:nth-child(8), td:nth-child(8) { width: 75px; text-align: right; }
-  th:nth-child(9), td:nth-child(9) { width: 55px; text-align: center; }
+  th:nth-child(1), td:nth-child(1) { width: 60px; }
+  th:nth-child(2), td:nth-child(2) { width: 160px; }
+  th:nth-child(3), td:nth-child(3) { width: 120px; }
+  th:nth-child(4), td:nth-child(4) { width: 45px; text-align: center; }
+  th:nth-child(5), td:nth-child(5) { width: 45px; text-align: center; }
+  th:nth-child(6), td:nth-child(6) { width: 70px; text-align: center; }
+  th:nth-child(7), td:nth-child(7) { width: 155px; }
+  th:nth-child(8), td:nth-child(8) { width: 70px; text-align: center; }
+  th:nth-child(9), td:nth-child(9) { width: 70px; text-align: right; }
+  th:nth-child(10), td:nth-child(10) { width: 50px; text-align: center; }
   @media print {
     table { page-break-inside: auto; }
     thead { display: table-header-group; }
@@ -1546,6 +1549,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       <th>Рег. номер</th>
       <th style="text-align:center">Коли</th>
       <th style="text-align:center">Пас.</th>
+      <th style="text-align:center">Заминава</th>
       <th>Бележки</th>
       <th style="text-align:center">Фактура</th>
       <th style="text-align:right">Цена</th>
