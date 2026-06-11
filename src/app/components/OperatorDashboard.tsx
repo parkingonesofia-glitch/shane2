@@ -1481,6 +1481,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       const invoice = b.needsInvoice ? 'ДА' : 'НЕ';
       const notes = b.carKeysNotes || '';
       const depDate = `${b.departureDate.split('-')[2]}/${b.departureDate.split('-')[1]}`;
+      const invoiceCell = b.needsInvoice ? (b.companyName || 'ДА') : '';
       return `<tr>
         <td>${b.arrivalTime}</td>
         <td>${b.name}</td>
@@ -1489,7 +1490,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
         <td style="text-align:center">${b.passengers ?? 0}</td>
         <td style="text-align:center">${depDate}</td>
         <td class="notes-cell">${notes}</td>
-        <td style="text-align:center">${invoice}</td>
+        <td style="font-size:11px">${invoiceCell}</td>
         <td style="text-align:right">€${price}</td>
         <td style="text-align:center"><input type="checkbox" /></td>
       </tr>`;
@@ -1584,7 +1585,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       const depDate = `${b.departureDate.split('-')[2]}/${b.departureDate.split('-')[1]}`;
       const isPaid = b.paymentStatus === 'paid';
       const hasLateFee = b.isLate;
-      const invoice = b.needsInvoice ? 'ДА' : 'НЕ';
+      const invoice = b.needsInvoice ? (b.companyName || 'ДА') : '';
       const paidCell = isPaid ? '✓' : '—';
 
       // Show amount only if unpaid or has a late fee
@@ -1604,7 +1605,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
         <td>${b.name}</td>
         <td style="text-align:center">${b.numberOfCars ?? 1}</td>
         <td style="text-align:center">${b.passengers ?? 0}</td>
-        <td style="text-align:center">${invoice}</td>
+        <td style="font-size:11px">${invoice}</td>
         <td style="text-align:center">${paidCell}</td>
         <td style="text-align:right;font-weight:${amountCell ? 'bold' : 'normal'};color:${hasLateFee && amountCell ? '#c2410c' : 'inherit'}">${amountCell}</td>
       </tr>`;
