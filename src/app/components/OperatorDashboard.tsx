@@ -121,7 +121,7 @@ interface Booking {
   vehicleSize?: 'standard' | 'oversized';
 }
 
-type TabType = "new" | "confirmed" | "arriving" | "leaving" | "exits" | "departed" | "summary" | "revenue" | "all" | "calendar";
+type TabType = "new" | "confirmed" | "arriving" | "leaving" | "exits" | "departed" | "summary" | "revenue" | "all" | "calendar" | "workload";
 type ShiftType = "day" | "night";
 
 interface OperatorDashboardProps {
@@ -2803,6 +2803,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
               { id: "all", label: "Всички", count: allBookings.length },
               { id: "revenue", label: "Приходи" },
               { id: "calendar", label: "Календар" },
+              ...(currentUser.role === "admin" ? [{ id: "workload", label: "Натовареност" }] : []),
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -3860,6 +3861,164 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                 </Card>
               </div>
             )}
+
+            {/* Workload Trend — admin only */}
+            {activeTab === "workload" && currentUser.role === "admin" && (() => {
+              const today = getTodayDate();
+              // Build a 60-day window: 30 past + today + 29 future
+              const days: string[] = [];
+              for (let i = -30; i <= 29; i++) {
+                const d = new Date();
+                d.setDate(d.getDate() + i);
+                days.push(`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`);
+              }
+
+              // For a dateStr + shift window, count arriving & departing cars
+              const countForWindow = (dateStr: string, windowStart: number, windowEnd: number) => {
+                const date = new Date(dateStr);
+                const shiftStart = new Date(date); shiftStart.setHours(windowStart, 0, 0, 0);
+                const shiftEnd = new Date(date);
+                if (windowEnd <= windowStart) { shiftEnd.setDate(shiftEnd.getDate() + 1); }
+                shiftEnd.setHours(windowEnd, 0, 0, 0);
+
+                let arriving = 0, departing = 0;
+                bookings.forEach(b => {
+                  if (b.status === 'cancelled' || b.status === 'no-show' || b.status === 'declined') return;
+                  const arr = new Date(`${b.arrivalDate}T${b.arrivalTime}`);
+                  const dep = new Date(`${b.departureDate}T${b.departureTime}`);
+                  const cars = Number(b.numberOfCars) > 0 ? Number(b.numberOfCars) : 1;
+                  if (arr >= shiftStart && arr < shiftEnd) arriving += cars;
+                  if (dep >= shiftStart && dep < shiftEnd) departing += cars;
+                });
+                return { arriving, departing, total: arriving + departing };
+              };
+
+              const dayData = days.map(dateStr => {
+                const isPast = dateStr < today;
+                const isToday = dateStr === today;
+                const day = countForWindow(dateStr, 0, 24);
+                const dayShift = countForWindow(dateStr, 8, 20);
+                const nightShift = countForWindow(dateStr, 20, 8);
+                const d = new Date(dateStr);
+                const dayName = d.toLocaleDateString('bg-BG', { weekday: 'short' });
+                const dayNum = d.getDate();
+                const monthStr = d.toLocaleDateString('bg-BG', { month: 'short' });
+                return { dateStr, isPast, isToday, day, dayShift, nightShift, dayName, dayNum, monthStr };
+              });
+
+              const maxTotal = Math.max(...dayData.map(d => d.day.total), 1);
+
+              return (
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-2xl font-bold">Натовареност по дни</h2>
+                    <span className="text-sm text-gray-500">30 дни назад · днес · 29 напред</span>
+                  </div>
+
+                  {/* Scrollable bar chart list */}
+                  <div className="space-y-1">
+                    {dayData.map(({ dateStr, isPast, isToday, day, dayShift, nightShift, dayName, dayNum, monthStr }) => {
+                      const barWidth = day.total > 0 ? Math.round((day.total / maxTotal) * 100) : 0;
+                      const isExpanded = selectedDate === dateStr;
+
+                      return (
+                        <div key={dateStr} className={`rounded-lg border ${isToday ? 'border-[#073590] border-2' : 'border-gray-200'} overflow-hidden`}>
+                          {/* Day row — click to expand */}
+                          <button
+                            className={`w-full flex items-center gap-3 px-3 py-2 text-left transition-colors ${isToday ? 'bg-blue-50' : isPast ? 'bg-gray-50' : 'bg-white'} hover:bg-blue-50`}
+                            onClick={() => setSelectedDate(isExpanded ? '' : dateStr)}
+                          >
+                            {/* Date label */}
+                            <div className="w-24 shrink-0">
+                              <span className={`font-bold text-sm ${isToday ? 'text-[#073590]' : isPast ? 'text-gray-500' : 'text-gray-900'}`}>
+                                {dayName} {dayNum} {monthStr}
+                              </span>
+                              {isToday && <span className="ml-1 text-[10px] font-bold text-[#073590] bg-blue-100 px-1 rounded">ДНЕС</span>}
+                            </div>
+
+                            {/* Bar */}
+                            <div className="flex-1 h-5 bg-gray-100 rounded overflow-hidden relative">
+                              {day.total > 0 && (
+                                <div
+                                  className={`h-full rounded transition-all ${isPast ? 'bg-gray-400' : isToday ? 'bg-[#073590]' : 'bg-blue-400'}`}
+                                  style={{ width: `${barWidth}%` }}
+                                />
+                              )}
+                            </div>
+
+                            {/* Numbers */}
+                            <div className="w-28 shrink-0 flex gap-2 justify-end text-sm">
+                              <span className="text-green-600 font-bold">↓{day.arriving}</span>
+                              <span className="text-orange-500 font-bold">↑{day.departing}</span>
+                            </div>
+
+                            {/* Expand chevron */}
+                            <div className="shrink-0 text-gray-400">
+                              {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                            </div>
+                          </button>
+
+                          {/* Expanded shift breakdown */}
+                          {isExpanded && (
+                            <div className="px-3 pb-3 pt-1 bg-white border-t border-gray-100 grid grid-cols-2 gap-2">
+                              <div className="rounded-lg bg-amber-50 border border-amber-200 p-3">
+                                <div className="flex items-center gap-1 mb-2">
+                                  <Sun className="w-4 h-4 text-amber-500" />
+                                  <span className="font-bold text-sm text-amber-800">Дневна 08:00–20:00</span>
+                                </div>
+                                <div className="flex justify-around">
+                                  <div className="text-center">
+                                    <div className="text-2xl font-black text-green-600">{dayShift.arriving}</div>
+                                    <div className="text-xs text-gray-500">пристигат</div>
+                                  </div>
+                                  <div className="text-center">
+                                    <div className="text-2xl font-black text-orange-500">{dayShift.departing}</div>
+                                    <div className="text-xs text-gray-500">заминават</div>
+                                  </div>
+                                  <div className="text-center">
+                                    <div className="text-2xl font-black text-gray-700">{dayShift.total}</div>
+                                    <div className="text-xs text-gray-500">общо</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="rounded-lg bg-indigo-50 border border-indigo-200 p-3">
+                                <div className="flex items-center gap-1 mb-2">
+                                  <Moon className="w-4 h-4 text-indigo-500" />
+                                  <span className="font-bold text-sm text-indigo-800">Нощна 20:00–08:00</span>
+                                </div>
+                                <div className="flex justify-around">
+                                  <div className="text-center">
+                                    <div className="text-2xl font-black text-green-600">{nightShift.arriving}</div>
+                                    <div className="text-xs text-gray-500">пристигат</div>
+                                  </div>
+                                  <div className="text-center">
+                                    <div className="text-2xl font-black text-orange-500">{nightShift.departing}</div>
+                                    <div className="text-xs text-gray-500">заминават</div>
+                                  </div>
+                                  <div className="text-center">
+                                    <div className="text-2xl font-black text-gray-700">{nightShift.total}</div>
+                                    <div className="text-xs text-gray-500">общо</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Legend */}
+                  <div className="flex gap-4 text-xs text-gray-500 pt-1">
+                    <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-gray-400 inline-block"></span> Минали дни</span>
+                    <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-[#073590] inline-block"></span> Днес</span>
+                    <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-blue-400 inline-block"></span> Предстоящи</span>
+                    <span className="flex items-center gap-1 text-green-600 font-semibold">↓ пристигат</span>
+                    <span className="flex items-center gap-1 text-orange-500 font-semibold">↑ заминават</span>
+                  </div>
+                </div>
+              );
+            })()}
           </>
         )}
       </div>
