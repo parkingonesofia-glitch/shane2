@@ -2445,13 +2445,6 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
           (() => {
             const today = new Date().toISOString().split('T')[0];
 
-            const days: string[] = [];
-            for (let i = -30; i <= 29; i++) {
-              const d = new Date();
-              d.setDate(d.getDate() + i);
-              days.push(`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`);
-            }
-
             const countForWindow = (dateStr: string, startHour: number, endHour: number) => {
               const base = new Date(dateStr);
               const winStart = new Date(base); winStart.setHours(startHour, 0, 0, 0);
@@ -2470,121 +2463,158 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
               return { arriving, departing, total: arriving + departing };
             };
 
-            const dayData = days.map(dateStr => {
-              const isPast = dateStr < today;
-              const isToday = dateStr === today;
-              const day = countForWindow(dateStr, 0, 24);
-              const dayShift = countForWindow(dateStr, 8, 20);
-              const nightShift = countForWindow(dateStr, 20, 8);
-              const d = new Date(dateStr);
-              const dayName = d.toLocaleDateString('bg-BG', { weekday: 'short' });
-              const dayNum = d.getDate();
-              const monthStr = d.toLocaleDateString('bg-BG', { month: 'short' });
-              return { dateStr, isPast, isToday, day, dayShift, nightShift, dayName, dayNum, monthStr };
-            });
+            const year = currentMonth.getFullYear();
+            const month = currentMonth.getMonth();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const firstDayOfWeek = new Date(year, month, 1).getDay();
+            const adjustedStart = firstDayOfWeek === 0 ? 6 : firstDayOfWeek - 1;
 
-            const maxTotal = Math.max(...dayData.map(d => d.day.total), 1);
+            const expandedDate = workloadExpandedDay;
 
             return (
-              <div className="space-y-3">
-                <div className="flex items-center justify-between mb-2">
+              <div className="space-y-4">
+                {/* Header + month nav */}
+                <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold flex items-center gap-2">
                     <TrendingUp className="w-6 h-6 text-[#073590]" />
-                    Натовареност по дни
+                    Натовареност
                   </h2>
-                  <span className="text-sm text-gray-500">30 дни назад · днес · 29 напред</span>
+                  <div className="flex items-center gap-2">
+                    <Button variant="outline" size="sm" onClick={() => { const d = new Date(currentMonth); d.setMonth(d.getMonth()-1); setCurrentMonth(d); setWorkloadExpandedDay(''); }}>
+                      <ChevronLeft className="w-4 h-4" />
+                    </Button>
+                    <span className="font-bold text-base w-36 text-center">
+                      {currentMonth.toLocaleDateString('bg-BG', { month: 'long', year: 'numeric' })}
+                    </span>
+                    <Button variant="outline" size="sm" onClick={() => { const d = new Date(currentMonth); d.setMonth(d.getMonth()+1); setCurrentMonth(d); setWorkloadExpandedDay(''); }}>
+                      <ChevronRight className="w-4 h-4" />
+                    </Button>
+                    <Button variant="ghost" size="sm" className="text-xs text-gray-500" onClick={() => { setCurrentMonth(new Date()); setWorkloadExpandedDay(''); }}>
+                      Днес
+                    </Button>
+                  </div>
                 </div>
 
-                <div className="space-y-1">
-                  {dayData.map(({ dateStr, isPast, isToday, day, dayShift, nightShift, dayName, dayNum, monthStr }) => {
-                    const barWidth = day.total > 0 ? Math.round((day.total / maxTotal) * 100) : 0;
-                    const isExpanded = workloadExpandedDay === dateStr;
+                {/* Day-of-week headers */}
+                <div className="grid grid-cols-7 gap-1 text-center text-xs font-bold text-gray-500 mb-1">
+                  {['Пн','Вт','Ср','Чт','Пт','Сб','Нд'].map(d => <div key={d}>{d}</div>)}
+                </div>
+
+                {/* Calendar grid */}
+                <div className="grid grid-cols-7 gap-1">
+                  {/* Empty cells before month start */}
+                  {Array.from({ length: adjustedStart }).map((_, i) => <div key={`e${i}`} />)}
+
+                  {/* Day cells */}
+                  {Array.from({ length: daysInMonth }, (_, i) => i + 1).map(day => {
+                    const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+                    const isPast = dateStr < today;
+                    const isToday = dateStr === today;
+                    const isSelected = expandedDate === dateStr;
+                    const all = countForWindow(dateStr, 0, 24);
+                    const total = all.total;
+
+                    // Color intensity based on workload
+                    let cellBg = 'bg-white border-gray-200';
+                    if (total > 0) {
+                      if (total >= 30) cellBg = isPast ? 'bg-red-200 border-red-400' : 'bg-red-100 border-red-300';
+                      else if (total >= 15) cellBg = isPast ? 'bg-orange-200 border-orange-400' : 'bg-orange-100 border-orange-300';
+                      else if (total >= 5) cellBg = isPast ? 'bg-blue-200 border-blue-400' : 'bg-blue-100 border-blue-300';
+                      else cellBg = isPast ? 'bg-gray-100 border-gray-300' : 'bg-green-50 border-green-200';
+                    } else {
+                      cellBg = isPast ? 'bg-gray-50 border-gray-200' : 'bg-white border-gray-200';
+                    }
 
                     return (
-                      <div key={dateStr} className={`rounded-lg border ${isToday ? 'border-[#073590] border-2' : 'border-gray-200'} overflow-hidden`}>
-                        <button
-                          className={`w-full flex items-center gap-3 px-3 py-2 text-left transition-colors ${isToday ? 'bg-blue-50' : isPast ? 'bg-gray-50' : 'bg-white'} hover:bg-blue-50`}
-                          onClick={() => setWorkloadExpandedDay(isExpanded ? '' : dateStr)}
-                        >
-                          <div className="w-28 shrink-0">
-                            <span className={`font-bold text-sm ${isToday ? 'text-[#073590]' : isPast ? 'text-gray-500' : 'text-gray-900'}`}>
-                              {dayName} {dayNum} {monthStr}
-                            </span>
-                            {isToday && <span className="ml-1 text-[10px] font-bold text-[#073590] bg-blue-100 px-1 rounded">ДНЕС</span>}
-                          </div>
-                          <div className="flex-1 h-5 bg-gray-100 rounded overflow-hidden">
-                            {day.total > 0 && (
-                              <div
-                                className={`h-full rounded transition-all ${isPast ? 'bg-gray-400' : isToday ? 'bg-[#073590]' : 'bg-blue-400'}`}
-                                style={{ width: `${barWidth}%` }}
-                              />
-                            )}
-                          </div>
-                          <div className="w-28 shrink-0 flex gap-2 justify-end text-sm">
-                            <span className="text-green-600 font-bold">↓{day.arriving}</span>
-                            <span className="text-orange-500 font-bold">↑{day.departing}</span>
-                          </div>
-                          <div className="shrink-0 text-gray-400">
-                            {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                          </div>
-                        </button>
-
-                        {isExpanded && (
-                          <div className="px-3 pb-3 pt-1 bg-white border-t border-gray-100 grid grid-cols-2 gap-2">
-                            <div className="rounded-lg bg-amber-50 border border-amber-200 p-3">
-                              <div className="flex items-center gap-1 mb-2">
-                                <Sun className="w-4 h-4 text-amber-500" />
-                                <span className="font-bold text-sm text-amber-800">Дневна 08:00–20:00</span>
-                              </div>
-                              <div className="flex justify-around">
-                                <div className="text-center">
-                                  <div className="text-2xl font-black text-green-600">{dayShift.arriving}</div>
-                                  <div className="text-xs text-gray-500">пристигат</div>
-                                </div>
-                                <div className="text-center">
-                                  <div className="text-2xl font-black text-orange-500">{dayShift.departing}</div>
-                                  <div className="text-xs text-gray-500">заминават</div>
-                                </div>
-                                <div className="text-center">
-                                  <div className="text-2xl font-black text-gray-700">{dayShift.total}</div>
-                                  <div className="text-xs text-gray-500">общо</div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="rounded-lg bg-indigo-50 border border-indigo-200 p-3">
-                              <div className="flex items-center gap-1 mb-2">
-                                <Moon className="w-4 h-4 text-indigo-500" />
-                                <span className="font-bold text-sm text-indigo-800">Нощна 20:00–08:00</span>
-                              </div>
-                              <div className="flex justify-around">
-                                <div className="text-center">
-                                  <div className="text-2xl font-black text-green-600">{nightShift.arriving}</div>
-                                  <div className="text-xs text-gray-500">пристигат</div>
-                                </div>
-                                <div className="text-center">
-                                  <div className="text-2xl font-black text-orange-500">{nightShift.departing}</div>
-                                  <div className="text-xs text-gray-500">заминават</div>
-                                </div>
-                                <div className="text-center">
-                                  <div className="text-2xl font-black text-gray-700">{nightShift.total}</div>
-                                  <div className="text-xs text-gray-500">общо</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                      <button
+                        key={dateStr}
+                        onClick={() => setWorkloadExpandedDay(isSelected ? '' : dateStr)}
+                        className={`border rounded-lg p-1 text-left transition-all hover:shadow-md min-h-[72px] flex flex-col ${cellBg} ${isToday ? 'ring-2 ring-[#073590] ring-offset-1' : ''} ${isSelected ? 'ring-2 ring-blue-500 shadow-lg' : ''}`}
+                      >
+                        <div className={`text-xs font-bold mb-1 ${isToday ? 'text-[#073590]' : isPast ? 'text-gray-400' : 'text-gray-700'}`}>
+                          {day}
+                          {isToday && <span className="ml-1 text-[9px] bg-[#073590] text-white px-1 rounded">днес</span>}
+                        </div>
+                        {total > 0 ? (
+                          <>
+                            <div className="text-[10px] text-green-700 font-semibold leading-tight">↓{all.arriving}</div>
+                            <div className="text-[10px] text-orange-600 font-semibold leading-tight">↑{all.departing}</div>
+                          </>
+                        ) : (
+                          <div className="text-[10px] text-gray-300">—</div>
                         )}
-                      </div>
+                      </button>
                     );
                   })}
                 </div>
 
-                <div className="flex flex-wrap gap-4 text-xs text-gray-500 pt-1">
-                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-gray-400 inline-block"></span> Минали дни</span>
-                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-[#073590] inline-block"></span> Днес</span>
-                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-blue-400 inline-block"></span> Предстоящи</span>
+                {/* Legend */}
+                <div className="flex flex-wrap gap-3 text-xs text-gray-500">
+                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-green-50 border border-green-200 inline-block"></span> 1–4</span>
+                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-blue-100 border border-blue-300 inline-block"></span> 5–14</span>
+                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-orange-100 border border-orange-300 inline-block"></span> 15–29</span>
+                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-red-100 border border-red-300 inline-block"></span> 30+</span>
                   <span className="text-green-600 font-semibold">↓ пристигат</span>
                   <span className="text-orange-500 font-semibold">↑ заминават</span>
                 </div>
+
+                {/* Expanded day shift breakdown */}
+                {expandedDate && (() => {
+                  const dayShift = countForWindow(expandedDate, 8, 20);
+                  const nightShift = countForWindow(expandedDate, 20, 8);
+                  const d = new Date(expandedDate);
+                  const label = d.toLocaleDateString('bg-BG', { weekday: 'long', day: 'numeric', month: 'long' });
+                  return (
+                    <div className="border-2 border-[#073590] rounded-xl overflow-hidden">
+                      <div className="bg-[#073590] text-white px-4 py-3 flex items-center justify-between">
+                        <span className="font-bold text-base capitalize">{label}</span>
+                        <button onClick={() => setWorkloadExpandedDay('')} className="text-white/70 hover:text-white">✕</button>
+                      </div>
+                      <div className="grid grid-cols-2 gap-3 p-4 bg-white">
+                        <div className="rounded-xl bg-amber-50 border border-amber-200 p-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <Sun className="w-5 h-5 text-amber-500" />
+                            <span className="font-bold text-sm text-amber-800">Дневна 08:00–20:00</span>
+                          </div>
+                          <div className="grid grid-cols-3 gap-2 text-center">
+                            <div>
+                              <div className="text-2xl font-black text-green-600">{dayShift.arriving}</div>
+                              <div className="text-xs text-gray-500">пристигат</div>
+                            </div>
+                            <div>
+                              <div className="text-2xl font-black text-orange-500">{dayShift.departing}</div>
+                              <div className="text-xs text-gray-500">заминават</div>
+                            </div>
+                            <div>
+                              <div className="text-2xl font-black text-gray-700">{dayShift.total}</div>
+                              <div className="text-xs text-gray-500">общо</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="rounded-xl bg-indigo-50 border border-indigo-200 p-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <Moon className="w-5 h-5 text-indigo-500" />
+                            <span className="font-bold text-sm text-indigo-800">Нощна 20:00–08:00</span>
+                          </div>
+                          <div className="grid grid-cols-3 gap-2 text-center">
+                            <div>
+                              <div className="text-2xl font-black text-green-600">{nightShift.arriving}</div>
+                              <div className="text-xs text-gray-500">пристигат</div>
+                            </div>
+                            <div>
+                              <div className="text-2xl font-black text-orange-500">{nightShift.departing}</div>
+                              <div className="text-xs text-gray-500">заминават</div>
+                            </div>
+                            <div>
+                              <div className="text-2xl font-black text-gray-700">{nightShift.total}</div>
+                              <div className="text-xs text-gray-500">общо</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
             );
           })()
