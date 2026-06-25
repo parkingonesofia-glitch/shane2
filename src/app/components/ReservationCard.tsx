@@ -289,6 +289,10 @@ export function ReservationCard({
                 <CheckCircle className="h-4 w-4 mr-1" />
                 Платено
               </Badge>
+            ) : reservation.paymentMethod === 'pay-on-leave' ? (
+              <Badge className="bg-red-600 text-white text-base py-1.5 px-3 font-black border-0 animate-pulse">
+                💳 Плаща при тръгване
+              </Badge>
             ) : (
               <Badge variant="outline" className="bg-gray-100 text-gray-700 border-gray-300 text-sm py-1 px-2 font-bold border-2">
                 <XCircle className="h-4 w-4 mr-1" />
