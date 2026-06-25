@@ -2475,33 +2475,33 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
               <div className="space-y-4">
                 {/* Header + month nav */}
                 <div className="flex items-center justify-between">
-                  <h2 className="text-2xl font-bold flex items-center gap-2">
-                    <TrendingUp className="w-6 h-6 text-[#073590]" />
+                  <h2 className="text-3xl font-bold flex items-center gap-2">
+                    <TrendingUp className="w-7 h-7 text-[#073590]" />
                     Натовареност
                   </h2>
                   <div className="flex items-center gap-2">
-                    <Button variant="outline" size="sm" onClick={() => { const d = new Date(currentMonth); d.setMonth(d.getMonth()-1); setCurrentMonth(d); setWorkloadExpandedDay(''); }}>
-                      <ChevronLeft className="w-4 h-4" />
+                    <Button variant="outline" onClick={() => { const d = new Date(currentMonth); d.setMonth(d.getMonth()-1); setCurrentMonth(d); setWorkloadExpandedDay(''); }} className="min-h-[44px] min-w-[44px]">
+                      <ChevronLeft className="w-5 h-5" />
                     </Button>
-                    <span className="font-bold text-base w-36 text-center">
+                    <span className="font-bold text-lg w-44 text-center capitalize">
                       {currentMonth.toLocaleDateString('bg-BG', { month: 'long', year: 'numeric' })}
                     </span>
-                    <Button variant="outline" size="sm" onClick={() => { const d = new Date(currentMonth); d.setMonth(d.getMonth()+1); setCurrentMonth(d); setWorkloadExpandedDay(''); }}>
-                      <ChevronRight className="w-4 h-4" />
+                    <Button variant="outline" onClick={() => { const d = new Date(currentMonth); d.setMonth(d.getMonth()+1); setCurrentMonth(d); setWorkloadExpandedDay(''); }} className="min-h-[44px] min-w-[44px]">
+                      <ChevronRight className="w-5 h-5" />
                     </Button>
-                    <Button variant="ghost" size="sm" className="text-xs text-gray-500" onClick={() => { setCurrentMonth(new Date()); setWorkloadExpandedDay(''); }}>
+                    <Button variant="ghost" className="text-sm text-gray-500" onClick={() => { setCurrentMonth(new Date()); setWorkloadExpandedDay(''); }}>
                       Днес
                     </Button>
                   </div>
                 </div>
 
                 {/* Day-of-week headers */}
-                <div className="grid grid-cols-7 gap-1 text-center text-xs font-bold text-gray-500 mb-1">
-                  {['Пн','Вт','Ср','Чт','Пт','Сб','Нд'].map(d => <div key={d}>{d}</div>)}
+                <div className="grid grid-cols-7 gap-2 text-center text-sm font-bold text-gray-500 mb-1">
+                  {['Пн','Вт','Ср','Чт','Пт','Сб','Нд'].map(d => <div key={d} className="py-1">{d}</div>)}
                 </div>
 
                 {/* Calendar grid */}
-                <div className="grid grid-cols-7 gap-1">
+                <div className="grid grid-cols-7 gap-2">
                   {/* Empty cells before month start */}
                   {Array.from({ length: adjustedStart }).map((_, i) => <div key={`e${i}`} />)}
 
@@ -2514,7 +2514,6 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
                     const all = countForWindow(dateStr, 0, 24);
                     const total = all.total;
 
-                    // Color intensity based on workload
                     let cellBg = 'bg-white border-gray-200';
                     if (total > 0) {
                       if (total >= 30) cellBg = isPast ? 'bg-red-200 border-red-400' : 'bg-red-100 border-red-300';
@@ -2529,19 +2528,19 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
                       <button
                         key={dateStr}
                         onClick={() => setWorkloadExpandedDay(isSelected ? '' : dateStr)}
-                        className={`border rounded-lg p-1 text-left transition-all hover:shadow-md min-h-[72px] flex flex-col ${cellBg} ${isToday ? 'ring-2 ring-[#073590] ring-offset-1' : ''} ${isSelected ? 'ring-2 ring-blue-500 shadow-lg' : ''}`}
+                        className={`border-2 rounded-xl p-2 text-left transition-all hover:shadow-md min-h-[90px] flex flex-col ${cellBg} ${isToday ? 'ring-3 ring-[#073590] ring-offset-2 border-[#073590]' : ''} ${isSelected ? 'ring-2 ring-blue-500 shadow-lg' : ''}`}
                       >
-                        <div className={`text-xs font-bold mb-1 ${isToday ? 'text-[#073590]' : isPast ? 'text-gray-400' : 'text-gray-700'}`}>
+                        <div className={`text-base font-black mb-1 leading-none ${isToday ? 'text-[#073590]' : isPast ? 'text-gray-400' : 'text-gray-800'}`}>
                           {day}
-                          {isToday && <span className="ml-1 text-[9px] bg-[#073590] text-white px-1 rounded">днес</span>}
+                          {isToday && <span className="ml-1 text-[10px] bg-[#073590] text-white px-1 py-0.5 rounded">днес</span>}
                         </div>
                         {total > 0 ? (
-                          <>
-                            <div className="text-[10px] text-green-700 font-semibold leading-tight">↓{all.arriving}</div>
-                            <div className="text-[10px] text-orange-600 font-semibold leading-tight">↑{all.departing}</div>
-                          </>
+                          <div className="mt-auto space-y-0.5">
+                            <div className="text-sm font-bold text-green-700 leading-tight">↓{all.arriving}</div>
+                            <div className="text-sm font-bold text-orange-600 leading-tight">↑{all.departing}</div>
+                          </div>
                         ) : (
-                          <div className="text-[10px] text-gray-300">—</div>
+                          <div className="mt-auto text-sm text-gray-300">—</div>
                         )}
                       </button>
                     );
@@ -2549,11 +2548,11 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
                 </div>
 
                 {/* Legend */}
-                <div className="flex flex-wrap gap-3 text-xs text-gray-500">
-                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-green-50 border border-green-200 inline-block"></span> 1–4</span>
-                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-blue-100 border border-blue-300 inline-block"></span> 5–14</span>
-                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-orange-100 border border-orange-300 inline-block"></span> 15–29</span>
-                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-red-100 border border-red-300 inline-block"></span> 30+</span>
+                <div className="flex flex-wrap gap-3 text-sm text-gray-500">
+                  <span className="flex items-center gap-1"><span className="w-4 h-4 rounded bg-green-50 border border-green-200 inline-block"></span> 1–4</span>
+                  <span className="flex items-center gap-1"><span className="w-4 h-4 rounded bg-blue-100 border border-blue-300 inline-block"></span> 5–14</span>
+                  <span className="flex items-center gap-1"><span className="w-4 h-4 rounded bg-orange-100 border border-orange-300 inline-block"></span> 15–29</span>
+                  <span className="flex items-center gap-1"><span className="w-4 h-4 rounded bg-red-100 border border-red-300 inline-block"></span> 30+</span>
                   <span className="text-green-600 font-semibold">↓ пристигат</span>
                   <span className="text-orange-500 font-semibold">↑ заминават</span>
                 </div>
