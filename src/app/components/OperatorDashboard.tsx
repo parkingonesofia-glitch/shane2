@@ -1234,6 +1234,15 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     if (booking.isLate) {
       badges.push(<Badge key="late" className="bg-orange-600 text-base py-1 px-3">⏰ Закъсняла</Badge>);
     }
+
+    // Pay on departure badge — big and unmissable
+    if (booking.paymentMethod === "pay-on-leave" && booking.paymentStatus !== "paid") {
+      badges.push(
+        <Badge key="pay-on-leave" className="bg-red-600 text-white text-base py-1 px-3 animate-pulse">
+          💳 Плаща при тръгване
+        </Badge>
+      );
+    }
     
     // Oversized vehicle badge
     if (booking.vehicleSize === 'oversized') {
