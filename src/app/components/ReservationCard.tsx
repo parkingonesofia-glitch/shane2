@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { formatDateDisplay, formatDateTimeDisplay } from "../utils/dateFormat";
@@ -17,7 +18,10 @@ import {
   Clock,
   AlertTriangle,
   Building2,
-  Hash
+  Hash,
+  History,
+  ChevronDown,
+  ChevronUp
 } from "lucide-react";
 
 // Unified Booking Interface
@@ -121,6 +125,7 @@ export function ReservationCard({
   showEditHistory = false,
   showStatusHistory = false,
 }: ReservationCardProps) {
+  const [historyOpen, setHistoryOpen] = useState(false);
   
   // Status badge helper with strong color signals
   const getStatusBadge = () => {
@@ -439,6 +444,99 @@ export function ReservationCard({
           </div>
         </div>
       )}
+
+      {/* CHANGE HISTORY — admin only via showEditHistory prop */}
+      {showEditHistory && (() => {
+        // Build unified timeline from all available fields
+        const events: { timestamp: string; label: string; by?: string; note?: string }[] = [];
+
+        if (reservation.createdAt) {
+          events.push({
+            timestamp: reservation.createdAt,
+            label: "Създадена резервация",
+            by: (reservation as any).createdBy || "Клиент (онлайн)",
+          });
+        }
+
+        // Status history entries
+        if (reservation.statusHistory) {
+          const statusLabels: Record<string, string> = {
+            confirmed: "Потвърдена",
+            arrived: "Пристигнал",
+            "checked-out": "Напуснал",
+            cancelled: "Отказана",
+            "no-show": "Не се яви",
+            declined: "Отхвърлена",
+            late: "Маркиран като закъснял",
+          };
+          reservation.statusHistory.forEach(s => {
+            events.push({
+              timestamp: s.timestamp,
+              label: statusLabels[s.status] || s.status,
+              by: s.actor,
+            });
+          });
+        } else {
+          // Fallback to individual timestamps
+          if ((reservation as any).arrivedAt)
+            events.push({ timestamp: (reservation as any).arrivedAt, label: "Пристигнал", by: (reservation as any).acceptedBy });
+          if ((reservation as any).checkedOutAt)
+            events.push({ timestamp: (reservation as any).checkedOutAt, label: "Напуснал" });
+          if ((reservation as any).cancelledAt)
+            events.push({ timestamp: (reservation as any).cancelledAt, label: "Отказана", by: (reservation as any).cancelledBy, note: reservation.cancellationReason });
+          if ((reservation as any).noShowAt)
+            events.push({ timestamp: (reservation as any).noShowAt, label: "Не се яви", by: (reservation as any).noShowBy, note: reservation.noShowReason });
+          if ((reservation as any).declinedAt)
+            events.push({ timestamp: (reservation as any).declinedAt, label: "Отхвърлена", by: (reservation as any).declinedBy, note: (reservation as any).declineReason });
+        }
+
+        // Edit history entries
+        if (reservation.editHistory) {
+          reservation.editHistory.forEach(e => {
+            events.push({ timestamp: e.timestamp, label: "Редактирана", by: e.editor, note: e.changes });
+          });
+        }
+
+        // Sort chronologically
+        events.sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+
+        if (events.length === 0) return null;
+
+        return (
+          <div className="mt-3 border-t border-gray-200 pt-3">
+            <button
+              onClick={() => setHistoryOpen(h => !h)}
+              className="flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-gray-800 transition-colors w-full"
+            >
+              <History className="w-4 h-4" />
+              История на промените ({events.length})
+              {historyOpen ? <ChevronUp className="w-4 h-4 ml-auto" /> : <ChevronDown className="w-4 h-4 ml-auto" />}
+            </button>
+
+            {historyOpen && (
+              <div className="mt-2 space-y-0">
+                {events.map((ev, i) => (
+                  <div key={i} className="flex gap-3 relative">
+                    {/* Timeline line */}
+                    <div className="flex flex-col items-center">
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#073590] mt-1 shrink-0 z-10" />
+                      {i < events.length - 1 && <div className="w-px flex-1 bg-gray-200 my-0.5" />}
+                    </div>
+                    <div className="pb-3 flex-1">
+                      <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                        <span className="font-semibold text-sm text-gray-900">{ev.label}</span>
+                        {ev.by && <span className="text-xs text-gray-500">– {ev.by}</span>}
+                      </div>
+                      <div className="text-xs text-gray-400">{formatDateTimeDisplay(ev.timestamp)}</div>
+                      {ev.note && <div className="text-xs text-gray-600 mt-0.5 italic">"{ev.note}"</div>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      })()}
 
       {/* ACTION BUTTONS - LARGE TOUCH TARGETS (48-56px) */}
       {showActions && actions && (
