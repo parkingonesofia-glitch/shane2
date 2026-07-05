@@ -105,10 +105,12 @@ export function CheckoutModal({
   const todayStr = new Date().toISOString().split("T")[0];
 
   const handleNext = () => {
-    if (adjustedFeeNum <= 0) {
-      // No extra fee — no need to ask payment method
-      onConfirm({ lateFee: 0, paymentMethod: booking.isLate ? "" : "" });
+    const needsPayment = booking.paymentMethod === "pay-on-leave" && booking.paymentStatus !== "paid";
+    if (adjustedFeeNum <= 0 && !needsPayment) {
+      // No fee and already paid — confirm directly
+      onConfirm({ lateFee: 0, paymentMethod: "" });
     } else {
+      // Has a fee to collect OR needs to collect base payment — ask cash/card
       setStep(2);
     }
   };
@@ -219,7 +221,7 @@ export function CheckoutModal({
                 disabled={isCalculating || (isAdjusted && !adjustmentReason) || adjustedFee === ""}
                 className="flex-1 bg-[#073590] hover:bg-[#052560] text-white font-bold"
               >
-                {adjustedFeeNum > 0 ? "Напред →" : "Потвърди"}
+                {(adjustedFeeNum > 0 || (booking.paymentMethod === "pay-on-leave" && booking.paymentStatus !== "paid")) ? "Напред →" : "Потвърди"}
               </Button>
             </div>
             {isAdjusted && !adjustmentReason && (
@@ -231,6 +233,11 @@ export function CheckoutModal({
             <div>
               <p className="text-sm text-gray-500 mb-1">Метод на плащане за</p>
               <p className="font-bold text-gray-900">{booking.name}</p>
+              {booking.paymentMethod === "pay-on-leave" && (
+                <p className="text-sm text-red-700 font-semibold mt-1">
+                  💳 Плаща при тръгване — събери сумата сега
+                </p>
+              )}
               {extraDays > 0 && (
                 <p className="text-sm text-amber-700 mt-1">
                   Включва доплащане €{adjustedFeeNum.toFixed(2)} за закъснение
