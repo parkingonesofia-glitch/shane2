@@ -146,7 +146,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
         <Card className="p-8 mb-6 print:shadow-none bg-white" id="reservation-card" style={{ backgroundColor: '#ffffff' }}>
           <div className="space-y-6">
             {/* Reservation Number */}
-            <div style={{ backgroundColor: '#FAF9F6', #0073AC }} className="p-4 rounded-lg text-center">
+            <div style={{ backgroundColor: '#FAF9F6',  color: '#0073AC' }} className="p-4 rounded-lg text-center">
               <p className="text-sm font-medium mb-1">
                 {language === 'bg' ? 'НОМЕР НА РЕЗЕРВАЦИЯ' : 'RESERVATION NUMBER'}
               </p>
@@ -245,7 +245,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
             <div style={{ borderTop: '1px solid #e5e7eb' }}></div>
 
             {/* Price */}
-            <div style={{ backgroundColor: '#FAF9F6', #0073AC }} className="p-6 rounded-lg">
+            <div style={{ backgroundColor: '#FAF9F6',  color: '#0073AC' }} className="p-6 rounded-lg">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm mb-1" style={{ opacity: 0.9 }}>
