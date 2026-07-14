@@ -62,7 +62,7 @@ export function FAQPage() {
         <>
           {t('faqA4Before')}{' '}
           <a
-            href="tel:+359886616991"
+            href="tel:+359877109788"
             className="text-[#f1c933] hover:text-[#d4af2a] font-semibold underline"
           >
             +359 886 616 991
@@ -84,7 +84,7 @@ export function FAQPage() {
           </button>{' '}
           {t('faqA5Middle')}{' '}
           <a
-            href="tel:+359886616991"
+            href="tel:+359877109788"
             className="text-[#f1c933] hover:text-[#d4af2a] font-semibold underline"
           >
             +359 886 616 991
@@ -103,7 +103,7 @@ export function FAQPage() {
         <>
           {t('faqA7Before')}{' '}
           <a
-            href="tel:+359886616991"
+            href="tel:+359877109788"
             className="text-[#f1c933] hover:text-[#d4af2a] font-semibold underline"
           >
             +359 886 616 991
@@ -195,7 +195,7 @@ export function FAQPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="tel:+359886616991"
+                href="tel:+359877109788"
                 className="bg-[#f1c933] text-[#1a1a2e] px-6 py-3 rounded-full font-semibold hover:bg-[#d4af2a] transition-colors flex items-center gap-2"
               >
                 <span>📞</span>
@@ -222,9 +222,9 @@ export function FAQPage() {
           <div className="flex flex-col sm:flex-row gap-2 justify-center items-center text-sm text-gray-300">
             <span>{t("footerLocation")}</span>
             <span className="hidden sm:inline">•</span>
-            <span>📞 <a href="tel:+359886616991" className="hover:underline">+359 886 616 991</a></span>
+            <span>📞 <a href="tel:+359877109788" className="hover:underline">+359 886 616 991</a></span>
             <span className="hidden sm:inline">•</span>
-            <span>✉️ <a href="mailto:info@skyparking.bg" className="hover:underline">info@skyparking.bg</a></span>
+            <span>✉️ <a href="mailto:info@parkingone.bg" className="hover:underline">info@parkingone.bg</a></span>
           </div>
 
           {/* Social Media and Messaging Buttons */}
@@ -264,7 +264,7 @@ export function FAQPage() {
             </a>
 
             <a
-              href="https://www.facebook.com/share/1AvUJmhjvq/?mibextid=wwXIfr"
+              href="FACEBOOK_LINK_HERE/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#1877f2] hover:bg-[#0c63d4] p-3 rounded-full transition-colors"
@@ -276,7 +276,7 @@ export function FAQPage() {
             </a>
 
             <a
-              href="https://www.instagram.com/skyparking.bg?igsh=ZGEyc2F3MTc5azZ5&utm_source=qr"
+              href="https://www.instagram.com/parkingone.bg?igsh=ZGEyc2F3MTc5azZ5&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-br from-[#833AB4] via-[#E1306C] to-[#F77737] hover:opacity-90 p-3 rounded-full transition-opacity"

@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://skyparking.bg/sitemap.xml
+Sitemap: https://parkingone.bg/sitemap.xml

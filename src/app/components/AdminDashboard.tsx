@@ -61,7 +61,7 @@ const publicAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFz
 // Bulgarian translations
 const bg = {
   // Header
-  dashboardTitle: "SkyParking Админ Панел",
+  dashboardTitle: "Parking One Админ Панел",
   logout: "Изход",
   
   // Actions
@@ -603,7 +603,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
     
     try {
       setUsersLoading(true);
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       
       const response = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/users`,
@@ -650,7 +650,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
     }
 
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       const response = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/bookings/delete-all`,
         {
@@ -786,7 +786,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
 
   // Create or update user
   const saveUser = async () => {
-    const token = localStorage.getItem("skyparking-token");
+    const token = localStorage.getItem("parkingone-token");
     
     try {
       const url = editingUser
@@ -832,7 +832,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
     
     if (!confirm(bg.deleteUserConfirm)) return;
 
-    const token = localStorage.getItem("skyparking-token");
+    const token = localStorage.getItem("parkingone-token");
 
     try {
       const response = await fetch(
@@ -877,7 +877,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
   const cleanupInvalidUsers = async () => {
     try {
       // First, run diagnostic to see what we're dealing with
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       const diagnosticResponse = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/users/diagnostic`,
         {
@@ -912,7 +912,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
 
     // Proceed with cleanup
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       const response = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/users/cleanup-invalid`,
         {
@@ -953,7 +953,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
     }
     
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       const response = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/users/emergency-cleanup`,
         {
@@ -1636,7 +1636,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
       const link = document.createElement("a");
       const url = URL.createObjectURL(blob);
       link.setAttribute("href", url);
-      link.setAttribute("download", `skyparking-reservations-${new Date().toISOString().split('T')[0]}.csv`);
+      link.setAttribute("download", `parkingone-reservations-${new Date().toISOString().split('T')[0]}.csv`);
       link.style.visibility = "hidden";
       document.body.appendChild(link);
       link.click();
@@ -1666,7 +1666,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
       const link = document.createElement("a");
       const url = URL.createObjectURL(blob);
       link.setAttribute("href", url);
-      link.setAttribute("download", `skyparking-reservations-${new Date().toISOString().split('T')[0]}.json`);
+      link.setAttribute("download", `parkingone-reservations-${new Date().toISOString().split('T')[0]}.json`);
       link.style.visibility = "hidden";
       document.body.appendChild(link);
       link.click();
@@ -1971,7 +1971,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
           <DiscountManager />
         ) : activeTab === "pricing" ? (
           /* ========== PRICING TAB ========== */
-          <PricingManager sessionToken={localStorage.getItem("skyparking-token") || ""} />
+          <PricingManager sessionToken={localStorage.getItem("parkingone-token") || ""} />
         ) : activeTab === "calendar" ? (
           /* ========== CALENDAR TAB ========== */
           <>

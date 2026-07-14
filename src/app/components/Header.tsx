@@ -85,7 +85,7 @@ export function Header() {
               {/* Desktop Logo */}
               <img
                 src="/logo-desktop.png"
-                alt="SkyParking Logo"
+                alt="Parking One Logo"
                 className="h-30 w-auto hidden md:block"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
@@ -93,7 +93,7 @@ export function Header() {
                   if (parent && !parent.querySelector('.logo-fallback')) {
                     const fallback = document.createElement('span');
                     fallback.className = 'text-[#ffd700] text-3xl font-bold logo-fallback';
-                    fallback.textContent = 'SkyParking';
+                    fallback.textContent = 'Parking One';
                     parent.appendChild(fallback);
                   }
                 }}
@@ -101,7 +101,7 @@ export function Header() {
               {/* Mobile Logo */}
               <img
                 src="/logo-mobile.png"
-                alt="SkyParking Logo"
+                alt="Parking One Logo"
                 className="w-52 h-auto md:hidden max-w-none"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
@@ -109,7 +109,7 @@ export function Header() {
                   if (parent && !parent.querySelector('.logo-fallback')) {
                     const fallback = document.createElement('span');
                     fallback.className = 'text-[#ffd700] text-2xl font-bold logo-fallback';
-                    fallback.textContent = 'SkyParking';
+                    fallback.textContent = 'Parking One';
                     parent.appendChild(fallback);
                   }
                 }}
@@ -146,7 +146,7 @@ export function Header() {
                 </DropdownMenuContent>
               </DropdownMenu>
               <a
-                href="tel:+359886616991"
+                href="tel:+359877109788"
                 className="bg-[#f1c933] text-[#1a1a2e] px-3 py-2 md:px-4 md:py-2 rounded-full font-semibold text-sm whitespace-nowrap flex items-center gap-2"
               >
                 <span className="text-[13px]">📞</span>

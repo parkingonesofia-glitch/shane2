@@ -14,7 +14,7 @@ export function HowItWorks() {
       titleEn: 'Book Online',
       descBg: (
         <>
-          Можете да направите резервация чрез <Link to="/booking" onClick={() => window.scrollTo(0, 0)} className="font-semibold underline hover:no-underline" style={{ color: '#073590' }}>формата на сайта</Link> или като се свържете с нас на <a href="tel:+359886616991" className="font-semibold underline hover:no-underline" style={{ color: '#073590' }}>+359 886 616 991</a>.
+          Можете да направите резервация чрез <Link to="/booking" onClick={() => window.scrollTo(0, 0)} className="font-semibold underline hover:no-underline" style={{ color: '#073590' }}>формата на сайта</Link> или като се свържете с нас на <a href="tel:+359877109788" className="font-semibold underline hover:no-underline" style={{ color: '#073590' }}>+359 886 616 991</a>.
         </>
       ),
       descEn: 'Fill out the easy booking form with arrival and departure dates, email and phone. Choose whether you want standard parking or "Car Keys" service.',

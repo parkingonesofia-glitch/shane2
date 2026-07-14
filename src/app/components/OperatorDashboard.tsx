@@ -836,7 +836,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
           return new Date() > depDateTime;
         });
         for (const b of overdueBookings) {
-          const token = localStorage.getItem("skyparking-token");
+          const token = localStorage.getItem("parkingone-token");
           fetch(
             `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/bookings/${b.id}/mark-late`,
             {
@@ -956,7 +956,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     }
 
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       const response = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/bookings/${lastAction.bookingId}/undo`,
         {
@@ -1289,7 +1289,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     if (!confirm(`Потвърждавате ли резервацията на ${booking.name}?`)) return;
 
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       const response = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/bookings/${booking.id}/accept`,
         {
@@ -1325,7 +1325,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     if (!reason) return;
 
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       const response = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/bookings/${booking.id}/decline`,
         {
@@ -1369,7 +1369,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     if (!confirm(`Сигурни ли сте, че искате да ма��кирате ${booking.name} като неявил се?`)) return;
 
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       const response = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/bookings/${booking.id}/mark-no-show`,
         {
@@ -1409,7 +1409,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     }
 
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       const response = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/bookings/${selectedBooking.id}/mark-arrived`,
         {
@@ -1549,7 +1549,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
 </style>
 </head>
 <body>
-<h1>SkyParking – Пристигащи клиенти</h1>
+<h1>Parking One – Пристигащи клиенти</h1>
 <div class="subtitle">${shiftLabel} &nbsp;|&nbsp; ${dateStr} &nbsp;|&nbsp; ${shiftTime} &nbsp;|&nbsp; ${arrivingToday.length} резервации</div>
 <table>
   <thead>
@@ -1659,7 +1659,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
 </style>
 </head>
 <body>
-<h1>SkyParking – Напускащи клиенти</h1>
+<h1>Parking One – Напускащи клиенти</h1>
 <div class="subtitle">${shiftLabel} &nbsp;|&nbsp; ${dateStr} &nbsp;|&nbsp; ${shiftTime} &nbsp;|&nbsp; ${leavingToday.length} резервации${lateCount > 0 ? ` &nbsp;|&nbsp; <span style="color:#c2410c;font-weight:bold">⏰ ${lateCount} закъснели</span>` : ''}</div>
 <table>
   <thead>
@@ -1743,7 +1743,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     const finalLateFee = lateFee !== undefined ? lateFee : confirmedLateFee;
 
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       const response = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/bookings/${targetBooking.id}/checkout`,
         {
@@ -1785,7 +1785,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     if (!confirm(`Сигурни ли сте, че искате да маркирате ${booking.name} като закъсняващ?`)) return;
 
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       const response = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/bookings/${booking.id}/mark-late`,
         {
@@ -1943,7 +1943,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     const totalPrice = parseFloat(manualPrice);
 
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       
       if (editingBooking) {
         // Update existing booking

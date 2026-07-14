@@ -56,8 +56,8 @@ export function HomePage() {
     // Set or update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     const descriptionText = language === 'bg' 
-      ? 'Сигурен и достъпен паркинг на 5 минути от Летище София Терминал 1 и 2. Безплатен трансфер, видеонаблюдение 24/7, онлайн резервация. SkyParking - вашето доверено решение за паркиране.'
-      : 'Secure and affordable parking 5 minutes from Sofia Airport Terminal 1 and 2. Free transfer, 24/7 video surveillance, online booking. SkyParking - your trusted parking solution.';
+      ? 'Сигурен и достъпен паркинг на 5 минути от Летище София Терминал 1 и 2. Безплатен трансфер, видеонаблюдение 24/7, онлайн резервация. Parking One - вашето доверено решение за паркиране.'
+      : 'Secure and affordable parking 5 minutes from Sofia Airport Terminal 1 and 2. Free transfer, 24/7 video surveillance, online booking. Parking One - your trusted parking solution.';
     
     if (metaDescription) {
       metaDescription.setAttribute('content', descriptionText);
@@ -71,8 +71,8 @@ export function HomePage() {
     // Set or update meta keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     const keywordsText = language === 'bg'
-      ? 'паркинг летище софия, skyparking, паркинг сфия аеропорт, паркинг летище, паркинг аеропорт софия, евтин паркинг летище, охраняем паркинг летище сфия'
-      : 'sofia airport parking, skyparking, sofia airport parking lot, airport parking bulgaria, cheap airport parking sofia, secure airport parking';
+      ? 'паркинг летище софия, parkingone, паркинг сфия аеропорт, паркинг летище, паркинг аеропорт софия, евтин паркинг летище, охраняем паркинг летище сфия'
+      : 'sofia airport parking, parkingone, sofia airport parking lot, airport parking bulgaria, cheap airport parking sofia, secure airport parking';
     
     if (metaKeywords) {
       metaKeywords.setAttribute('content', keywordsText);
@@ -129,14 +129,14 @@ export function HomePage() {
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "ParkingFacility",
-      "name": "SkyParking",
-      "image": "https://skyparking.bg/og-image.jpg",
-      "url": "https://skyparking.bg/",
-      "telephone": "+359886616991",
-      "email": "info@skyparking.bg",
+      "name": "Parking One",
+      "image": "https://parkingone.bg/og-image.jpg",
+      "url": "https://parkingone.bg/",
+      "telephone": "+359877109788",
+      "email": "info@parkingone.bg",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Ulitsa Nedelcho Bonchev 30",
+        "streetAddress": "Ulitsa Iztochna Tangeta 23",
         "addressLocality": "Sofia",
         "addressCountry": "BG"
       },
@@ -155,8 +155,8 @@ export function HomePage() {
       },
       "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
       "sameAs": [
-        "https://www.facebook.com/share/1AvUJmhjvq",
-        "https://www.instagram.com/skyparking.bg"
+        "FACEBOOK_LINK_HERE",
+        "https://www.instagram.com/parkingone.bg"
       ],
       "amenityFeature": [
         {
@@ -187,11 +187,11 @@ export function HomePage() {
       <SEO 
         title={t("heroTitle")}
         description={language === 'bg' 
-          ? 'Сигурен и достъпен паркинг на 5 минути от Летище София Терминал 1 и 2. Безплатен трансфер, видеонаблюдение 24/7, онлайн резервация. SkyParking - вашето доверено решение за паркиране.'
-          : 'Secure and affordable parking 5 minutes from Sofia Airport Terminal 1 and 2. Free transfer, 24/7 video surveillance, online booking. SkyParking - your trusted parking solution.'
+          ? 'Сигурен и достъпен паркинг на 5 минути от Летище София Терминал 1 и 2. Безплатен трансфер, видеонаблюдение 24/7, онлайн резервация. Parking One - вашето доверено решение за паркиране.'
+          : 'Secure and affordable parking 5 minutes from Sofia Airport Terminal 1 and 2. Free transfer, 24/7 video surveillance, online booking. Parking One - your trusted parking solution.'
         }
-        canonical="https://skyparking.bg/"
-        ogImage="https://skyparking.bg/og-image.jpg"
+        canonical="https://parkingone.bg/"
+        ogImage="https://parkingone.bg/og-image.jpg"
       />
       
       {/* Header */}
@@ -225,9 +225,9 @@ export function HomePage() {
           <div className="flex flex-col sm:flex-row gap-2 justify-center items-center text-sm text-gray-300">
             <span>{t("footerLocation")}</span>
             <span className="hidden sm:inline">•</span>
-            <span>📞 <a href="tel:+359886616991" className="hover:underline">+359 886 616 991</a></span>
+            <span>📞 <a href="tel:+359877109788" className="hover:underline">+359 886 616 991</a></span>
             <span className="hidden sm:inline">•</span>
-            <span>✉️ <a href="mailto:info@skyparking.bg" className="hover:underline">info@skyparking.bg</a></span>
+            <span>✉️ <a href="mailto:info@parkingone.bg" className="hover:underline">info@parkingone.bg</a></span>
           </div>
           
           {/* Social Media and Messaging Buttons */}
@@ -267,7 +267,7 @@ export function HomePage() {
             </a>
             
             <a
-              href="https://www.facebook.com/share/1AvUJmhjvq/?mibextid=wwXIfr"
+              href="FACEBOOK_LINK_HERE/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#1877f2] hover:bg-[#0c63d4] p-3 rounded-full transition-colors"
@@ -279,7 +279,7 @@ export function HomePage() {
             </a>
             
             <a
-              href="https://www.instagram.com/skyparking.bg?igsh=ZGEyc2F3MTc5azZ5&utm_source=qr"
+              href="https://www.instagram.com/parkingone.bg?igsh=ZGEyc2F3MTc5azZ5&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-br from-[#833AB4] via-[#E1306C] to-[#F77737] hover:opacity-90 p-3 rounded-full transition-opacity"

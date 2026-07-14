@@ -39,8 +39,8 @@ export function PricingManager({ sessionToken }: PricingManagerProps) {
       
       // Force clear frontend cache to get fresh data
       try {
-        localStorage.removeItem('skyparking_pricing_cache');
-        localStorage.removeItem('skyparking_pricing_cache_timestamp');
+        localStorage.removeItem('parkingone_pricing_cache');
+        localStorage.removeItem('parkingone_pricing_cache_timestamp');
         console.log("🧹 Cleared frontend pricing cache");
       } catch (e) {
         console.warn("Could not clear cache:", e);

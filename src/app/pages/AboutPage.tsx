@@ -143,7 +143,7 @@ export function AboutPage() {
                 {t('aboutBookNowBtn')}
               </button>
               <a
-                href="tel:+359886616991"
+                href="tel:+359877109788"
                 className="px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105 bg-white"
                 style={{ color: '#073590' }}
               >

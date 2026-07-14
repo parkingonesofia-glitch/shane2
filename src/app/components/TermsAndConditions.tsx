@@ -40,30 +40,30 @@ export function TermsAndConditions() {
               <section>
                 <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">1. ПРЕДМЕТ</h2>
                 <p className="text-justify mb-4">
-                  Настоящите „Общи условия" регулират взаимоотношенията между фирма "А-Парк 98" ЕООД и потребителите на електронната (интернет) страница и услуги, предоставяни чрез домейна www.skyparking.bg. Фирмата "А-Парк 98" ЕООД е собственик на уебсайта и осигурява услугите, свързани с паркирането на паркинг до летище София. Всеки потребител, който използва нашия уебсайт www.skyparking.bg, е задължен да спазва настоящите общи условия през целия период на ползването – от момента на достъпване на сайта до напускането му.
+                  Настоящите „Общи условия" регулират взаимоотношенията между фирма "А-Парк 98" ЕООД и потребителите на електронната (интернет) страница и услуги, предоставяни чрез домейна www.parkingone.bg. Фирмата "А-Парк 98" ЕООД е собственик на уебсайта и осигурява услугите, свързани с паркирането на паркинг до летище София. Всеки потребител, който използва нашия уебсайт www.parkingone.bg, е задължен да спазва настоящите общи условия през целия период на ползването – от момента на достъпване на сайта до напускането му.
                 </p>
                 <p className="text-justify mb-4">
-                  Тези условия са задължителни както за фирмата "А-Парк 98" ЕООД така и за всички потребители, които маркират обектите, линковете или бутоните на страниците на www.skyparking.bg/ (с изключение на линка към настоящите „Общи условия") или използват услугите, предлагани от паркинга, намиращ се на адрес гр. София.
+                  Тези условия са задължителни както за фирмата "А-Парк 98" ЕООД така и за всички потребители, които маркират обектите, линковете или бутоните на страниците на www.parkingone.bg/ (с изключение на линка към настоящите „Общи условия") или използват услугите, предлагани от паркинга, намиращ се на адрес гр. София.
                 </p>
                 <p className="text-justify mb-4">
-                  Тук се съдържат Общите условия, съгласно които "А-Парк 98" ЕООД предоставя продукти и услуги на потребителите си, посредством уебсайта https://www.skyparking.bg/. Тези условия обвързват всички потребители и уреждат правилата за използването на уебсайта https://www.skyparking.bg/, включително сключването на договори за паркинг услуги.
+                  Тук се съдържат Общите условия, съгласно които "А-Парк 98" ЕООД предоставя продукти и услуги на потребителите си, посредством уебсайта https://www.parkingone.bg/. Тези условия обвързват всички потребители и уреждат правилата за използването на уебсайта https://www.parkingone.bg/, включително сключването на договори за паркинг услуги.
                 </p>
                 <p className="text-justify mb-4">
-                  С достъпването на домейна https://www.skyparking.bg/ и използването на неговите услуги, потребителят се съгласява, изцяло приема и се задължава да спазва настоящите Общи условия.
+                  С достъпването на домейна https://www.parkingone.bg/ и използването на неговите услуги, потребителят се съгласява, изцяло приема и се задължава да спазва настоящите Общи условия.
                 </p>
                 <p className="text-justify">
-                  Фирмата "А-Парк 98" ЕООД препоръчва внимателно да прочетете Общите условия, преди да използвате нашия уебсайт. Ако не приемате тези Общи условия, не трябва да използвате https://www.skyparking.bg/.
+                  Фирмата "А-Парк 98" ЕООД препоръчва внимателно да прочетете Общите условия, преди да използвате нашия уебсайт. Ако не приемате тези Общи условия, не трябва да използвате https://www.parkingone.bg/.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">2. ДЕФИНИЦИИ</h2>
                 <ul className="list-disc pl-6 space-y-3 text-justify">
-                  <li><strong>ПРОДАВАЧ</strong> – "А-Парк 98" ЕООД включително https://www.skyparking.bg/ или всеки партньор на "А-Парк 98" ЕООД свързан с уебсайта https://www.skyparking.bg/</li>
-                  <li><strong>САЙТ</strong> – домейна https://www.skyparking.bg/ и неговите поддомейни</li>
-                  <li><strong>ПОТРЕБИТЕЛ</strong> – всяко физическо или юридическо лице, което използва уебсайта https://www.skyparking.bg/ по какъвто и да е начин, включително, но не само, като разглежда информацията, прави резервации, заплаща услуги стоки и др.</li>
+                  <li><strong>ПРОДАВАЧ</strong> – "А-Парк 98" ЕООД включително https://www.parkingone.bg/ или всеки партньор на "А-Парк 98" ЕООД свързан с уебсайта https://www.parkingone.bg/</li>
+                  <li><strong>САЙТ</strong> – домейна https://www.parkingone.bg/ и неговите поддомейни</li>
+                  <li><strong>ПОТРЕБИТЕЛ</strong> – всяко физическо или юридическо лице, което използва уебсайта https://www.parkingone.bg/ по какъвто и да е начин, включително, но не само, като разглежда информацията, прави резервации, заплаща услуги стоки и др.</li>
                   <li><strong>ДОГОВОР</strong> – представлява сключеният от разстояние договор между Продавача и Потребителя за покупко-продажба на Стоки и/или Услуги от уебсайта, като настоящите общи условия за ползване на уебсайта са неразделна част от него.</li>
-                  <li><strong>СТОКИ И УСЛУГИ</strong> – всеки предмет на договора за покупко-продажба, предлаган от уебсайта https://www.skyparking.bg/</li>
+                  <li><strong>СТОКИ И УСЛУГИ</strong> – всеки предмет на договора за покупко-продажба, предлаган от уебсайта https://www.parkingone.bg/</li>
                   <li><strong>СПЕЦИФИКАЦИИ</strong> – всички характеристики и/или описания на Стоките и Услугите, както са посочени на уебсайта.</li>
                   <li><strong>РЕЗЕРВАЦИЯ</strong> – представлява индивидуална заявка за закупуване на избраните „Услуги", съгласно условията, определени на уебсайта. Това е акт, извършен от потребителя по своя собствена преценка и го обвързва със силата на договор между потребителя и фирмата „А-Парк 98" ЕООД.</li>
                 </ul>
@@ -75,14 +75,14 @@ export function TermsAndConditions() {
                   "А-Парк 98" ЕООД е дружество, регистрирано в Република България, със седалище и адрес на управление: БЪЛГАРИЯ, гр. София (1330), р-н Красна поляна, жк. Разсадника, блок 28, вход А, етаж 1, апартамент 1, вписано в Търговския регистър с ЕИК 208627398.
                 </p>
                 <p className="text-justify">
-                  Данни за кореспонденция: БЪЛГАРИЯ, гр. София (1330), р-н Красна поляна, жк. Разсадника, блок 28, вход А, етаж 1, апартамент 1 и електронна поща: info@skyparking.bg
+                  Данни за кореспонденция: БЪЛГАРИЯ, гр. София (1330), р-н Красна поляна, жк. Разсадника, блок 28, вход А, етаж 1, апартамент 1 и електронна поща: info@parkingone.bg
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">4. ОБЩИ ПОЛОЖЕНИЯ ЗА ИЗПОЛЗВАНЕ НА САЙТА</h2>
                 <p className="text-justify mb-4">
-                  4.1. "А-Парк 98" ЕООД (наричан по-долу „Продавач") като оператор на този уебсайт https://www.skyparking.bg/, Ви предоставя правото да преглеждате и изтегляте всички материали, които са публикувани на този сайт само за лична употреба и без търговска цел, при условие че спазвате всички авторски права и съответните означения.
+                  4.1. "А-Парк 98" ЕООД (наричан по-долу „Продавач") като оператор на този уебсайт https://www.parkingone.bg/, Ви предоставя правото да преглеждате и изтегляте всички материали, които са публикувани на този сайт само за лична употреба и без търговска цел, при условие че спазвате всички авторски права и съответните означения.
                 </p>
                 
                 <p className="text-justify mb-4">
@@ -94,7 +94,7 @@ export function TermsAndConditions() {
                 </p>
                 
                 <p className="text-justify mb-4">
-                  4.4. www.skyparking.bg/ има правото по всяко време и без предупреждение да извършва промени в публикуваните материали, услуги и цени. Някои от публикуваните материали могат да бъдат остарели, и "А-Парк 98" ЕООД не носи отговорност за тяхната актуализация.
+                  4.4. www.parkingone.bg/ има правото по всяко време и без предупреждение да извършва промени в публикуваните материали, услуги и цени. Някои от публикуваните материали могат да бъдат остарели, и "А-Парк 98" ЕООД не носи отговорност за тяхната актуализация.
                 </p>
                 
                 <p className="text-justify">
@@ -105,7 +105,7 @@ export function TermsAndConditions() {
               <section>
                 <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">5. ПРАВИЛА И ЦЕНИ</h2>
                 <p className="text-justify mb-4">
-                  5.1. Фирмата "А-Парк 98" ЕООД се ангажира при възможност и наличност на места да осигури паркомясто за лек автомобил на всеки свой клиент, който направи резервация посредством сайта www.skyparking.bg/
+                  5.1. Фирмата "А-Парк 98" ЕООД се ангажира при възможност и наличност на места да осигури паркомясто за лек автомобил на всеки свой клиент, който направи резервация посредством сайта www.parkingone.bg/
                 </p>
                 
                 <p className="text-justify mb-4">
@@ -218,7 +218,7 @@ export function TermsAndConditions() {
               <section>
                 <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">8. РЕЗЕРВАЦИЯ</h2>
                 <p className="text-justify mb-4">
-                  8.1. Резервацията на паркинг услуги през уебсайта https://www.skyparking.bg/ се осъществява чрез попълване на съответната форма за резервация и последващо потвърждение от страна на "А-Парк 98" ЕООД или нейния представител. Резервацията е предварителна и подлежи на наличността на свободни места за паркиране.
+                  8.1. Резервацията на паркинг услуги през уебсайта https://www.parkingone.bg/ се осъществява чрез попълване на съответната форма за резервация и последващо потвърждение от страна на "А-Парк 98" ЕООД или нейния представител. Резервацията е предварителна и подлежи на наличността на свободни места за паркиране.
                 </p>
                 
                 <p className="text-justify mb-4">
@@ -324,30 +324,30 @@ export function TermsAndConditions() {
               <section>
                 <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">1. SUBJECT</h2>
                 <p className="text-justify mb-4">
-                  These "Terms and Conditions" regulate the relationship between "A-Park 98" Ltd. and users of the electronic (internet) website and services provided through the domain www.skyparking.bg. The company "A-Park 98" Ltd. is the owner of the website and provides services related to parking near Sofia Airport. Every user who uses our website www.skyparking.bg is obliged to comply with these terms and conditions throughout the entire period of use - from the moment of accessing the site until leaving it.
+                  These "Terms and Conditions" regulate the relationship between "A-Park 98" Ltd. and users of the electronic (internet) website and services provided through the domain www.parkingone.bg. The company "A-Park 98" Ltd. is the owner of the website and provides services related to parking near Sofia Airport. Every user who uses our website www.parkingone.bg is obliged to comply with these terms and conditions throughout the entire period of use - from the moment of accessing the site until leaving it.
                 </p>
                 <p className="text-justify mb-4">
-                  These conditions are mandatory for both "A-Park 98" Ltd. and all users who click on objects, links or buttons on the pages of www.skyparking.bg/ (except for the link to these "Terms and Conditions") or use the services offered by the parking lot located in Sofia.
+                  These conditions are mandatory for both "A-Park 98" Ltd. and all users who click on objects, links or buttons on the pages of www.parkingone.bg/ (except for the link to these "Terms and Conditions") or use the services offered by the parking lot located in Sofia.
                 </p>
                 <p className="text-justify mb-4">
-                  These Terms and Conditions contain the rules according to which "A-Park 98" Ltd. provides products and services to its users through the website https://www.skyparking.bg/. These conditions bind all users and regulate the rules for using the website https://www.skyparking.bg/, including the conclusion of contracts for parking services.
+                  These Terms and Conditions contain the rules according to which "A-Park 98" Ltd. provides products and services to its users through the website https://www.parkingone.bg/. These conditions bind all users and regulate the rules for using the website https://www.parkingone.bg/, including the conclusion of contracts for parking services.
                 </p>
                 <p className="text-justify mb-4">
-                  By accessing the domain https://www.skyparking.bg/ and using its services, the user agrees, fully accepts and undertakes to comply with these Terms and Conditions.
+                  By accessing the domain https://www.parkingone.bg/ and using its services, the user agrees, fully accepts and undertakes to comply with these Terms and Conditions.
                 </p>
                 <p className="text-justify">
-                  "A-Park 98" Ltd. recommends that you carefully read the Terms and Conditions before using our website. If you do not accept these Terms and Conditions, you should not use https://www.skyparking.bg/.
+                  "A-Park 98" Ltd. recommends that you carefully read the Terms and Conditions before using our website. If you do not accept these Terms and Conditions, you should not use https://www.parkingone.bg/.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">2. DEFINITIONS</h2>
                 <ul className="list-disc pl-6 space-y-3 text-justify">
-                  <li><strong>SELLER</strong> – "A-Park 98" Ltd. including https://www.skyparking.bg/ or any partner of "A-Park 98" Ltd. related to the website https://www.skyparking.bg/</li>
-                  <li><strong>SITE</strong> – the domain https://www.skyparking.bg/ and its subdomains</li>
-                  <li><strong>USER</strong> – any natural or legal person who uses the website https://www.skyparking.bg/ in any way, including but not limited to viewing information, making reservations, paying for services and goods, etc.</li>
+                  <li><strong>SELLER</strong> – "A-Park 98" Ltd. including https://www.parkingone.bg/ or any partner of "A-Park 98" Ltd. related to the website https://www.parkingone.bg/</li>
+                  <li><strong>SITE</strong> – the domain https://www.parkingone.bg/ and its subdomains</li>
+                  <li><strong>USER</strong> – any natural or legal person who uses the website https://www.parkingone.bg/ in any way, including but not limited to viewing information, making reservations, paying for services and goods, etc.</li>
                   <li><strong>CONTRACT</strong> – represents a distance contract concluded between the Seller and the User for the purchase and sale of Goods and/or Services from the website, with these general terms of use of the website being an integral part of it.</li>
-                  <li><strong>GOODS AND SERVICES</strong> – any subject of the purchase and sale contract offered by the website https://www.skyparking.bg/</li>
+                  <li><strong>GOODS AND SERVICES</strong> – any subject of the purchase and sale contract offered by the website https://www.parkingone.bg/</li>
                   <li><strong>SPECIFICATIONS</strong> – all characteristics and/or descriptions of Goods and Services as indicated on the website.</li>
                   <li><strong>RESERVATION</strong> – represents an individual order for the purchase of selected "Services" according to the conditions specified on the website. This is an act performed by the user at their own discretion and binds them with the force of a contract between the user and "A-Park 98" Ltd.</li>
                 </ul>
@@ -359,14 +359,14 @@ export function TermsAndConditions() {
                   "A-Park 98" Ltd. is a company registered in the Republic of Bulgaria, with headquarters and management address: BULGARIA, Sofia (1330), Krasna Polyana district, Razsadnika residential complex, Block 28, Entrance A, Floor 1, Apartment 1, registered in the Commercial Register with UIC 208627398.
                 </p>
                 <p className="text-justify">
-                  Correspondence details: BULGARIA, Sofia (1330), Krasna Polyana district, Razsadnika residential complex, Block 28, Entrance A, Floor 1, Apartment 1 and email: info@skyparking.bg
+                  Correspondence details: BULGARIA, Sofia (1330), Krasna Polyana district, Razsadnika residential complex, Block 28, Entrance A, Floor 1, Apartment 1 and email: info@parkingone.bg
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">4. GENERAL PROVISIONS FOR USE OF THE SITE</h2>
                 <p className="text-justify mb-4">
-                  4.1. "A-Park 98" Ltd. (hereinafter referred to as the "Seller") as the operator of this website https://www.skyparking.bg/, grants you the right to view and download all materials published on this site only for personal use and without commercial purpose, provided that you comply with all copyrights and relevant designations.
+                  4.1. "A-Park 98" Ltd. (hereinafter referred to as the "Seller") as the operator of this website https://www.parkingone.bg/, grants you the right to view and download all materials published on this site only for personal use and without commercial purpose, provided that you comply with all copyrights and relevant designations.
                 </p>
                 
                 <p className="text-justify mb-4">
@@ -378,7 +378,7 @@ export function TermsAndConditions() {
                 </p>
                 
                 <p className="text-justify mb-4">
-                  4.4. www.skyparking.bg/ has the right at any time and without warning to make changes to published materials, services and prices. Some of the published materials may be outdated, and "A-Park 98" Ltd. is not responsible for updating them.
+                  4.4. www.parkingone.bg/ has the right at any time and without warning to make changes to published materials, services and prices. Some of the published materials may be outdated, and "A-Park 98" Ltd. is not responsible for updating them.
                 </p>
                 
                 <p className="text-justify">
@@ -389,7 +389,7 @@ export function TermsAndConditions() {
               <section>
                 <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">5. RULES AND PRICES</h2>
                 <p className="text-justify mb-4">
-                  5.1. "A-Park 98" Ltd. undertakes, when possible and subject to availability, to provide a parking space for a passenger car to each client who makes a reservation through the website www.skyparking.bg/
+                  5.1. "A-Park 98" Ltd. undertakes, when possible and subject to availability, to provide a parking space for a passenger car to each client who makes a reservation through the website www.parkingone.bg/
                 </p>
                 
                 <p className="text-justify mb-4">
@@ -502,7 +502,7 @@ export function TermsAndConditions() {
               <section>
                 <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">8. RESERVATION</h2>
                 <p className="text-justify mb-4">
-                  8.1. Reservation of parking services through the website https://www.skyparking.bg/ is carried out by filling out the appropriate reservation form and subsequent confirmation by "A-Park 98" Ltd. or its representative. The reservation is preliminary and subject to the availability of free parking spaces.
+                  8.1. Reservation of parking services through the website https://www.parkingone.bg/ is carried out by filling out the appropriate reservation form and subsequent confirmation by "A-Park 98" Ltd. or its representative. The reservation is preliminary and subject to the availability of free parking spaces.
                 </p>
                 
                 <p className="text-justify mb-4">

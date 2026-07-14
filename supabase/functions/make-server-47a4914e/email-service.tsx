@@ -107,7 +107,7 @@ function generateConfirmationEmailHTML_BG(data: BookingEmailData): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Потвърждение на резервация - SkyParking - Паркинг Летище София</title>
+  <title>Потвърждение на резервация - Parking One - Паркинг Летище София</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     body { 
@@ -129,7 +129,7 @@ function generateConfirmationEmailHTML_BG(data: BookingEmailData): string {
     
     <!-- Header - Compact with Solid Brand Blue -->
     <div class="email-header" style="background-color: #053790; padding: 18px 20px; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-      <img class="header-logo" src="https://skyparking.bg/logo-email.png" alt="SkyParking" style="max-width: 160px; height: auto; display: inline-block;" />
+      <img class="header-logo" src="https://parkingone.bg/logo-email.png" alt="Parking One" style="max-width: 160px; height: auto; display: inline-block;" />
     </div>
 
     <!-- Confirmation Statement -->
@@ -138,7 +138,7 @@ function generateConfirmationEmailHTML_BG(data: BookingEmailData): string {
         Резервацията ви е потвърдена
       </h1>
       <p style="margin: 0; font-size: 15px; color: #6b7280; font-weight: 400; line-height: 1.5;">
-        Благодарим ви, че избрахте SkyParking.
+        Благодарим ви, че избрахте Parking One.
       </p>
     </div>
 
@@ -252,7 +252,7 @@ function generateConfirmationEmailHTML_BG(data: BookingEmailData): string {
           </h2>
         </div>
         <p style="margin: 0 0 20px 0; font-size: 14px; color: #4b5563; line-height: 1.6;">
-          Ulitsa Nedelcho Bonchev 30
+          Ulitsa Iztochna Tangeta 23
         </p>
         
         <!-- Navigation Buttons - Centered, Not Full Width -->
@@ -262,7 +262,7 @@ function generateConfirmationEmailHTML_BG(data: BookingEmailData): string {
               <tr>
                 <td style="padding-bottom: 12px;">
                   <a href="https://ul.waze.com/ul?place=ChIJ6eb_yAqHqkARRJP7h2zo5AU&ll=42.67676540%2C23.40033890&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" style="display: block; text-align: center; background-color: #053790; color: #ffffff; padding: 14px 20px; text-decoration: none; border-radius: 10px; font-size: 14px; font-weight: 600; height: 48px; line-height: 20px; box-sizing: border-box;">
-                    <img src="https://skyparking.bg/waze-icon.png" alt="Waze" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;" />
+                    <img src="https://parkingone.bg/waze-icon.png" alt="Waze" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;" />
                     Навигация с Waze
                   </a>
                 </td>
@@ -270,7 +270,7 @@ function generateConfirmationEmailHTML_BG(data: BookingEmailData): string {
               <tr>
                 <td>
                   <a href="https://maps.app.goo.gl/Yt6YeQN5ECBSjVme8" style="display: block; text-align: center; background-color: #ffffff; color: #053790; padding: 14px 20px; text-decoration: none; border-radius: 10px; font-size: 14px; font-weight: 600; border: 2px solid #053790; height: 48px; line-height: 20px; box-sizing: border-box;">
-                    <img src="https://skyparking.bg/google-maps-icon.png" alt="Google Maps" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;" />
+                    <img src="https://parkingone.bg/google-maps-icon.png" alt="Google Maps" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;" />
                     Навигация с Google Maps
                   </a>
                 </td>
@@ -299,7 +299,7 @@ function generateConfirmationEmailHTML_BG(data: BookingEmailData): string {
             📞 Телефон
           </div>
           <div>
-            <a href="tel:+359886616991" style="color: #053790; font-size: 15px; font-weight: 600; text-decoration: none;">
+            <a href="tel:+359877109788" style="color: #053790; font-size: 15px; font-weight: 600; text-decoration: none;">
               +359 886 616 991
             </a>
           </div>
@@ -309,8 +309,8 @@ function generateConfirmationEmailHTML_BG(data: BookingEmailData): string {
             📧 Имейл
           </div>
           <div>
-            <a href="mailto:info@skyparking.bg" style="color: #053790; font-size: 15px; font-weight: 600; text-decoration: none;">
-              info@skyparking.bg
+            <a href="mailto:info@parkingone.bg" style="color: #053790; font-size: 15px; font-weight: 600; text-decoration: none;">
+              info@parkingone.bg
             </a>
           </div>
         </div>
@@ -320,12 +320,12 @@ function generateConfirmationEmailHTML_BG(data: BookingEmailData): string {
     <!-- Footer - Restored -->
     <div style="background-color: #f3f4f6; padding: 24px 20px; text-align: center; border-top: 1px solid #e5e7eb;">
       <div style="font-size: 15px; font-weight: 600; color: #053790; margin-bottom: 8px;">
-        SkyParking
+        Parking One
       </div>
       <div style="font-size: 13px; color: #6b7280; margin-bottom: 4px;">
-        <a href="tel:+359886616991" style="color: #6b7280; text-decoration: none;">+359 886 616 991</a>
+        <a href="tel:+359877109788" style="color: #6b7280; text-decoration: none;">+359 886 616 991</a>
         <span style="margin: 0 6px; color: #d1d5db;">•</span>
-        <a href="mailto:info@skyparking.bg" style="color: #6b7280; text-decoration: none;">info@skyparking.bg</a>
+        <a href="mailto:info@parkingone.bg" style="color: #6b7280; text-decoration: none;">info@parkingone.bg</a>
       </div>
       <div style="font-size: 12px; color: #9ca3af; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e5e7eb;">
         Това е автоматично генериран имейл. Моля, не отговаряйте на него.
@@ -408,7 +408,7 @@ function generateConfirmationEmailHTML_EN(data: BookingEmailData): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Booking Confirmation - SkyParking - Sofia Airport Parking</title>
+  <title>Booking Confirmation - Parking One - Sofia Airport Parking</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     body { 
@@ -430,7 +430,7 @@ function generateConfirmationEmailHTML_EN(data: BookingEmailData): string {
     
     <!-- Header - Compact with Solid Brand Blue -->
     <div class="email-header" style="background-color: #053790; padding: 18px 20px; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-      <img class="header-logo" src="https://skyparking.bg/logo-email.png" alt="SkyParking" style="max-width: 160px; height: auto; display: inline-block;" />
+      <img class="header-logo" src="https://parkingone.bg/logo-email.png" alt="Parking One" style="max-width: 160px; height: auto; display: inline-block;" />
     </div>
 
     <!-- Confirmation Statement -->
@@ -439,7 +439,7 @@ function generateConfirmationEmailHTML_EN(data: BookingEmailData): string {
         Your reservation is confirmed
       </h1>
       <p style="margin: 0; font-size: 15px; color: #6b7280; font-weight: 400; line-height: 1.5;">
-        Thank you for choosing SkyParking.
+        Thank you for choosing Parking One.
       </p>
     </div>
 
@@ -553,7 +553,7 @@ function generateConfirmationEmailHTML_EN(data: BookingEmailData): string {
           </h2>
         </div>
         <p style="margin: 0 0 20px 0; font-size: 14px; color: #4b5563; line-height: 1.6;">
-          Ulitsa Nedelcho Bonchev 30
+          Ulitsa Iztochna Tangeta 23
         </p>
         
         <!-- Navigation Buttons - Centered, Not Full Width -->
@@ -563,7 +563,7 @@ function generateConfirmationEmailHTML_EN(data: BookingEmailData): string {
               <tr>
                 <td style="padding-bottom: 12px;">
                   <a href="https://ul.waze.com/ul?place=ChIJ6eb_yAqHqkARRJP7h2zo5AU&ll=42.67676540%2C23.40033890&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" style="display: block; text-align: center; background-color: #053790; color: #ffffff; padding: 14px 20px; text-decoration: none; border-radius: 10px; font-size: 14px; font-weight: 600; height: 48px; line-height: 20px; box-sizing: border-box;">
-                    <img src="https://skyparking.bg/waze-icon.png" alt="Waze" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;" />
+                    <img src="https://parkingone.bg/waze-icon.png" alt="Waze" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;" />
                     Navigate with Waze
                   </a>
                 </td>
@@ -571,7 +571,7 @@ function generateConfirmationEmailHTML_EN(data: BookingEmailData): string {
               <tr>
                 <td>
                   <a href="https://maps.app.goo.gl/Yt6YeQN5ECBSjVme8" style="display: block; text-align: center; background-color: #ffffff; color: #053790; padding: 14px 20px; text-decoration: none; border-radius: 10px; font-size: 14px; font-weight: 600; border: 2px solid #053790; height: 48px; line-height: 20px; box-sizing: border-box;">
-                    <img src="https://skyparking.bg/google-maps-icon.png" alt="Google Maps" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;" />
+                    <img src="https://parkingone.bg/google-maps-icon.png" alt="Google Maps" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;" />
                     Navigate with Google Maps
                   </a>
                 </td>
@@ -600,7 +600,7 @@ function generateConfirmationEmailHTML_EN(data: BookingEmailData): string {
             📞 Phone
           </div>
           <div>
-            <a href="tel:+359886616991" style="color: #053790; font-size: 15px; font-weight: 600; text-decoration: none;">
+            <a href="tel:+359877109788" style="color: #053790; font-size: 15px; font-weight: 600; text-decoration: none;">
               +359 886 616 991
             </a>
           </div>
@@ -610,8 +610,8 @@ function generateConfirmationEmailHTML_EN(data: BookingEmailData): string {
             📧 Email
           </div>
           <div>
-            <a href="mailto:info@skyparking.bg" style="color: #053790; font-size: 15px; font-weight: 600; text-decoration: none;">
-              info@skyparking.bg
+            <a href="mailto:info@parkingone.bg" style="color: #053790; font-size: 15px; font-weight: 600; text-decoration: none;">
+              info@parkingone.bg
             </a>
           </div>
         </div>
@@ -621,12 +621,12 @@ function generateConfirmationEmailHTML_EN(data: BookingEmailData): string {
     <!-- Footer - Restored -->
     <div style="background-color: #f3f4f6; padding: 24px 20px; text-align: center; border-top: 1px solid #e5e7eb;">
       <div style="font-size: 15px; font-weight: 600; color: #053790; margin-bottom: 8px;">
-        SkyParking
+        Parking One
       </div>
       <div style="font-size: 13px; color: #6b7280; margin-bottom: 4px;">
-        <a href="tel:+359886616991" style="color: #6b7280; text-decoration: none;">+359 886 616 991</a>
+        <a href="tel:+359877109788" style="color: #6b7280; text-decoration: none;">+359 886 616 991</a>
         <span style="margin: 0 6px; color: #d1d5db;">•</span>
-        <a href="mailto:info@skyparking.bg" style="color: #6b7280; text-decoration: none;">info@skyparking.bg</a>
+        <a href="mailto:info@parkingone.bg" style="color: #6b7280; text-decoration: none;">info@parkingone.bg</a>
       </div>
       <div style="font-size: 12px; color: #9ca3af; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e5e7eb;">
         This is an automatically generated email. Please do not reply to it.
@@ -677,9 +677,9 @@ function generateConfirmationEmailHTML_MULTILINGUAL(data: BookingEmailData): str
     oversizedSurcharge: string;
   }> = {
     el: {
-      subject: `Η κράτησή σας στο SkyParking ${data.bookingId}`,
+      subject: `Η κράτησή σας στο Parking One ${data.bookingId}`,
       confirmed: 'Η κράτησή σας επιβεβαιώθηκε',
-      thankYou: 'Ευχαριστούμε που επιλέξατε το SkyParking.',
+      thankYou: 'Ευχαριστούμε που επιλέξατε το Parking One.',
       totalPrice: 'Συνολική Τιμή',
       freeTransfer: 'Δωρεάν Μεταφορά',
       reservationNumber: 'Αριθμός Κράτησης',
@@ -710,9 +710,9 @@ function generateConfirmationEmailHTML_MULTILINGUAL(data: BookingEmailData): str
       oversizedSurcharge: 'Επιπλέον χρέωση για υπερμέγεθες όχημα',
     },
     tr: {
-      subject: `SkyParking Rezervasyonunuz ${data.bookingId}`,
+      subject: `Parking One Rezervasyonunuz ${data.bookingId}`,
       confirmed: 'Rezervasyonunuz onaylandı',
-      thankYou: 'SkyParking\'i seçtiğiniz için teşekkür ederiz.',
+      thankYou: 'Parking One\'i seçtiğiniz için teşekkür ederiz.',
       totalPrice: 'Toplam Ücret',
       freeTransfer: 'Ücretsiz Transfer',
       reservationNumber: 'Rezervasyon Numarası',
@@ -743,9 +743,9 @@ function generateConfirmationEmailHTML_MULTILINGUAL(data: BookingEmailData): str
       oversizedSurcharge: 'Büyük araç ek ücreti',
     },
     sr: {
-      subject: `Vaša SkyParking rezervacija ${data.bookingId}`,
+      subject: `Vaša Parking One rezervacija ${data.bookingId}`,
       confirmed: 'Vaša rezervacija je potvrđena',
-      thankYou: 'Hvala što ste izabrali SkyParking.',
+      thankYou: 'Hvala što ste izabrali Parking One.',
       totalPrice: 'Ukupna Cena',
       freeTransfer: 'Besplatan Transfer',
       reservationNumber: 'Broj Rezervacije',
@@ -776,9 +776,9 @@ function generateConfirmationEmailHTML_MULTILINGUAL(data: BookingEmailData): str
       oversizedSurcharge: 'Doplata za velikogabaritno vozilo',
     },
     mk: {
-      subject: `Вашата SkyParking резервација ${data.bookingId}`,
+      subject: `Вашата Parking One резервација ${data.bookingId}`,
       confirmed: 'Вашата резервација е потврдена',
-      thankYou: 'Благодариме што го избравте SkyParking.',
+      thankYou: 'Благодариме што го избравте Parking One.',
       totalPrice: 'Вкупна Цена',
       freeTransfer: 'Бесплатен Трансфер',
       reservationNumber: 'Број на Резервација',
@@ -809,9 +809,9 @@ function generateConfirmationEmailHTML_MULTILINGUAL(data: BookingEmailData): str
       oversizedSurcharge: 'Доплата за вонгабаритно возило',
     },
     ro: {
-      subject: `Rezervarea dvs. SkyParking ${data.bookingId}`,
+      subject: `Rezervarea dvs. Parking One ${data.bookingId}`,
       confirmed: 'Rezervarea dvs. a fost confirmată',
-      thankYou: 'Vă mulțumim că ați ales SkyParking.',
+      thankYou: 'Vă mulțumim că ați ales Parking One.',
       totalPrice: 'Preț Total',
       freeTransfer: 'Transfer Gratuit',
       reservationNumber: 'Număr Rezervare',
@@ -842,9 +842,9 @@ function generateConfirmationEmailHTML_MULTILINGUAL(data: BookingEmailData): str
       oversizedSurcharge: 'Suprataxă vehicul supradimensionat',
     },
     uk: {
-      subject: `Ваше бронювання SkyParking ${data.bookingId}`,
+      subject: `Ваше бронювання Parking One ${data.bookingId}`,
       confirmed: 'Ваше бронювання підтверджено',
-      thankYou: 'Дякуємо, що обрали SkyParking.',
+      thankYou: 'Дякуємо, що обрали Parking One.',
       totalPrice: 'Загальна Ціна',
       freeTransfer: 'Безкоштовний Трансфер',
       reservationNumber: 'Номер Бронювання',
@@ -938,7 +938,7 @@ function generateConfirmationEmailHTML_MULTILINGUAL(data: BookingEmailData): str
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${s.confirmed} - SkyParking</title>
+  <title>${s.confirmed} - Parking One</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; -webkit-font-smoothing: antialiased; }
@@ -954,7 +954,7 @@ function generateConfirmationEmailHTML_MULTILINGUAL(data: BookingEmailData): str
 <body style="margin: 0; padding: 0; background-color: #f5f5f5;">
   <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
     <div class="email-header" style="background-color: #053790; padding: 18px 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1);">
-      <img class="header-logo" src="https://skyparking.bg/logo-email.png" alt="SkyParking" style="max-width: 160px; height: auto; display: inline-block;" />
+      <img class="header-logo" src="https://parkingone.bg/logo-email.png" alt="Parking One" style="max-width: 160px; height: auto; display: inline-block;" />
     </div>
     <div style="padding: 32px 20px 24px; text-align: center; background-color: #ffffff;">
       <h1 style="margin: 0 0 10px 0; font-size: 24px; font-weight: 600; color: #053790; letter-spacing: -0.3px;">${s.confirmed}</h1>
@@ -1019,21 +1019,21 @@ function generateConfirmationEmailHTML_MULTILINGUAL(data: BookingEmailData): str
         <div style="margin-bottom: 14px;">
           <h2 style="margin: 0; font-size: 16px; font-weight: 600; color: #111827;">📍 ${s.parkingLocation}</h2>
         </div>
-        <p style="margin: 0 0 20px 0; font-size: 14px; color: #4b5563; line-height: 1.6;">Ulitsa Nedelcho Bonchev 30</p>
+        <p style="margin: 0 0 20px 0; font-size: 14px; color: #4b5563; line-height: 1.6;">Ulitsa Iztochna Tangeta 23</p>
         <div style="text-align: center;">
           <div class="nav-button-container" style="display: inline-block; max-width: 340px; width: 100%;">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
               <tr>
                 <td style="padding-bottom: 12px;">
                   <a href="https://ul.waze.com/ul?place=ChIJ6eb_yAqHqkARRJP7h2zo5AU&ll=42.67676540%2C23.40033890&navigate=yes" style="display: block; text-align: center; background-color: #053790; color: #ffffff; padding: 14px 20px; text-decoration: none; border-radius: 10px; font-size: 14px; font-weight: 600; height: 48px; line-height: 20px; box-sizing: border-box;">
-                    <img src="https://skyparking.bg/waze-icon.png" alt="Waze" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;" />${s.navigateWaze}
+                    <img src="https://parkingone.bg/waze-icon.png" alt="Waze" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;" />${s.navigateWaze}
                   </a>
                 </td>
               </tr>
               <tr>
                 <td>
                   <a href="https://maps.app.goo.gl/Yt6YeQN5ECBSjVme8" style="display: block; text-align: center; background-color: #ffffff; color: #053790; padding: 14px 20px; text-decoration: none; border-radius: 10px; font-size: 14px; font-weight: 600; border: 2px solid #053790; height: 48px; line-height: 20px; box-sizing: border-box;">
-                    <img src="https://skyparking.bg/google-maps-icon.png" alt="Google Maps" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;" />${s.navigateGMaps}
+                    <img src="https://parkingone.bg/google-maps-icon.png" alt="Google Maps" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 8px;" />${s.navigateGMaps}
                   </a>
                 </td>
               </tr>
@@ -1054,20 +1054,20 @@ function generateConfirmationEmailHTML_MULTILINGUAL(data: BookingEmailData): str
       <div style="background-color: #f9fafb; border-radius: 8px; padding: 18px;">
         <div style="margin-bottom: 14px;">
           <div style="color: #6b7280; font-size: 12px; font-weight: 500; margin-bottom: 4px;">📞 ${s.phoneLabel}</div>
-          <div><a href="tel:+359886616991" style="color: #053790; font-size: 15px; font-weight: 600; text-decoration: none;">+359 886 616 991</a></div>
+          <div><a href="tel:+359877109788" style="color: #053790; font-size: 15px; font-weight: 600; text-decoration: none;">+359 886 616 991</a></div>
         </div>
         <div>
           <div style="color: #6b7280; font-size: 12px; font-weight: 500; margin-bottom: 4px;">📧 ${s.emailLabel}</div>
-          <div><a href="mailto:info@skyparking.bg" style="color: #053790; font-size: 15px; font-weight: 600; text-decoration: none;">info@skyparking.bg</a></div>
+          <div><a href="mailto:info@parkingone.bg" style="color: #053790; font-size: 15px; font-weight: 600; text-decoration: none;">info@parkingone.bg</a></div>
         </div>
       </div>
     </div>
     <div style="background-color: #f3f4f6; padding: 24px 20px; text-align: center; border-top: 1px solid #e5e7eb;">
-      <div style="font-size: 15px; font-weight: 600; color: #053790; margin-bottom: 8px;">SkyParking</div>
+      <div style="font-size: 15px; font-weight: 600; color: #053790; margin-bottom: 8px;">Parking One</div>
       <div style="font-size: 13px; color: #6b7280; margin-bottom: 4px;">
-        <a href="tel:+359886616991" style="color: #6b7280; text-decoration: none;">+359 886 616 991</a>
+        <a href="tel:+359877109788" style="color: #6b7280; text-decoration: none;">+359 886 616 991</a>
         <span style="margin: 0 6px; color: #d1d5db;">•</span>
-        <a href="mailto:info@skyparking.bg" style="color: #6b7280; text-decoration: none;">info@skyparking.bg</a>
+        <a href="mailto:info@parkingone.bg" style="color: #6b7280; text-decoration: none;">info@parkingone.bg</a>
       </div>
       <div style="font-size: 12px; color: #9ca3af; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e5e7eb;">${s.autoEmail}</div>
     </div>
@@ -1087,8 +1087,8 @@ export async function sendConfirmationEmail(data: BookingEmailData): Promise<{ s
       return { success: false, error: 'Email service not configured' };
     }
 
-    // Use reservations@skyparking.bg as the FROM email
-    const fromEmail = 'SkyParking <reservations@skyparking.bg>';
+    // Use reservations@parkingone.bg as the FROM email
+    const fromEmail = 'Parking One <reservations@parkingone.bg>';
 
     // Determine language (default to Bulgarian)
     const language = data.language || 'bg';
@@ -1105,14 +1105,14 @@ export async function sendConfirmationEmail(data: BookingEmailData): Promise<{ s
 
     // Subject line based on language
     const subjectMap: Record<string, string> = {
-      bg: `Вашата резервация за SkyParking ${data.bookingId}`,
-      en: `Your SkyParking Reservation ${data.bookingId}`,
-      el: `Η κράτησή σας στο SkyParking ${data.bookingId}`,
-      tr: `SkyParking Rezervasyonunuz ${data.bookingId}`,
-      sr: `Vaša SkyParking rezervacija ${data.bookingId}`,
-      mk: `Вашата SkyParking резервација ${data.bookingId}`,
-      ro: `Rezervarea dvs. SkyParking ${data.bookingId}`,
-      uk: `Ваше бронювання SkyParking ${data.bookingId}`,
+      bg: `Вашата резервация за Parking One ${data.bookingId}`,
+      en: `Your Parking One Reservation ${data.bookingId}`,
+      el: `Η κράτησή σας στο Parking One ${data.bookingId}`,
+      tr: `Parking One Rezervasyonunuz ${data.bookingId}`,
+      sr: `Vaša Parking One rezervacija ${data.bookingId}`,
+      mk: `Вашата Parking One резервација ${data.bookingId}`,
+      ro: `Rezervarea dvs. Parking One ${data.bookingId}`,
+      uk: `Ваше бронювання Parking One ${data.bookingId}`,
     };
     const subject = subjectMap[language] ?? subjectMap['en'];
 
@@ -1132,11 +1132,11 @@ export async function sendConfirmationEmail(data: BookingEmailData): Promise<{ s
 
 Плащане на място при пристигане.
 
-Благодарим Ви, че избрахте SkyParking!
+Благодарим Ви, че избрахте Parking One!
 
 За въпроси: ${data.phone}
-Email: reservations@skyparking.bg
-Уеб: https://www.skyparking.bg
+Email: reservations@parkingone.bg
+Уеб: https://www.parkingone.bg
     `.trim();
 
     const textEN = `
@@ -1154,22 +1154,22 @@ Price: €${data.totalPrice}
 
 Payment on arrival.
 
-Thank you for choosing SkyParking!
+Thank you for choosing Parking One!
 
 For questions: ${data.phone}
-Email: reservations@skyparking.bg
-Web: https://www.skyparking.bg
+Email: reservations@parkingone.bg
+Web: https://www.parkingone.bg
     `.trim();
 
     const plainTextByLang: Record<string, string> = {
       bg: textBG,
       en: textEN,
-      el: `Γεια σας ${data.name},\n\nΗ κράτησή σας στο πάρκινγκ κοντά στο αεροδρόμιο Σόφιας επιβεβαιώθηκε.\n\nΑριθμός κράτησης: ${data.bookingId}\nΆφιξη: ${formatDateDisplay(data.arrivalDate)} στις ${data.arrivalTime}\nΑναχώρηση: ${formatDateDisplay(data.departureDate)} στις ${data.departureTime}\nΠινακίδα: ${data.licensePlate}\nΤιμή: €${data.totalPrice}\n\nΠληρωμή κατά την άφιξη.\n\nΕυχαριστούμε που επιλέξατε το SkyParking!\nEmail: reservations@skyparking.bg`,
-      tr: `Merhaba ${data.name},\n\nSofya Havalimanı yakınındaki otopark rezervasyonunuz onaylandı.\n\nRezervason No: ${data.bookingId}\nGiriş: ${formatDateDisplay(data.arrivalDate)} saat ${data.arrivalTime}\nÇıkış: ${formatDateDisplay(data.departureDate)} saat ${data.departureTime}\nPlaka: ${data.licensePlate}\nÜcret: €${data.totalPrice}\n\nGelişte ödeme.\n\nSkyParking'i seçtiğiniz için teşekkür ederiz!\nEmail: reservations@skyparking.bg`,
-      sr: `Zdravo ${data.name},\n\nVaša rezervacija parkinga kod Aerodroma Sofija je potvrđena.\n\nBroj rezervacije: ${data.bookingId}\nDolazak: ${formatDateDisplay(data.arrivalDate)} u ${data.arrivalTime}\nOdlazak: ${formatDateDisplay(data.departureDate)} u ${data.departureTime}\nRegistarski broj: ${data.licensePlate}\nCena: €${data.totalPrice}\n\nPlaćanje po dolasku.\n\nHvala što ste izabrali SkyParking!\nEmail: reservations@skyparking.bg`,
-      mk: `Здраво ${data.name},\n\nВашата резервација за паркинг кај Аеродромот во Софија е потврдена.\n\nБрој на резервација: ${data.bookingId}\nПристигнување: ${formatDateDisplay(data.arrivalDate)} во ${data.arrivalTime}\nЗаминување: ${formatDateDisplay(data.departureDate)} во ${data.departureTime}\nРегистарски број: ${data.licensePlate}\nЦена: €${data.totalPrice}\n\nПлаќање при пристигнување.\n\nБлагодариме што го избравте SkyParking!\nEmail: reservations@skyparking.bg`,
-      ro: `Bună ziua ${data.name},\n\nRezervarea dvs. la parcarea de lângă Aeroportul Sofia a fost confirmată.\n\nNumăr rezervare: ${data.bookingId}\nSosire: ${formatDateDisplay(data.arrivalDate)} la ${data.arrivalTime}\nPlecare: ${formatDateDisplay(data.departureDate)} la ${data.departureTime}\nNr. înmatriculare: ${data.licensePlate}\nPreț: €${data.totalPrice}\n\nPlată la sosire.\n\nVă mulțumim că ați ales SkyParking!\nEmail: reservations@skyparking.bg`,
-      uk: `Доброго дня ${data.name},\n\nВаше бронювання паркінгу біля аеропорту Софії підтверджено.\n\nНомер бронювання: ${data.bookingId}\nПрибуття: ${formatDateDisplay(data.arrivalDate)} о ${data.arrivalTime}\nВід'їзд: ${formatDateDisplay(data.departureDate)} о ${data.departureTime}\nНомерний знак: ${data.licensePlate}\nЦіна: €${data.totalPrice}\n\nОплата при прибутті.\n\nДякуємо, що обрали SkyParking!\nEmail: reservations@skyparking.bg`,
+      el: `Γεια σας ${data.name},\n\nΗ κράτησή σας στο πάρκινγκ κοντά στο αεροδρόμιο Σόφιας επιβεβαιώθηκε.\n\nΑριθμός κράτησης: ${data.bookingId}\nΆφιξη: ${formatDateDisplay(data.arrivalDate)} στις ${data.arrivalTime}\nΑναχώρηση: ${formatDateDisplay(data.departureDate)} στις ${data.departureTime}\nΠινακίδα: ${data.licensePlate}\nΤιμή: €${data.totalPrice}\n\nΠληρωμή κατά την άφιξη.\n\nΕυχαριστούμε που επιλέξατε το Parking One!\nEmail: reservations@parkingone.bg`,
+      tr: `Merhaba ${data.name},\n\nSofya Havalimanı yakınındaki otopark rezervasyonunuz onaylandı.\n\nRezervason No: ${data.bookingId}\nGiriş: ${formatDateDisplay(data.arrivalDate)} saat ${data.arrivalTime}\nÇıkış: ${formatDateDisplay(data.departureDate)} saat ${data.departureTime}\nPlaka: ${data.licensePlate}\nÜcret: €${data.totalPrice}\n\nGelişte ödeme.\n\nParking One'i seçtiğiniz için teşekkür ederiz!\nEmail: reservations@parkingone.bg`,
+      sr: `Zdravo ${data.name},\n\nVaša rezervacija parkinga kod Aerodroma Sofija je potvrđena.\n\nBroj rezervacije: ${data.bookingId}\nDolazak: ${formatDateDisplay(data.arrivalDate)} u ${data.arrivalTime}\nOdlazak: ${formatDateDisplay(data.departureDate)} u ${data.departureTime}\nRegistarski broj: ${data.licensePlate}\nCena: €${data.totalPrice}\n\nPlaćanje po dolasku.\n\nHvala što ste izabrali Parking One!\nEmail: reservations@parkingone.bg`,
+      mk: `Здраво ${data.name},\n\nВашата резервација за паркинг кај Аеродромот во Софија е потврдена.\n\nБрој на резервација: ${data.bookingId}\nПристигнување: ${formatDateDisplay(data.arrivalDate)} во ${data.arrivalTime}\nЗаминување: ${formatDateDisplay(data.departureDate)} во ${data.departureTime}\nРегистарски број: ${data.licensePlate}\nЦена: €${data.totalPrice}\n\nПлаќање при пристигнување.\n\nБлагодариме што го избравте Parking One!\nEmail: reservations@parkingone.bg`,
+      ro: `Bună ziua ${data.name},\n\nRezervarea dvs. la parcarea de lângă Aeroportul Sofia a fost confirmată.\n\nNumăr rezervare: ${data.bookingId}\nSosire: ${formatDateDisplay(data.arrivalDate)} la ${data.arrivalTime}\nPlecare: ${formatDateDisplay(data.departureDate)} la ${data.departureTime}\nNr. înmatriculare: ${data.licensePlate}\nPreț: €${data.totalPrice}\n\nPlată la sosire.\n\nVă mulțumim că ați ales Parking One!\nEmail: reservations@parkingone.bg`,
+      uk: `Доброго дня ${data.name},\n\nВаше бронювання паркінгу біля аеропорту Софії підтверджено.\n\nНомер бронювання: ${data.bookingId}\nПрибуття: ${formatDateDisplay(data.arrivalDate)} о ${data.arrivalTime}\nВід'їзд: ${formatDateDisplay(data.departureDate)} о ${data.departureTime}\nНомерний знак: ${data.licensePlate}\nЦіна: €${data.totalPrice}\n\nОплата при прибутті.\n\nДякуємо, що обрали Parking One!\nEmail: reservations@parkingone.bg`,
     };
     const plainText = plainTextByLang[language] ?? textEN;
 
@@ -1182,11 +1182,11 @@ Web: https://www.skyparking.bg
       html: emailHTML,
       text: plainText,
       // Add reply-to header for better deliverability
-      reply_to: 'reservations@skyparking.bg',
+      reply_to: 'reservations@parkingone.bg',
       // Add headers to improve deliverability
       headers: {
         'X-Entity-Ref-ID': data.bookingId,
-        'List-Unsubscribe': '<mailto:reservations@skyparking.bg?subject=unsubscribe>',
+        'List-Unsubscribe': '<mailto:reservations@parkingone.bg?subject=unsubscribe>',
       }
     });
 
@@ -1226,7 +1226,7 @@ function generateViberMessageHTML(data: BookingEmailData): string {
       heading: '📱 Viber съобщение за клиента',
       instruction: 'Копирайте текста по-долу и го изпратете на клиента във Viber:',
       greeting: 'Здравейте',
-      confirmed: '✅ SkyParking потвърждава вашата резервация!',
+      confirmed: '✅ Parking One потвърждава вашата резервация!',
       from: 'От',
       to: 'До',
       car: 'Автомобил',
@@ -1241,7 +1241,7 @@ function generateViberMessageHTML(data: BookingEmailData): string {
       heading: '📱 Viber message for the customer',
       instruction: 'Copy the text below and send it to the customer on Viber:',
       greeting: 'Hello',
-      confirmed: '✅ SkyParking confirms your reservation!',
+      confirmed: '✅ Parking One confirms your reservation!',
       from: 'From',
       to: 'To',
       car: 'Car',
@@ -1256,7 +1256,7 @@ function generateViberMessageHTML(data: BookingEmailData): string {
       heading: '📱 Μήνυμα Viber για τον πελάτη',
       instruction: 'Αντιγράψτε το παρακάτω κείμενο και στείλτε το στον πελάτη μέσω Viber:',
       greeting: 'Γεια σας',
-      confirmed: '✅ Το SkyParking επιβεβαιώνει την κράτησή σας!',
+      confirmed: '✅ Το Parking One επιβεβαιώνει την κράτησή σας!',
       from: 'Από',
       to: 'Έως',
       car: 'Αυτοκίνητο',
@@ -1271,7 +1271,7 @@ function generateViberMessageHTML(data: BookingEmailData): string {
       heading: '📱 Müşteri için Viber mesajı',
       instruction: 'Aşağıdaki metni kopyalayın ve Viber üzerinden müşteriye gönderin:',
       greeting: 'Merhaba',
-      confirmed: '✅ SkyParking rezervasyonunuzu onayladı!',
+      confirmed: '✅ Parking One rezervasyonunuzu onayladı!',
       from: 'Giriş',
       to: 'Çıkış',
       car: 'Araç',
@@ -1286,7 +1286,7 @@ function generateViberMessageHTML(data: BookingEmailData): string {
       heading: '📱 Viber poruka za klijenta',
       instruction: 'Kopirajte tekst ispod i pošaljite ga klijentu putem Vibera:',
       greeting: 'Zdravo',
-      confirmed: '✅ SkyParking potvrđuje vašu rezervaciju!',
+      confirmed: '✅ Parking One potvrđuje vašu rezervaciju!',
       from: 'Od',
       to: 'Do',
       car: 'Automobil',
@@ -1301,7 +1301,7 @@ function generateViberMessageHTML(data: BookingEmailData): string {
       heading: '📱 Viber порака за клиентот',
       instruction: 'Копирајте го текстот подолу и пратете го на клиентот преку Viber:',
       greeting: 'Здраво',
-      confirmed: '✅ SkyParking ја потврдува вашата резервација!',
+      confirmed: '✅ Parking One ја потврдува вашата резервација!',
       from: 'Од',
       to: 'До',
       car: 'Автомобил',
@@ -1316,7 +1316,7 @@ function generateViberMessageHTML(data: BookingEmailData): string {
       heading: '📱 Mesaj Viber pentru client',
       instruction: 'Copiați textul de mai jos și trimiteți-l clientului pe Viber:',
       greeting: 'Bună ziua',
-      confirmed: '✅ SkyParking confirmă rezervarea dvs.!',
+      confirmed: '✅ Parking One confirmă rezervarea dvs.!',
       from: 'De la',
       to: 'Până la',
       car: 'Mașină',
@@ -1331,7 +1331,7 @@ function generateViberMessageHTML(data: BookingEmailData): string {
       heading: '📱 Viber повідомлення для клієнта',
       instruction: 'Скопіюйте текст нижче та надішліть його клієнту через Viber:',
       greeting: 'Доброго дня',
-      confirmed: '✅ SkyParking підтверджує ваше бронювання!',
+      confirmed: '✅ Parking One підтверджує ваше бронювання!',
       from: 'Від',
       to: 'До',
       car: 'Автомобіль',
@@ -1349,7 +1349,7 @@ function generateViberMessageHTML(data: BookingEmailData): string {
   return `
     <div style="background-color: #7360f2; border: 3px solid #665dc0; padding: 20px; margin: 25px 0; border-radius: 8px;">
       <div style="display: flex; align-items: center; margin-bottom: 15px;">
-        <img src="https://skyparking.bg/viber-logo.png" alt="Viber" style="width: 32px; height: 32px; margin-right: 12px;" />
+        <img src="https://parkingone.bg/viber-logo.png" alt="Viber" style="width: 32px; height: 32px; margin-right: 12px;" />
         <h3 style="margin: 0; font-size: 20px; color: #ffffff;">${s.heading}</h3>
       </div>
       <p style="margin: 0 0 12px 0; font-size: 13px; color: #e0d9ff; font-style: italic;">
@@ -1422,7 +1422,7 @@ function generateAdminNotificationEmailHTML(data: BookingEmailData): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Нова резервация - SkyParking - Паркинг Летище София</title>
+  <title>Нова резервация - Parking One - Паркинг Летище София</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4;">
   <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 0;">
@@ -1430,7 +1430,7 @@ function generateAdminNotificationEmailHTML(data: BookingEmailData): string {
     <!-- Header -->
     <div style="background-color: #073590; padding: 30px; text-align: center;">
       <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: bold;">🔔 Нова резервация</h1>
-      <p style="margin: 5px 0 0 0; color: #f1c933; font-size: 16px;">SkyParking Admin Notification</p>
+      <p style="margin: 5px 0 0 0; color: #f1c933; font-size: 16px;">Parking One Admin Notification</p>
     </div>
 
     <!-- Content -->
@@ -1492,7 +1492,7 @@ function generateAdminNotificationEmailHTML(data: BookingEmailData): string {
 
     <!-- Footer -->
     <div style="background-color: #333333; color: #ffffff; padding: 20px; text-align: center; font-size: 14px;">
-      <p style="margin: 0;">© 2026 SkyParking - Admin Notification System</p>
+      <p style="margin: 0;">© 2026 Parking One - Admin Notification System</p>
     </div>
 
   </div>
@@ -1511,15 +1511,15 @@ export async function sendAdminNotificationEmail(data: BookingEmailData): Promis
       return { success: false, error: 'Email service not configured' };
     }
 
-    const fromEmail = 'SkyParking <reservations@skyparking.bg>';
-    const adminEmail = 'reservations@skyparking.bg';
+    const fromEmail = 'Parking One <reservations@parkingone.bg>';
+    const adminEmail = 'reservations@parkingone.bg';
     
     const emailHTML = generateAdminNotificationEmailHTML(data);
 
     const subject = `🔔 Нова резервация ${data.bookingId} - €${data.totalPrice}`;
 
     const plainText = `
-Нова резервация - SkyParking
+Нова резервация - Parking One
 
 Номер: ${data.bookingId}
 Пристигане: ${formatDateDisplay(data.arrivalDate)} в ${data.arrivalTime}
@@ -1582,8 +1582,8 @@ export async function sendContactInquiryEmail(data: ContactInquiryData): Promise
       return { success: false, error: 'Email service not configured' };
     }
 
-    const fromEmail = 'SkyParking <reservations@skyparking.bg>';
-    const toEmail = 'info@skyparking.bg';
+    const fromEmail = 'Parking One <reservations@parkingone.bg>';
+    const toEmail = 'info@parkingone.bg';
     
     const emailHTML = `
 <!DOCTYPE html>
@@ -1591,14 +1591,14 @@ export async function sendContactInquiryEmail(data: ContactInquiryData): Promise
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${data.language === 'bg' ? 'Ново запитване' : 'New Inquiry'} - SkyParking</title>
+  <title>${data.language === 'bg' ? 'Ново запитване' : 'New Inquiry'} - Parking One</title>
 </head>
 <body style="margin: 0; padding: 0; background-color: #f5f5f5; font-family: Arial, sans-serif;">
   <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
     
     <!-- Header -->
     <div style="background-color: #073590; padding: 30px; text-align: center;">
-      <h1 style="margin: 0; color: #f1c933; font-size: 28px;">SkyParking</h1>
+      <h1 style="margin: 0; color: #f1c933; font-size: 28px;">Parking One</h1>
       <p style="margin: 10px 0 0 0; color: #ffffff; font-size: 16px;">
         ${data.language === 'bg' ? 'Ново запитване от клиент' : 'New Customer Inquiry'}
       </p>
@@ -1654,7 +1654,7 @@ export async function sendContactInquiryEmail(data: ContactInquiryData): Promise
 
     <!-- Footer -->
     <div style="background-color: #333333; color: #ffffff; padding: 20px; text-align: center; font-size: 14px;">
-      <p style="margin: 0;">© 2026 SkyParking - ${data.language === 'bg' ? 'Система за управление' : 'Management System'}</p>
+      <p style="margin: 0;">© 2026 Parking One - ${data.language === 'bg' ? 'Система за управление' : 'Management System'}</p>
     </div>
 
   </div>
@@ -1667,7 +1667,7 @@ export async function sendContactInquiryEmail(data: ContactInquiryData): Promise
       : `📨 New Inquiry: ${data.subject}`;
 
     const plainText = `
-${data.language === 'bg' ? 'Ново запитване' : 'New Inquiry'} - SkyParking
+${data.language === 'bg' ? 'Ново запитване' : 'New Inquiry'} - Parking One
 
 ${data.language === 'bg' ? 'Тема:' : 'Subject:'} ${data.subject}
 

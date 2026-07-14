@@ -53,7 +53,7 @@ export default function App() {
 
       // Verify existing token
       const verifyToken = async () => {
-        const token = localStorage.getItem("skyparking-token");
+        const token = localStorage.getItem("parkingone-token");
         if (token && (path === "/admin-panel-2026" || path.startsWith("/admin-panel-2026/"))) {
           try {
             const response = await fetch(
@@ -72,11 +72,11 @@ export default function App() {
               setPermissions(data.permissions);
               setIsLoggedIn(true);
             } else {
-              localStorage.removeItem("skyparking-token");
+              localStorage.removeItem("parkingone-token");
             }
           } catch (error) {
             console.error("Token verification error:", error);
-            localStorage.removeItem("skyparking-token");
+            localStorage.removeItem("parkingone-token");
           }
         }
         setIsVerifying(false);
@@ -90,14 +90,14 @@ export default function App() {
   }, []);
 
   const handleLogin = (user: User, token: string, userPermissions: string[]) => {
-    localStorage.setItem("skyparking-token", token);
+    localStorage.setItem("parkingone-token", token);
     setCurrentUser(user);
     setPermissions(userPermissions);
     setIsLoggedIn(true);
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("skyparking-token");
+    localStorage.removeItem("parkingone-token");
     setCurrentUser(null);
     setPermissions([]);
     setIsLoggedIn(false);

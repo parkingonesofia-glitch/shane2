@@ -80,7 +80,7 @@ export function HowItWorksPage() {
                           <>
                             {t("onlineTelephoneBookingText1")}{" "}
                             <a
-                              href="tel:+359886616991"
+                              href="tel:+359877109788"
                               className="font-semibold hover:underline"
                               style={{ color: '#073590' }}
                             >
@@ -103,7 +103,7 @@ export function HowItWorksPage() {
                           <>
                             {t("returnAndPickupText1")}{" "}
                             <a
-                              href="tel:+359886616991"
+                              href="tel:+359877109788"
                               className="font-semibold hover:underline"
                               style={{ color: '#073590' }}
                             >

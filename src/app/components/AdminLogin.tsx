@@ -43,7 +43,7 @@ export function AdminLogin({ onLogin }: { onLogin: () => void }) {
 
       if (data.success) {
         toast.success("Login successful");
-        localStorage.setItem("skyparking-token", data.token);
+        localStorage.setItem("parkingone-token", data.token);
         setIsLocked(false);
         setLockoutMessage("");
         onLogin();
@@ -75,7 +75,7 @@ export function AdminLogin({ onLogin }: { onLogin: () => void }) {
           <div className="mx-auto w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-4">
             <Lock className="h-6 w-6 text-white" />
           </div>
-          <h1 className="text-2xl font-bold">SkyParking Admin</h1>
+          <h1 className="text-2xl font-bold">Parking One Admin</h1>
           <p className="text-gray-600 mt-2">Sign in to manage bookings</p>
         </div>
 

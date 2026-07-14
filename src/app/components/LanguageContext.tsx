@@ -11,7 +11,7 @@ interface LanguageContextType {
 const translations = {
   bg: {
     // Hero Section
-    heroTitle: "SkyParking - Паркинг Летище София",
+    heroTitle: "Parking One - Паркинг Летище София",
     heroSubtitle: "Сигурен и достъпен паркинг на 5 минути от Терминал 1 и 2. Резервирайте сега и пътувайте със спокойствие.",
     bookNow: "Резервирай сега",
     callButton: "Обади се +359 886 616 991",
@@ -29,7 +29,7 @@ const translations = {
     callNow: "Обади се",
     
     // Features
-    whyChooseUs: "Защо да изберете SkyParking?",
+    whyChooseUs: "Защо да изберете Parking One?",
     whyChooseUsDesc: "Предлагаме най-надеждното и удобно решение за паркиране за пътници от Летище София",
     secureParking: "Охраняем паркинг 24/7",
     secureParkingDesc: "Видеонаблюдение + жива охрана - автомобилът Ви е в сигурни ръце",
@@ -163,7 +163,7 @@ const translations = {
     // Footer
     footerTagline: "Сигурно и достъпно паркинг решение за вашия автомобил",
     footerLocation: "📍 Улица Неделчо Бончев 30",
-    footerRights: "© 2026 SkyParking - Паркинг Летище София. Всички права запазени.",
+    footerRights: "© 2026 Parking One - Паркинг Летище София. Всички права запазени.",
     
     // Map Section
     ourLocation: "Нашата локация",
@@ -189,10 +189,10 @@ const translations = {
     callUs: "обадете ни се",
 
     // FAQ Page
-    faqPageTitle: "Често задавани въпроси - SkyParking Летище София",
-    faqPageDesc: "Отговори на най-често задаваните въпроси за паркиране в SkyParking. Информация за цени, резервации, трансфер и охрана.",
+    faqPageTitle: "Често задавани въпроси - Parking One Летище София",
+    faqPageDesc: "Отговори на най-често задаваните въпроси за паркиране в Parking One. Информация за цени, резервации, трансфер и охрана.",
     faqTitle: "Често задавани въпроси",
-    faqSubtitle: "Отговори на най-често задаваните въпроси за паркиране в SkyParking",
+    faqSubtitle: "Отговори на най-често задаваните въпроси за паркиране в Parking One",
     faqQ1: "Къде се намира паркингът?",
     faqA1Before: "Нашият паркинг се намира в близост до летище София - само на 5 мин. от Терминал 1 и Терминал 2, на удобно и достъпно място, което осигурява лесен и бърз достъп с вашия автомобил. Може да видите точната локация, както и да използвате директно бутоните за Google Maps и Waze, в раздел",
     faqA1ContactLink: "Контакти",
@@ -229,11 +229,11 @@ const translations = {
     faqGoToContact: "Към Контакти",
 
     // About Page
-    aboutPageTitle: "За Нас - SkyParking",
+    aboutPageTitle: "За Нас - Parking One",
     aboutTitle: "За Нас",
     aboutSubtitle: "Вашият надежден партньор за паркиране на Летище София",
-    aboutWelcomeTitle: "Добре Дошли в SkyParking",
-    aboutWelcomeText: "SkyParking е модерен охраняем паркинг, разположен само на 5 минути от Терминал 1 и Терминал 2 на Летище София. Ние предлагаме сигурно и удобно решение за паркиране на Вашия автомобил по време на пътуване.",
+    aboutWelcomeTitle: "Добре Дошли в Parking One",
+    aboutWelcomeText: "Parking One е модерен охраняем паркинг, разположен само на 5 минути от Терминал 1 и Терминал 2 на Летище София. Ние предлагаме сигурно и удобно решение за паркиране на Вашия автомобил по време на пътуване.",
     aboutMissionTitle: "Нашата Мисия",
     aboutMissionText: "Да предоставим на нашите клиенти спокойствие и сигурност, знаейки че техният автомобил е в добри ръце, докато те пътуват. Стремим се да направим процеса на паркиране възможно най-лесен и безпроблемен.",
     aboutWhyUsTitle: "Защо Да Изберете Нас?",
@@ -264,9 +264,9 @@ const translations = {
     aboutCallUsBtn: "Обадете Ни Се",
 
     // Services Page
-    servicesPageTitle: "Услуги - SkyParking",
+    servicesPageTitle: "Услуги - Parking One",
     servicesTitle: "Нашите Услуги",
-    servicesSubtitle: "В SkyParking предлагаме пълен набор от услуги за удобството и сигурността на нашите клиенти",
+    servicesSubtitle: "В Parking One предлагаме пълен набор от услуги за удобството и сигурността на нашите клиенти",
     serviceSecureTitle: "Сигурен Паркинг",
     serviceSecureDesc: "Видеонаблюдение 24/7, охранявана територия и пълна застраховка за спокойствието ви",
     serviceTransferTitle: "Безплатен Трансфер",
@@ -296,7 +296,7 @@ const translations = {
     servicesBookOnline: "Резервирайте онлайн за най-добрата цена",
 
     // Pricing Page
-    pricingPageTitle: "Цени - SkyParking",
+    pricingPageTitle: "Цени - Parking One",
     pricingTitle: "Цени за Престой",
     pricingSubtitle: "Прозрачни цени без скрити такси започващи от 3€ (5.87 лева)",
     pricingWeekendTitle: "Уикенд Пакет",
@@ -325,8 +325,8 @@ const translations = {
     pricingBookNow: "Резервирайте Сега",
 
     // HowItWorks Page
-    howItWorksPageTitle: "Как Работи - SkyParking",
-    howItWorksTitle: "Как Работи SkyParking?",
+    howItWorksPageTitle: "Как Работи - Parking One",
+    howItWorksTitle: "Как Работи Parking One?",
     howItWorksSubtitle: "Процесът е лесен и прост - резервирайте, пристигнете и пътувайте спокойно",
     howItWorksFaqTitle: "Често Задавани Въпроси",
     howItWorksQ1: "Кога трябва да платя?",
@@ -342,7 +342,7 @@ const translations = {
     howItWorksBookNow: "Резервирайте Сега",
 
     // Contact Page
-    contactPageTitle: "Контакти - SkyParking",
+    contactPageTitle: "Контакти - Parking One",
     contactTitle: "Свържете се с Нас",
     contactSubtitle: "Тук сме, за да отговорим на всичките ви въпроси",
     contactInfoTitle: "Информация за Контакт",
@@ -369,8 +369,8 @@ const translations = {
     contactFormSend: "Изпрати",
 
     // Booking Page
-    bookingPageTitle: "Резервация - SkyParking Летище София",
-    bookingPageDesc: "Резервирайте вашето място в SkyParking. Без предплащане - плащате при пристигане. Безплатен трансфер до летището.",
+    bookingPageTitle: "Резервация - Parking One Летище София",
+    bookingPageDesc: "Резервирайте вашето място в Parking One. Без предплащане - плащате при пристигане. Безплатен трансфер до летището.",
 
     // Vehicle Size
     vehicleSizeLabel: "Размер на превозното средство",
@@ -384,7 +384,7 @@ const translations = {
   },
   en: {
     // Hero Section
-    heroTitle: "SkyParking - Sofia Airport Parking",
+    heroTitle: "Parking One - Sofia Airport Parking",
     heroSubtitle: "Secure, affordable parking 5 minutes from Terminal 1 and 2. Book now and travel with peace of mind.",
     bookNow: "Book Now",
     callButton: "Call +359 886 616 991",
@@ -402,7 +402,7 @@ const translations = {
     callNow: "Call Now",
     
     // Features
-    whyChooseUs: "Why Choose SkyParking?",
+    whyChooseUs: "Why Choose Parking One?",
     whyChooseUsDesc: "We provide the most reliable and convenient parking solution for Sofia Airport travelers",
     secureParking: "Secure parking 24/7",
     secureParkingDesc: "Video surveillance + on-site security — your car is safe at all times.",
@@ -535,8 +535,8 @@ const translations = {
     
     // Footer
     footerTagline: "Secure, affordable, and convenient parking solutions",
-    footerLocation: "📍 Ulitsa Nedelcho Bonchev 30",
-    footerRights: "© 2026 SkyParking - Sofia Airport Parking. All rights reserved.",
+    footerLocation: "📍 Ulitsa Iztochna Tangeta 23",
+    footerRights: "© 2026 Parking One - Sofia Airport Parking. All rights reserved.",
     
     // Map Section
     ourLocation: "Our Location",
@@ -562,10 +562,10 @@ const translations = {
     callUs: "call us",
 
     // FAQ Page
-    faqPageTitle: "Frequently Asked Questions - SkyParking Sofia Airport",
-    faqPageDesc: "Answers to frequently asked questions about parking at SkyParking. Information about prices, reservations, transfers and security.",
+    faqPageTitle: "Frequently Asked Questions - Parking One Sofia Airport",
+    faqPageDesc: "Answers to frequently asked questions about parking at Parking One. Information about prices, reservations, transfers and security.",
     faqTitle: "Frequently Asked Questions",
-    faqSubtitle: "Answers to the most frequently asked questions about parking at SkyParking",
+    faqSubtitle: "Answers to the most frequently asked questions about parking at Parking One",
     faqQ1: "Where is the parking located?",
     faqA1Before: "Our parking is located near Sofia Airport - just 5 minutes from Terminal 1 and Terminal 2, in a convenient and accessible location that ensures easy and quick access with your car. You can see the exact location and use the Google Maps and Waze buttons directly in the",
     faqA1ContactLink: "Contact",
@@ -602,11 +602,11 @@ const translations = {
     faqGoToContact: "Go to Contact",
 
     // About Page
-    aboutPageTitle: "About Us - SkyParking",
+    aboutPageTitle: "About Us - Parking One",
     aboutTitle: "About Us",
     aboutSubtitle: "Your trusted parking partner at Sofia Airport",
-    aboutWelcomeTitle: "Welcome to SkyParking",
-    aboutWelcomeText: "SkyParking is a modern secured parking facility located just 5 minutes from Terminal 1 and Terminal 2 of Sofia Airport. We offer a safe and convenient solution for parking your car while you travel.",
+    aboutWelcomeTitle: "Welcome to Parking One",
+    aboutWelcomeText: "Parking One is a modern secured parking facility located just 5 minutes from Terminal 1 and Terminal 2 of Sofia Airport. We offer a safe and convenient solution for parking your car while you travel.",
     aboutMissionTitle: "Our Mission",
     aboutMissionText: "To provide our customers with peace of mind and security, knowing that their vehicle is in good hands while they travel. We strive to make the parking process as easy and hassle-free as possible.",
     aboutWhyUsTitle: "Why Choose Us?",
@@ -637,9 +637,9 @@ const translations = {
     aboutCallUsBtn: "Call Us",
 
     // Services Page
-    servicesPageTitle: "Services - SkyParking",
+    servicesPageTitle: "Services - Parking One",
     servicesTitle: "Our Services",
-    servicesSubtitle: "At SkyParking we offer a complete set of services for the comfort and safety of our customers",
+    servicesSubtitle: "At Parking One we offer a complete set of services for the comfort and safety of our customers",
     serviceSecureTitle: "Secure Parking",
     serviceSecureDesc: "24/7 video surveillance, secured premises, and full insurance for your peace of mind",
     serviceTransferTitle: "Free Transfer",
@@ -669,7 +669,7 @@ const translations = {
     servicesBookOnline: "Book online for the best price",
 
     // Pricing Page
-    pricingPageTitle: "Prices - SkyParking",
+    pricingPageTitle: "Prices - Parking One",
     pricingTitle: "Parking Prices",
     pricingSubtitle: "Transparent pricing with no hidden fees",
     pricingWeekendTitle: "Weekend Package",
@@ -698,8 +698,8 @@ const translations = {
     pricingBookNow: "Book Now",
 
     // HowItWorks Page
-    howItWorksPageTitle: "How It Works - SkyParking",
-    howItWorksTitle: "How Does SkyParking Work?",
+    howItWorksPageTitle: "How It Works - Parking One",
+    howItWorksTitle: "How Does Parking One Work?",
     howItWorksSubtitle: "The process is easy and simple - book, arrive and travel worry-free",
     howItWorksFaqTitle: "Frequently Asked Questions",
     howItWorksQ1: "When do I need to pay?",
@@ -715,7 +715,7 @@ const translations = {
     howItWorksBookNow: "Book Now",
 
     // Contact Page
-    contactPageTitle: "Contact - SkyParking",
+    contactPageTitle: "Contact - Parking One",
     contactTitle: "Contact Us",
     contactSubtitle: "We're here to answer all your questions",
     contactInfoTitle: "Contact Information",
@@ -724,7 +724,7 @@ const translations = {
     contactEmailLabel: "Email",
     contactResponds2h: "We respond within 2 hours",
     contactAddressLabel: "Address",
-    contactAddressValue: "Ulitsa Nedelcho Bonchev 30",
+    contactAddressValue: "Ulitsa Iztochna Tangeta 23",
     contact5minFromAirport: "5 minutes from airport",
     contactWorkingHoursLabel: "Working Hours",
     contactAlwaysOpen: "24/7",
@@ -742,8 +742,8 @@ const translations = {
     contactFormSend: "Send Message",
 
     // Booking Page
-    bookingPageTitle: "Reservation - SkyParking Sofia Airport",
-    bookingPageDesc: "Reserve your spot at SkyParking. No prepayment - pay on arrival. Free transfer to the airport.",
+    bookingPageTitle: "Reservation - Parking One Sofia Airport",
+    bookingPageDesc: "Reserve your spot at Parking One. No prepayment - pay on arrival. Free transfer to the airport.",
 
     // Vehicle Size
     vehicleSizeLabel: "Vehicle Size",
@@ -757,7 +757,7 @@ const translations = {
   },
   el: {
     // Hero Section
-    heroTitle: "SkyParking - Πάρκινγκ Αεροδρόμιο Σόφιας",
+    heroTitle: "Parking One - Πάρκινγκ Αεροδρόμιο Σόφιας",
     heroSubtitle: "Ασφαλές και προσιτό πάρκινγκ 5 λεπτά από Τερματικό 1 και 2. Κάντε κράτηση τώρα και ταξιδέψτε αναπαυτικά.",
     bookNow: "Κράτηση Τώρα",
     callButton: "Καλέστε +359 886 616 991",
@@ -775,7 +775,7 @@ const translations = {
     callNow: "Καλέστε",
 
     // Features
-    whyChooseUs: "Γιατί να επιλέξετε το SkyParking;",
+    whyChooseUs: "Γιατί να επιλέξετε το Parking One;",
     whyChooseUsDesc: "Παρέχουμε την πιο αξιόπιστη και βολική λύση στάθμευσης για επιβάτες του Αεροδρομίου της Σόφιας",
     secureParking: "Ασφαλής στάθμευση 24/7",
     secureParkingDesc: "Βιντεοεπιτήρηση + επί τόπου φύλαξη — το αυτοκίνητό σας είναι πάντα ασφαλές.",
@@ -908,8 +908,8 @@ const translations = {
 
     // Footer
     footerTagline: "Ασφαλής, προσιτή και βολική λύση στάθμευσης",
-    footerLocation: "📍 Ulitsa Nedelcho Bonchev 30, Σόφια",
-    footerRights: "© 2026 SkyParking - Πάρκινγκ Αεροδρόμιο Σόφιας. Όλα τα δικαιώματα διατηρούνται.",
+    footerLocation: "📍 Ulitsa Iztochna Tangeta 23, Σόφια",
+    footerRights: "© 2026 Parking One - Πάρκινγκ Αεροδρόμιο Σόφιας. Όλα τα δικαιώματα διατηρούνται.",
 
     // Map Section
     ourLocation: "Η Τοποθεσία Μας",
@@ -935,10 +935,10 @@ const translations = {
     callUs: "καλέστε μας",
 
     // FAQ Page
-    faqPageTitle: "Συχνές Ερωτήσεις - SkyParking Αεροδρόμιο Σόφιας",
-    faqPageDesc: "Απαντήσεις στις πιο συχνές ερωτήσεις για στάθμευση στο SkyParking. Πληροφορίες για τιμές, κρατήσεις, μεταφορές και ασφάλεια.",
+    faqPageTitle: "Συχνές Ερωτήσεις - Parking One Αεροδρόμιο Σόφιας",
+    faqPageDesc: "Απαντήσεις στις πιο συχνές ερωτήσεις για στάθμευση στο Parking One. Πληροφορίες για τιμές, κρατήσεις, μεταφορές και ασφάλεια.",
     faqTitle: "Συχνές Ερωτήσεις",
-    faqSubtitle: "Απαντήσεις στις πιο συχνές ερωτήσεις για στάθμευση στο SkyParking",
+    faqSubtitle: "Απαντήσεις στις πιο συχνές ερωτήσεις για στάθμευση στο Parking One",
     faqQ1: "Πού βρίσκεται το πάρκινγκ;",
     faqA1Before: "Το πάρκινγκ μας βρίσκεται κοντά στο Αεροδρόμιο της Σόφιας - μόλις 5 λεπτά από το Τερματικό 1 και το Τερματικό 2, σε βολική και προσβάσιμη τοποθεσία. Μπορείτε να δείτε την ακριβή τοποθεσία και να χρησιμοποιήσετε τα κουμπιά Google Maps και Waze στην ενότητα",
     faqA1ContactLink: "Επικοινωνία",
@@ -975,11 +975,11 @@ const translations = {
     faqGoToContact: "Μεταβείτε στην Επικοινωνία",
 
     // About Page
-    aboutPageTitle: "Σχετικά με Εμάς - SkyParking",
+    aboutPageTitle: "Σχετικά με Εμάς - Parking One",
     aboutTitle: "Σχετικά με Εμάς",
     aboutSubtitle: "Ο αξιόπιστος συνεργάτης σας για στάθμευση στο Αεροδρόμιο της Σόφιας",
-    aboutWelcomeTitle: "Καλώς ήρθατε στο SkyParking",
-    aboutWelcomeText: "Το SkyParking είναι ένας σύγχρονος φυλασσόμενος χώρος στάθμευσης, μόλις 5 λεπτά από το Τερματικό 1 και Τερματικό 2 του Αεροδρομίου της Σόφιας. Προσφέρουμε μια ασφαλή και βολική λύση για τη στάθμευση του αυτοκινήτου σας κατά τη διάρκεια του ταξιδιού σας.",
+    aboutWelcomeTitle: "Καλώς ήρθατε στο Parking One",
+    aboutWelcomeText: "Το Parking One είναι ένας σύγχρονος φυλασσόμενος χώρος στάθμευσης, μόλις 5 λεπτά από το Τερματικό 1 και Τερματικό 2 του Αεροδρομίου της Σόφιας. Προσφέρουμε μια ασφαλή και βολική λύση για τη στάθμευση του αυτοκινήτου σας κατά τη διάρκεια του ταξιδιού σας.",
     aboutMissionTitle: "Η Αποστολή Μας",
     aboutMissionText: "Να παρέχουμε στους πελάτες μας ηρεμία και ασφάλεια, γνωρίζοντας ότι το όχημά τους βρίσκεται σε καλά χέρια ενώ ταξιδεύουν. Προσπαθούμε να κάνουμε τη διαδικασία στάθμευσης όσο το δυνατόν πιο εύκολη και αναπαυτική.",
     aboutWhyUsTitle: "Γιατί να μας Επιλέξετε;",
@@ -1010,9 +1010,9 @@ const translations = {
     aboutCallUsBtn: "Καλέστε Μας",
 
     // Services Page
-    servicesPageTitle: "Υπηρεσίες - SkyParking",
+    servicesPageTitle: "Υπηρεσίες - Parking One",
     servicesTitle: "Οι Υπηρεσίες Μας",
-    servicesSubtitle: "Στο SkyParking προσφέρουμε πλήρες σύνολο υπηρεσιών για την άνεση και ασφάλεια των πελατών μας",
+    servicesSubtitle: "Στο Parking One προσφέρουμε πλήρες σύνολο υπηρεσιών για την άνεση και ασφάλεια των πελατών μας",
     serviceSecureTitle: "Ασφαλής Στάθμευση",
     serviceSecureDesc: "24/7 βιντεοεπιτήρηση, φυλασσόμενος χώρος και πλήρης ασφάλεια για την ηρεμία σας",
     serviceTransferTitle: "Δωρεάν Μεταφορά",
@@ -1042,7 +1042,7 @@ const translations = {
     servicesBookOnline: "Κλείστε online για την καλύτερη τιμή",
 
     // Pricing Page
-    pricingPageTitle: "Τιμές - SkyParking",
+    pricingPageTitle: "Τιμές - Parking One",
     pricingTitle: "Τιμές Στάθμευσης",
     pricingSubtitle: "Διαφανείς τιμές χωρίς κρυφές χρεώσεις",
     pricingWeekendTitle: "Πακέτο Σαββατοκύριακου",
@@ -1071,8 +1071,8 @@ const translations = {
     pricingBookNow: "Κράτηση Τώρα",
 
     // HowItWorks Page
-    howItWorksPageTitle: "Πώς Λειτουργεί - SkyParking",
-    howItWorksTitle: "Πώς Λειτουργεί το SkyParking;",
+    howItWorksPageTitle: "Πώς Λειτουργεί - Parking One",
+    howItWorksTitle: "Πώς Λειτουργεί το Parking One;",
     howItWorksSubtitle: "Η διαδικασία είναι εύκολη και απλή - κλείστε, φτάστε και ταξιδέψτε αναπαυτικά",
     howItWorksFaqTitle: "Συχνές Ερωτήσεις",
     howItWorksQ1: "Πότε πρέπει να πληρώσω;",
@@ -1088,7 +1088,7 @@ const translations = {
     howItWorksBookNow: "Κράτηση Τώρα",
 
     // Contact Page
-    contactPageTitle: "Επικοινωνία - SkyParking",
+    contactPageTitle: "Επικοινωνία - Parking One",
     contactTitle: "Επικοινωνήστε Μαζί Μας",
     contactSubtitle: "Είμαστε εδώ για να απαντήσουμε σε όλες τις ερωτήσεις σας",
     contactInfoTitle: "Στοιχεία Επικοινωνίας",
@@ -1097,7 +1097,7 @@ const translations = {
     contactEmailLabel: "Email",
     contactResponds2h: "Απαντάμε εντός 2 ωρών",
     contactAddressLabel: "Διεύθυνση",
-    contactAddressValue: "Ulitsa Nedelcho Bonchev 30",
+    contactAddressValue: "Ulitsa Iztochna Tangeta 23",
     contact5minFromAirport: "5 λεπτά από το αεροδρόμιο",
     contactWorkingHoursLabel: "Ώρες Λειτουργίας",
     contactAlwaysOpen: "24/7",
@@ -1115,8 +1115,8 @@ const translations = {
     contactFormSend: "Αποστολή Μηνύματος",
 
     // Booking Page
-    bookingPageTitle: "Κράτηση - SkyParking Αεροδρόμιο Σόφιας",
-    bookingPageDesc: "Κλείστε τη θέση σας στο SkyParking. Χωρίς προκαταβολή - πληρώνετε κατά την άφιξη. Δωρεάν μεταφορά στο αεροδρόμιο.",
+    bookingPageTitle: "Κράτηση - Parking One Αεροδρόμιο Σόφιας",
+    bookingPageDesc: "Κλείστε τη θέση σας στο Parking One. Χωρίς προκαταβολή - πληρώνετε κατά την άφιξη. Δωρεάν μεταφορά στο αεροδρόμιο.",
 
     // Vehicle Size
     vehicleSizeLabel: "Μέγεθος οχήματος",
@@ -1130,7 +1130,7 @@ const translations = {
   },
   tr: {
     // Hero Section
-    heroTitle: "SkyParking - Sofya Havalimanı Otoparkı",
+    heroTitle: "Parking One - Sofya Havalimanı Otoparkı",
     heroSubtitle: "Terminal 1 ve 2'ye 5 dakika uzaklıkta güvenli ve uygun fiyatlı otopark. Şimdi rezervasyon yapın, huzurla seyahat edin.",
     bookNow: "Şimdi Rezervasyon Yap",
     callButton: "Ara +359 886 616 991",
@@ -1148,7 +1148,7 @@ const translations = {
     callNow: "Şimdi Ara",
 
     // Features
-    whyChooseUs: "Neden SkyParking'i Seçmelisiniz?",
+    whyChooseUs: "Neden Parking One'i Seçmelisiniz?",
     whyChooseUsDesc: "Sofya Havalimanı yolcuları için en güvenilir ve pratik otopark çözümünü sunuyoruz",
     secureParking: "7/24 Güvenli Otopark",
     secureParkingDesc: "Kamera sistemi + yerinde güvenlik — araçınız her zaman güvende.",
@@ -1281,8 +1281,8 @@ const translations = {
 
     // Footer
     footerTagline: "Güvenli, uygun fiyatlı ve pratik otopark çözümleri",
-    footerLocation: "📍 Ulitsa Nedelcho Bonchev 30, Sofya",
-    footerRights: "© 2026 SkyParking - Sofya Havalimanı Otoparkı. Tüm hakları saklıdır.",
+    footerLocation: "📍 Ulitsa Iztochna Tangeta 23, Sofya",
+    footerRights: "© 2026 Parking One - Sofya Havalimanı Otoparkı. Tüm hakları saklıdır.",
 
     // Map Section
     ourLocation: "Konumumuz",
@@ -1308,10 +1308,10 @@ const translations = {
     callUs: "bizi arayın",
 
     // FAQ Page
-    faqPageTitle: "Sık Sorulan Sorular - SkyParking Sofya Havalimanı",
-    faqPageDesc: "SkyParking'de park etmeyle ilgili en sık sorulan soruların yanıtları. Fiyatlar, rezervasyonlar, transferler ve güvenlik hakkında bilgi.",
+    faqPageTitle: "Sık Sorulan Sorular - Parking One Sofya Havalimanı",
+    faqPageDesc: "Parking One'de park etmeyle ilgili en sık sorulan soruların yanıtları. Fiyatlar, rezervasyonlar, transferler ve güvenlik hakkında bilgi.",
     faqTitle: "Sık Sorulan Sorular",
-    faqSubtitle: "SkyParking'de park etmeyle ilgili en sık sorulan soruların yanıtları",
+    faqSubtitle: "Parking One'de park etmeyle ilgili en sık sorulan soruların yanıtları",
     faqQ1: "Otopark nerede bulunuyor?",
     faqA1Before: "Otoparkımız Sofya Havalimanı yakınında - Terminal 1 ve Terminal 2'ye sadece 5 dakika mesafede bulunmaktadır. Haritada konumumuzu görmek ve Google Maps ile Waze butonlarını kullanmak için",
     faqA1ContactLink: "İletişim",
@@ -1348,11 +1348,11 @@ const translations = {
     faqGoToContact: "İletişime Git",
 
     // About Page
-    aboutPageTitle: "Hakkımızda - SkyParking",
+    aboutPageTitle: "Hakkımızda - Parking One",
     aboutTitle: "Hakkımızda",
     aboutSubtitle: "Sofya Havalimanı'nda güvenilir park ortağınız",
-    aboutWelcomeTitle: "SkyParking'e Hoş Geldiniz",
-    aboutWelcomeText: "SkyParking, Sofya Havalimanı'nın Terminal 1 ve Terminal 2'sine sadece 5 dakika mesafede modern bir güvenlikli otoparktır. Seyahat ederken aracınızı güvenli ve kolay bir şekilde park etmeniz için çözüm sunuyoruz.",
+    aboutWelcomeTitle: "Parking One'e Hoş Geldiniz",
+    aboutWelcomeText: "Parking One, Sofya Havalimanı'nın Terminal 1 ve Terminal 2'sine sadece 5 dakika mesafede modern bir güvenlikli otoparktır. Seyahat ederken aracınızı güvenli ve kolay bir şekilde park etmeniz için çözüm sunuyoruz.",
     aboutMissionTitle: "Misyonumuz",
     aboutMissionText: "Seyahat ederken araçlarının güvende olduğunu bilerek müşterilerimize huzur ve güvenlik sağlamak. Park sürecini mümkün olduğunca kolay ve sorunsuz hale getirmeye çalışıyoruz.",
     aboutWhyUsTitle: "Neden Bizi Seçmelisiniz?",
@@ -1383,9 +1383,9 @@ const translations = {
     aboutCallUsBtn: "Bizi Arayın",
 
     // Services Page
-    servicesPageTitle: "Hizmetler - SkyParking",
+    servicesPageTitle: "Hizmetler - Parking One",
     servicesTitle: "Hizmetlerimiz",
-    servicesSubtitle: "SkyParking olarak müşterilerimizin konforu ve güvenliği için eksiksiz bir hizmet seti sunuyoruz",
+    servicesSubtitle: "Parking One olarak müşterilerimizin konforu ve güvenliği için eksiksiz bir hizmet seti sunuyoruz",
     serviceSecureTitle: "Güvenli Otopark",
     serviceSecureDesc: "Huzurunuz için 7/24 kamera sistemi, güvenlikli alan ve tam sigorta",
     serviceTransferTitle: "Ücretsiz Servis",
@@ -1415,7 +1415,7 @@ const translations = {
     servicesBookOnline: "En iyi fiyat için çevrimiçi rezervasyon yapın",
 
     // Pricing Page
-    pricingPageTitle: "Fiyatlar - SkyParking",
+    pricingPageTitle: "Fiyatlar - Parking One",
     pricingTitle: "Otopark Fiyatları",
     pricingSubtitle: "Gizli ücret olmayan şeffaf fiyatlandırma",
     pricingWeekendTitle: "Hafta Sonu Paketi",
@@ -1444,8 +1444,8 @@ const translations = {
     pricingBookNow: "Şimdi Rezervasyon Yap",
 
     // HowItWorks Page
-    howItWorksPageTitle: "Nasıl Çalışır - SkyParking",
-    howItWorksTitle: "SkyParking Nasıl Çalışır?",
+    howItWorksPageTitle: "Nasıl Çalışır - Parking One",
+    howItWorksTitle: "Parking One Nasıl Çalışır?",
     howItWorksSubtitle: "Süreç kolay ve basit - rezervasyon yapın, gelin ve endişesizce seyahat edin",
     howItWorksFaqTitle: "Sık Sorulan Sorular",
     howItWorksQ1: "Ne zaman ödeme yapmalıyım?",
@@ -1461,7 +1461,7 @@ const translations = {
     howItWorksBookNow: "Şimdi Rezervasyon Yap",
 
     // Contact Page
-    contactPageTitle: "İletişim - SkyParking",
+    contactPageTitle: "İletişim - Parking One",
     contactTitle: "Bize Ulaşın",
     contactSubtitle: "Tüm sorularınızı yanıtlamak için buradayız",
     contactInfoTitle: "İletişim Bilgileri",
@@ -1470,7 +1470,7 @@ const translations = {
     contactEmailLabel: "E-posta",
     contactResponds2h: "2 saat içinde yanıt veriyoruz",
     contactAddressLabel: "Adres",
-    contactAddressValue: "Ulitsa Nedelcho Bonchev 30",
+    contactAddressValue: "Ulitsa Iztochna Tangeta 23",
     contact5minFromAirport: "Havalimanına 5 dakika",
     contactWorkingHoursLabel: "Çalışma Saatleri",
     contactAlwaysOpen: "7/24",
@@ -1488,8 +1488,8 @@ const translations = {
     contactFormSend: "Mesaj Gönder",
 
     // Booking Page
-    bookingPageTitle: "Rezervasyon - SkyParking Sofya Havalimanı",
-    bookingPageDesc: "SkyParking'de yerinizi rezerve edin. Ön ödeme yok - varışta ödeyin. Havalimanına ücretsiz transfer.",
+    bookingPageTitle: "Rezervasyon - Parking One Sofya Havalimanı",
+    bookingPageDesc: "Parking One'de yerinizi rezerve edin. Ön ödeme yok - varışta ödeyin. Havalimanına ücretsiz transfer.",
 
     // Vehicle Size
     vehicleSizeLabel: "Araç Boyutu",
@@ -1503,7 +1503,7 @@ const translations = {
   },
   sr: {
     // Hero Section
-    heroTitle: "SkyParking - Parking Aerodrom Sofija",
+    heroTitle: "Parking One - Parking Aerodrom Sofija",
     heroSubtitle: "Siguran i pristupačan parking 5 minuta od Terminala 1 i 2. Rezervišite sada i putujte bez brige.",
     bookNow: "Rezervišite Sada",
     callButton: "Pozovite +359 886 616 991",
@@ -1521,7 +1521,7 @@ const translations = {
     callNow: "Pozovite",
 
     // Features
-    whyChooseUs: "Zašto izabrati SkyParking?",
+    whyChooseUs: "Zašto izabrati Parking One?",
     whyChooseUsDesc: "Pružamo najpouzdanije i najpogodnije rešenje za parkiranje za putnike Aerodroma Sofija",
     secureParking: "Siguran parking 24/7",
     secureParkingDesc: "Video nadzor + obezbeđenje — vaš automobil je uvek siguran.",
@@ -1655,7 +1655,7 @@ const translations = {
     // Footer
     footerTagline: "Sigurno, pristupačno i zgodno rešenje za parkiranje",
     footerLocation: "📍 Ulica Nedelčo Bončev 30, Sofija",
-    footerRights: "© 2026 SkyParking - Parking Aerodrom Sofija. Sva prava zadržana.",
+    footerRights: "© 2026 Parking One - Parking Aerodrom Sofija. Sva prava zadržana.",
 
     // Map Section
     ourLocation: "Naša Lokacija",
@@ -1681,10 +1681,10 @@ const translations = {
     callUs: "pozovite nas",
 
     // FAQ Page
-    faqPageTitle: "Česta Pitanja - SkyParking Aerodrom Sofija",
-    faqPageDesc: "Odgovori na najčešće postavljana pitanja o parkiranju u SkyParking. Informacije o cenama, rezervacijama, transferima i obezbeđenju.",
+    faqPageTitle: "Česta Pitanja - Parking One Aerodrom Sofija",
+    faqPageDesc: "Odgovori na najčešće postavljana pitanja o parkiranju u Parking One. Informacije o cenama, rezervacijama, transferima i obezbeđenju.",
     faqTitle: "Česta Pitanja",
-    faqSubtitle: "Odgovori na najčešće postavljana pitanja o parkiranju u SkyParking",
+    faqSubtitle: "Odgovori na najčešće postavljana pitanja o parkiranju u Parking One",
     faqQ1: "Gde se nalazi parking?",
     faqA1Before: "Naš parking se nalazi u blizini Aerodroma Sofija - samo 5 minuta od Terminala 1 i Terminala 2. Tačnu lokaciju i dugmad za Google Maps i Waze možete pronaći u odeljku",
     faqA1ContactLink: "Kontakt",
@@ -1721,11 +1721,11 @@ const translations = {
     faqGoToContact: "Idite na Kontakt",
 
     // About Page
-    aboutPageTitle: "O Nama - SkyParking",
+    aboutPageTitle: "O Nama - Parking One",
     aboutTitle: "O Nama",
     aboutSubtitle: "Vaš pouzdani partner za parkiranje na Aerodromu Sofija",
-    aboutWelcomeTitle: "Dobrodošli u SkyParking",
-    aboutWelcomeText: "SkyParking je moderan obezbeđen parking, smešten samo 5 minuta od Terminala 1 i Terminala 2 Aerodroma Sofija. Nudimo bezbedno i udobno rešenje za parkiranje vašeg automobila tokom putovanja.",
+    aboutWelcomeTitle: "Dobrodošli u Parking One",
+    aboutWelcomeText: "Parking One je moderan obezbeđen parking, smešten samo 5 minuta od Terminala 1 i Terminala 2 Aerodroma Sofija. Nudimo bezbedno i udobno rešenje za parkiranje vašeg automobila tokom putovanja.",
     aboutMissionTitle: "Naša Misija",
     aboutMissionText: "Da pružimo našim klijentima mir i sigurnost, znajući da je njihovo vozilo u dobrim rukama dok putuju. Trudimo se da proces parkiranja bude što lakši i bez komplikacija.",
     aboutWhyUsTitle: "Zašto Odabrati Nas?",
@@ -1756,9 +1756,9 @@ const translations = {
     aboutCallUsBtn: "Pozovite Nas",
 
     // Services Page
-    servicesPageTitle: "Usluge - SkyParking",
+    servicesPageTitle: "Usluge - Parking One",
     servicesTitle: "Naše Usluge",
-    servicesSubtitle: "U SkyParkingu nudimo kompletan set usluga za udobnost i bezbednost naših klijenata",
+    servicesSubtitle: "U Parking Oneu nudimo kompletan set usluga za udobnost i bezbednost naših klijenata",
     serviceSecureTitle: "Siguran Parking",
     serviceSecureDesc: "24/7 video nadzor, obezbeđen prostor i potpuna zaštita za vaš mir",
     serviceTransferTitle: "Besplatan Transfer",
@@ -1788,7 +1788,7 @@ const translations = {
     servicesBookOnline: "Rezervišite online za najbolju cenu",
 
     // Pricing Page
-    pricingPageTitle: "Cene - SkyParking",
+    pricingPageTitle: "Cene - Parking One",
     pricingTitle: "Cene Parkiranja",
     pricingSubtitle: "Transparentne cene bez skrivenih naknada",
     pricingWeekendTitle: "Vikend Paket",
@@ -1817,8 +1817,8 @@ const translations = {
     pricingBookNow: "Rezervišite Sada",
 
     // HowItWorks Page
-    howItWorksPageTitle: "Kako Funkcioniše - SkyParking",
-    howItWorksTitle: "Kako Funkcioniše SkyParking?",
+    howItWorksPageTitle: "Kako Funkcioniše - Parking One",
+    howItWorksTitle: "Kako Funkcioniše Parking One?",
     howItWorksSubtitle: "Proces je lak i jednostavan - rezervišite, stignite i putujte bez briga",
     howItWorksFaqTitle: "Česta Pitanja",
     howItWorksQ1: "Kada moram da platim?",
@@ -1834,7 +1834,7 @@ const translations = {
     howItWorksBookNow: "Rezervišite Sada",
 
     // Contact Page
-    contactPageTitle: "Kontakt - SkyParking",
+    contactPageTitle: "Kontakt - Parking One",
     contactTitle: "Kontaktirajte Nas",
     contactSubtitle: "Tu smo da odgovorimo na sva vaša pitanja",
     contactInfoTitle: "Kontakt Informacije",
@@ -1861,8 +1861,8 @@ const translations = {
     contactFormSend: "Pošalji Poruku",
 
     // Booking Page
-    bookingPageTitle: "Rezervacija - SkyParking Aerodrom Sofija",
-    bookingPageDesc: "Rezervišite vaše mesto u SkyParking. Bez avansa - plaćate pri dolasku. Besplatan transfer do aerodroma.",
+    bookingPageTitle: "Rezervacija - Parking One Aerodrom Sofija",
+    bookingPageDesc: "Rezervišite vaše mesto u Parking One. Bez avansa - plaćate pri dolasku. Besplatan transfer do aerodroma.",
 
     // Vehicle Size
     vehicleSizeLabel: "Veličina vozila",
@@ -1876,7 +1876,7 @@ const translations = {
   },
   mk: {
     // Hero Section
-    heroTitle: "SkyParking - Паркинг Аеродром Софија",
+    heroTitle: "Parking One - Паркинг Аеродром Софија",
     heroSubtitle: "Безбеден и достапен паркинг 5 минути од Терминал 1 и 2. Резервирајте сега и патувајте мирно.",
     bookNow: "Резервирај Сега",
     callButton: "Јави се +359 886 616 991",
@@ -1894,7 +1894,7 @@ const translations = {
     callNow: "Јави се",
 
     // Features
-    whyChooseUs: "Зошто да изберете SkyParking?",
+    whyChooseUs: "Зошто да изберете Parking One?",
     whyChooseUsDesc: "Обезбедуваме најдоверливо и најпогодно решение за паркирање за патниците на Аеродром Софија",
     secureParking: "Безбеден паркинг 24/7",
     secureParkingDesc: "Видеонадзор + обезбедување — вашиот автомобил е секогаш безбеден.",
@@ -2028,7 +2028,7 @@ const translations = {
     // Footer
     footerTagline: "Безбедно, достапно и погодно решение за паркирање",
     footerLocation: "📍 Улица Неделчо Бончев 30, Софија",
-    footerRights: "© 2026 SkyParking - Паркинг Аеродром Софија. Сите права задржани.",
+    footerRights: "© 2026 Parking One - Паркинг Аеродром Софија. Сите права задржани.",
 
     // Map Section
     ourLocation: "Нашата Локација",
@@ -2054,10 +2054,10 @@ const translations = {
     callUs: "јавете ни се",
 
     // FAQ Page
-    faqPageTitle: "Чести Прашања - SkyParking Аеродром Софија",
-    faqPageDesc: "Одговори на најчестите прашања за паркирање во SkyParking. Информации за цени, резервации, трансфер и обезбедување.",
+    faqPageTitle: "Чести Прашања - Parking One Аеродром Софија",
+    faqPageDesc: "Одговори на најчестите прашања за паркирање во Parking One. Информации за цени, резервации, трансфер и обезбедување.",
     faqTitle: "Чести Прашања",
-    faqSubtitle: "Одговори на најчестите прашања за паркирање во SkyParking",
+    faqSubtitle: "Одговори на најчестите прашања за паркирање во Parking One",
     faqQ1: "Каде се наоѓа паркингот?",
     faqA1Before: "Нашиот паркинг се наоѓа во близина на Аеродром Софија - само 5 минути од Терминал 1 и Терминал 2. Точната локација и копчињата за Google Maps и Waze можете да ги видите во делот",
     faqA1ContactLink: "Контакт",
@@ -2094,11 +2094,11 @@ const translations = {
     faqGoToContact: "Одете на Контакт",
 
     // About Page
-    aboutPageTitle: "За Нас - SkyParking",
+    aboutPageTitle: "За Нас - Parking One",
     aboutTitle: "За Нас",
     aboutSubtitle: "Вашиот доверлив партнер за паркирање на Аеродром Софија",
-    aboutWelcomeTitle: "Добредојдовте во SkyParking",
-    aboutWelcomeText: "SkyParking е модерен обезбеден паркинг, лоциран само 5 минути од Терминал 1 и Терминал 2 на Аеродром Софија. Нудиме безбедно и удобно решение за паркирање на вашиот автомобил за време на патување.",
+    aboutWelcomeTitle: "Добредојдовте во Parking One",
+    aboutWelcomeText: "Parking One е модерен обезбеден паркинг, лоциран само 5 минути од Терминал 1 и Терминал 2 на Аеродром Софија. Нудиме безбедно и удобно решение за паркирање на вашиот автомобил за време на патување.",
     aboutMissionTitle: "Нашата Мисија",
     aboutMissionText: "Да им обезбедиме на нашите клиенти мир и сигурност, знаејќи дека нивниот автомобил е во добри раце додека патуваат. Настојуваме да го направиме процесот на паркирање што е можно поедноставен и без проблеми.",
     aboutWhyUsTitle: "Зошто да нè изберете?",
@@ -2129,9 +2129,9 @@ const translations = {
     aboutCallUsBtn: "Јавете Ни Се",
 
     // Services Page
-    servicesPageTitle: "Услуги - SkyParking",
+    servicesPageTitle: "Услуги - Parking One",
     servicesTitle: "Нашите Услуги",
-    servicesSubtitle: "Во SkyParking нудиме комплетен сет услуги за удобноста и безбедноста на нашите клиенти",
+    servicesSubtitle: "Во Parking One нудиме комплетен сет услуги за удобноста и безбедноста на нашите клиенти",
     serviceSecureTitle: "Безбеден Паркинг",
     serviceSecureDesc: "24/7 видеонадзор, обезбедена територија и целосна заштита за ваш мир",
     serviceTransferTitle: "Бесплатен Трансфер",
@@ -2161,7 +2161,7 @@ const translations = {
     servicesBookOnline: "Резервирај онлајн за најдобра цена",
 
     // Pricing Page
-    pricingPageTitle: "Цени - SkyParking",
+    pricingPageTitle: "Цени - Parking One",
     pricingTitle: "Цени за Паркирање",
     pricingSubtitle: "Транспарентни цени без скриени надоместоци",
     pricingWeekendTitle: "Викенд Пакет",
@@ -2190,8 +2190,8 @@ const translations = {
     pricingBookNow: "Резервирај Сега",
 
     // HowItWorks Page
-    howItWorksPageTitle: "Kako Функционира - SkyParking",
-    howItWorksTitle: "Kako Функционира SkyParking?",
+    howItWorksPageTitle: "Kako Функционира - Parking One",
+    howItWorksTitle: "Kako Функционира Parking One?",
     howItWorksSubtitle: "Процесот е лесен и едноставен - резервирајте, пристигнете и патувајте мирно",
     howItWorksFaqTitle: "Чести Прашања",
     howItWorksQ1: "Кога треба да платам?",
@@ -2207,7 +2207,7 @@ const translations = {
     howItWorksBookNow: "Резервирај Сега",
 
     // Contact Page
-    contactPageTitle: "Контакт - SkyParking",
+    contactPageTitle: "Контакт - Parking One",
     contactTitle: "Контактирајте Нè",
     contactSubtitle: "Тука сме за да одговориме на сите ваши прашања",
     contactInfoTitle: "Контакт Информации",
@@ -2234,8 +2234,8 @@ const translations = {
     contactFormSend: "Испрати Порака",
 
     // Booking Page
-    bookingPageTitle: "Резервација - SkyParking Аеродром Софија",
-    bookingPageDesc: "Резервирајте го вашето место во SkyParking. Без аванс - плаќате при пристигање. Бесплатен трансфер до аеродромот.",
+    bookingPageTitle: "Резервација - Parking One Аеродром Софија",
+    bookingPageDesc: "Резервирајте го вашето место во Parking One. Без аванс - плаќате при пристигање. Бесплатен трансфер до аеродромот.",
 
     // Vehicle Size
     vehicleSizeLabel: "Големина на возилото",
@@ -2249,7 +2249,7 @@ const translations = {
   },
   ro: {
     // Hero Section
-    heroTitle: "SkyParking - Parcare Aeroportul Sofia",
+    heroTitle: "Parking One - Parcare Aeroportul Sofia",
     heroSubtitle: "Parcare sigură și accesibilă la 5 minute de Terminalul 1 și 2. Rezervați acum și călătoriți fără griji.",
     bookNow: "Rezervați Acum",
     callButton: "Sunați +359 886 616 991",
@@ -2267,7 +2267,7 @@ const translations = {
     callNow: "Sunați",
 
     // Features
-    whyChooseUs: "De ce să alegeți SkyParking?",
+    whyChooseUs: "De ce să alegeți Parking One?",
     whyChooseUsDesc: "Oferim cea mai fiabilă și convenabilă soluție de parcare pentru pasagerii Aeroportului Sofia",
     secureParking: "Parcare sigură 24/7",
     secureParkingDesc: "Supraveghere video + securitate — mașina dvs. este mereu în siguranță.",
@@ -2401,7 +2401,7 @@ const translations = {
     // Footer
     footerTagline: "Soluție de parcare sigură, accesibilă și convenabilă",
     footerLocation: "📍 Ulița Nedelcho Bonchev 30, Sofia",
-    footerRights: "© 2026 SkyParking - Parcare Aeroportul Sofia. Toate drepturile rezervate.",
+    footerRights: "© 2026 Parking One - Parcare Aeroportul Sofia. Toate drepturile rezervate.",
 
     // Map Section
     ourLocation: "Locația Noastră",
@@ -2427,10 +2427,10 @@ const translations = {
     callUs: "sunați-ne",
 
     // FAQ Page
-    faqPageTitle: "Întrebări Frecvente - SkyParking Aeroportul Sofia",
-    faqPageDesc: "Răspunsuri la cele mai frecvente întrebări despre parcarea la SkyParking. Informații despre prețuri, rezervări, transferuri și securitate.",
+    faqPageTitle: "Întrebări Frecvente - Parking One Aeroportul Sofia",
+    faqPageDesc: "Răspunsuri la cele mai frecvente întrebări despre parcarea la Parking One. Informații despre prețuri, rezervări, transferuri și securitate.",
     faqTitle: "Întrebări Frecvente",
-    faqSubtitle: "Răspunsuri la cele mai frecvente întrebări despre parcarea la SkyParking",
+    faqSubtitle: "Răspunsuri la cele mai frecvente întrebări despre parcarea la Parking One",
     faqQ1: "Unde este situată parcarea?",
     faqA1Before: "Parcarea noastră este situată lângă Aeroportul Sofia - la doar 5 minute de Terminalul 1 și Terminalul 2. Puteți vedea locația exactă și butoanele Google Maps și Waze în secțiunea",
     faqA1ContactLink: "Contact",
@@ -2467,11 +2467,11 @@ const translations = {
     faqGoToContact: "Mergeți la Contact",
 
     // About Page
-    aboutPageTitle: "Despre Noi - SkyParking",
+    aboutPageTitle: "Despre Noi - Parking One",
     aboutTitle: "Despre Noi",
     aboutSubtitle: "Partenerul dvs. de încredere pentru parcare la Aeroportul Sofia",
-    aboutWelcomeTitle: "Bine ați venit la SkyParking",
-    aboutWelcomeText: "SkyParking este o parcare modernă și securizată, situată la doar 5 minute de Terminalul 1 și Terminalul 2 al Aeroportului Sofia. Oferim o soluție sigură și convenabilă pentru parcarea mașinii dvs. în timpul călătoriei.",
+    aboutWelcomeTitle: "Bine ați venit la Parking One",
+    aboutWelcomeText: "Parking One este o parcare modernă și securizată, situată la doar 5 minute de Terminalul 1 și Terminalul 2 al Aeroportului Sofia. Oferim o soluție sigură și convenabilă pentru parcarea mașinii dvs. în timpul călătoriei.",
     aboutMissionTitle: "Misiunea Noastră",
     aboutMissionText: "Să le oferim clienților noștri liniște și siguranță, știind că vehiculul lor este pe mâini bune cât timp călătoresc. Ne străduim să facem procesul de parcare cât mai ușor și fără bătăi de cap.",
     aboutWhyUsTitle: "De Ce Să Ne Alegeți?",
@@ -2502,9 +2502,9 @@ const translations = {
     aboutCallUsBtn: "Sunați-ne",
 
     // Services Page
-    servicesPageTitle: "Servicii - SkyParking",
+    servicesPageTitle: "Servicii - Parking One",
     servicesTitle: "Serviciile Noastre",
-    servicesSubtitle: "La SkyParking oferim un set complet de servicii pentru confortul și siguranța clienților noștri",
+    servicesSubtitle: "La Parking One oferim un set complet de servicii pentru confortul și siguranța clienților noștri",
     serviceSecureTitle: "Parcare Sigură",
     serviceSecureDesc: "Supraveghere video 24/7, spațiu securizat și asigurare completă pentru liniștea dvs.",
     serviceTransferTitle: "Transfer Gratuit",
@@ -2534,7 +2534,7 @@ const translations = {
     servicesBookOnline: "Rezervați online pentru cel mai bun preț",
 
     // Pricing Page
-    pricingPageTitle: "Prețuri - SkyParking",
+    pricingPageTitle: "Prețuri - Parking One",
     pricingTitle: "Prețuri Parcare",
     pricingSubtitle: "Prețuri transparente fără taxe ascunse",
     pricingWeekendTitle: "Pachet Weekend",
@@ -2563,8 +2563,8 @@ const translations = {
     pricingBookNow: "Rezervați Acum",
 
     // HowItWorks Page
-    howItWorksPageTitle: "Cum Funcționează - SkyParking",
-    howItWorksTitle: "Cum Funcționează SkyParking?",
+    howItWorksPageTitle: "Cum Funcționează - Parking One",
+    howItWorksTitle: "Cum Funcționează Parking One?",
     howItWorksSubtitle: "Procesul este ușor și simplu - rezervați, sosiți și călătoriți fără griji",
     howItWorksFaqTitle: "Întrebări Frecvente",
     howItWorksQ1: "Când trebuie să plătesc?",
@@ -2580,7 +2580,7 @@ const translations = {
     howItWorksBookNow: "Rezervați Acum",
 
     // Contact Page
-    contactPageTitle: "Contact - SkyParking",
+    contactPageTitle: "Contact - Parking One",
     contactTitle: "Contactați-ne",
     contactSubtitle: "Suntem aici să răspundem la toate întrebările dvs.",
     contactInfoTitle: "Informații de Contact",
@@ -2607,8 +2607,8 @@ const translations = {
     contactFormSend: "Trimite Mesaj",
 
     // Booking Page
-    bookingPageTitle: "Rezervare - SkyParking Aeroportul Sofia",
-    bookingPageDesc: "Rezervați-vă locul la SkyParking. Fără plată în avans - plătiți la sosire. Transfer gratuit la aeroport.",
+    bookingPageTitle: "Rezervare - Parking One Aeroportul Sofia",
+    bookingPageDesc: "Rezervați-vă locul la Parking One. Fără plată în avans - plătiți la sosire. Transfer gratuit la aeroport.",
 
     // Vehicle Size
     vehicleSizeLabel: "Dimensiunea vehiculului",
@@ -2622,7 +2622,7 @@ const translations = {
   },
   uk: {
     // Hero Section
-    heroTitle: "SkyParking - Паркінг Аеропорт Софія",
+    heroTitle: "Parking One - Паркінг Аеропорт Софія",
     heroSubtitle: "Безпечне та доступне паркування за 5 хвилин від Терміналу 1 і 2. Бронюйте зараз і подорожуйте спокійно.",
     bookNow: "Забронювати Зараз",
     callButton: "Подзвонити +359 886 616 991",
@@ -2640,7 +2640,7 @@ const translations = {
     callNow: "Подзвонити",
 
     // Features
-    whyChooseUs: "Чому обрати SkyParking?",
+    whyChooseUs: "Чому обрати Parking One?",
     whyChooseUsDesc: "Ми надаємо найнадійніше та зручне рішення для паркування для пасажирів аеропорту Софія",
     secureParking: "Безпечне паркування 24/7",
     secureParkingDesc: "Відеоспостереження + охорона на місці — ваш автомобіль завжди в безпеці.",
@@ -2774,7 +2774,7 @@ const translations = {
     // Footer
     footerTagline: "Безпечне, доступне та зручне рішення для паркування",
     footerLocation: "📍 Вулиця Неделчо Бончев 30, Софія",
-    footerRights: "© 2026 SkyParking - Паркінг Аеропорт Софія. Всі права захищено.",
+    footerRights: "© 2026 Parking One - Паркінг Аеропорт Софія. Всі права захищено.",
 
     // Map Section
     ourLocation: "Наше Розташування",
@@ -2800,10 +2800,10 @@ const translations = {
     callUs: "зателефонуйте нам",
 
     // FAQ Page
-    faqPageTitle: "Часті питання - SkyParking Аеропорт Софія",
-    faqPageDesc: "Відповіді на часті питання про паркування в SkyParking. Інформація про ціни, бронювання, трансфер та охорону.",
+    faqPageTitle: "Часті питання - Parking One Аеропорт Софія",
+    faqPageDesc: "Відповіді на часті питання про паркування в Parking One. Інформація про ціни, бронювання, трансфер та охорону.",
     faqTitle: "Часті питання",
-    faqSubtitle: "Відповіді на найпоширеніші питання про паркування в SkyParking",
+    faqSubtitle: "Відповіді на найпоширеніші питання про паркування в Parking One",
     faqQ1: "Де знаходиться паркінг?",
     faqA1Before: "Наш паркінг розташований поруч з аеропортом Софія — всього 5 хвилин від Терміналу 1 і Терміналу 2, у зручному та доступному місці. Точне розташування та кнопки Google Maps і Waze можна знайти в розділі",
     faqA1ContactLink: "Контакти",
@@ -2840,11 +2840,11 @@ const translations = {
     faqGoToContact: "Перейти до Контактів",
 
     // About Page
-    aboutPageTitle: "Про нас - SkyParking",
+    aboutPageTitle: "Про нас - Parking One",
     aboutTitle: "Про нас",
     aboutSubtitle: "Ваш надійний партнер для паркування в аеропорту Софія",
-    aboutWelcomeTitle: "Ласкаво просимо до SkyParking",
-    aboutWelcomeText: "SkyParking — це сучасний охоронюваний паркінг, розташований всього за 5 хвилин від Терміналу 1 і Терміналу 2 аеропорту Софія. Ми пропонуємо безпечне та зручне рішення для паркування вашого автомобіля під час подорожі.",
+    aboutWelcomeTitle: "Ласкаво просимо до Parking One",
+    aboutWelcomeText: "Parking One — це сучасний охоронюваний паркінг, розташований всього за 5 хвилин від Терміналу 1 і Терміналу 2 аеропорту Софія. Ми пропонуємо безпечне та зручне рішення для паркування вашого автомобіля під час подорожі.",
     aboutMissionTitle: "Наша Місія",
     aboutMissionText: "Забезпечити нашим клієнтам спокій і безпеку, знаючи, що їхній автомобіль у надійних руках під час подорожі. Ми прагнемо зробити процес паркування максимально простим і безпроблемним.",
     aboutWhyUsTitle: "Чому обрати нас?",
@@ -2875,9 +2875,9 @@ const translations = {
     aboutCallUsBtn: "Подзвонити нам",
 
     // Services Page
-    servicesPageTitle: "Послуги - SkyParking",
+    servicesPageTitle: "Послуги - Parking One",
     servicesTitle: "Наші Послуги",
-    servicesSubtitle: "У SkyParking ми пропонуємо повний набір послуг для комфорту та безпеки наших клієнтів",
+    servicesSubtitle: "У Parking One ми пропонуємо повний набір послуг для комфорту та безпеки наших клієнтів",
     serviceSecureTitle: "Безпечне Паркування",
     serviceSecureDesc: "Відеоспостереження 24/7, охоронювана територія та повне страхування для вашого спокою",
     serviceTransferTitle: "Безкоштовний Трансфер",
@@ -2907,7 +2907,7 @@ const translations = {
     servicesBookOnline: "Забронюйте онлайн за найкращою ціною",
 
     // Pricing Page
-    pricingPageTitle: "Ціни - SkyParking",
+    pricingPageTitle: "Ціни - Parking One",
     pricingTitle: "Ціни на Паркування",
     pricingSubtitle: "Прозорі ціни без прихованих зборів",
     pricingWeekendTitle: "Вихідний Пакет",
@@ -2936,8 +2936,8 @@ const translations = {
     pricingBookNow: "Забронювати Зараз",
 
     // How It Works Page
-    howItWorksPageTitle: "Як це працює - SkyParking",
-    howItWorksTitle: "Як працює SkyParking?",
+    howItWorksPageTitle: "Як це працює - Parking One",
+    howItWorksTitle: "Як працює Parking One?",
     howItWorksSubtitle: "Процес простий і зрозумілий — забронюйте, приїжджайте та подорожуйте без турбот",
     howItWorksFaqTitle: "Часті питання",
     howItWorksQ1: "Коли потрібно платити?",
@@ -2953,7 +2953,7 @@ const translations = {
     howItWorksBookNow: "Забронювати Зараз",
 
     // Contact Page
-    contactPageTitle: "Контакти - SkyParking",
+    contactPageTitle: "Контакти - Parking One",
     contactTitle: "Зв'яжіться з нами",
     contactSubtitle: "Ми тут, щоб відповісти на всі ваші запитання",
     contactInfoTitle: "Контактна Інформація",
@@ -2980,8 +2980,8 @@ const translations = {
     contactFormSend: "Надіслати повідомлення",
 
     // Booking Page
-    bookingPageTitle: "Бронювання - SkyParking Аеропорт Софія",
-    bookingPageDesc: "Заброньте місце в SkyParking. Без передоплати — оплата при прибутті. Безкоштовний трансфер до аеропорту.",
+    bookingPageTitle: "Бронювання - Parking One Аеропорт Софія",
+    bookingPageDesc: "Заброньте місце в Parking One. Без передоплати — оплата при прибутті. Безкоштовний трансфер до аеропорту.",
 
     // Vehicle Size
     vehicleSizeLabel: "Розмір транспортного засобу",

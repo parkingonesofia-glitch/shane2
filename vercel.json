@@ -24,10 +24,10 @@
       "has": [
         {
           "type": "host",
-          "value": "www.skyparking.bg"
+          "value": "www.parkingone.bg"
         }
       ],
-      "destination": "https://skyparking.bg/:path*",
+      "destination": "https://parkingone.bg/:path*",
       "permanent": true
     }
   ],

@@ -104,7 +104,7 @@ export function ContactPage() {
                   </div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-lg mb-1">{t('contactPhone')}</h3>
-                    <a href="tel:+359886616991" className="text-blue-600 hover:underline text-lg">
+                    <a href="tel:+359877109788" className="text-blue-600 hover:underline text-lg">
                       +359 886 616 991
                     </a>
                     <p className="text-sm text-gray-600 mt-1">
@@ -120,8 +120,8 @@ export function ContactPage() {
                   </div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-lg mb-1">{t('contactEmailLabel')}</h3>
-                    <a href="mailto:info@skyparking.bg" className="text-blue-600 hover:underline">
-                      info@skyparking.bg
+                    <a href="mailto:info@parkingone.bg" className="text-blue-600 hover:underline">
+                      info@parkingone.bg
                     </a>
                     <p className="text-sm text-gray-600 mt-1">
                       {t('contactResponds2h')}

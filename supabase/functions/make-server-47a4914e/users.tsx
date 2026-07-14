@@ -100,7 +100,7 @@ export async function ensureAdminUser() {
       username: "sandeparking",
       passwordHash: hashPassword("Sashoepichaga98!"),
       fullName: "System Administrator",
-      email: "admin@skyparking.bg",
+      email: "admin@parkingone.bg",
       role: "admin",
       isActive: true,
       createdAt: new Date().toISOString(),
@@ -343,7 +343,7 @@ export function hasPermission(user: User, permission: string): boolean {
 export function createSessionToken(user: User): string {
   const timestamp = Date.now();
   const data = `${user.id}:${timestamp}`;
-  const hash = createHash("sha256").update(data + "skyparking_secret_key").digest("hex");
+  const hash = createHash("sha256").update(data + "parkingone_secret_key").digest("hex");
   return `${user.id}:${timestamp}:${hash}`;
 }
 
@@ -367,7 +367,7 @@ export async function verifySessionToken(token: string): Promise<User | null> {
     
     // Verify hash
     const data = `${userId}:${timestamp}`;
-    const expectedHash = createHash("sha256").update(data + "skyparking_secret_key").digest("hex");
+    const expectedHash = createHash("sha256").update(data + "parkingone_secret_key").digest("hex");
     if (hash !== expectedHash) {
       console.log("❌ Token hash mismatch");
       return null;

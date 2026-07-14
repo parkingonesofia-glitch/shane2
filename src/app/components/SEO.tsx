@@ -47,7 +47,7 @@ export function SEO({ title, description, canonical, ogImage }: SEOProps) {
     }
 
     // Update canonical URL
-    const canonicalUrl = canonical || `https://skyparking.bg${location.pathname}`;
+    const canonicalUrl = canonical || `https://parkingone.bg${location.pathname}`;
     let linkCanonical = document.querySelector('link[rel="canonical"]');
     if (!linkCanonical) {
       linkCanonical = document.createElement('link');

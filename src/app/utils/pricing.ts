@@ -51,12 +51,12 @@ let cachedPricing: PricingConfig | null = null;
 let pricingFetchPromise: Promise<PricingConfig> | null = null;
 let isPricingInitialized = false;
 
-const PRICING_CACHE_KEY = 'skyparking_pricing_cache';
-const PRICING_CACHE_TIMESTAMP_KEY = 'skyparking_pricing_cache_timestamp';
-const PRICING_CACHE_VERSION_KEY = 'skyparking_pricing_cache_version';
+const PRICING_CACHE_KEY = 'parkingone_pricing_cache';
+const PRICING_CACHE_TIMESTAMP_KEY = 'parkingone_pricing_cache_timestamp';
+const PRICING_CACHE_VERSION_KEY = 'parkingone_pricing_cache_version';
 const CURRENT_CACHE_VERSION = '2'; // Increment this to force cache clear
 const CACHE_EXPIRY_MS = 5 * 60 * 1000; // 5 minutes - only for "fresh" cache checks
-const PERMANENT_FALLBACK_KEY = 'skyparking_pricing_permanent_fallback'; // Never expires, always available
+const PERMANENT_FALLBACK_KEY = 'parkingone_pricing_permanent_fallback'; // Never expires, always available
 
 // Load pricing from localStorage cache
 function loadPricingFromCache(): PricingConfig | null {

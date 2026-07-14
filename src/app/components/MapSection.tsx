@@ -7,12 +7,12 @@ export function MapSection() {
   const { t } = useLanguage();
 
   const handleGoogleMaps = () => {
-    // Opens official Google Maps location for SkyParking
+    // Opens official Google Maps location for Parking One
     window.open("https://maps.app.goo.gl/Yt6YeQN5ECBSjVme8", "_blank");
   };
 
   const handleWaze = () => {
-    // Opens official Waze navigation for SkyParking
+    // Opens official Waze navigation for Parking One
     window.open("https://ul.waze.com/ul?place=ChIJ6eb_yAqHqkARRJP7h2zo5AU&ll=42.67676540%2C23.40033890&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location", "_blank");
   };
 
@@ -34,15 +34,15 @@ export function MapSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="SkyParking Location"
+                title="Parking One Location"
                 className="block"
               ></iframe>
             </div>
             
             <div className="p-6 bg-gray-50 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left">
-                <p className="font-semibold text-gray-900">SkyParking</p>
-                <p className="text-sm text-gray-600">Ulitsa Nedelcho Bonchev 30, Sofia, Bulgaria</p>
+                <p className="font-semibold text-gray-900">Parking One</p>
+                <p className="text-sm text-gray-600">Ulitsa Iztochna Tangeta 23, Sofia, Bulgaria</p>
               </div>
               <div className="flex flex-row gap-3">
                 <Button 

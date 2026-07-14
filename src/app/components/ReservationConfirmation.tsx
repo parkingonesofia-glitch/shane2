@@ -97,7 +97,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
         pdf.addImage(imgData, 'PNG', x, y, scaledWidth, scaledHeight, undefined, 'FAST');
         
         // Save with reservation number in filename
-        pdf.save(`SkyParking-Reservation-${booking.bookingCode}.pdf`);
+        pdf.save(`Parking One-Reservation-${booking.bookingCode}.pdf`);
       } catch (error) {
         console.error('Error generating PDF:', error);
         alert(language === 'bg' 

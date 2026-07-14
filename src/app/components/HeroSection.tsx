@@ -7,7 +7,7 @@ export function HeroSection() {
   const { t, language } = useLanguage();
   
   const handleCallClick = () => {
-    window.location.href = "tel:+359886616991";
+    window.location.href = "tel:+359877109788";
   };
 
   return (

@@ -18,7 +18,7 @@ export function SettingsManager() {
 
   // Check token on mount
   useEffect(() => {
-    const token = localStorage.getItem("skyparking-token");
+    const token = localStorage.getItem("parkingone-token");
     if (token) {
       setTokenStatus(`Token exists: ${token.substring(0, 30)}...`);
     } else {
@@ -34,7 +34,7 @@ export function SettingsManager() {
   const fetchSettings = async () => {
     setLoading(true);
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       const response = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/settings`,
         {
@@ -60,7 +60,7 @@ export function SettingsManager() {
   const updateSettings = async () => {
     setIsSaving(true);
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       console.log("Saving settings with token:", token ? "Token exists" : "No token");
       console.log("Email notifications setting:", emailNotificationsEnabled);
       
@@ -103,7 +103,7 @@ export function SettingsManager() {
 
     setIsBackfilling(true);
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       const response = await fetch(
         `https://${projectId}.supabase.co/functions/v1/make-server-47a4914e/admin/backfill-paidat`,
         {
@@ -138,7 +138,7 @@ export function SettingsManager() {
 
     setIsRecalculatingLateFees(true);
     try {
-      const token = localStorage.getItem("skyparking-token");
+      const token = localStorage.getItem("parkingone-token");
       
       console.log("Recalculate late fees - Token from localStorage:", token ? token.substring(0, 20) + "..." : "missing");
       
@@ -229,7 +229,7 @@ export function SettingsManager() {
                   Известия за нови резервации
                 </Label>
                 <p className="text-sm text-gray-600 mt-1">
-                  Изпрати имейл до reservations@skyparking.bg при всяка нова резервация
+                  Изпрати имейл до reservations@parkingone.bg при всяка нова резервация
                 </p>
                 <p className="text-xs text-gray-500 mt-2">
                   💡 Изключи това при тестване, за да не изчерпваш лимита си за имейли
