@@ -12,7 +12,7 @@ export function HeroSection() {
 
   return (
     <>
-      <section className="relative h-[95vh] flex items-center justify-center overflow-hidden mt-6 md:mt-[165px]">
+      <section className="relative h-[95vh] flex items-center justify-center overflow-hidden mt-20 md:mt-[90px]">
         <div className="absolute inset-0 md:inset-0 bottom-0 md:bottom-0">
           <ImageWithFallback
             src="/hero-image.jpg"
