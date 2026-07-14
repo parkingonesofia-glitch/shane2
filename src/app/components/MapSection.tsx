@@ -60,7 +60,7 @@ export function MapSection() {
                 <Button 
                   onClick={handleWaze}
                   size="lg"
-                  className="bg-[#FAF9F6] hover:bg-[#FAF9F6]/90 text-white"
+                  className="bg-[#FAF9F6] hover:bg-[#FAF9F6]/90 text-[#0073AC]"
                 >
                   <img 
                     src="/waze-icon.png" 

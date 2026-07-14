@@ -302,7 +302,7 @@ export function Reviews() {
             href="https://share.google/vmafBFlebQvN85aRH"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-lg font-semibold text-white shadow-lg hover:shadow-xl transition-all hover:scale-105"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-lg font-semibold text-[#0073AC] shadow-lg hover:shadow-xl transition-all hover:scale-105"
             style={{ backgroundColor: '#FAF9F6' }}
           >
             <svg className="w-5 h-5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">

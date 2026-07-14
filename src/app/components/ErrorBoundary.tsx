@@ -45,7 +45,7 @@ export class ErrorBoundary extends Component<Props, State> {
           minHeight: '100vh', 
           backgroundColor: '#ff0000',
           padding: '20px',
-          color: '#ffffff',
+          #0073AC,
           fontSize: '16px',
           fontFamily: 'monospace'
         }}>
@@ -83,7 +83,7 @@ export class ErrorBoundary extends Component<Props, State> {
               padding: '15px 30px',
               fontSize: '18px',
               backgroundColor: '#0000ff',
-              color: '#ffffff',
+              #0073AC,
               border: 'none',
               borderRadius: '8px',
               cursor: 'pointer'

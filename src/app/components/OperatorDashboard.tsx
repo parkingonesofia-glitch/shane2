@@ -1238,7 +1238,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
     // Pay on departure badge — big and unmissable
     if (booking.paymentMethod === "pay-on-leave" && booking.paymentStatus !== "paid") {
       badges.push(
-        <Badge key="pay-on-leave" className="bg-red-600 text-white text-base py-1 px-3 animate-pulse">
+        <Badge key="pay-on-leave" className="bg-red-600 text-[#0073AC] text-base py-1 px-3 animate-pulse">
           💳 Плаща при тръгване
         </Badge>
       );
@@ -2367,7 +2367,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
         <div className="flex flex-col gap-3 w-full">
           <Button 
             onClick={() => handleAcceptReservation(booking)}
-            className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg h-14 w-full"
+            className="bg-green-600 hover:bg-green-700 text-[#0073AC] font-bold text-lg h-14 w-full"
           >
             <CheckCircle className="w-6 h-6 mr-2" />
             ✔ Приеми
@@ -2389,7 +2389,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
         <div className="flex flex-col gap-3 w-full">
           <Button 
             onClick={() => handleArrived(booking)}
-            className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg h-14 w-full"
+            className="bg-green-600 hover:bg-green-700 text-[#0073AC] font-bold text-lg h-14 w-full"
           >
             <CheckCircle className="w-6 h-6 mr-2" />
             ✔ Пристигна
@@ -2411,7 +2411,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
         return (
           <Button 
             onClick={() => handleCheckout(booking)}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg h-14 w-full"
+            className="bg-blue-600 hover:bg-blue-700 text-[#0073AC] font-bold text-lg h-14 w-full"
           >
             <CheckCircle className="w-6 h-6 mr-2" />
             Напусна (доплащане €{(booking.lateSurcharge || 0).toFixed(2)})
@@ -2422,7 +2422,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
         <div className="flex flex-col gap-3 w-full">
           <Button 
             onClick={() => handleCheckout(booking)}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg h-14 w-full"
+            className="bg-blue-600 hover:bg-blue-700 text-[#0073AC] font-bold text-lg h-14 w-full"
           >
             <CheckCircle className="w-6 h-6 mr-2" />
             Напусна
@@ -2451,7 +2451,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
         return (
           <Button 
             onClick={() => handleArrived(booking)}
-            className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg h-14 w-full"
+            className="bg-green-600 hover:bg-green-700 text-[#0073AC] font-bold text-lg h-14 w-full"
           >
             <CheckCircle className="w-6 h-6 mr-2" />
             ✔ Пристигна
@@ -2462,7 +2462,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
         return (
           <Button 
             onClick={() => handleCheckout(booking)}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg h-14 w-full"
+            className="bg-blue-600 hover:bg-blue-700 text-[#0073AC] font-bold text-lg h-14 w-full"
           >
             <CheckCircle className="w-6 h-6 mr-2" />
             Напусна (доплащане €{(booking.lateSurcharge || 0).toFixed(2)})
@@ -2474,7 +2474,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
           <div className="flex flex-col gap-3 w-full">
             <Button 
               onClick={() => handleCheckout(booking)}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg h-14 w-full"
+              className="bg-blue-600 hover:bg-blue-700 text-[#0073AC] font-bold text-lg h-14 w-full"
             >
               <CheckCircle className="w-6 h-6 mr-2" />
               Напусна
@@ -2588,7 +2588,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
 
       {/* Auto-reset notification */}
       {showAutoResetMessage && (
-        <div className="fixed bottom-4 right-4 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg text-sm z-50 animate-fade-in">
+        <div className="fixed bottom-4 right-4 bg-gray-800 text-[#0073AC] px-6 py-3 rounded-lg shadow-lg text-sm z-50 animate-fade-in">
           Върнато към активната смяна
         </div>
       )}
@@ -2921,7 +2921,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                     <Button
                       variant="outline"
                       onClick={printArrivingTimetable}
-                      className="flex items-center gap-2 border-[#FAF9F6] text-[#FAF9F6] hover:bg-[#FAF9F6] hover:text-white"
+                      className="flex items-center gap-2 border-[#FAF9F6] text-[#FAF9F6] hover:bg-[#FAF9F6] hover:text-[#0073AC]"
                     >
                       <FileText className="w-4 h-4" />
                       Разпечатай
@@ -2948,7 +2948,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                     <Button
                       variant="outline"
                       onClick={printLeavingTimetable}
-                      className="flex items-center gap-2 border-[#FAF9F6] text-[#FAF9F6] hover:bg-[#FAF9F6] hover:text-white"
+                      className="flex items-center gap-2 border-[#FAF9F6] text-[#FAF9F6] hover:bg-[#FAF9F6] hover:text-[#0073AC]"
                     >
                       <FileText className="w-4 h-4" />
                       Разпечатай
@@ -3132,7 +3132,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                 <Card className="p-4 sm:p-6">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="p-3 bg-[#FAF9F6] rounded-lg">
-                      <Euro className="w-8 h-8 text-white" />
+                      <Euro className="w-8 h-8 text-[#0073AC]" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-xl sm:text-2xl">Общо приходи</h3>
@@ -4624,7 +4624,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       {/* Floating Action Button (FAB) - Create Reservation */}
       <button
         onClick={handleAddManualReservation}
-        className="fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-[#FAF9F6] hover:bg-[#052558] active:bg-[#041a3d] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200 px-4 sm:px-6 py-3 sm:py-4 min-h-[56px] touch-manipulation"
+        className="fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-[#FAF9F6] hover:bg-[#052558] active:bg-[#041a3d] text-[#0073AC] font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200 px-4 sm:px-6 py-3 sm:py-4 min-h-[56px] touch-manipulation"
         aria-label="Добави резервация"
       >
         <Plus className="w-5 h-5 sm:w-6 sm:h-6" />

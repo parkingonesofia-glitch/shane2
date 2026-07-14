@@ -64,7 +64,7 @@ export function TimePicker({ value, onChange, label, error, id }: TimePickerProp
                 onClick={() => handleSelect(time)}
                 className={`w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-gray-100 ${
                   value === time 
-                    ? "bg-[#FAF9F6] text-white hover:bg-[#052961] font-semibold" 
+                    ? "bg-[#FAF9F6] text-[#0073AC] hover:bg-[#052961] font-semibold" 
                     : "text-gray-900"
                 }`}
               >

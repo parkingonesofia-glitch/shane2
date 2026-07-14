@@ -286,7 +286,7 @@ export function DiscountManager() {
           <Button
             onClick={handleCreateDiscount}
             disabled={isCreating}
-            className="bg-[#FAF9F6] hover:bg-[#052c70] text-white font-medium h-11"
+            className="bg-[#FAF9F6] hover:bg-[#052c70] text-[#0073AC] font-medium h-11"
           >
             {isCreating ? (
               <>

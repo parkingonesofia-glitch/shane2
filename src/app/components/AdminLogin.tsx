@@ -73,7 +73,7 @@ export function AdminLogin({ onLogin }: { onLogin: () => void }) {
       <Card className="w-full max-w-md p-8">
         <div className="text-center mb-8">
           <div className="mx-auto w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-4">
-            <Lock className="h-6 w-6 text-white" />
+            <Lock className="h-6 w-6 text-[#0073AC]" />
           </div>
           <h1 className="text-2xl font-bold">Parking One Admin</h1>
           <p className="text-gray-600 mt-2">Sign in to manage bookings</p>

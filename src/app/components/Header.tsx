@@ -123,7 +123,7 @@ export function Header() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="bg-transparent text-white border-white/30 hover:bg-white/10 hover:border-white px-1 md:px-2 text-[11px] md:text-[13px] gap-0.5 md:gap-1.5 h-7 md:h-8 min-w-0"
+                    className="bg-transparent text-[#0073AC] border-white/30 hover:bg-white/10 hover:border-white px-1 md:px-2 text-[11px] md:text-[13px] gap-0.5 md:gap-1.5 h-7 md:h-8 min-w-0"
                   >
                     <Globe className="w-3.5 h-3.5 md:w-4 md:h-4 opacity-90 shrink-0" />
                     <span className="hidden md:inline">{LANGUAGES.find((l) => l.code === language)?.label ?? "БГ"}</span>
@@ -176,7 +176,7 @@ export function Header() {
           <div className="flex justify-end p-4">
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="text-white hover:text-[#0073AC] transition-colors focus:outline-none focus:ring-2 focus:ring-[#0073AC] rounded-lg p-2"
+              className="text-[#0073AC] hover:text-[#0073AC] transition-colors focus:outline-none focus:ring-2 focus:ring-[#0073AC] rounded-lg p-2"
               aria-label="Close menu"
             >
               <X className="h-6 w-6" />
@@ -187,43 +187,43 @@ export function Header() {
           <nav className="flex flex-col px-6 py-4 gap-4">
             <button
               onClick={() => handleNavigate("/booking")}
-              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-[#0073AC] hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navBooking")}
             </button>
             <button
               onClick={() => handleNavigate("/services")}
-              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-[#0073AC] hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navServices")}
             </button>
             <button
               onClick={() => handleNavigate("/pricing")}
-              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-[#0073AC] hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navPricing")}
             </button>
             <button
               onClick={() => handleNavigate("/how-it-works")}
-              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-[#0073AC] hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navHowItWorks")}
             </button>
             <button
               onClick={() => handleNavigate("/faq")}
-              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-[#0073AC] hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navFAQ")}
             </button>
             <button
               onClick={() => handleNavigate("/about")}
-              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-[#0073AC] hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navAbout")}
             </button>
             <button
               onClick={() => handleNavigate("/contact")}
-              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-[#0073AC] hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navContact")}
             </button>

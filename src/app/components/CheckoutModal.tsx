@@ -127,9 +127,9 @@ export function CheckoutModal({
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-xl shadow-2xl w-full max-w-sm">
         {/* Header */}
-        <div className="bg-[#FAF9F6] text-white px-5 py-4 rounded-t-xl flex items-center justify-between">
+        <div className="bg-[#FAF9F6] text-[#0073AC] px-5 py-4 rounded-t-xl flex items-center justify-between">
           <h2 className="text-lg font-bold">Напускане на паркинга</h2>
-          <button onClick={onCancel} className="text-white/80 hover:text-white">
+          <button onClick={onCancel} className="text-[#0073AC]/80 hover:text-[#0073AC]">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -219,7 +219,7 @@ export function CheckoutModal({
               <Button
                 onClick={handleNext}
                 disabled={isCalculating || (isAdjusted && !adjustmentReason) || adjustedFee === ""}
-                className="flex-1 bg-[#FAF9F6] hover:bg-[#052560] text-white font-bold"
+                className="flex-1 bg-[#FAF9F6] hover:bg-[#052560] text-[#0073AC] font-bold"
               >
                 {(adjustedFeeNum > 0 || (booking.paymentMethod === "pay-on-leave" && booking.paymentStatus !== "paid")) ? "Напред →" : "Потвърди"}
               </Button>
@@ -281,7 +281,7 @@ export function CheckoutModal({
               <Button
                 onClick={handleConfirm}
                 disabled={!paymentMethod}
-                className="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold"
+                className="flex-1 bg-green-600 hover:bg-green-700 text-[#0073AC] font-bold"
               >
                 Потвърди
               </Button>

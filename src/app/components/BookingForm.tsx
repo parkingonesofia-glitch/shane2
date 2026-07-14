@@ -752,7 +752,7 @@ export function BookingForm() {
                     />
                     <Button
                       type="button"
-                      className="bg-[#FAF9F6] hover:bg-[#052c70] font-bold text-white text-lg h-12 px-8 rounded-xl shadow-md hover:shadow-lg transition-all whitespace-nowrap"
+                      className="bg-[#FAF9F6] hover:bg-[#052c70] font-bold text-[#0073AC] text-lg h-12 px-8 rounded-xl shadow-md hover:shadow-lg transition-all whitespace-nowrap"
                       disabled={isValidatingDiscount || !!appliedDiscount}
                       onClick={validateDiscountCode}
                     >

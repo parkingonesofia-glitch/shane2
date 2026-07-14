@@ -57,7 +57,7 @@ export function PricingPage() {
             {/* Weekly Package - FEATURED */}
             <div className="bg-white rounded-lg shadow-xl p-6 border-4 relative transform md:scale-105" style={{ borderColor: '#0073AC' }}>
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-[#0073AC] text-white px-4 py-1 rounded-full text-sm font-bold whitespace-nowrap">
+                <span className="bg-[#0073AC] text-[#0073AC] px-4 py-1 rounded-full text-sm font-bold whitespace-nowrap">
                   {t('pricingPopular')}
                 </span>
               </div>
@@ -170,7 +170,7 @@ export function PricingPage() {
           <div className="text-center">
             <button
               onClick={() => navigate('/')}
-              className="px-8 py-4 rounded-lg font-semibold text-white text-lg shadow-lg hover:shadow-xl transition-shadow"
+              className="px-8 py-4 rounded-lg font-semibold text-[#0073AC] text-lg shadow-lg hover:shadow-xl transition-shadow"
               style={{ backgroundColor: '#FAF9F6' }}
             >
               {t('pricingBookNow')}

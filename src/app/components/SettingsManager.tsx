@@ -278,7 +278,7 @@ export function SettingsManager() {
             <Button
               onClick={updateSettings}
               disabled={isSaving}
-              className="bg-[#FAF9F6] hover:bg-[#052c70] text-white px-8"
+              className="bg-[#FAF9F6] hover:bg-[#052c70] text-[#0073AC] px-8"
             >
               {isSaving ? "Запазване..." : "Запази настройките"}
             </Button>
@@ -302,7 +302,7 @@ export function SettingsManager() {
           <Button
             onClick={backfillPaidAt}
             disabled={isBackfilling}
-            className="bg-orange-600 hover:bg-orange-700 text-white"
+            className="bg-orange-600 hover:bg-orange-700 text-[#0073AC]"
           >
             {isBackfilling ? "Актуализиране..." : "Актуализирай paidAt полета"}
           </Button>
@@ -317,7 +317,7 @@ export function SettingsManager() {
           <Button
             onClick={recalculateLateFees}
             disabled={isRecalculatingLateFees}
-            className="bg-orange-600 hover:bg-orange-700 text-white"
+            className="bg-orange-600 hover:bg-orange-700 text-[#0073AC]"
           >
             {isRecalculatingLateFees ? "Пресмятане..." : "Пресметни задълженията"}
           </Button>

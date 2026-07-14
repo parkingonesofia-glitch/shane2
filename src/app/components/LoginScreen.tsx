@@ -85,7 +85,7 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
       <Card className="w-full max-w-md p-8 shadow-2xl">
         <div className="text-center mb-8">
           <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <LogIn className="h-8 w-8 text-white" />
+            <LogIn className="h-8 w-8 text-[#0073AC]" />
           </div>
           <h1 className="text-3xl font-bold text-gray-900">Parking One</h1>
           <p className="text-gray-600 mt-2">Система за управление на резервации</p>

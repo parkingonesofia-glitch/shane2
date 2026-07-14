@@ -295,7 +295,7 @@ export function ReservationCard({
                 Платено
               </Badge>
             ) : reservation.paymentMethod === 'pay-on-leave' ? (
-              <Badge className="bg-red-600 text-white text-base py-1.5 px-3 font-black border-0">
+              <Badge className="bg-red-600 text-[#0073AC] text-base py-1.5 px-3 font-black border-0">
                 💳 Плаща при тръгване
               </Badge>
             ) : (

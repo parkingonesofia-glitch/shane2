@@ -66,7 +66,7 @@ export function HowItWorks() {
                 <div className="flex items-start gap-4">
                   {/* Number Badge with Icon */}
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white relative" style={{ backgroundColor: '#FAF9F6' }}>
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-[#0073AC] relative" style={{ backgroundColor: '#FAF9F6' }}>
                       {step.number}
                       <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#0073AC' }}>
                         <Icon className="w-4 h-4" style={{ color: '#FAF9F6' }} />
@@ -98,7 +98,7 @@ export function HowItWorks() {
                 <div className="flex flex-col items-center text-center">
                   {/* Number Badge with Icon */}
                   <div className="flex-shrink-0 mb-4">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white relative" style={{ backgroundColor: '#FAF9F6' }}>
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-[#0073AC] relative" style={{ backgroundColor: '#FAF9F6' }}>
                       {step.number}
                       <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#0073AC' }}>
                         <Icon className="w-4 h-4" style={{ color: '#FAF9F6' }} />

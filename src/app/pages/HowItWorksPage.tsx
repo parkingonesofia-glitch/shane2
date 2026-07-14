@@ -171,7 +171,7 @@ export function HowItWorksPage() {
             </p>
             <button
               onClick={() => navigate('/')}
-              className="px-8 py-4 rounded-lg font-semibold text-white text-lg shadow-lg hover:shadow-xl transition-shadow"
+              className="px-8 py-4 rounded-lg font-semibold text-[#0073AC] text-lg shadow-lg hover:shadow-xl transition-shadow"
               style={{ backgroundColor: '#FAF9F6' }}
             >
               {t('howItWorksBookNow')}

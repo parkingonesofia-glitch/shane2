@@ -1340,7 +1340,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
         {booking.status === "new" && (
           <>
             <Button
-              className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg h-14 w-full"
+              className="bg-green-600 hover:bg-green-700 text-[#0073AC] font-bold text-lg h-14 w-full"
               onClick={() => acceptBooking(booking)}
             >
               <CheckCircle className="h-6 w-6 mr-2" />
@@ -1360,7 +1360,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
         {booking.status === "confirmed" && (
           <>
             <Button
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg h-14 w-full"
+              className="bg-blue-600 hover:bg-blue-700 text-[#0073AC] font-bold text-lg h-14 w-full"
               onClick={() => markArrived(booking)}
             >
               <LogIn className="h-6 w-6 mr-2" />
@@ -1387,7 +1387,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
         
         {booking.status === "arrived" && (
           <Button
-            className="bg-green-600 hover:bg-green-700 text-white font-bold text-lg h-14 w-full"
+            className="bg-green-600 hover:bg-green-700 text-[#0073AC] font-bold text-lg h-14 w-full"
             onClick={() => checkout(booking)}
           >
             <CheckCircle className="h-6 w-6 mr-2" />
@@ -2532,7 +2532,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
                       >
                         <div className={`text-base font-black mb-1 leading-none ${isToday ? 'text-[#FAF9F6]' : isPast ? 'text-gray-400' : 'text-gray-800'}`}>
                           {day}
-                          {isToday && <span className="ml-1 text-[10px] bg-[#FAF9F6] text-white px-1 py-0.5 rounded">днес</span>}
+                          {isToday && <span className="ml-1 text-[10px] bg-[#FAF9F6] text-[#0073AC] px-1 py-0.5 rounded">днес</span>}
                         </div>
                         {total > 0 ? (
                           <div className="mt-auto space-y-0.5">
@@ -2565,9 +2565,9 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
                   const label = d.toLocaleDateString('bg-BG', { weekday: 'long', day: 'numeric', month: 'long' });
                   return (
                     <div className="border-2 border-[#FAF9F6] rounded-xl overflow-hidden">
-                      <div className="bg-[#FAF9F6] text-white px-4 py-3 flex items-center justify-between">
+                      <div className="bg-[#FAF9F6] text-[#0073AC] px-4 py-3 flex items-center justify-between">
                         <span className="font-bold text-base capitalize">{label}</span>
-                        <button onClick={() => setWorkloadExpandedDay('')} className="text-white/70 hover:text-white">✕</button>
+                        <button onClick={() => setWorkloadExpandedDay('')} className="text-[#0073AC]/70 hover:text-[#0073AC]">✕</button>
                       </div>
                       <div className="grid grid-cols-2 gap-3 p-4 bg-white">
                         <div className="rounded-xl bg-amber-50 border border-amber-200 p-4">
@@ -3404,7 +3404,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
               {bg.closeDialog}
             </Button>
             <Button 
-              className="bg-orange-600 hover:bg-orange-700 text-white"
+              className="bg-orange-600 hover:bg-orange-700 text-[#0073AC]"
               onClick={() => {
                 if (capacityWarning.booking) {
                   acceptBooking(capacityWarning.booking, true);
@@ -3435,7 +3435,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
       {!["users", "settings", "pricing", "discounts", "calendar", "revenue"].includes(activeTab) && (
         <button
           onClick={() => { originalEditDates.current = null; setIsAddingNew(true); setFormData({ paymentStatus: "manual", status: "confirmed", passengers: 2, numberOfCars: 1 }); }}
-          className="fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-[#FAF9F6] hover:bg-[#052558] active:bg-[#041a3d] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200 px-4 sm:px-6 py-3 sm:py-4 min-h-[56px] touch-manipulation"
+          className="fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-[#FAF9F6] hover:bg-[#052558] active:bg-[#041a3d] text-[#0073AC] font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200 px-4 sm:px-6 py-3 sm:py-4 min-h-[56px] touch-manipulation"
           aria-label="Добави резервация"
         >
           <Plus className="w-5 h-5 sm:w-6 sm:h-6" />

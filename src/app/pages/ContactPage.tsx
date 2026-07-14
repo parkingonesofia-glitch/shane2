@@ -199,7 +199,7 @@ export function ContactPage() {
               <Button
                 onClick={handleWaze}
                 size="lg"
-                className="bg-[#FAF9F6] hover:bg-[#FAF9F6]/90 text-white font-semibold"
+                className="bg-[#FAF9F6] hover:bg-[#FAF9F6]/90 text-[#0073AC] font-semibold"
               >
                 <img
                   src="/waze-icon.png"
@@ -312,7 +312,7 @@ export function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-6 py-3 rounded-lg font-semibold text-white transition-all hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  className="w-full px-6 py-3 rounded-lg font-semibold text-[#0073AC] transition-all hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                   style={{ backgroundColor: '#FAF9F6' }}
                 >
                   {isSubmitting ? (

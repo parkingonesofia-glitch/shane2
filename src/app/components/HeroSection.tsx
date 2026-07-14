@@ -22,7 +22,7 @@ export function HeroSection() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F6]/60 via-[#1e5ba8]/35 to-[#FAF9F6]/60"></div>
         </div>
         
-        <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto py-12 md:py-0">
+        <div className="relative z-10 text-center text-[#0073AC] px-4 max-w-5xl mx-auto py-12 md:py-0">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
             {t("heroTitle")}
           </h1>
