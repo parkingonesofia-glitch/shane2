@@ -323,7 +323,7 @@ export function RevenueManagement({ bookings, users }: RevenueManagementProps) {
             <Download className="h-4 w-4 mr-2" />
             Експорт прогнозни (.csv)
           </Button>
-          <Button onClick={exportAllCSV} variant="default" className="text-sm bg-[#073590]">
+          <Button onClick={exportAllCSV} variant="default" className="text-sm bg-[#FAF9F6]">
             <Download className="h-4 w-4 mr-2" />
             Експорт всички (.csv)
           </Button>
@@ -593,9 +593,9 @@ export function RevenueManagement({ bookings, users }: RevenueManagementProps) {
           <Card className="p-6 border-2 border-[#0073AC] bg-gradient-to-br from-yellow-50 to-white">
             <div className="flex items-center justify-between mb-2">
               <span className="text-gray-700 font-semibold">Комбинирано</span>
-              <Euro className="h-6 w-6 text-[#073590]" />
+              <Euro className="h-6 w-6 text-[#FAF9F6]" />
             </div>
-            <p className="text-3xl font-black text-[#073590]">€{(revenueData.collected.total + revenueData.forecast.total).toFixed(2)}</p>
+            <p className="text-3xl font-black text-[#FAF9F6]">€{(revenueData.collected.total + revenueData.forecast.total).toFixed(2)}</p>
             <p className="text-xs text-gray-600 mt-2">Събрани + Прогнозни</p>
           </Card>
         </div>
@@ -629,7 +629,7 @@ export function RevenueManagement({ bookings, users }: RevenueManagementProps) {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#073590]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#FAF9F6]"
             >
               <option value="all">Всички статуси</option>
               <option value="confirmed">Потвърдена</option>
@@ -646,7 +646,7 @@ export function RevenueManagement({ bookings, users }: RevenueManagementProps) {
             <select
               value={paymentStatusFilter}
               onChange={(e) => setPaymentStatusFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#073590]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#FAF9F6]"
             >
               <option value="all">Всички</option>
               <option value="paid">Платено</option>
@@ -660,7 +660,7 @@ export function RevenueManagement({ bookings, users }: RevenueManagementProps) {
             <select
               value={paymentMethodFilter}
               onChange={(e) => setPaymentMethodFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#073590]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#FAF9F6]"
             >
               <option value="all">Всички</option>
               <option value="cash">В брой</option>

@@ -198,7 +198,7 @@ export function DiscountManager() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center py-12">
-        <Loader2 className="h-8 w-8 animate-spin text-[#073590]" />
+        <Loader2 className="h-8 w-8 animate-spin text-[#FAF9F6]" />
       </div>
     );
   }
@@ -230,7 +230,7 @@ export function DiscountManager() {
               id="newType"
               value={newType}
               onChange={(e) => setNewType(e.target.value as "percentage" | "fixed")}
-              className="w-full h-11 px-3 rounded-md border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-[#073590]"
+              className="w-full h-11 px-3 rounded-md border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-[#FAF9F6]"
             >
               <option value="percentage">Percentage (%)</option>
               <option value="fixed">Fixed Amount (€)</option>
@@ -286,7 +286,7 @@ export function DiscountManager() {
           <Button
             onClick={handleCreateDiscount}
             disabled={isCreating}
-            className="bg-[#073590] hover:bg-[#052c70] text-white font-medium h-11"
+            className="bg-[#FAF9F6] hover:bg-[#052c70] text-white font-medium h-11"
           >
             {isCreating ? (
               <>

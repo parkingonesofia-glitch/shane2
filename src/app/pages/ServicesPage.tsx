@@ -85,7 +85,7 @@ export function ServicesPage() {
 
       <div className="pt-24 md:pt-32 pb-16 px-4">{/* Added md:pt-32 for desktop to clear the taller header */}
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#073590' }}>
+          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#FAF9F6' }}>
             {t('servicesTitle')}
           </h1>
 
@@ -98,9 +98,9 @@ export function ServicesPage() {
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
                 <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#0073AC' }}>
-                  <service.icon className="w-8 h-8" style={{ color: '#073590' }} />
+                  <service.icon className="w-8 h-8" style={{ color: '#FAF9F6' }} />
                 </div>
-                <h3 className="text-xl font-bold mb-3" style={{ color: '#073590' }}>
+                <h3 className="text-xl font-bold mb-3" style={{ color: '#FAF9F6' }}>
                   {t(service.titleKey)}
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
@@ -112,16 +112,16 @@ export function ServicesPage() {
 
           {/* Additional Benefits */}
           <div className="mb-16">
-            <h2 className="text-4xl font-bold text-center mb-12" style={{ color: '#073590' }}>
+            <h2 className="text-4xl font-bold text-center mb-12" style={{ color: '#FAF9F6' }}>
               {t('additionalBenefitsTitle')}
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               {additionalBenefits.map((benefit, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
                   <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#0073AC' }}>
-                    <benefit.icon className="w-8 h-8" style={{ color: '#073590' }} />
+                    <benefit.icon className="w-8 h-8" style={{ color: '#FAF9F6' }} />
                   </div>
-                  <h3 className="text-xl font-bold mb-3" style={{ color: '#073590' }}>
+                  <h3 className="text-xl font-bold mb-3" style={{ color: '#FAF9F6' }}>
                     {t(benefit.titleKey)}
                   </h3>
                   <p className="text-gray-700 leading-relaxed">
@@ -137,7 +137,7 @@ export function ServicesPage() {
             <button
               onClick={() => navigate('/')}
               className="px-8 py-4 rounded-lg font-semibold text-white text-lg shadow-lg hover:shadow-xl transition-shadow"
-              style={{ backgroundColor: '#073590' }}
+              style={{ backgroundColor: '#FAF9F6' }}
             >
               {t('servicesBookNow')}
             </button>

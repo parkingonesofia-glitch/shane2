@@ -18,7 +18,7 @@ export function PricingPage() {
 
       <div className="pt-24 md:pt-32 pb-16 px-4">{/* Added md:pt-32 for desktop to clear the taller header */}
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#073590' }}>
+          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#FAF9F6' }}>
             {t('pricingTitle')}
           </h1>
 
@@ -31,7 +31,7 @@ export function PricingPage() {
             {/* Weekend Package */}
             <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 hover:border-[#0073AC] transition-colors">
               <div className="text-center">
-                <h2 className="text-xl font-bold mb-1" style={{ color: '#073590' }}>
+                <h2 className="text-xl font-bold mb-1" style={{ color: '#FAF9F6' }}>
                   {t('pricingWeekendTitle')}
                 </h2>
                 <div className="text-sm text-gray-600 mb-3">
@@ -44,7 +44,7 @@ export function PricingPage() {
                   <div className="text-xs text-gray-500 mt-1">
                     (48.89 {t('pricingCurrencyBGN')})
                   </div>
-                  <div className="text-xs font-semibold mt-2" style={{ color: '#073590' }}>
+                  <div className="text-xs font-semibold mt-2" style={{ color: '#FAF9F6' }}>
                     {t('pricingWeekendPerDay')}
                   </div>
                 </div>
@@ -62,7 +62,7 @@ export function PricingPage() {
                 </span>
               </div>
               <div className="text-center">
-                <h2 className="text-xl font-bold mb-1" style={{ color: '#073590' }}>
+                <h2 className="text-xl font-bold mb-1" style={{ color: '#FAF9F6' }}>
                   {t('pricingWeeklyTitle')}
                 </h2>
                 <div className="text-sm text-gray-600 mb-3">
@@ -75,7 +75,7 @@ export function PricingPage() {
                   <div className="text-xs text-gray-500 mt-1">
                     (74.32 {t('pricingCurrencyBGN')})
                   </div>
-                  <div className="text-xs font-semibold mt-2" style={{ color: '#073590' }}>
+                  <div className="text-xs font-semibold mt-2" style={{ color: '#FAF9F6' }}>
                     {t('pricingWeeklyPerDay')}
                   </div>
                 </div>
@@ -88,7 +88,7 @@ export function PricingPage() {
             {/* Monthly Package */}
             <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 hover:border-[#0073AC] transition-colors">
               <div className="text-center">
-                <h2 className="text-xl font-bold mb-1" style={{ color: '#073590' }}>
+                <h2 className="text-xl font-bold mb-1" style={{ color: '#FAF9F6' }}>
                   {t('pricingMonthlyTitle')}
                 </h2>
                 <div className="text-sm text-gray-600 mb-3">
@@ -101,7 +101,7 @@ export function PricingPage() {
                   <div className="text-xs text-gray-500 mt-1">
                     (170.15 {t('pricingCurrencyBGN')})
                   </div>
-                  <div className="text-xs font-semibold mt-2" style={{ color: '#073590' }}>
+                  <div className="text-xs font-semibold mt-2" style={{ color: '#FAF9F6' }}>
                     {t('pricingMonthlyPerDay')}
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export function PricingPage() {
 
           {/* Features Section */}
           <div className="bg-white rounded-lg shadow-lg p-8 border-2 border-gray-200 mb-8">
-            <h3 className="text-2xl font-bold mb-6 text-center" style={{ color: '#073590' }}>
+            <h3 className="text-2xl font-bold mb-6 text-center" style={{ color: '#FAF9F6' }}>
               {t('pricingIncludedTitle')}
             </h3>
             <div className="grid md:grid-cols-2 gap-4">
@@ -144,21 +144,21 @@ export function PricingPage() {
               </div>
             </div>
             <div className="mt-6 bg-yellow-50 rounded-lg p-4 border-2" style={{ borderColor: '#0073AC' }}>
-              <p className="font-semibold text-center" style={{ color: '#073590' }}>
+              <p className="font-semibold text-center" style={{ color: '#FAF9F6' }}>
                 {t('pricingLongerNote')}
               </p>
             </div>
           </div>
 
           {/* Car Keys Service Note */}
-          <div className="bg-blue-50 rounded-lg p-8 mb-8 border-2" style={{ borderColor: '#073590' }}>
-            <h3 className="text-xl font-bold mb-4 text-center" style={{ color: '#073590' }}>
+          <div className="bg-blue-50 rounded-lg p-8 mb-8 border-2" style={{ borderColor: '#FAF9F6' }}>
+            <h3 className="text-xl font-bold mb-4 text-center" style={{ color: '#FAF9F6' }}>
               {t('pricingCarKeysTitle')}
             </h3>
             <p className="text-center text-gray-700 text-lg mb-4">
               {t('pricingCarKeysDesc')}
             </p>
-            <p className="text-center font-semibold" style={{ color: '#073590' }}>
+            <p className="text-center font-semibold" style={{ color: '#FAF9F6' }}>
               {t('pricingCarKeysContact')}
             </p>
             <p className="text-center text-2xl font-bold mt-2" style={{ color: '#0073AC' }}>
@@ -171,7 +171,7 @@ export function PricingPage() {
             <button
               onClick={() => navigate('/')}
               className="px-8 py-4 rounded-lg font-semibold text-white text-lg shadow-lg hover:shadow-xl transition-shadow"
-              style={{ backgroundColor: '#073590' }}
+              style={{ backgroundColor: '#FAF9F6' }}
             >
               {t('pricingBookNow')}
             </button>

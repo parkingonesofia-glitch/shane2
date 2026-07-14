@@ -19,7 +19,7 @@ export function TermsAndConditions() {
           <Button
             variant="ghost"
             onClick={handleBack}
-            className="text-[#073590] hover:text-[#073590]/80"
+            className="text-[#FAF9F6] hover:text-[#FAF9F6]/80"
           >
             <ArrowLeft className="mr-2 h-5 w-5" />
             {language === "bg" ? "Назад към началната страница" : "Back to Home"}
@@ -310,7 +310,7 @@ export function TermsAndConditions() {
                 <p className="font-semibold text-lg text-gray-900">
                   Настоящите Общи условия са издадени от:
                 </p>
-                <p className="font-bold text-xl text-[#073590] mt-2">
+                <p className="font-bold text-xl text-[#FAF9F6] mt-2">
                   „А-Парк 98" ЕООД
                 </p>
                 <p className="text-gray-700 mt-1">
@@ -594,7 +594,7 @@ export function TermsAndConditions() {
                 <p className="font-semibold text-lg text-gray-900">
                   These Terms and Conditions are issued by:
                 </p>
-                <p className="font-bold text-xl text-[#073590] mt-2">
+                <p className="font-bold text-xl text-[#FAF9F6] mt-2">
                   "A-Park 98" Ltd.
                 </p>
                 <p className="text-gray-700 mt-1">

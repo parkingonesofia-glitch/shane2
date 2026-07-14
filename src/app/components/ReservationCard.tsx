@@ -153,7 +153,7 @@ export function ReservationCard({
       {/* TOP: Booking Code & Status Badges */}
       <div className="flex items-center justify-between gap-2 mb-3">
         {reservation.bookingCode && (
-          <Badge className="bg-[#0073AC] text-[#073590] font-bold text-sm py-1 px-3 flex-shrink-0 border-2 border-[#073590]">
+          <Badge className="bg-[#0073AC] text-[#FAF9F6] font-bold text-sm py-1 px-3 flex-shrink-0 border-2 border-[#FAF9F6]">
             {reservation.bookingCode}
           </Badge>
         )}
@@ -192,7 +192,7 @@ export function ReservationCard({
       {/* PRIORITY 1: CUSTOMER NAME - LARGEST */}
       <div className="mb-3 pb-3 border-b-2 border-gray-200">
         <div className="flex items-center gap-2">
-          <User className="h-7 w-7 text-[#073590] flex-shrink-0" />
+          <User className="h-7 w-7 text-[#FAF9F6] flex-shrink-0" />
           <div className="flex-1">
             <div className="text-xs text-gray-500 font-semibold mb-0.5">КЛИЕНТ</div>
             <div className="font-black text-[28px] leading-tight text-gray-900">
@@ -218,7 +218,7 @@ export function ReservationCard({
             )}
             {/* Passenger Count - Clear and Easy to Read */}
             <div className="mt-2 flex items-center gap-2 text-base font-semibold text-gray-700">
-              <Users className="h-5 w-5 text-[#073590] flex-shrink-0" />
+              <Users className="h-5 w-5 text-[#FAF9F6] flex-shrink-0" />
               <span>{reservation.passengers} {reservation.passengers === 1 ? 'пътник' : 'пътника'}</span>
               {reservation.numberOfCars && reservation.numberOfCars > 1 && (
                 <>
@@ -519,7 +519,7 @@ export function ReservationCard({
                   <div key={i} className="flex gap-3 relative">
                     {/* Timeline line */}
                     <div className="flex flex-col items-center">
-                      <div className="w-2.5 h-2.5 rounded-full bg-[#073590] mt-1 shrink-0 z-10" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#FAF9F6] mt-1 shrink-0 z-10" />
                       {i < events.length - 1 && <div className="w-px flex-1 bg-gray-200 my-0.5" />}
                     </div>
                     <div className="pb-3 flex-1">

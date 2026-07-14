@@ -43,7 +43,7 @@ export function BookingPage() {
 
       <div className="pt-24 md:pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#073590' }}>
+          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#FAF9F6' }}>
             {t("reservation")}
           </h1>
 
@@ -57,7 +57,7 @@ export function BookingPage() {
       </div>
 
       {/* Footer */}
-      <footer className="text-white py-12 bg-[#073590]">
+      <footer className="text-white py-12 bg-[#FAF9F6]">
         <div className="container mx-auto px-4 text-center">
           <h3 className="mb-2 text-2xl font-bold">{t("heroTitle")}</h3>
           <p className="text-gray-300 mb-6">

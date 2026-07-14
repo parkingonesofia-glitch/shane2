@@ -127,7 +127,7 @@ export function CheckoutModal({
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-xl shadow-2xl w-full max-w-sm">
         {/* Header */}
-        <div className="bg-[#073590] text-white px-5 py-4 rounded-t-xl flex items-center justify-between">
+        <div className="bg-[#FAF9F6] text-white px-5 py-4 rounded-t-xl flex items-center justify-between">
           <h2 className="text-lg font-bold">Напускане на паркинга</h2>
           <button onClick={onCancel} className="text-white/80 hover:text-white">
             <X className="w-5 h-5" />
@@ -175,7 +175,7 @@ export function CheckoutModal({
                     min="0"
                     value={adjustedFee}
                     onChange={(e) => setAdjustedFee(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#073590] text-lg font-bold text-center"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FAF9F6] text-lg font-bold text-center"
                   />
                   {isAdjusted && (
                     <p className="text-xs text-amber-700 mt-1 flex items-center gap-1">
@@ -187,7 +187,7 @@ export function CheckoutModal({
                     <select
                       value={adjustmentReason}
                       onChange={(e) => setAdjustmentReason(e.target.value)}
-                      className="w-full mt-2 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#073590]"
+                      className="w-full mt-2 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#FAF9F6]"
                     >
                       <option value="">Причина за корекция...</option>
                       <option value="goodwill">Отстъпка от добра воля</option>
@@ -208,7 +208,7 @@ export function CheckoutModal({
             {/* Total */}
             <div className="flex justify-between items-center pt-1 border-t">
               <span className="text-gray-700 font-medium">Общо за плащане:</span>
-              <span className="text-2xl font-black text-[#073590]">€{totalDue.toFixed(2)}</span>
+              <span className="text-2xl font-black text-[#FAF9F6]">€{totalDue.toFixed(2)}</span>
             </div>
 
             {/* Buttons */}
@@ -219,7 +219,7 @@ export function CheckoutModal({
               <Button
                 onClick={handleNext}
                 disabled={isCalculating || (isAdjusted && !adjustmentReason) || adjustedFee === ""}
-                className="flex-1 bg-[#073590] hover:bg-[#052560] text-white font-bold"
+                className="flex-1 bg-[#FAF9F6] hover:bg-[#052560] text-white font-bold"
               >
                 {(adjustedFeeNum > 0 || (booking.paymentMethod === "pay-on-leave" && booking.paymentStatus !== "paid")) ? "Напред →" : "Потвърди"}
               </Button>
@@ -246,7 +246,7 @@ export function CheckoutModal({
             </div>
 
             <div className="text-center py-1">
-              <span className="text-3xl font-black text-[#073590]">€{totalDue.toFixed(2)}</span>
+              <span className="text-3xl font-black text-[#FAF9F6]">€{totalDue.toFixed(2)}</span>
             </div>
 
             <div className="grid grid-cols-2 gap-3">

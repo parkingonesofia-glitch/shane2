@@ -374,7 +374,7 @@ export function ReservationPerformance({ bookings, users }: ReservationPerforman
             <Download className="h-4 w-4 mr-2" />
             Експорт резервации
           </Button>
-          <Button onClick={exportByEmployee} variant="default" className="text-sm bg-[#073590]">
+          <Button onClick={exportByEmployee} variant="default" className="text-sm bg-[#FAF9F6]">
             <Download className="h-4 w-4 mr-2" />
             Експорт по служител
           </Button>
@@ -504,7 +504,7 @@ export function ReservationPerformance({ bookings, users }: ReservationPerforman
           onClick={() => setExpandedEmployee(!expandedEmployee)}
           className="w-full flex items-center justify-between mb-4 hover:bg-gray-50 p-3 rounded-lg transition-colors"
         >
-          <h3 className="text-xl font-bold text-[#073590]">👤 По служител</h3>
+          <h3 className="text-xl font-bold text-[#FAF9F6]">👤 По служител</h3>
           {expandedEmployee ? <ChevronUp className="h-6 w-6" /> : <ChevronDown className="h-6 w-6" />}
         </button>
         
@@ -528,7 +528,7 @@ export function ReservationPerformance({ bookings, users }: ReservationPerforman
                     </td>
                     <td className="p-3 text-center font-semibold text-blue-600">{emp.created}</td>
                     <td className="p-3 text-center font-semibold text-green-600">{emp.accepted}</td>
-                    <td className="p-3 text-right font-bold text-[#073590]">€{emp.revenue.toFixed(2)}</td>
+                    <td className="p-3 text-right font-bold text-[#FAF9F6]">€{emp.revenue.toFixed(2)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -543,7 +543,7 @@ export function ReservationPerformance({ bookings, users }: ReservationPerforman
           onClick={() => setExpandedDaily(!expandedDaily)}
           className="w-full flex items-center justify-between mb-4 hover:bg-gray-50 p-3 rounded-lg transition-colors"
         >
-          <h3 className="text-xl font-bold text-[#073590]">📅 Резервации по дни</h3>
+          <h3 className="text-xl font-bold text-[#FAF9F6]">📅 Резервации по дни</h3>
           {expandedDaily ? <ChevronUp className="h-6 w-6" /> : <ChevronDown className="h-6 w-6" />}
         </button>
         
@@ -613,7 +613,7 @@ export function ReservationPerformance({ bookings, users }: ReservationPerforman
             <select
               value={employeeFilter}
               onChange={(e) => setEmployeeFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#073590]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#FAF9F6]"
             >
               <option value="all">Всички служители</option>
               {uniqueEmployees.map(emp => (
@@ -628,7 +628,7 @@ export function ReservationPerformance({ bookings, users }: ReservationPerforman
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#073590]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#FAF9F6]"
             >
               <option value="all">Всички статуси</option>
               <option value="new">Нова</option>
@@ -646,7 +646,7 @@ export function ReservationPerformance({ bookings, users }: ReservationPerforman
             <select
               value={paymentStatusFilter}
               onChange={(e) => setPaymentStatusFilter(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#073590]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#FAF9F6]"
             >
               <option value="all">Всички</option>
               <option value="paid">Платено</option>
@@ -694,7 +694,7 @@ export function ReservationPerformance({ bookings, users }: ReservationPerforman
           className="w-full flex items-center justify-between mb-4 hover:bg-gray-50 p-3 rounded-lg transition-colors"
         >
           <div>
-            <h3 className="text-xl font-bold text-[#073590]">📋 Детайлна таблица на резервации</h3>
+            <h3 className="text-xl font-bold text-[#FAF9F6]">📋 Детайлна таблица на резервации</h3>
             <p className="text-sm text-gray-600 mt-1">{detailedBookings.length} резервации</p>
           </div>
           {expandedDetails ? <ChevronUp className="h-6 w-6" /> : <ChevronDown className="h-6 w-6" />}
@@ -743,7 +743,7 @@ export function ReservationPerformance({ bookings, users }: ReservationPerforman
                             {getAcceptedBy(booking)}
                           </div>
                         </td>
-                        <td className="p-3 text-right font-bold text-[#073590]">
+                        <td className="p-3 text-right font-bold text-[#FAF9F6]">
                           €{(booking.finalPrice || booking.totalPrice).toFixed(2)}
                         </td>
                         <td className="p-3 text-center text-xs">

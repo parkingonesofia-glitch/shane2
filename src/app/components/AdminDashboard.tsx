@@ -1948,7 +1948,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
                   onClick={() => setActiveTab("workload")}
                   className={`px-4 sm:px-6 py-3 sm:py-4 font-medium text-base sm:text-lg whitespace-nowrap border-b-2 transition-colors min-h-[48px] flex items-center ${
                     activeTab === "workload"
-                      ? "border-[#073590] text-[#073590]"
+                      ? "border-[#FAF9F6] text-[#FAF9F6]"
                       : "border-transparent text-gray-600 hover:text-gray-900"
                   }`}
                 >
@@ -2090,7 +2090,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
             <Card className="p-6">
             {/* Calendar Title and Helper Text */}
             <div className="mb-4">
-              <h2 className="text-2xl font-bold text-[#073590] mb-2">Очаквана заетост</h2>
+              <h2 className="text-2xl font-bold text-[#FAF9F6] mb-2">Очаквана заетост</h2>
               <p className="text-sm text-gray-600 italic">Базирано на потвърдени резервации</p>
             </div>
             
@@ -2173,7 +2173,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
                         onClick={() => setSelectedDate(dateStr)}
                         className={`p-3 border-2 rounded-lg hover:shadow-md transition-all ${bgColor} ${
                           isSelected ? 'ring-2 ring-blue-500 shadow-lg' : ''
-                        } ${isToday ? 'ring-4 ring-[#0073AC] font-black border-[#073590] border-4' : ''}`}
+                        } ${isToday ? 'ring-4 ring-[#0073AC] font-black border-[#FAF9F6] border-4' : ''}`}
                       >
                         <div className={`${isToday ? 'text-xl' : 'text-lg'} font-medium mb-1`}>{day}</div>
                         <div className={`${isToday ? 'text-base font-bold' : 'text-sm'} font-semibold`}>
@@ -2240,15 +2240,15 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
                   {capacity.isToday && (
                     <>
                       {/* Section 1: Real-time Status (Live) */}
-                      <div className="mb-6 p-4 bg-white rounded-lg border-2 border-[#073590]">
-                        <h4 className="text-lg font-bold text-[#073590] mb-3 flex items-center gap-2">
+                      <div className="mb-6 p-4 bg-white rounded-lg border-2 border-[#FAF9F6]">
+                        <h4 className="text-lg font-bold text-[#FAF9F6] mb-3 flex items-center gap-2">
                           <Car className="h-5 w-5" />
                           📍 Реално състояние (Live)
                         </h4>
                         <div className="grid grid-cols-2 gap-4">
                           <div className="text-center p-3 bg-blue-50 rounded">
                             <div className="text-sm text-gray-600 font-semibold mb-1">В ПАРКИНГА</div>
-                            <div className="text-4xl font-black text-[#073590]">{realParked}</div>
+                            <div className="text-4xl font-black text-[#FAF9F6]">{realParked}</div>
                           </div>
                           <div className="text-center p-3 bg-green-50 rounded">
                             <div className="text-sm text-gray-600 font-semibold mb-1">СВОБОДНИ</div>
@@ -2476,7 +2476,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
                 {/* Header + month nav */}
                 <div className="flex items-center justify-between">
                   <h2 className="text-3xl font-bold flex items-center gap-2">
-                    <TrendingUp className="w-7 h-7 text-[#073590]" />
+                    <TrendingUp className="w-7 h-7 text-[#FAF9F6]" />
                     Натовареност
                   </h2>
                   <div className="flex items-center gap-2">
@@ -2528,11 +2528,11 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
                       <button
                         key={dateStr}
                         onClick={() => setWorkloadExpandedDay(isSelected ? '' : dateStr)}
-                        className={`border-2 rounded-xl p-2 text-left transition-all hover:shadow-md min-h-[90px] flex flex-col ${cellBg} ${isToday ? 'ring-3 ring-[#073590] ring-offset-2 border-[#073590]' : ''} ${isSelected ? 'ring-2 ring-blue-500 shadow-lg' : ''}`}
+                        className={`border-2 rounded-xl p-2 text-left transition-all hover:shadow-md min-h-[90px] flex flex-col ${cellBg} ${isToday ? 'ring-3 ring-[#FAF9F6] ring-offset-2 border-[#FAF9F6]' : ''} ${isSelected ? 'ring-2 ring-blue-500 shadow-lg' : ''}`}
                       >
-                        <div className={`text-base font-black mb-1 leading-none ${isToday ? 'text-[#073590]' : isPast ? 'text-gray-400' : 'text-gray-800'}`}>
+                        <div className={`text-base font-black mb-1 leading-none ${isToday ? 'text-[#FAF9F6]' : isPast ? 'text-gray-400' : 'text-gray-800'}`}>
                           {day}
-                          {isToday && <span className="ml-1 text-[10px] bg-[#073590] text-white px-1 py-0.5 rounded">днес</span>}
+                          {isToday && <span className="ml-1 text-[10px] bg-[#FAF9F6] text-white px-1 py-0.5 rounded">днес</span>}
                         </div>
                         {total > 0 ? (
                           <div className="mt-auto space-y-0.5">
@@ -2564,8 +2564,8 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
                   const d = new Date(expandedDate);
                   const label = d.toLocaleDateString('bg-BG', { weekday: 'long', day: 'numeric', month: 'long' });
                   return (
-                    <div className="border-2 border-[#073590] rounded-xl overflow-hidden">
-                      <div className="bg-[#073590] text-white px-4 py-3 flex items-center justify-between">
+                    <div className="border-2 border-[#FAF9F6] rounded-xl overflow-hidden">
+                      <div className="bg-[#FAF9F6] text-white px-4 py-3 flex items-center justify-between">
                         <span className="font-bold text-base capitalize">{label}</span>
                         <button onClick={() => setWorkloadExpandedDay('')} className="text-white/70 hover:text-white">✕</button>
                       </div>
@@ -3210,7 +3210,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
             </Button>
             <Button 
               onClick={saveBooking}
-              className="h-14 px-8 text-base font-semibold bg-[#073590] hover:bg-[#052558] w-full sm:w-auto order-1 sm:order-2"
+              className="h-14 px-8 text-base font-semibold bg-[#FAF9F6] hover:bg-[#052558] w-full sm:w-auto order-1 sm:order-2"
             >
               {editingBooking ? bg.update : bg.create}
             </Button>
@@ -3435,7 +3435,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
       {!["users", "settings", "pricing", "discounts", "calendar", "revenue"].includes(activeTab) && (
         <button
           onClick={() => { originalEditDates.current = null; setIsAddingNew(true); setFormData({ paymentStatus: "manual", status: "confirmed", passengers: 2, numberOfCars: 1 }); }}
-          className="fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-[#073590] hover:bg-[#052558] active:bg-[#041a3d] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200 px-4 sm:px-6 py-3 sm:py-4 min-h-[56px] touch-manipulation"
+          className="fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-[#FAF9F6] hover:bg-[#052558] active:bg-[#041a3d] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200 px-4 sm:px-6 py-3 sm:py-4 min-h-[56px] touch-manipulation"
           aria-label="Добави резервация"
         >
           <Plus className="w-5 h-5 sm:w-6 sm:h-6" />

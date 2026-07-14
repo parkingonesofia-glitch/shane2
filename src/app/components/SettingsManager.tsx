@@ -278,7 +278,7 @@ export function SettingsManager() {
             <Button
               onClick={updateSettings}
               disabled={isSaving}
-              className="bg-[#073590] hover:bg-[#052c70] text-white px-8"
+              className="bg-[#FAF9F6] hover:bg-[#052c70] text-white px-8"
             >
               {isSaving ? "Запазване..." : "Запази настройките"}
             </Button>

@@ -72,7 +72,7 @@ export function NumberPicker({
                 onClick={() => handleSelect(option.value)}
                 className={`w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-gray-100 ${
                   value === option.value 
-                    ? "bg-[#073590] text-white hover:bg-[#052961] font-semibold" 
+                    ? "bg-[#FAF9F6] text-white hover:bg-[#052961] font-semibold" 
                     : "text-gray-900"
                 }`}
               >

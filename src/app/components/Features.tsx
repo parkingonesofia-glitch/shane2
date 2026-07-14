@@ -44,7 +44,7 @@ export function Features() {
               <Card key={index} className="p-8 hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0073AC] hover:-translate-y-2 h-full">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#0073AC] text-white shadow-lg flex-shrink-0 mb-6">
-                    <Icon className="h-8 w-8 text-[#073590]" />
+                    <Icon className="h-8 w-8 text-[#FAF9F6]" />
                   </div>
                   <div className="flex flex-col items-center text-center w-full max-w-[280px]">
                     <h3 className="text-xl font-bold text-gray-900 mb-4 w-full leading-[1.4] min-h-[3.5rem]">{t(feature.titleKey)}</h3>

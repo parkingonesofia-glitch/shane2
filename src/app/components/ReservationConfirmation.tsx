@@ -146,7 +146,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
         <Card className="p-8 mb-6 print:shadow-none bg-white" id="reservation-card" style={{ backgroundColor: '#ffffff' }}>
           <div className="space-y-6">
             {/* Reservation Number */}
-            <div style={{ backgroundColor: '#073590', color: '#ffffff' }} className="p-4 rounded-lg text-center">
+            <div style={{ backgroundColor: '#FAF9F6', color: '#ffffff' }} className="p-4 rounded-lg text-center">
               <p className="text-sm font-medium mb-1">
                 {language === 'bg' ? 'НОМЕР НА РЕЗЕРВАЦИЯ' : 'RESERVATION NUMBER'}
               </p>
@@ -157,7 +157,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-3">
                 <h3 className="font-semibold flex items-center gap-2" style={{ color: '#111827' }}>
-                  <Calendar className="w-5 h-5" style={{ color: '#073590' }} />
+                  <Calendar className="w-5 h-5" style={{ color: '#FAF9F6' }} />
                   {language === 'bg' ? 'Пристигане' : 'Arrival'}
                 </h3>
                 <div style={{ backgroundColor: '#f9fafb' }} className="p-4 rounded-lg">
@@ -171,7 +171,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
 
               <div className="space-y-3">
                 <h3 className="font-semibold flex items-center gap-2" style={{ color: '#111827' }}>
-                  <Calendar className="w-5 h-5" style={{ color: '#073590' }} />
+                  <Calendar className="w-5 h-5" style={{ color: '#FAF9F6' }} />
                   {language === 'bg' ? 'Заминаване' : 'Departure'}
                 </h3>
                 <div style={{ backgroundColor: '#f9fafb' }} className="p-4 rounded-lg">
@@ -195,7 +195,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-start gap-3">
-                  <User className="w-5 h-5 mt-1" style={{ color: '#073590' }} />
+                  <User className="w-5 h-5 mt-1" style={{ color: '#FAF9F6' }} />
                   <div>
                     <p className="text-sm" style={{ color: '#4b5563' }}>{language === 'bg' ? 'Име' : 'Name'}</p>
                     <p className="font-medium" style={{ color: '#111827' }}>{booking.name}</p>
@@ -203,7 +203,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 mt-1" style={{ color: '#073590' }} />
+                  <Phone className="w-5 h-5 mt-1" style={{ color: '#FAF9F6' }} />
                   <div>
                     <p className="text-sm" style={{ color: '#4b5563' }}>{language === 'bg' ? 'Телефон' : 'Phone'}</p>
                     <p className="font-medium" style={{ color: '#111827' }}>{booking.phone}</p>
@@ -215,7 +215,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
             {/* Vehicle Information */}
             <div className="space-y-4">
               <h3 className="font-semibold text-lg flex items-center gap-2" style={{ color: '#111827' }}>
-                <Car className="w-5 h-5" style={{ color: '#073590' }} />
+                <Car className="w-5 h-5" style={{ color: '#FAF9F6' }} />
                 {language === 'bg' ? 'Информация за превозните средства' : 'Vehicle Information'}
               </h3>
               
@@ -245,7 +245,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
             <div style={{ borderTop: '1px solid #e5e7eb' }}></div>
 
             {/* Price */}
-            <div style={{ backgroundColor: '#073590', color: '#ffffff' }} className="p-6 rounded-lg">
+            <div style={{ backgroundColor: '#FAF9F6', color: '#ffffff' }} className="p-6 rounded-lg">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm mb-1" style={{ opacity: 0.9 }}>
@@ -276,9 +276,9 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
 
             {/* Free Shuttle Service Notice */}
             <div style={{ backgroundColor: '#0073AC' }} className="p-4 rounded-lg flex items-start gap-3">
-              <Bus className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: '#073590' }} />
+              <Bus className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: '#FAF9F6' }} />
               <div>
-                <p className="font-semibold mb-1" style={{ color: '#073590' }}>
+                <p className="font-semibold mb-1" style={{ color: '#FAF9F6' }}>
                   {language === 'bg' ? 'Безплатен трансфер до летище София' : 'Free Shuttle Service to Sofia Airport'}
                 </p>
                 <p className="text-sm" style={{ color: '#374151' }}>
@@ -296,7 +296,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
           <Button
             onClick={handleDownloadPDF}
             size="lg"
-            className="flex-1 h-14 text-base font-semibold bg-[#073590] hover:bg-[#073590]/90 text-white transition-colors"
+            className="flex-1 h-14 text-base font-semibold bg-[#FAF9F6] hover:bg-[#FAF9F6]/90 text-white transition-colors"
           >
             <Printer className="w-5 h-5 mr-2" />
             {language === 'bg' ? 'Свалете PDF' : 'Download PDF'}
@@ -305,7 +305,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
           <Button
             onClick={onBackToHome}
             size="lg"
-            className="flex-1 h-14 text-base font-semibold bg-[#0073AC] hover:bg-[#f5d54a] text-[#073590] transition-colors"
+            className="flex-1 h-14 text-base font-semibold bg-[#0073AC] hover:bg-[#f5d54a] text-[#FAF9F6] transition-colors"
           >
             <Home className="w-5 h-5 mr-2" />
             {language === 'bg' ? 'Обратно към начална страница' : 'Back to Home'}

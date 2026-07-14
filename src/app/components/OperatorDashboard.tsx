@@ -1526,7 +1526,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
   h1 { font-size: 18px; margin: 0 0 3px 0; }
   .subtitle { font-size: 13px; color: #555; margin-bottom: 10px; }
   table { width: 960px; border-collapse: collapse; table-layout: fixed; }
-  th { background: #073590; color: #fff; padding: 8px 6px; font-size: 13px; text-align: left; }
+  th { background: #FAF9F6; color: #fff; padding: 8px 6px; font-size: 13px; text-align: left; }
   td { border: 1px solid #ccc; padding: 9px 6px; vertical-align: middle; font-size: 14px; white-space: nowrap; overflow: hidden; }
   tr { page-break-inside: avoid; break-inside: avoid; }
   tr:nth-child(even) td { background: #f5f7fc; }
@@ -1638,7 +1638,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
   h1 { font-size: 18px; margin: 0 0 3px 0; }
   .subtitle { font-size: 13px; color: #555; margin-bottom: 10px; }
   table { width: 960px; border-collapse: collapse; table-layout: fixed; }
-  th { background: #073590; color: #fff; padding: 8px 6px; font-size: 13px; text-align: left; }
+  th { background: #FAF9F6; color: #fff; padding: 8px 6px; font-size: 13px; text-align: left; }
   td { border: 1px solid #ccc; padding: 9px 6px; vertical-align: middle; font-size: 14px; white-space: nowrap; overflow: hidden; }
   tr { page-break-inside: avoid; break-inside: avoid; }
   tr:nth-child(even) td { background: #f5f7fc; }
@@ -2921,7 +2921,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                     <Button
                       variant="outline"
                       onClick={printArrivingTimetable}
-                      className="flex items-center gap-2 border-[#073590] text-[#073590] hover:bg-[#073590] hover:text-white"
+                      className="flex items-center gap-2 border-[#FAF9F6] text-[#FAF9F6] hover:bg-[#FAF9F6] hover:text-white"
                     >
                       <FileText className="w-4 h-4" />
                       Разпечатай
@@ -2948,7 +2948,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                     <Button
                       variant="outline"
                       onClick={printLeavingTimetable}
-                      className="flex items-center gap-2 border-[#073590] text-[#073590] hover:bg-[#073590] hover:text-white"
+                      className="flex items-center gap-2 border-[#FAF9F6] text-[#FAF9F6] hover:bg-[#FAF9F6] hover:text-white"
                     >
                       <FileText className="w-4 h-4" />
                       Разпечатай
@@ -3121,7 +3121,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                       </p>
                       <Button 
                         onClick={returnToActiveShift}
-                        className="mt-4 bg-[#073590] hover:bg-[#052560]"
+                        className="mt-4 bg-[#FAF9F6] hover:bg-[#052560]"
                       >
                         Върнете се към текущата смяна
                       </Button>
@@ -3131,7 +3131,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                 <>
                 <Card className="p-4 sm:p-6">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="p-3 bg-[#073590] rounded-lg">
+                    <div className="p-3 bg-[#FAF9F6] rounded-lg">
                       <Euro className="w-8 h-8 text-white" />
                     </div>
                     <div>
@@ -3562,7 +3562,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                 <Card className="p-3">
                   {/* Calendar Title and Helper Text */}
                   <div className="mb-3">
-                    <h2 className="text-xl sm:text-2xl font-bold text-[#073590]">Очаквана заетост</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold text-[#FAF9F6]">Очаквана заетост</h2>
                     <p className="text-xs sm:text-sm text-gray-600 italic">Базирано на потвърдени резервации</p>
                   </div>
                   
@@ -3643,7 +3643,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                               onClick={() => setSelectedDate(dateStr)}
                               className={`aspect-square border-2 rounded text-center hover:shadow-md transition-all flex flex-col items-center justify-center p-1 ${bgColor} ${
                                 isSelected ? 'ring-2 ring-blue-500 shadow-lg' : ''
-                              } ${isToday ? 'ring-4 ring-[#0073AC] font-black border-[#073590] border-4' : ''}`}
+                              } ${isToday ? 'ring-4 ring-[#0073AC] font-black border-[#FAF9F6] border-4' : ''}`}
                             >
                               <div className={`${isToday ? 'text-base sm:text-lg' : 'text-sm sm:text-base'} font-bold leading-none`}>{day}</div>
                               <div className={`${isToday ? 'text-xs sm:text-sm font-bold' : 'text-[10px] sm:text-xs'} mt-0.5 font-semibold`}>
@@ -3715,15 +3715,15 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                         {capacity.isToday && (
                           <>
                             {/* Section 1: Real-time Status (Live) */}
-                            <div className="mb-3 p-3 bg-white rounded-lg border-2 border-[#073590]">
-                              <h4 className="text-sm sm:text-base font-bold text-[#073590] mb-2 flex items-center gap-1">
+                            <div className="mb-3 p-3 bg-white rounded-lg border-2 border-[#FAF9F6]">
+                              <h4 className="text-sm sm:text-base font-bold text-[#FAF9F6] mb-2 flex items-center gap-1">
                                 <Car className="h-4 w-4" />
                                 📍 Реално (Live)
                               </h4>
                               <div className="grid grid-cols-2 gap-2">
                                 <div className="text-center p-2 bg-blue-50 rounded">
                                   <div className="text-xs text-gray-600 font-semibold mb-1">В ПАРКИНГА</div>
-                                  <div className="text-3xl font-black text-[#073590]">{realParked}</div>
+                                  <div className="text-3xl font-black text-[#FAF9F6]">{realParked}</div>
                                 </div>
                                 <div className="text-center p-2 bg-green-50 rounded">
                                   <div className="text-xs text-gray-600 font-semibold mb-1">СВОБОДНИ</div>
@@ -3931,7 +3931,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                       const isExpanded = selectedDate === dateStr;
 
                       return (
-                        <div key={dateStr} className={`rounded-lg border ${isToday ? 'border-[#073590] border-2' : 'border-gray-200'} overflow-hidden`}>
+                        <div key={dateStr} className={`rounded-lg border ${isToday ? 'border-[#FAF9F6] border-2' : 'border-gray-200'} overflow-hidden`}>
                           {/* Day row — click to expand */}
                           <button
                             className={`w-full flex items-center gap-3 px-3 py-2 text-left transition-colors ${isToday ? 'bg-blue-50' : isPast ? 'bg-gray-50' : 'bg-white'} hover:bg-blue-50`}
@@ -3939,17 +3939,17 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                           >
                             {/* Date label */}
                             <div className="w-24 shrink-0">
-                              <span className={`font-bold text-sm ${isToday ? 'text-[#073590]' : isPast ? 'text-gray-500' : 'text-gray-900'}`}>
+                              <span className={`font-bold text-sm ${isToday ? 'text-[#FAF9F6]' : isPast ? 'text-gray-500' : 'text-gray-900'}`}>
                                 {dayName} {dayNum} {monthStr}
                               </span>
-                              {isToday && <span className="ml-1 text-[10px] font-bold text-[#073590] bg-blue-100 px-1 rounded">ДНЕС</span>}
+                              {isToday && <span className="ml-1 text-[10px] font-bold text-[#FAF9F6] bg-blue-100 px-1 rounded">ДНЕС</span>}
                             </div>
 
                             {/* Bar */}
                             <div className="flex-1 h-5 bg-gray-100 rounded overflow-hidden relative">
                               {day.total > 0 && (
                                 <div
-                                  className={`h-full rounded transition-all ${isPast ? 'bg-gray-400' : isToday ? 'bg-[#073590]' : 'bg-blue-400'}`}
+                                  className={`h-full rounded transition-all ${isPast ? 'bg-gray-400' : isToday ? 'bg-[#FAF9F6]' : 'bg-blue-400'}`}
                                   style={{ width: `${barWidth}%` }}
                                 />
                               )}
@@ -4020,7 +4020,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                   {/* Legend */}
                   <div className="flex gap-4 text-xs text-gray-500 pt-1">
                     <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-gray-400 inline-block"></span> Минали дни</span>
-                    <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-[#073590] inline-block"></span> Днес</span>
+                    <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-[#FAF9F6] inline-block"></span> Днес</span>
                     <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-blue-400 inline-block"></span> Предстоящи</span>
                     <span className="flex items-center gap-1 text-green-600 font-semibold">↓ пристигат</span>
                     <span className="flex items-center gap-1 text-orange-500 font-semibold">↑ заминават</span>
@@ -4600,7 +4600,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
             </Button>
             <Button 
               onClick={handleSaveBooking}
-              className="h-14 px-8 text-base font-semibold bg-[#073590] hover:bg-[#052558] w-full sm:w-auto order-1 sm:order-2"
+              className="h-14 px-8 text-base font-semibold bg-[#FAF9F6] hover:bg-[#052558] w-full sm:w-auto order-1 sm:order-2"
             >
               {editingBooking ? "Запази промени" : "Създай резервация"}
             </Button>
@@ -4624,7 +4624,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
       {/* Floating Action Button (FAB) - Create Reservation */}
       <button
         onClick={handleAddManualReservation}
-        className="fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-[#073590] hover:bg-[#052558] active:bg-[#041a3d] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200 px-4 sm:px-6 py-3 sm:py-4 min-h-[56px] touch-manipulation"
+        className="fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-[#FAF9F6] hover:bg-[#052558] active:bg-[#041a3d] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200 px-4 sm:px-6 py-3 sm:py-4 min-h-[56px] touch-manipulation"
         aria-label="Добави резервация"
       >
         <Plus className="w-5 h-5 sm:w-6 sm:h-6" />

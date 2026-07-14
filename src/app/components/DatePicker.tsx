@@ -95,7 +95,7 @@ export function DatePicker({ value, onChange, minDate, label, error, id, default
                 justifyContent: "center",
                 alignItems: "center",
                 marginBottom: "1rem",
-                color: "#073590",
+                color: "#FAF9F6",
                 fontWeight: "bold"
               },
               nav: {
@@ -145,7 +145,7 @@ export function DatePicker({ value, onChange, minDate, label, error, id, default
                 transition: "all 0.2s"
               },
               day_selected: {
-                backgroundColor: "#073590 !important",
+                backgroundColor: "#FAF9F6 !important",
                 color: "white !important",
                 fontWeight: "600"
               },

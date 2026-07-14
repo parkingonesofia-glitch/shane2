@@ -48,7 +48,7 @@ export function HowItWorksPage() {
 
       <div className="pt-24 md:pt-32 pb-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#073590' }}>
+          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#FAF9F6' }}>
             {t('howItWorksTitle')}
           </h1>
 
@@ -66,13 +66,13 @@ export function HowItWorksPage() {
                     {/* Icon */}
                     <div className="flex-shrink-0">
                       <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ backgroundColor: '#0073AC' }}>
-                        <Icon className="h-10 w-10" style={{ color: '#073590' }} />
+                        <Icon className="h-10 w-10" style={{ color: '#FAF9F6' }} />
                       </div>
                     </div>
 
                     {/* Content */}
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-3" style={{ color: '#073590' }}>
+                      <h3 className="text-2xl font-bold mb-3" style={{ color: '#FAF9F6' }}>
                         {t(step.titleKey)}
                       </h3>
                       <p className="text-gray-700 text-lg leading-relaxed text-justify">
@@ -82,7 +82,7 @@ export function HowItWorksPage() {
                             <a
                               href="tel:+359877109788"
                               className="font-semibold hover:underline"
-                              style={{ color: '#073590' }}
+                              style={{ color: '#FAF9F6' }}
                             >
                               +359 886 616 991
                             </a>{" "}
@@ -91,7 +91,7 @@ export function HowItWorksPage() {
                               href="/"
                               onClick={handleScrollToBooking}
                               className="font-semibold hover:underline"
-                              style={{ color: '#073590' }}
+                              style={{ color: '#FAF9F6' }}
                             >
                               {t("bookingForm")}
                             </a>
@@ -105,7 +105,7 @@ export function HowItWorksPage() {
                             <a
                               href="tel:+359877109788"
                               className="font-semibold hover:underline"
-                              style={{ color: '#073590' }}
+                              style={{ color: '#FAF9F6' }}
                             >
                               {t("callUs")}
                             </a>
@@ -122,12 +122,12 @@ export function HowItWorksPage() {
 
           {/* FAQ Section */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
-            <h2 className="text-2xl font-bold mb-8 text-center" style={{ color: '#073590' }}>
+            <h2 className="text-2xl font-bold mb-8 text-center" style={{ color: '#FAF9F6' }}>
               {t('howItWorksFaqTitle')}
             </h2>
             <div className="space-y-6">
               <div>
-                <h4 className="font-semibold text-lg mb-2" style={{ color: '#073590' }}>
+                <h4 className="font-semibold text-lg mb-2" style={{ color: '#FAF9F6' }}>
                   {t('howItWorksQ1')}
                 </h4>
                 <p className="text-gray-700">
@@ -135,7 +135,7 @@ export function HowItWorksPage() {
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold text-lg mb-2" style={{ color: '#073590' }}>
+                <h4 className="font-semibold text-lg mb-2" style={{ color: '#FAF9F6' }}>
                   {t('howItWorksQ2')}
                 </h4>
                 <p className="text-gray-700">
@@ -143,7 +143,7 @@ export function HowItWorksPage() {
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold text-lg mb-2" style={{ color: '#073590' }}>
+                <h4 className="font-semibold text-lg mb-2" style={{ color: '#FAF9F6' }}>
                   {t('howItWorksQ3')}
                 </h4>
                 <p className="text-gray-700">
@@ -151,7 +151,7 @@ export function HowItWorksPage() {
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold text-lg mb-2" style={{ color: '#073590' }}>
+                <h4 className="font-semibold text-lg mb-2" style={{ color: '#FAF9F6' }}>
                   {t('howItWorksQ4')}
                 </h4>
                 <p className="text-gray-700">
@@ -163,7 +163,7 @@ export function HowItWorksPage() {
 
           {/* CTA */}
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4" style={{ color: '#073590' }}>
+            <h3 className="text-2xl font-bold mb-4" style={{ color: '#FAF9F6' }}>
               {t('howItWorksReadyTitle')}
             </h3>
             <p className="text-gray-600 mb-6 text-lg">
@@ -172,7 +172,7 @@ export function HowItWorksPage() {
             <button
               onClick={() => navigate('/')}
               className="px-8 py-4 rounded-lg font-semibold text-white text-lg shadow-lg hover:shadow-xl transition-shadow"
-              style={{ backgroundColor: '#073590' }}
+              style={{ backgroundColor: '#FAF9F6' }}
             >
               {t('howItWorksBookNow')}
             </button>

@@ -16,7 +16,7 @@ export function AboutPage() {
 
       <div className="pt-24 md:pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#073590' }}>
+          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#FAF9F6' }}>
             {t('aboutTitle')}
           </h1>
 
@@ -27,21 +27,21 @@ export function AboutPage() {
           {/* Main Content */}
           <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
             <div className="prose prose-lg max-w-none">
-              <h2 className="text-2xl font-bold mb-4" style={{ color: '#073590' }}>
+              <h2 className="text-2xl font-bold mb-4" style={{ color: '#FAF9F6' }}>
                 {t('aboutWelcomeTitle')}
               </h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {t('aboutWelcomeText')}
               </p>
 
-              <h3 className="text-xl font-bold mb-3 mt-8" style={{ color: '#073590' }}>
+              <h3 className="text-xl font-bold mb-3 mt-8" style={{ color: '#FAF9F6' }}>
                 {t('aboutMissionTitle')}
               </h3>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {t('aboutMissionText')}
               </p>
 
-              <h3 className="text-xl font-bold mb-3 mt-8" style={{ color: '#073590' }}>
+              <h3 className="text-xl font-bold mb-3 mt-8" style={{ color: '#FAF9F6' }}>
                 {t('aboutWhyUsTitle')}
               </h3>
               <ul className="space-y-3 mb-6">
@@ -77,7 +77,7 @@ export function AboutPage() {
                 </li>
               </ul>
 
-              <h3 className="text-xl font-bold mb-3 mt-8" style={{ color: '#073590' }}>
+              <h3 className="text-xl font-bold mb-3 mt-8" style={{ color: '#FAF9F6' }}>
                 {t('aboutServicesTitle')}
               </h3>
               <p className="text-gray-700 mb-4 leading-relaxed">
@@ -106,14 +106,14 @@ export function AboutPage() {
                 </li>
               </ul>
 
-              <h3 className="text-xl font-bold mb-3 mt-8" style={{ color: '#073590' }}>
+              <h3 className="text-xl font-bold mb-3 mt-8" style={{ color: '#FAF9F6' }}>
                 {t('aboutContactTitle')}
               </h3>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 {t('aboutContactIntro')}
               </p>
-              <div className="bg-blue-50 rounded-lg p-6 border-2" style={{ borderColor: '#073590' }}>
-                <p className="text-center font-semibold mb-2" style={{ color: '#073590' }}>
+              <div className="bg-blue-50 rounded-lg p-6 border-2" style={{ borderColor: '#FAF9F6' }}>
+                <p className="text-center font-semibold mb-2" style={{ color: '#FAF9F6' }}>
                   {t('aboutContactLabel')}
                 </p>
                 <p className="text-center text-2xl font-bold" style={{ color: '#0073AC' }}>
@@ -127,7 +127,7 @@ export function AboutPage() {
           </div>
 
           {/* CTA Section */}
-          <div className="bg-gradient-to-r from-[#073590] to-[#0a4ab8] rounded-lg shadow-lg p-8 text-center text-white">
+          <div className="bg-gradient-to-r from-[#FAF9F6] to-[#0a4ab8] rounded-lg shadow-lg p-8 text-center text-white">
             <h3 className="text-2xl font-bold mb-4">
               {t('aboutReadyToBook')}
             </h3>
@@ -138,14 +138,14 @@ export function AboutPage() {
               <button
                 onClick={() => window.location.href = '/'}
                 className="px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
-                style={{ backgroundColor: '#0073AC', color: '#073590' }}
+                style={{ backgroundColor: '#0073AC', color: '#FAF9F6' }}
               >
                 {t('aboutBookNowBtn')}
               </button>
               <a
                 href="tel:+359877109788"
                 className="px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105 bg-white"
-                style={{ color: '#073590' }}
+                style={{ color: '#FAF9F6' }}
               >
                 {t('aboutCallUsBtn')}
               </a>

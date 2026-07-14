@@ -14,7 +14,7 @@ export function HowItWorks() {
       titleEn: 'Book Online',
       descBg: (
         <>
-          Можете да направите резервация чрез <Link to="/booking" onClick={() => window.scrollTo(0, 0)} className="font-semibold underline hover:no-underline" style={{ color: '#073590' }}>формата на сайта</Link> или като се свържете с нас на <a href="tel:+359877109788" className="font-semibold underline hover:no-underline" style={{ color: '#073590' }}>+359 886 616 991</a>.
+          Можете да направите резервация чрез <Link to="/booking" onClick={() => window.scrollTo(0, 0)} className="font-semibold underline hover:no-underline" style={{ color: '#FAF9F6' }}>формата на сайта</Link> или като се свържете с нас на <a href="tel:+359877109788" className="font-semibold underline hover:no-underline" style={{ color: '#FAF9F6' }}>+359 886 616 991</a>.
         </>
       ),
       descEn: 'Fill out the easy booking form with arrival and departure dates, email and phone. Choose whether you want standard parking or "Car Keys" service.',
@@ -66,17 +66,17 @@ export function HowItWorks() {
                 <div className="flex items-start gap-4">
                   {/* Number Badge with Icon */}
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white relative" style={{ backgroundColor: '#073590' }}>
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white relative" style={{ backgroundColor: '#FAF9F6' }}>
                       {step.number}
                       <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#0073AC' }}>
-                        <Icon className="w-4 h-4" style={{ color: '#073590' }} />
+                        <Icon className="w-4 h-4" style={{ color: '#FAF9F6' }} />
                       </div>
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-3" style={{ color: '#073590' }}>
+                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAF9F6' }}>
                       {language === 'bg' ? step.titleBg : step.titleEn}
                     </h3>
                     <p className="text-gray-700 leading-relaxed p-[0px] m-[0px] text-justify">
@@ -98,17 +98,17 @@ export function HowItWorks() {
                 <div className="flex flex-col items-center text-center">
                   {/* Number Badge with Icon */}
                   <div className="flex-shrink-0 mb-4">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white relative" style={{ backgroundColor: '#073590' }}>
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white relative" style={{ backgroundColor: '#FAF9F6' }}>
                       {step.number}
                       <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#0073AC' }}>
-                        <Icon className="w-4 h-4" style={{ color: '#073590' }} />
+                        <Icon className="w-4 h-4" style={{ color: '#FAF9F6' }} />
                       </div>
                     </div>
                   </div>
 
                   {/* Content */}
                   <div>
-                    <h3 className="text-xl font-bold mb-3" style={{ color: '#073590' }}>
+                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAF9F6' }}>
                       {language === 'bg' ? step.titleBg : step.titleEn}
                     </h3>
                     <p className="text-gray-700 text-sm leading-relaxed text-justify">

@@ -48,7 +48,7 @@ export function MapSection() {
                 <Button 
                   onClick={handleGoogleMaps}
                   size="lg"
-                  className="bg-[#0073AC] hover:bg-[#0073AC]/90 text-[#073590]"
+                  className="bg-[#0073AC] hover:bg-[#0073AC]/90 text-[#FAF9F6]"
                 >
                   <img 
                     src="/google-maps-icon.png" 
@@ -60,7 +60,7 @@ export function MapSection() {
                 <Button 
                   onClick={handleWaze}
                   size="lg"
-                  className="bg-[#073590] hover:bg-[#073590]/90 text-white"
+                  className="bg-[#FAF9F6] hover:bg-[#FAF9F6]/90 text-white"
                 >
                   <img 
                     src="/waze-icon.png" 

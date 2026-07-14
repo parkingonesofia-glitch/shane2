@@ -443,7 +443,7 @@ export function BookingForm() {
 
               {/* Price Display */}
               {totalPrice && arrivalDate && departureDate && arrivalTime && departureTime && (
-                <div className="bg-white border-2 border-[#073590] rounded-xl p-6 shadow-lg">
+                <div className="bg-white border-2 border-[#FAF9F6] rounded-xl p-6 shadow-lg">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                     {/* Left Side - Price */}
                     <div className="flex-1">
@@ -452,7 +452,7 @@ export function BookingForm() {
                       </p>
                       <div className="flex flex-col gap-1">
                         <div className="flex items-baseline gap-2">
-                          <span className="text-5xl font-bold text-[#073590]">€{totalPrice.toFixed(2)}</span>
+                          <span className="text-5xl font-bold text-[#FAF9F6]">€{totalPrice.toFixed(2)}</span>
                           {numberOfCars > 1 && (
                             <span className="text-xl text-gray-500">(€{(totalPrice / numberOfCars).toFixed(2)} {t("perCar")})</span>
                           )}
@@ -752,7 +752,7 @@ export function BookingForm() {
                     />
                     <Button
                       type="button"
-                      className="bg-[#073590] hover:bg-[#052c70] font-bold text-white text-lg h-12 px-8 rounded-xl shadow-md hover:shadow-lg transition-all whitespace-nowrap"
+                      className="bg-[#FAF9F6] hover:bg-[#052c70] font-bold text-white text-lg h-12 px-8 rounded-xl shadow-md hover:shadow-lg transition-all whitespace-nowrap"
                       disabled={isValidatingDiscount || !!appliedDiscount}
                       onClick={validateDiscountCode}
                     >
@@ -823,7 +823,7 @@ export function BookingForm() {
                     href="/terms"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#073590] hover:text-[#0073AC] font-medium underline transition-colors"
+                    className="text-[#FAF9F6] hover:text-[#0073AC] font-medium underline transition-colors"
                   >
                     {t("termsAndConditionsLink")}
                   </a>
@@ -837,7 +837,7 @@ export function BookingForm() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-[#0073AC] hover:bg-[#f5d54a] font-bold text-[#073590] text-lg h-14 rounded-xl shadow-md hover:shadow-lg transition-all"
+                className="w-full bg-[#0073AC] hover:bg-[#f5d54a] font-bold text-[#FAF9F6] text-lg h-14 rounded-xl shadow-md hover:shadow-lg transition-all"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (

@@ -62,7 +62,7 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#073590] shadow-lg">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F6] shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20 md:h-[110px]">
             {/* Hamburger Menu Button - Left */}
@@ -167,7 +167,7 @@ export function Header() {
 
       {/* Drawer Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-72 bg-[#073590] z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-72 bg-[#FAF9F6] z-50 transform transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         } shadow-2xl`}
       >

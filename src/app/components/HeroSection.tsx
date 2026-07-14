@@ -19,7 +19,7 @@ export function HeroSection() {
             alt="Airport parking lot"
             className="w-full h-full object-cover object-[40%_center] md:object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#073590]/60 via-[#1e5ba8]/35 to-[#073590]/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F6]/60 via-[#1e5ba8]/35 to-[#FAF9F6]/60"></div>
         </div>
         
         <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto py-12 md:py-0">

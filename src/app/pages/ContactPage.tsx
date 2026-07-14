@@ -81,7 +81,7 @@ export function ContactPage() {
 
       <div className="pt-24 md:pt-32 pb-16 px-4">{/* Added md:pt-32 for desktop to clear the taller header */}
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#073590' }}>
+          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#FAF9F6' }}>
             {t('contactTitle')}
           </h1>
 
@@ -92,7 +92,7 @@ export function ContactPage() {
           {/* Contact Information */}
           <div className="mb-12">
             <div className="bg-white rounded-lg shadow-lg p-8">
-              <h2 className="text-2xl font-bold mb-6" style={{ color: '#073590' }}>
+              <h2 className="text-2xl font-bold mb-6" style={{ color: '#FAF9F6' }}>
                 {t('contactInfoTitle')}
               </h2>
 
@@ -100,7 +100,7 @@ export function ContactPage() {
                 {/* Phone */}
                 <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#0073AC' }}>
-                    <Phone className="w-6 h-6" style={{ color: '#073590' }} />
+                    <Phone className="w-6 h-6" style={{ color: '#FAF9F6' }} />
                   </div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-lg mb-1">{t('contactPhone')}</h3>
@@ -116,7 +116,7 @@ export function ContactPage() {
                 {/* Email */}
                 <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#0073AC' }}>
-                    <Mail className="w-6 h-6" style={{ color: '#073590' }} />
+                    <Mail className="w-6 h-6" style={{ color: '#FAF9F6' }} />
                   </div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-lg mb-1">{t('contactEmailLabel')}</h3>
@@ -132,7 +132,7 @@ export function ContactPage() {
                 {/* Location */}
                 <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#0073AC' }}>
-                    <MapPin className="w-6 h-6" style={{ color: '#073590' }} />
+                    <MapPin className="w-6 h-6" style={{ color: '#FAF9F6' }} />
                   </div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-lg mb-1">{t('contactAddressLabel')}</h3>
@@ -148,7 +148,7 @@ export function ContactPage() {
                 {/* Working Hours */}
                 <div className="flex items-start">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#0073AC' }}>
-                    <Clock className="w-6 h-6" style={{ color: '#073590' }} />
+                    <Clock className="w-6 h-6" style={{ color: '#FAF9F6' }} />
                   </div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-lg mb-1">{t('contactWorkingHoursLabel')}</h3>
@@ -166,7 +166,7 @@ export function ContactPage() {
 
           {/* Map Section */}
           <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-            <h2 className="text-2xl font-bold mb-6" style={{ color: '#073590' }}>
+            <h2 className="text-2xl font-bold mb-6" style={{ color: '#FAF9F6' }}>
               {t('contactMapTitle')}
             </h2>
             <div className="aspect-video w-full bg-gray-200 rounded-lg overflow-hidden">
@@ -187,7 +187,7 @@ export function ContactPage() {
               <Button
                 onClick={handleGoogleMaps}
                 size="lg"
-                className="bg-[#0073AC] hover:bg-[#0073AC]/90 text-[#073590] font-semibold"
+                className="bg-[#0073AC] hover:bg-[#0073AC]/90 text-[#FAF9F6] font-semibold"
               >
                 <img
                   src="/google-maps-icon.png"
@@ -199,7 +199,7 @@ export function ContactPage() {
               <Button
                 onClick={handleWaze}
                 size="lg"
-                className="bg-[#073590] hover:bg-[#073590]/90 text-white font-semibold"
+                className="bg-[#FAF9F6] hover:bg-[#FAF9F6]/90 text-white font-semibold"
               >
                 <img
                   src="/waze-icon.png"
@@ -214,7 +214,7 @@ export function ContactPage() {
           {/* Contact Form */}
           <div className="space-y-6">
             <div className="bg-white rounded-lg shadow-lg p-8">
-              <h2 className="text-2xl font-bold mb-6" style={{ color: '#073590' }}>
+              <h2 className="text-2xl font-bold mb-6" style={{ color: '#FAF9F6' }}>
                 {t('contactFormTitle')}
               </h2>
 
@@ -313,7 +313,7 @@ export function ContactPage() {
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full px-6 py-3 rounded-lg font-semibold text-white transition-all hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-                  style={{ backgroundColor: '#073590' }}
+                  style={{ backgroundColor: '#FAF9F6' }}
                 >
                   {isSubmitting ? (
                     <>

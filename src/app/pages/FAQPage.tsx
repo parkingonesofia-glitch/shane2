@@ -144,7 +144,7 @@ export function FAQPage() {
 
       <div className="pt-24 md:pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#073590' }}>
+          <h1 className="text-4xl font-bold text-center mb-4" style={{ color: '#FAF9F6' }}>
             {t('faqTitle')}
           </h1>
 
@@ -162,7 +162,7 @@ export function FAQPage() {
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
                 >
-                  <h3 className="text-lg font-semibold text-[#073590] pr-4">
+                  <h3 className="text-lg font-semibold text-[#FAF9F6] pr-4">
                     {faq.question}
                   </h3>
                   <ChevronDown
@@ -186,7 +186,7 @@ export function FAQPage() {
           </div>
 
           {/* Contact CTA */}
-          <div className="mt-12 bg-[#073590] rounded-xl p-8 text-center text-white">
+          <div className="mt-12 bg-[#FAF9F6] rounded-xl p-8 text-center text-white">
             <h3 className="text-2xl font-bold mb-3">
               {t('faqStillHaveQuestions')}
             </h3>
@@ -213,7 +213,7 @@ export function FAQPage() {
       </div>
 
       {/* Footer */}
-      <footer className="text-white py-12 bg-[#073590]">
+      <footer className="text-white py-12 bg-[#FAF9F6]">
         <div className="container mx-auto px-4 text-center">
           <h3 className="mb-2 text-2xl font-bold">{t("heroTitle")}</h3>
           <p className="text-gray-300 mb-6">
