@@ -86,7 +86,7 @@ export function Header() {
               <img
                 src="/logo-desktop.png"
                 alt="Parking One Logo"
-                className="h-30 w-auto hidden md:block"
+                className="h-60 w-auto hidden md:block"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   const parent = e.currentTarget.parentElement;
@@ -102,7 +102,7 @@ export function Header() {
               <img
                 src="/logo-mobile.png"
                 alt="Parking One Logo"
-                className="w-52 h-auto md:hidden max-w-none"
+                className="w-[26rem] h-auto md:hidden max-w-none"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   const parent = e.currentTarget.parentElement;
