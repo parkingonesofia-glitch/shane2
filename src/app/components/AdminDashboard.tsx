@@ -2173,7 +2173,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
                         onClick={() => setSelectedDate(dateStr)}
                         className={`p-3 border-2 rounded-lg hover:shadow-md transition-all ${bgColor} ${
                           isSelected ? 'ring-2 ring-blue-500 shadow-lg' : ''
-                        } ${isToday ? 'ring-4 ring-[#f1c933] font-black border-[#073590] border-4' : ''}`}
+                        } ${isToday ? 'ring-4 ring-[#0073AC] font-black border-[#073590] border-4' : ''}`}
                       >
                         <div className={`${isToday ? 'text-xl' : 'text-lg'} font-medium mb-1`}>{day}</div>
                         <div className={`${isToday ? 'text-base font-bold' : 'text-sm'} font-semibold`}>
