@@ -96,7 +96,7 @@ export function ContactForm() {
                 )}
               </div>
 
-              <Button type="submit" size="lg" className="w-full bg-[#f1c933] hover:bg-[#f5d54a] font-bold text-[#073590]">
+              <Button type="submit" size="lg" className="w-full bg-[#0073AC] hover:bg-[#f5d54a] font-bold text-[#073590]">
                 <MessageSquare className="mr-2 h-5 w-5" />
                 {t("sendInquiry")}
               </Button>

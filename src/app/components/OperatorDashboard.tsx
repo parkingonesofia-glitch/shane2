@@ -3643,7 +3643,7 @@ export function OperatorDashboard({ onLogout, currentUser, permissions }: Operat
                               onClick={() => setSelectedDate(dateStr)}
                               className={`aspect-square border-2 rounded text-center hover:shadow-md transition-all flex flex-col items-center justify-center p-1 ${bgColor} ${
                                 isSelected ? 'ring-2 ring-blue-500 shadow-lg' : ''
-                              } ${isToday ? 'ring-4 ring-[#f1c933] font-black border-[#073590] border-4' : ''}`}
+                              } ${isToday ? 'ring-4 ring-[#0073AC] font-black border-[#073590] border-4' : ''}`}
                             >
                               <div className={`${isToday ? 'text-base sm:text-lg' : 'text-sm sm:text-base'} font-bold leading-none`}>{day}</div>
                               <div className={`${isToday ? 'text-xs sm:text-sm font-bold' : 'text-[10px] sm:text-xs'} mt-0.5 font-semibold`}>

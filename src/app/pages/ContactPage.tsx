@@ -99,7 +99,7 @@ export function ContactPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {/* Phone */}
                 <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#f1c933' }}>
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#0073AC' }}>
                     <Phone className="w-6 h-6" style={{ color: '#073590' }} />
                   </div>
                   <div className="ml-4">
@@ -115,7 +115,7 @@ export function ContactPage() {
 
                 {/* Email */}
                 <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#f1c933' }}>
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#0073AC' }}>
                     <Mail className="w-6 h-6" style={{ color: '#073590' }} />
                   </div>
                   <div className="ml-4">
@@ -131,7 +131,7 @@ export function ContactPage() {
 
                 {/* Location */}
                 <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#f1c933' }}>
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#0073AC' }}>
                     <MapPin className="w-6 h-6" style={{ color: '#073590' }} />
                   </div>
                   <div className="ml-4">
@@ -147,7 +147,7 @@ export function ContactPage() {
 
                 {/* Working Hours */}
                 <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#f1c933' }}>
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#0073AC' }}>
                     <Clock className="w-6 h-6" style={{ color: '#073590' }} />
                   </div>
                   <div className="ml-4">
@@ -187,7 +187,7 @@ export function ContactPage() {
               <Button
                 onClick={handleGoogleMaps}
                 size="lg"
-                className="bg-[#f1c933] hover:bg-[#f1c933]/90 text-[#073590] font-semibold"
+                className="bg-[#0073AC] hover:bg-[#0073AC]/90 text-[#073590] font-semibold"
               >
                 <img
                   src="/google-maps-icon.png"

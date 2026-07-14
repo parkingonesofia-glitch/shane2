@@ -68,18 +68,18 @@ export function Header() {
             {/* Hamburger Menu Button - Left */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="flex flex-col gap-1.5 w-10 h-10 justify-center items-center transition-all hover:scale-110 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#ffd700] rounded-2xl p-2 backdrop-blur-sm"
+              className="flex flex-col gap-1.5 w-10 h-10 justify-center items-center transition-all hover:scale-110 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#0073AC] rounded-2xl p-2 backdrop-blur-sm"
               aria-label="Toggle menu"
             >
-              <span className="w-6 h-1 bg-[#ffd700] rounded-full shadow-sm"></span>
-              <span className="w-6 h-1 bg-[#ffd700] rounded-full shadow-sm"></span>
-              <span className="w-6 h-1 bg-[#ffd700] rounded-full shadow-sm"></span>
+              <span className="w-6 h-1 bg-[#0073AC] rounded-full shadow-sm"></span>
+              <span className="w-6 h-1 bg-[#0073AC] rounded-full shadow-sm"></span>
+              <span className="w-6 h-1 bg-[#0073AC] rounded-full shadow-sm"></span>
             </button>
 
             {/* Logo - Center */}
             <button
               onClick={handleLogoClick}
-              className="absolute left-1/2 transform -translate-x-1/2 flex items-center transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#ffd700] rounded-lg z-10 overflow-visible"
+              className="absolute left-1/2 transform -translate-x-1/2 flex items-center transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#0073AC] rounded-lg z-10 overflow-visible"
               aria-label="Return to homepage"
             >
               {/* Desktop Logo */}
@@ -92,7 +92,7 @@ export function Header() {
                   const parent = e.currentTarget.parentElement;
                   if (parent && !parent.querySelector('.logo-fallback')) {
                     const fallback = document.createElement('span');
-                    fallback.className = 'text-[#ffd700] text-3xl font-bold logo-fallback';
+                    fallback.className = 'text-[#0073AC] text-3xl font-bold logo-fallback';
                     fallback.textContent = 'Parking One';
                     parent.appendChild(fallback);
                   }
@@ -108,7 +108,7 @@ export function Header() {
                   const parent = e.currentTarget.parentElement;
                   if (parent && !parent.querySelector('.logo-fallback')) {
                     const fallback = document.createElement('span');
-                    fallback.className = 'text-[#ffd700] text-2xl font-bold logo-fallback';
+                    fallback.className = 'text-[#0073AC] text-2xl font-bold logo-fallback';
                     fallback.textContent = 'Parking One';
                     parent.appendChild(fallback);
                   }
@@ -147,7 +147,7 @@ export function Header() {
               </DropdownMenu>
               <a
                 href="tel:+359877109788"
-                className="bg-[#f1c933] text-[#1a1a2e] px-3 py-2 md:px-4 md:py-2 rounded-full font-semibold text-sm whitespace-nowrap flex items-center gap-2"
+                className="bg-[#0073AC] text-[#1a1a2e] px-3 py-2 md:px-4 md:py-2 rounded-full font-semibold text-sm whitespace-nowrap flex items-center gap-2"
               >
                 <span className="text-[13px]">📞</span>
                 <span className="hidden md:inline text-[15px]">{t("callNow")}</span>
@@ -176,7 +176,7 @@ export function Header() {
           <div className="flex justify-end p-4">
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="text-white hover:text-[#ffd700] transition-colors focus:outline-none focus:ring-2 focus:ring-[#ffd700] rounded-lg p-2"
+              className="text-white hover:text-[#0073AC] transition-colors focus:outline-none focus:ring-2 focus:ring-[#0073AC] rounded-lg p-2"
               aria-label="Close menu"
             >
               <X className="h-6 w-6" />
@@ -187,43 +187,43 @@ export function Header() {
           <nav className="flex flex-col px-6 py-4 gap-4">
             <button
               onClick={() => handleNavigate("/booking")}
-              className="text-white hover:text-[#ffd700] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navBooking")}
             </button>
             <button
               onClick={() => handleNavigate("/services")}
-              className="text-white hover:text-[#ffd700] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navServices")}
             </button>
             <button
               onClick={() => handleNavigate("/pricing")}
-              className="text-white hover:text-[#ffd700] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navPricing")}
             </button>
             <button
               onClick={() => handleNavigate("/how-it-works")}
-              className="text-white hover:text-[#ffd700] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navHowItWorks")}
             </button>
             <button
               onClick={() => handleNavigate("/faq")}
-              className="text-white hover:text-[#ffd700] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navFAQ")}
             </button>
             <button
               onClick={() => handleNavigate("/about")}
-              className="text-white hover:text-[#ffd700] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navAbout")}
             </button>
             <button
               onClick={() => handleNavigate("/contact")}
-              className="text-white hover:text-[#ffd700] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
+              className="text-white hover:text-[#0073AC] transition-colors font-medium text-left py-3 px-4 hover:bg-white/5 rounded-lg"
             >
               {t("navContact")}
             </button>

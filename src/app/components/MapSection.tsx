@@ -48,7 +48,7 @@ export function MapSection() {
                 <Button 
                   onClick={handleGoogleMaps}
                   size="lg"
-                  className="bg-[#f1c933] hover:bg-[#f1c933]/90 text-[#073590]"
+                  className="bg-[#0073AC] hover:bg-[#0073AC]/90 text-[#073590]"
                 >
                   <img 
                     src="/google-maps-icon.png" 

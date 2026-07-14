@@ -65,7 +65,7 @@ export function HowItWorksPage() {
                   <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                     {/* Icon */}
                     <div className="flex-shrink-0">
-                      <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ backgroundColor: '#f1c933' }}>
+                      <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ backgroundColor: '#0073AC' }}>
                         <Icon className="h-10 w-10" style={{ color: '#073590' }} />
                       </div>
                     </div>

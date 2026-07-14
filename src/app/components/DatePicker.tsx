@@ -151,7 +151,7 @@ export function DatePicker({ value, onChange, minDate, label, error, id, default
               },
               day_today: {
                 fontWeight: "600",
-                border: "2px solid #f1c933"
+                border: "2px solid #0073AC"
               },
               day_disabled: {
                 color: "#d1d5db",

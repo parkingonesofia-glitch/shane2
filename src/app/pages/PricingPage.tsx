@@ -29,7 +29,7 @@ export function PricingPage() {
           {/* Pricing Cards */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {/* Weekend Package */}
-            <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 hover:border-[#f1c933] transition-colors">
+            <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 hover:border-[#0073AC] transition-colors">
               <div className="text-center">
                 <h2 className="text-xl font-bold mb-1" style={{ color: '#073590' }}>
                   {t('pricingWeekendTitle')}
@@ -38,7 +38,7 @@ export function PricingPage() {
                   {t('pricingWeekend3days')}
                 </div>
                 <div className="mb-4">
-                  <div className="text-4xl font-bold mb-1" style={{ color: '#f1c933' }}>
+                  <div className="text-4xl font-bold mb-1" style={{ color: '#0073AC' }}>
                     25€
                   </div>
                   <div className="text-xs text-gray-500 mt-1">
@@ -55,9 +55,9 @@ export function PricingPage() {
             </div>
 
             {/* Weekly Package - FEATURED */}
-            <div className="bg-white rounded-lg shadow-xl p-6 border-4 relative transform md:scale-105" style={{ borderColor: '#f1c933' }}>
+            <div className="bg-white rounded-lg shadow-xl p-6 border-4 relative transform md:scale-105" style={{ borderColor: '#0073AC' }}>
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-[#f1c933] text-white px-4 py-1 rounded-full text-sm font-bold whitespace-nowrap">
+                <span className="bg-[#0073AC] text-white px-4 py-1 rounded-full text-sm font-bold whitespace-nowrap">
                   {t('pricingPopular')}
                 </span>
               </div>
@@ -69,7 +69,7 @@ export function PricingPage() {
                   {t('pricingWeekly7days')}
                 </div>
                 <div className="mb-4">
-                  <div className="text-5xl font-bold mb-1" style={{ color: '#f1c933' }}>
+                  <div className="text-5xl font-bold mb-1" style={{ color: '#0073AC' }}>
                     38€
                   </div>
                   <div className="text-xs text-gray-500 mt-1">
@@ -86,7 +86,7 @@ export function PricingPage() {
             </div>
 
             {/* Monthly Package */}
-            <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 hover:border-[#f1c933] transition-colors">
+            <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 hover:border-[#0073AC] transition-colors">
               <div className="text-center">
                 <h2 className="text-xl font-bold mb-1" style={{ color: '#073590' }}>
                   {t('pricingMonthlyTitle')}
@@ -95,7 +95,7 @@ export function PricingPage() {
                   {t('pricingMonthly30days')}
                 </div>
                 <div className="mb-4">
-                  <div className="text-4xl font-bold mb-1" style={{ color: '#f1c933' }}>
+                  <div className="text-4xl font-bold mb-1" style={{ color: '#0073AC' }}>
                     87€*
                   </div>
                   <div className="text-xs text-gray-500 mt-1">
@@ -119,31 +119,31 @@ export function PricingPage() {
             </h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex items-start">
-                <svg className="w-6 h-6 mr-3 flex-shrink-0 mt-1" style={{ color: '#f1c933' }} fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-6 h-6 mr-3 flex-shrink-0 mt-1" style={{ color: '#0073AC' }} fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 <span className="text-lg">{t('pricingFeature1')}</span>
               </div>
               <div className="flex items-start">
-                <svg className="w-6 h-6 mr-3 flex-shrink-0 mt-1" style={{ color: '#f1c933' }} fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-6 h-6 mr-3 flex-shrink-0 mt-1" style={{ color: '#0073AC' }} fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 <span className="text-lg">{t('pricingFeature2')}</span>
               </div>
               <div className="flex items-start">
-                <svg className="w-6 h-6 mr-3 flex-shrink-0 mt-1" style={{ color: '#f1c933' }} fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-6 h-6 mr-3 flex-shrink-0 mt-1" style={{ color: '#0073AC' }} fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 <span className="text-lg">{t('pricingFeature3')}</span>
               </div>
               <div className="flex items-start">
-                <svg className="w-6 h-6 mr-3 flex-shrink-0 mt-1" style={{ color: '#f1c933' }} fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-6 h-6 mr-3 flex-shrink-0 mt-1" style={{ color: '#0073AC' }} fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 <span className="text-lg">{t('pricingFeature4')}</span>
               </div>
             </div>
-            <div className="mt-6 bg-yellow-50 rounded-lg p-4 border-2" style={{ borderColor: '#f1c933' }}>
+            <div className="mt-6 bg-yellow-50 rounded-lg p-4 border-2" style={{ borderColor: '#0073AC' }}>
               <p className="font-semibold text-center" style={{ color: '#073590' }}>
                 {t('pricingLongerNote')}
               </p>
@@ -161,7 +161,7 @@ export function PricingPage() {
             <p className="text-center font-semibold" style={{ color: '#073590' }}>
               {t('pricingCarKeysContact')}
             </p>
-            <p className="text-center text-2xl font-bold mt-2" style={{ color: '#f1c933' }}>
+            <p className="text-center text-2xl font-bold mt-2" style={{ color: '#0073AC' }}>
               +359 886 616 991
             </p>
           </div>

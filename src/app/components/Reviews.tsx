@@ -157,7 +157,7 @@ export function Reviews() {
           <div className="flex items-center justify-center gap-2">
             <div className="flex">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="h-6 w-6 fill-[#ffd700] text-[#ffd700]" />
+                <Star key={star} className="h-6 w-6 fill-[#0073AC] text-[#0073AC]" />
               ))}
             </div>
             <span className="text-xl font-bold text-gray-700">5.0</span>
@@ -168,7 +168,7 @@ export function Reviews() {
           {/* Desktop: Left Arrow */}
           <button
             onClick={prevReview}
-            className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-[#f1c933] hover:bg-[#f5d54a] text-[#1a1a2e] rounded-full p-3 shadow-lg transition-all hover:scale-110"
+            className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-[#0073AC] hover:bg-[#f5d54a] text-[#1a1a2e] rounded-full p-3 shadow-lg transition-all hover:scale-110"
             aria-label="Previous reviews"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -177,7 +177,7 @@ export function Reviews() {
           {/* Desktop Reviews Grid */}
           <div className="hidden md:grid md:grid-cols-3 gap-6 px-8">
             {visibleReviews.map((review) => (
-              <Card key={review.id} className="p-6 hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-[#ffd700] relative">
+              <Card key={review.id} className="p-6 hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-[#0073AC] relative">
                 {/* Google Badge on Card */}
                 <div className="absolute top-4 right-4">
                   <svg className="w-4 h-4" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -189,7 +189,7 @@ export function Reviews() {
                 </div>
                 
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#f1c933] flex items-center justify-center font-bold text-lg" style={{ color: '#073590' }}>
+                  <div className="w-12 h-12 rounded-full bg-[#0073AC] flex items-center justify-center font-bold text-lg" style={{ color: '#073590' }}>
                     {(language === "bg" ? review.nameBg : review.name).charAt(0)}
                   </div>
                   <div className="flex-1">
@@ -204,7 +204,7 @@ export function Reviews() {
 
                 <div className="flex mb-3">
                   {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-[#ffd700] text-[#ffd700]" />
+                    <Star key={i} className="h-4 w-4 fill-[#0073AC] text-[#0073AC]" />
                   ))}
                 </div>
 
@@ -243,7 +243,7 @@ export function Reviews() {
                   </div>
                   
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-[#f1c933] flex items-center justify-center font-bold text-lg" style={{ color: '#073590' }}>
+                    <div className="w-12 h-12 rounded-full bg-[#0073AC] flex items-center justify-center font-bold text-lg" style={{ color: '#073590' }}>
                       {(language === "bg" ? review.nameBg : review.name).charAt(0)}
                     </div>
                     <div className="flex-1">
@@ -258,7 +258,7 @@ export function Reviews() {
 
                   <div className="flex mb-3">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-[#ffd700] text-[#ffd700]" />
+                      <Star key={i} className="h-4 w-4 fill-[#0073AC] text-[#0073AC]" />
                     ))}
                   </div>
 
@@ -280,7 +280,7 @@ export function Reviews() {
               <div
                 key={index}
                 className={`h-2 w-2 rounded-full transition-all ${
-                  index === mobileIndex ? 'bg-[#f1c933] w-4' : 'bg-gray-300'
+                  index === mobileIndex ? 'bg-[#0073AC] w-4' : 'bg-gray-300'
                 }`}
               />
             ))}
@@ -289,7 +289,7 @@ export function Reviews() {
           {/* Desktop: Right Arrow */}
           <button
             onClick={nextReview}
-            className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-[#f1c933] hover:bg-[#f5d54a] text-[#1a1a2e] rounded-full p-3 shadow-lg transition-all hover:scale-110"
+            className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-[#0073AC] hover:bg-[#f5d54a] text-[#1a1a2e] rounded-full p-3 shadow-lg transition-all hover:scale-110"
             aria-label="Next reviews"
           >
             <ChevronRight className="h-6 w-6" />

@@ -43,14 +43,14 @@ export function HeroSection() {
                   window.scrollTo({ top: elementPosition - headerHeight, behavior: 'smooth' });
                 }
               }}
-              className="bg-[#f1c933] text-[#1a1a2e] hover:bg-[#f5d54a] px-8 py-6 font-bold shadow-2xl transform hover:scale-105 transition-all text-[16px]"
+              className="bg-[#0073AC] text-[#1a1a2e] hover:bg-[#f5d54a] px-8 py-6 font-bold shadow-2xl transform hover:scale-105 transition-all text-[16px]"
             >
               {t("bookNow")}
             </Button>
             <Button 
               size="lg" 
               onClick={handleCallClick}
-              className="bg-[#f1c933] text-[#1a1a2e] hover:bg-[#f5d54a] text-lg px-8 py-6 font-bold shadow-2xl transform hover:scale-105 transition-all"
+              className="bg-[#0073AC] text-[#1a1a2e] hover:bg-[#f5d54a] text-lg px-8 py-6 font-bold shadow-2xl transform hover:scale-105 transition-all"
             >
               <Phone className="mr-2 h-5 w-5" />
               {t("callButton")}

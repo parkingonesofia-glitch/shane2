@@ -46,31 +46,31 @@ export function AboutPage() {
               </h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
-                  <span className="mr-2 mt-1" style={{ color: '#f1c933' }}>✓</span>
+                  <span className="mr-2 mt-1" style={{ color: '#0073AC' }}>✓</span>
                   <span className="text-gray-700">
                     <strong>{t('aboutBenefitSecurity')}</strong> {t('aboutBenefitSecurityDesc')}
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 mt-1" style={{ color: '#f1c933' }}>✓</span>
+                  <span className="mr-2 mt-1" style={{ color: '#0073AC' }}>✓</span>
                   <span className="text-gray-700">
                     <strong>{t('aboutBenefitConvenience')}</strong> {t('aboutBenefitConvenienceDesc')}
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 mt-1" style={{ color: '#f1c933' }}>✓</span>
+                  <span className="mr-2 mt-1" style={{ color: '#0073AC' }}>✓</span>
                   <span className="text-gray-700">
                     <strong>{t('aboutBenefitFlexibility')}</strong> {t('aboutBenefitFlexibilityDesc')}
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 mt-1" style={{ color: '#f1c933' }}>✓</span>
+                  <span className="mr-2 mt-1" style={{ color: '#0073AC' }}>✓</span>
                   <span className="text-gray-700">
                     <strong>{t('aboutBenefitAffordability')}</strong> {t('aboutBenefitAffordabilityDesc')}
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 mt-1" style={{ color: '#f1c933' }}>✓</span>
+                  <span className="mr-2 mt-1" style={{ color: '#0073AC' }}>✓</span>
                   <span className="text-gray-700">
                     <strong>{t('aboutBenefitProfessionalism')}</strong> {t('aboutBenefitProfessionalismDesc')}
                   </span>
@@ -85,23 +85,23 @@ export function AboutPage() {
               </p>
               <ul className="space-y-2 mb-6 text-gray-700">
                 <li className="flex items-start">
-                  <span className="mr-2 mt-1" style={{ color: '#f1c933' }}>•</span>
+                  <span className="mr-2 mt-1" style={{ color: '#0073AC' }}>•</span>
                   {t('aboutService1')}
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 mt-1" style={{ color: '#f1c933' }}>•</span>
+                  <span className="mr-2 mt-1" style={{ color: '#0073AC' }}>•</span>
                   {t('aboutService2')}
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 mt-1" style={{ color: '#f1c933' }}>•</span>
+                  <span className="mr-2 mt-1" style={{ color: '#0073AC' }}>•</span>
                   {t('aboutService3')}
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 mt-1" style={{ color: '#f1c933' }}>•</span>
+                  <span className="mr-2 mt-1" style={{ color: '#0073AC' }}>•</span>
                   {t('aboutService4')}
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 mt-1" style={{ color: '#f1c933' }}>•</span>
+                  <span className="mr-2 mt-1" style={{ color: '#0073AC' }}>•</span>
                   {t('aboutService5')}
                 </li>
               </ul>
@@ -116,7 +116,7 @@ export function AboutPage() {
                 <p className="text-center font-semibold mb-2" style={{ color: '#073590' }}>
                   {t('aboutContactLabel')}
                 </p>
-                <p className="text-center text-2xl font-bold" style={{ color: '#f1c933' }}>
+                <p className="text-center text-2xl font-bold" style={{ color: '#0073AC' }}>
                   +359 886 616 991
                 </p>
                 <p className="text-center text-gray-600 mt-2">
@@ -138,7 +138,7 @@ export function AboutPage() {
               <button
                 onClick={() => window.location.href = '/'}
                 className="px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
-                style={{ backgroundColor: '#f1c933', color: '#073590' }}
+                style={{ backgroundColor: '#0073AC', color: '#073590' }}
               >
                 {t('aboutBookNowBtn')}
               </button>

@@ -275,7 +275,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
             </div>
 
             {/* Free Shuttle Service Notice */}
-            <div style={{ backgroundColor: '#f1c933' }} className="p-4 rounded-lg flex items-start gap-3">
+            <div style={{ backgroundColor: '#0073AC' }} className="p-4 rounded-lg flex items-start gap-3">
               <Bus className="w-6 h-6 flex-shrink-0 mt-1" style={{ color: '#073590' }} />
               <div>
                 <p className="font-semibold mb-1" style={{ color: '#073590' }}>
@@ -305,7 +305,7 @@ export function ReservationConfirmation({ booking, onBackToHome }: ReservationCo
           <Button
             onClick={onBackToHome}
             size="lg"
-            className="flex-1 h-14 text-base font-semibold bg-[#f1c933] hover:bg-[#f5d54a] text-[#073590] transition-colors"
+            className="flex-1 h-14 text-base font-semibold bg-[#0073AC] hover:bg-[#f5d54a] text-[#073590] transition-colors"
           >
             <Home className="w-5 h-5 mr-2" />
             {language === 'bg' ? 'Обратно към начална страница' : 'Back to Home'}

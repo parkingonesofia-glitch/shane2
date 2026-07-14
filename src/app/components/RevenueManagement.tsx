@@ -590,7 +590,7 @@ export function RevenueManagement({ bookings, users }: RevenueManagementProps) {
           </Card>
 
           {/* Combined Total */}
-          <Card className="p-6 border-2 border-[#f1c933] bg-gradient-to-br from-yellow-50 to-white">
+          <Card className="p-6 border-2 border-[#0073AC] bg-gradient-to-br from-yellow-50 to-white">
             <div className="flex items-center justify-between mb-2">
               <span className="text-gray-700 font-semibold">Комбинирано</span>
               <Euro className="h-6 w-6 text-[#073590]" />

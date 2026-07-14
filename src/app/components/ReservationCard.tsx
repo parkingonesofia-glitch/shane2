@@ -153,7 +153,7 @@ export function ReservationCard({
       {/* TOP: Booking Code & Status Badges */}
       <div className="flex items-center justify-between gap-2 mb-3">
         {reservation.bookingCode && (
-          <Badge className="bg-[#f1c933] text-[#073590] font-bold text-sm py-1 px-3 flex-shrink-0 border-2 border-[#073590]">
+          <Badge className="bg-[#0073AC] text-[#073590] font-bold text-sm py-1 px-3 flex-shrink-0 border-2 border-[#073590]">
             {reservation.bookingCode}
           </Badge>
         )}

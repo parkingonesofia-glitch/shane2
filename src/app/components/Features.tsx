@@ -41,9 +41,9 @@ export function Features() {
             const Icon = feature.icon;
             const isBookingCard = feature.titleKey === "lowPricesEasyBooking";
             return (
-              <Card key={index} className="p-8 hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#f1c933] hover:-translate-y-2 h-full">
+              <Card key={index} className="p-8 hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0073AC] hover:-translate-y-2 h-full">
                 <div className="flex flex-col items-center">
-                  <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#f1c933] text-white shadow-lg flex-shrink-0 mb-6">
+                  <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#0073AC] text-white shadow-lg flex-shrink-0 mb-6">
                     <Icon className="h-8 w-8 text-[#073590]" />
                   </div>
                   <div className="flex flex-col items-center text-center w-full max-w-[280px]">

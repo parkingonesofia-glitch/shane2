@@ -68,7 +68,7 @@ export function HowItWorks() {
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white relative" style={{ backgroundColor: '#073590' }}>
                       {step.number}
-                      <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#f1c933' }}>
+                      <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#0073AC' }}>
                         <Icon className="w-4 h-4" style={{ color: '#073590' }} />
                       </div>
                     </div>
@@ -100,7 +100,7 @@ export function HowItWorks() {
                   <div className="flex-shrink-0 mb-4">
                     <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white relative" style={{ backgroundColor: '#073590' }}>
                       {step.number}
-                      <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#f1c933' }}>
+                      <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#0073AC' }}>
                         <Icon className="w-4 h-4" style={{ color: '#073590' }} />
                       </div>
                     </div>

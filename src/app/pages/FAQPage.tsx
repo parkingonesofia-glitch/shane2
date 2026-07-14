@@ -40,7 +40,7 @@ export function FAQPage() {
           {t('faqA1Before')}{' '}
           <button
             onClick={() => navigate('/contact')}
-            className="text-[#f1c933] hover:text-[#d4af2a] font-semibold underline"
+            className="text-[#0073AC] hover:text-[#d4af2a] font-semibold underline"
           >
             {t('faqA1ContactLink')}
           </button>
@@ -63,7 +63,7 @@ export function FAQPage() {
           {t('faqA4Before')}{' '}
           <a
             href="tel:+359877109788"
-            className="text-[#f1c933] hover:text-[#d4af2a] font-semibold underline"
+            className="text-[#0073AC] hover:text-[#d4af2a] font-semibold underline"
           >
             +359 886 616 991
           </a>
@@ -78,14 +78,14 @@ export function FAQPage() {
           {t('faqA5Before')}{' '}
           <button
             onClick={() => navigate('/booking')}
-            className="text-[#f1c933] hover:text-[#d4af2a] font-semibold underline"
+            className="text-[#0073AC] hover:text-[#d4af2a] font-semibold underline"
           >
             {t('faqA5BookingLink')}
           </button>{' '}
           {t('faqA5Middle')}{' '}
           <a
             href="tel:+359877109788"
-            className="text-[#f1c933] hover:text-[#d4af2a] font-semibold underline"
+            className="text-[#0073AC] hover:text-[#d4af2a] font-semibold underline"
           >
             +359 886 616 991
           </a>
@@ -104,14 +104,14 @@ export function FAQPage() {
           {t('faqA7Before')}{' '}
           <a
             href="tel:+359877109788"
-            className="text-[#f1c933] hover:text-[#d4af2a] font-semibold underline"
+            className="text-[#0073AC] hover:text-[#d4af2a] font-semibold underline"
           >
             +359 886 616 991
           </a>{' '}
           {t('faqA7Middle')}{' '}
           <button
             onClick={() => navigate('/how-it-works')}
-            className="text-[#f1c933] hover:text-[#d4af2a] font-semibold underline"
+            className="text-[#0073AC] hover:text-[#d4af2a] font-semibold underline"
           >
             {t('faqA7HowItWorksLink')}
           </button>
@@ -166,7 +166,7 @@ export function FAQPage() {
                     {faq.question}
                   </h3>
                   <ChevronDown
-                    className={`flex-shrink-0 w-5 h-5 text-[#f1c933] transition-transform duration-200 ${
+                    className={`flex-shrink-0 w-5 h-5 text-[#0073AC] transition-transform duration-200 ${
                       openIndex === index ? 'transform rotate-180' : ''
                     }`}
                   />
@@ -196,7 +196,7 @@ export function FAQPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href="tel:+359877109788"
-                className="bg-[#f1c933] text-[#1a1a2e] px-6 py-3 rounded-full font-semibold hover:bg-[#d4af2a] transition-colors flex items-center gap-2"
+                className="bg-[#0073AC] text-[#1a1a2e] px-6 py-3 rounded-full font-semibold hover:bg-[#d4af2a] transition-colors flex items-center gap-2"
               >
                 <span>📞</span>
                 <span>+359 886 616 991</span>

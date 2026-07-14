@@ -97,7 +97,7 @@ export function ServicesPage() {
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#f1c933' }}>
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#0073AC' }}>
                   <service.icon className="w-8 h-8" style={{ color: '#073590' }} />
                 </div>
                 <h3 className="text-xl font-bold mb-3" style={{ color: '#073590' }}>
@@ -118,7 +118,7 @@ export function ServicesPage() {
             <div className="grid md:grid-cols-2 gap-8">
               {additionalBenefits.map((benefit, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#f1c933' }}>
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#0073AC' }}>
                     <benefit.icon className="w-8 h-8" style={{ color: '#073590' }} />
                   </div>
                   <h3 className="text-xl font-bold mb-3" style={{ color: '#073590' }}>

@@ -823,7 +823,7 @@ export function BookingForm() {
                     href="/terms"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#073590] hover:text-[#f1c933] font-medium underline transition-colors"
+                    className="text-[#073590] hover:text-[#0073AC] font-medium underline transition-colors"
                   >
                     {t("termsAndConditionsLink")}
                   </a>
@@ -837,7 +837,7 @@ export function BookingForm() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-[#f1c933] hover:bg-[#f5d54a] font-bold text-[#073590] text-lg h-14 rounded-xl shadow-md hover:shadow-lg transition-all"
+                className="w-full bg-[#0073AC] hover:bg-[#f5d54a] font-bold text-[#073590] text-lg h-14 rounded-xl shadow-md hover:shadow-lg transition-all"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
