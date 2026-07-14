@@ -153,4 +153,4 @@ Otherwise it feels like money “vanishes”.
 
 ---
 
-**Keep SkyParking design system and colors (#053790 / #f1c933).**
+**Keep Parking One design system and colors (#053790 / #f1c933).**

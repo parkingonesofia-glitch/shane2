@@ -22,7 +22,7 @@ You need to **manually commit your assets to GitHub** so they're preserved acros
    - `logo-header.png` (if you have a header logo)
    - `viber-logo.png` (for admin email notifications)
    - Any other assets you're using
-5. Commit with message: `Add public assets for SkyParking`
+5. Commit with message: `Add public assets for Parking One`
 6. Vercel will auto-deploy and include these files
 
 ### Option 2: Add Assets via Git Command Line
@@ -43,7 +43,7 @@ git add public/logo-header.png
 git add public/viber-logo.png
 
 # Commit
-git commit -m "Add public assets for SkyParking"
+git commit -m "Add public assets for Parking One"
 
 # Push to GitHub
 git push origin main
@@ -91,7 +91,7 @@ Update `/supabase/functions/server/email-service.tsx`:
 
 ```tsx
 // Change from:
-<img src="https://skyparking.bg/viber-logo.png" ... />
+<img src="https://parkingone.bg/viber-logo.png" ... />
 
 // To:
 <img src="https://cdn.example.com/viber-icon.png" ... />

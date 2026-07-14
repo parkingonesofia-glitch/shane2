@@ -12,7 +12,7 @@ When you push from Figma Make to GitHub/Vercel, files in this folder will be DEL
    - Add your image files to the `/public` folder
    - Files needed:
      - `hero-image.jpg` - Hero section background
-     - `logo-header.png` - SkyParking header logo (optional)
+     - `logo-header.png` - Parking One header logo (optional)
      - `viber-logo.png` - Viber icon for admin emails (optional)
 
 2. **Commit and push to git:**
@@ -20,7 +20,7 @@ When you push from Figma Make to GitHub/Vercel, files in this folder will be DEL
    git add public/hero-image.jpg
    git add public/logo-header.png
    git add public/viber-logo.png
-   git commit -m "Add public assets for SkyParking"
+   git commit -m "Add public assets for Parking One"
    git push
    ```
 

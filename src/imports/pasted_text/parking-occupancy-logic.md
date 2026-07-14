@@ -103,4 +103,4 @@ Rename:
 
 ---
 
-**Keep SkyParking visual style and colors (#053790 / #f1c933).**
+**Keep Parking One visual style and colors (#053790 / #f1c933).**

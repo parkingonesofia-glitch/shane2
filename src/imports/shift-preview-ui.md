@@ -1,6 +1,6 @@
 Do NOT modify any backend logic, database structure, shift calculation, reservation status logic, or system behavior.
 This is a UI-only enhancement.
-Add a minimal “Shift Preview” feature inside the existing SkyParking operator admin panel.
+Add a minimal “Shift Preview” feature inside the existing Parking One operator admin panel.
 Keep everything else exactly as it is.
 1. Add a Mini Status Bar
 Place it directly below the current shift header section (under the “Night Shift 01/03/2026 20:00 – 02/03/2026 08:00” area).

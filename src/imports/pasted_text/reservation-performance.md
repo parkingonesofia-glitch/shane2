@@ -5,7 +5,7 @@
 * Who accepted/confirmed them
 * Overall reservation flow and performance
 
-Keep UI clean, operational, and consistent with SkyParking admin design.
+Keep UI clean, operational, and consistent with Parking One admin design.
 
 ---
 
@@ -157,7 +157,7 @@ This will allow:
 
   * 👤 employee
   * 📅 date
-* Maintain SkyParking colors (#053790 / #f1c933)
+* Maintain Parking One colors (#053790 / #f1c933)
 
 ---
 

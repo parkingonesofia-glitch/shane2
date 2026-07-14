@@ -1,4 +1,4 @@
-**Figma AI Prompt — Clean Operator UI v3 (SkyParking Admin Panel)**
+**Figma AI Prompt — Clean Operator UI v3 (Parking One Admin Panel)**
 
 Do NOT modify any backend logic, reservation logic, shift calculations, occupancy calculations, or database structure.
 

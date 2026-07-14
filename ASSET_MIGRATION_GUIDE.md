@@ -103,20 +103,20 @@ For email templates, you need to use the full Vercel URL:
 // Change from:
 src="https://dbybybmjjeeocoecaewv.supabase.co/storage/v1/object/public/assets/email_header.png"
 // To:
-src="https://skyparking.bg/logo-email.png"
+src="https://parkingone.bg/logo-email.png"
 
 // And:
 src="https://dbybybmjjeeocoecaewv.supabase.co/storage/v1/object/public/assets/waze-icon.png"
 // To:
-src="https://skyparking.bg/waze-icon.png"
+src="https://parkingone.bg/waze-icon.png"
 
 // And:
 src="https://dbybybmjjeeocoecaewv.supabase.co/storage/v1/object/public/assets/google-map-icon.png"
 // To:
-src="https://skyparking.bg/google-maps-icon.png"
+src="https://parkingone.bg/google-maps-icon.png"
 ```
 
-**Note:** Email templates require absolute URLs, so use `https://skyparking.bg/` instead of relative paths.
+**Note:** Email templates require absolute URLs, so use `https://parkingone.bg/` instead of relative paths.
 
 ## Files Already Updated ✅
 

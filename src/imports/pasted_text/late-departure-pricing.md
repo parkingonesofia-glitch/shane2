@@ -1,4 +1,4 @@
-**Goal:** Update late departure pricing logic in the SkyParking admin/operator dashboard.
+**Goal:** Update late departure pricing logic in the Parking One admin/operator dashboard.
 
 Currently, late reservations automatically receive a fixed **€5 per day penalty fee**.
 Change this behavior so that late departures are calculated using the **normal parking price logic**, not a fixed penalty fee.

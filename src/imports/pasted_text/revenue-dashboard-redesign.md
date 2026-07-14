@@ -1,6 +1,6 @@
-Goal: redesign and fix the **Приходи / Revenue** section in the SkyParking admin dashboard so that **historical revenue**, **future revenue forecast**, and **exports** work correctly and are easy to understand.
+Goal: redesign and fix the **Приходи / Revenue** section in the Parking One admin dashboard so that **historical revenue**, **future revenue forecast**, and **exports** work correctly and are easy to understand.
 
-Use the existing SkyParking admin style. Keep the design clean, operational, and suitable for shift staff. Preserve Bulgarian UI language.
+Use the existing Parking One admin style. Keep the design clean, operational, and suitable for shift staff. Preserve Bulgarian UI language.
 
 ---
 
