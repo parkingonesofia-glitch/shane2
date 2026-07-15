@@ -443,7 +443,7 @@ export function BookingForm() {
 
               {/* Price Display */}
               {totalPrice && arrivalDate && departureDate && arrivalTime && departureTime && (
-                <div className="bg-white border-2 border-[#FAF9F6] rounded-xl p-6 shadow-lg">
+                <div className="bg-white border-2 border-[#0073AC] rounded-xl p-6 shadow-lg">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                     {/* Left Side - Price */}
                     <div className="flex-1">
@@ -452,7 +452,7 @@ export function BookingForm() {
                       </p>
                       <div className="flex flex-col gap-1">
                         <div className="flex items-baseline gap-2">
-                          <span className="text-5xl font-bold text-[#FAF9F6]">€{totalPrice.toFixed(2)}</span>
+                          <span className="text-5xl font-bold text-[#0073AC]">€{totalPrice.toFixed(2)}</span>
                           {numberOfCars > 1 && (
                             <span className="text-xl text-gray-500">(€{(totalPrice / numberOfCars).toFixed(2)} {t("perCar")})</span>
                           )}
@@ -823,7 +823,7 @@ export function BookingForm() {
                     href="/terms"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#FAF9F6] hover:text-[#0073AC] font-medium underline transition-colors"
+                    className="text-[#0073AC] hover:text-[#005a8a] font-medium underline transition-colors"
                   >
                     {t("termsAndConditionsLink")}
                   </a>

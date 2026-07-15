@@ -14,7 +14,7 @@ export function HowItWorks() {
       titleEn: 'Book Online',
       descBg: (
         <>
-          Можете да направите резервация чрез <Link to="/booking" onClick={() => window.scrollTo(0, 0)} className="font-semibold underline hover:no-underline" style={{ color: '#FAF9F6' }}>формата на сайта</Link> или като се свържете с нас на <a href="tel:+359877109788" className="font-semibold underline hover:no-underline" style={{ color: '#FAF9F6' }}>+359 886 616 991</a>.
+          Можете да направите резервация чрез <Link to="/booking" onClick={() => window.scrollTo(0, 0)} className="font-semibold underline hover:no-underline" style={{ color: '#FAF9F6' }}>формата на сайта</Link> или като се свържете с нас на <a href="tel:+359877109788" className="font-semibold underline hover:no-underline" style={{ color: '#0073AC' }}>+359 886 616 991</a>.
         </>
       ),
       descEn: 'Fill out the easy booking form with arrival and departure dates, email and phone. Choose whether you want standard parking or "Car Keys" service.',
@@ -76,7 +76,7 @@ export function HowItWorks() {
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAF9F6' }}>
+                    <h3 className="text-xl font-bold mb-3" style={{ color: '#1a1a2e' }}>
                       {language === 'bg' ? step.titleBg : step.titleEn}
                     </h3>
                     <p className="text-gray-700 leading-relaxed p-[0px] m-[0px] text-justify">
@@ -108,7 +108,7 @@ export function HowItWorks() {
 
                   {/* Content */}
                   <div>
-                    <h3 className="text-xl font-bold mb-3" style={{ color: '#FAF9F6' }}>
+                    <h3 className="text-xl font-bold mb-3" style={{ color: '#1a1a2e' }}>
                       {language === 'bg' ? step.titleBg : step.titleEn}
                     </h3>
                     <p className="text-gray-700 text-sm leading-relaxed text-justify">
