@@ -162,7 +162,7 @@ const translations = {
     
     // Footer
     footerTagline: "Сигурно и достъпно паркинг решение за вашия автомобил",
-    footerLocation: "📍 Улица Неделчо Бончев 30",
+    footerLocation: "📍 Улица Източна Тангента 23",
     footerRights: "© 2026 Parking One - Паркинг Летище София. Всички права запазени.",
     
     // Map Section
@@ -351,7 +351,7 @@ const translations = {
     contactEmailLabel: "Имейл",
     contactResponds2h: "Отговаряме в рамките на 2 часа",
     contactAddressLabel: "Адрес",
-    contactAddressValue: "Улица Неделчо Бончев 30",
+    contactAddressValue: "Улица Източна Тангента 23",
     contact5minFromAirport: "5 минути от летището",
     contactWorkingHoursLabel: "Работно Време",
     contactAlwaysOpen: "Денонощно",
@@ -1654,7 +1654,7 @@ const translations = {
 
     // Footer
     footerTagline: "Sigurno, pristupačno i zgodno rešenje za parkiranje",
-    footerLocation: "📍 Ulica Nedelčo Bončev 30, Sofija",
+    footerLocation: "📍 Ulica Iztochna Tangeta 23, Sofija",
     footerRights: "© 2026 Parking One - Parking Aerodrom Sofija. Sva prava zadržana.",
 
     // Map Section
@@ -1843,7 +1843,7 @@ const translations = {
     contactEmailLabel: "Email",
     contactResponds2h: "Odgovaramo u roku od 2 sata",
     contactAddressLabel: "Adresa",
-    contactAddressValue: "Ulica Nedelčo Bončev 30",
+    contactAddressValue: "Ulica Iztochna Tangeta 23",
     contact5minFromAirport: "5 minuta od aerodroma",
     contactWorkingHoursLabel: "Radno Vreme",
     contactAlwaysOpen: "24/7",
@@ -2027,7 +2027,7 @@ const translations = {
 
     // Footer
     footerTagline: "Безбедно, достапно и погодно решение за паркирање",
-    footerLocation: "📍 Улица Неделчо Бончев 30, Софија",
+    footerLocation: "📍 Улица Източна Тангента 23, Софија",
     footerRights: "© 2026 Parking One - Паркинг Аеродром Софија. Сите права задржани.",
 
     // Map Section
@@ -2216,7 +2216,7 @@ const translations = {
     contactEmailLabel: "Е-мејл",
     contactResponds2h: "Одговараме во рок од 2 часа",
     contactAddressLabel: "Адреса",
-    contactAddressValue: "Улица Неделчо Бончев 30",
+    contactAddressValue: "Улица Източна Тангента 23",
     contact5minFromAirport: "5 минути од аеродромот",
     contactWorkingHoursLabel: "Работно Време",
     contactAlwaysOpen: "24/7",
@@ -2400,7 +2400,7 @@ const translations = {
 
     // Footer
     footerTagline: "Soluție de parcare sigură, accesibilă și convenabilă",
-    footerLocation: "📍 Ulița Nedelcho Bonchev 30, Sofia",
+    footerLocation: "📍 Ulița Iztochna Tangeta 23, Sofia",
     footerRights: "© 2026 Parking One - Parcare Aeroportul Sofia. Toate drepturile rezervate.",
 
     // Map Section
@@ -2589,7 +2589,7 @@ const translations = {
     contactEmailLabel: "Email",
     contactResponds2h: "Răspundem în 2 ore",
     contactAddressLabel: "Adresă",
-    contactAddressValue: "Ulița Nedelcho Bonchev 30",
+    contactAddressValue: "Ulița Iztochna Tangeta 23",
     contact5minFromAirport: "5 minute de la aeroport",
     contactWorkingHoursLabel: "Program de Lucru",
     contactAlwaysOpen: "24/7",
@@ -2773,7 +2773,7 @@ const translations = {
 
     // Footer
     footerTagline: "Безпечне, доступне та зручне рішення для паркування",
-    footerLocation: "📍 Вулиця Неделчо Бончев 30, Софія",
+    footerLocation: "📍 Вулиця Східна Тангента 23, Софія",
     footerRights: "© 2026 Parking One - Паркінг Аеропорт Софія. Всі права захищено.",
 
     // Map Section
@@ -2962,7 +2962,7 @@ const translations = {
     contactEmailLabel: "Електронна пошта",
     contactResponds2h: "Відповідаємо протягом 2 годин",
     contactAddressLabel: "Адреса",
-    contactAddressValue: "Вулиця Неделчо Бончев 30",
+    contactAddressValue: "Вулиця Східна Тангента 23",
     contact5minFromAirport: "5 хвилин від аеропорту",
     contactWorkingHoursLabel: "Години роботи",
     contactAlwaysOpen: "24/7",
