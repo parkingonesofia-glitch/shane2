@@ -12,25 +12,27 @@ export function HeroSection() {
 
   return (
     <>
-      <section className="relative h-[95vh] flex items-center justify-center overflow-hidden mt-20 md:mt-[90px]">
+      <section className="relative h-[95vh] flex flex-col justify-between overflow-hidden mt-20 md:mt-[90px]">
         <div className="absolute inset-0 md:inset-0 bottom-0 md:bottom-0">
           <ImageWithFallback
             src="/hero-image.jpg"
             alt="Airport parking lot"
             className="w-full h-full object-cover object-[40%_center] md:object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F6]/60 via-[#1e5ba8]/35 to-[#FAF9F6]/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6]/80 via-transparent to-transparent"></div>
         </div>
-        
-        <div className="relative z-10 text-center text-[#0073AC] px-4 max-w-5xl mx-auto py-12 md:py-0">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+
+        <div className="relative z-10 text-center text-[#0073AC] px-4 max-w-5xl mx-auto pt-8 md:pt-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight drop-shadow-sm">
             {t("heroTitle")}
           </h1>
-          <p className="mb-10 text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto drop-shadow-sm">
             {t("heroSubtitle")}
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 md:mb-0">
+        </div>
+
+        <div className="relative z-10 text-center px-4 pb-12 md:pb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
               onClick={() => {
@@ -58,6 +60,7 @@ export function HeroSection() {
           </div>
         </div>
       </section>
+
 
       {/* Trust badges - outside hero on mobile, inside on desktop */}
       
