@@ -13,7 +13,7 @@ export function MapSection() {
 
   const handleWaze = () => {
     // Opens official Waze navigation for Parking One
-    window.open("https://ul.waze.com/ul?place=ChIJ6eb_yAqHqkARRJP7h2zo5AU&ll=42.67676540%2C23.40033890&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location", "_blank");
+    window.open("https://waze.com/ul/hsx8du64xg", "_blank");
   };
 
   return (
