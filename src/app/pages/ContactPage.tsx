@@ -105,7 +105,7 @@ export function ContactPage() {
                   <div className="ml-4">
                     <h3 className="font-semibold text-lg mb-1">{t('contactPhone')}</h3>
                     <a href="tel:+359877109788" className="text-blue-600 hover:underline text-lg">
-                      +359 886 616 991
+                      +359 877 109 788
                     </a>
                     <p className="text-sm text-gray-600 mt-1">
                       {t('contactAvailable247')}

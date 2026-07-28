@@ -2751,7 +2751,7 @@ export function AdminDashboard({ onLogout, currentUser, permissions }: AdminDash
                 type="tel"
                 value={formData.phone || ""}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                placeholder="+359 886 616 991"
+                placeholder="+359 877 109 788"
                 className="h-14 text-base"
                 autoComplete="tel"
                 enterKeyHint="next"

@@ -84,7 +84,7 @@ export function HowItWorksPage() {
                               className="font-semibold hover:underline"
                               style={{ color: '#FAF9F6' }}
                             >
-                              +359 886 616 991
+                              +359 877 109 788
                             </a>{" "}
                             {t("onlineTelephoneBookingText2")}{" "}
                             <a

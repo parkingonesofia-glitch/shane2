@@ -162,7 +162,7 @@ export function PricingPage() {
               {t('pricingCarKeysContact')}
             </p>
             <p className="text-center text-2xl font-bold mt-2" style={{ color: '#0073AC' }}>
-              +359 886 616 991
+              +359 877 109 788
             </p>
           </div>
 

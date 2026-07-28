@@ -117,7 +117,7 @@ export function AboutPage() {
                   {t('aboutContactLabel')}
                 </p>
                 <p className="text-center text-2xl font-bold" style={{ color: '#0073AC' }}>
-                  +359 886 616 991
+                  +359 877 109 788
                 </p>
                 <p className="text-center text-gray-600 mt-2">
                   {t('aboutAvailable247')}

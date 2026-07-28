@@ -14,7 +14,7 @@ const translations = {
     heroTitle: "Parking One - Паркинг Летище София",
     heroSubtitle: "Сигурен и достъпен паркинг на 5 минути от Терминал 1 и 2. Резервирайте сега и пътувайте със спокойствие.",
     bookNow: "Резервирай сега",
-    callButton: "Обади се +359 886 616 991",
+    callButton: "Обади се +359 877 109 788",
     
     // Navigation
     navFeatures: "Предимства",
@@ -318,7 +318,7 @@ const translations = {
     pricingFeature2: "2 безплатни трансфера от и до летището",
     pricingFeature3: "Онлайн резервация",
     pricingFeature4: "Без предплащане",
-    pricingLongerNote: "* За по-дълги периоди (за 1 месец и повече) моля обадете се на +359 886 616 991",
+    pricingLongerNote: "* За по-дълги периоди (за 1 месец и повече) моля обадете се на +359 877 109 788",
     pricingCarKeysTitle: "Услуга \"Ключове\"",
     pricingCarKeysDesc: "Максимално удобство - оставяте ключовете, ние паркираме вашия автомобил",
     pricingCarKeysContact: "За цени и повече информация, моля обадете се на:",
@@ -387,7 +387,7 @@ const translations = {
     heroTitle: "Parking One - Sofia Airport Parking",
     heroSubtitle: "Secure, affordable parking 5 minutes from Terminal 1 and 2. Book now and travel with peace of mind.",
     bookNow: "Book Now",
-    callButton: "Call +359 886 616 991",
+    callButton: "Call +359 877 109 788",
     
     // Navigation
     navFeatures: "Features",
@@ -691,7 +691,7 @@ const translations = {
     pricingFeature2: "2 free transfers to and from the airport",
     pricingFeature3: "Online booking",
     pricingFeature4: "No prepayment required",
-    pricingLongerNote: "* For longer periods (1 month and more) please call us at +359 886 616 991",
+    pricingLongerNote: "* For longer periods (1 month and more) please call us at +359 877 109 788",
     pricingCarKeysTitle: "Car Keys Service",
     pricingCarKeysDesc: "Maximum convenience - leave your keys, we park your car",
     pricingCarKeysContact: "For pricing and more information, please call:",
@@ -760,7 +760,7 @@ const translations = {
     heroTitle: "Parking One - Πάρκινγκ Αεροδρόμιο Σόφιας",
     heroSubtitle: "Ασφαλές και προσιτό πάρκινγκ 5 λεπτά από Τερματικό 1 και 2. Κάντε κράτηση τώρα και ταξιδέψτε αναπαυτικά.",
     bookNow: "Κράτηση Τώρα",
-    callButton: "Καλέστε +359 886 616 991",
+    callButton: "Καλέστε +359 877 109 788",
 
     // Navigation
     navFeatures: "Πλεονεκτήματα",
@@ -1064,7 +1064,7 @@ const translations = {
     pricingFeature2: "2 δωρεάν μεταφορές από και προς το αεροδρόμιο",
     pricingFeature3: "Διαδικτυακή κράτηση",
     pricingFeature4: "Χωρίς προκαταβολή",
-    pricingLongerNote: "* Για μεγαλύτερες περιόδους (1 μήνας και άνω) παρακαλώ καλέστε στο +359 886 616 991",
+    pricingLongerNote: "* Για μεγαλύτερες περιόδους (1 μήνας και άνω) παρακαλώ καλέστε στο +359 877 109 788",
     pricingCarKeysTitle: "Υπηρεσία «Κλειδιά»",
     pricingCarKeysDesc: "Μέγιστη άνεση - αφήνετε τα κλειδιά, εμείς παρκάρουμε το αυτοκίνητό σας",
     pricingCarKeysContact: "Για τιμές και περισσότερες πληροφορίες, παρακαλώ καλέστε:",
@@ -1133,7 +1133,7 @@ const translations = {
     heroTitle: "Parking One - Sofya Havalimanı Otoparkı",
     heroSubtitle: "Terminal 1 ve 2'ye 5 dakika uzaklıkta güvenli ve uygun fiyatlı otopark. Şimdi rezervasyon yapın, huzurla seyahat edin.",
     bookNow: "Şimdi Rezervasyon Yap",
-    callButton: "Ara +359 886 616 991",
+    callButton: "Ara +359 877 109 788",
 
     // Navigation
     navFeatures: "Avantajlar",
@@ -1437,7 +1437,7 @@ const translations = {
     pricingFeature2: "Havalimanına 2 ücretsiz transfer",
     pricingFeature3: "Çevrimiçi rezervasyon",
     pricingFeature4: "Ön ödeme gerekmez",
-    pricingLongerNote: "* Daha uzun süreler için (1 ay ve üzeri) lütfen +359 886 616 991 numaralı telefonu arayın",
+    pricingLongerNote: "* Daha uzun süreler için (1 ay ve üzeri) lütfen +359 877 109 788 numaralı telefonu arayın",
     pricingCarKeysTitle: "Anahtar Hizmeti",
     pricingCarKeysDesc: "Maksimum kolaylık - anahtarlarınızı bırakın, aracınızı biz park edelim",
     pricingCarKeysContact: "Fiyatlar ve daha fazla bilgi için lütfen arayın:",
@@ -1506,7 +1506,7 @@ const translations = {
     heroTitle: "Parking One - Parking Aerodrom Sofija",
     heroSubtitle: "Siguran i pristupačan parking 5 minuta od Terminala 1 i 2. Rezervišite sada i putujte bez brige.",
     bookNow: "Rezervišite Sada",
-    callButton: "Pozovite +359 886 616 991",
+    callButton: "Pozovite +359 877 109 788",
 
     // Navigation
     navFeatures: "Prednosti",
@@ -1810,7 +1810,7 @@ const translations = {
     pricingFeature2: "2 besplatna transfera od i do aerodroma",
     pricingFeature3: "Online rezervacija",
     pricingFeature4: "Bez avansa",
-    pricingLongerNote: "* Za duže periode (1 mesec i više) molimo pozovite +359 886 616 991",
+    pricingLongerNote: "* Za duže periode (1 mesec i više) molimo pozovite +359 877 109 788",
     pricingCarKeysTitle: "Usluga \"Ključevi\"",
     pricingCarKeysDesc: "Maksimalna udobnost - ostavljate ključeve, mi parkiramo vaš automobil",
     pricingCarKeysContact: "Za cene i više informacija, molimo pozovite:",
@@ -1879,7 +1879,7 @@ const translations = {
     heroTitle: "Parking One - Паркинг Аеродром Софија",
     heroSubtitle: "Безбеден и достапен паркинг 5 минути од Терминал 1 и 2. Резервирајте сега и патувајте мирно.",
     bookNow: "Резервирај Сега",
-    callButton: "Јави се +359 886 616 991",
+    callButton: "Јави се +359 877 109 788",
 
     // Navigation
     navFeatures: "Предности",
@@ -2183,7 +2183,7 @@ const translations = {
     pricingFeature2: "2 бесплатни трансфери од и до аеродромот",
     pricingFeature3: "Онлајн резервација",
     pricingFeature4: "Без аванс",
-    pricingLongerNote: "* За подолги периоди (1 месец и повеќе) ве молиме јавете се на +359 886 616 991",
+    pricingLongerNote: "* За подолги периоди (1 месец и повеќе) ве молиме јавете се на +359 877 109 788",
     pricingCarKeysTitle: "Услуга \"Клучеви\"",
     pricingCarKeysDesc: "Максимална удобност - ги оставате клучевите, ние го паркираме вашиот автомобил",
     pricingCarKeysContact: "За цени и повеќе информации, ве молиме јавете се на:",
@@ -2252,7 +2252,7 @@ const translations = {
     heroTitle: "Parking One - Parcare Aeroportul Sofia",
     heroSubtitle: "Parcare sigură și accesibilă la 5 minute de Terminalul 1 și 2. Rezervați acum și călătoriți fără griji.",
     bookNow: "Rezervați Acum",
-    callButton: "Sunați +359 886 616 991",
+    callButton: "Sunați +359 877 109 788",
 
     // Navigation
     navFeatures: "Avantaje",
@@ -2556,7 +2556,7 @@ const translations = {
     pricingFeature2: "2 transferuri gratuite la și de la aeroport",
     pricingFeature3: "Rezervare online",
     pricingFeature4: "Fără plată în avans",
-    pricingLongerNote: "* Pentru perioade mai lungi (1 lună și mai mult) vă rugăm sunați la +359 886 616 991",
+    pricingLongerNote: "* Pentru perioade mai lungi (1 lună și mai mult) vă rugăm sunați la +359 877 109 788",
     pricingCarKeysTitle: "Serviciu \"Chei\"",
     pricingCarKeysDesc: "Confort maxim - lăsați cheile, noi parcăm mașina dvs.",
     pricingCarKeysContact: "Pentru prețuri și mai multe informații, vă rugăm sunați:",
@@ -2625,7 +2625,7 @@ const translations = {
     heroTitle: "Parking One - Паркінг Аеропорт Софія",
     heroSubtitle: "Безпечне та доступне паркування за 5 хвилин від Терміналу 1 і 2. Бронюйте зараз і подорожуйте спокійно.",
     bookNow: "Забронювати Зараз",
-    callButton: "Подзвонити +359 886 616 991",
+    callButton: "Подзвонити +359 877 109 788",
 
     // Navigation
     navFeatures: "Переваги",
@@ -2929,7 +2929,7 @@ const translations = {
     pricingFeature2: "2 безкоштовні трансфери до/від аеропорту",
     pricingFeature3: "Онлайн-бронювання",
     pricingFeature4: "Передоплата не потрібна",
-    pricingLongerNote: "* Для тривалих термінів (1 місяць і більше) зателефонуйте нам на +359 886 616 991",
+    pricingLongerNote: "* Для тривалих термінів (1 місяць і більше) зателефонуйте нам на +359 877 109 788",
     pricingCarKeysTitle: "Послуга «Ключі від автомобіля»",
     pricingCarKeysDesc: "Максимальна зручність — залишайте ключі, ми паркуємо ваш автомобіль",
     pricingCarKeysContact: "Для отримання цін та додаткової інформації, будь ласка, зателефонуйте:",

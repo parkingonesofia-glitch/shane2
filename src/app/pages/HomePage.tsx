@@ -225,7 +225,7 @@ export function HomePage() {
           <div className="flex flex-col sm:flex-row gap-2 justify-center items-center text-sm text-gray-600">
             <span>{t("footerLocation")}</span>
             <span className="hidden sm:inline">•</span>
-            <span>📞 <a href="tel:+359877109788" className="hover:underline">+359 886 616 991</a></span>
+            <span>📞 <a href="tel:+359877109788" className="hover:underline">+359 877 109 788</a></span>
             <span className="hidden sm:inline">•</span>
             <span>✉️ <a href="mailto:info@parkingone.bg" className="hover:underline">info@parkingone.bg</a></span>
           </div>
@@ -233,7 +233,7 @@ export function HomePage() {
           {/* Social Media and Messaging Buttons */}
           <div className="flex gap-4 justify-center items-center mt-6">
             <a
-              href="viber://chat?number=%2B359886616991"
+              href="viber://chat?number=%2B359877109788"
               onClick={(e) => {
                 // Fallback for desktop - open in new tab with viber public account link
                 if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -255,7 +255,7 @@ export function HomePage() {
             </a>
             
             <a
-              href="https://wa.me/359886616991"
+              href="https://wa.me/359877109788"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#25D366] hover:bg-[#1da851] p-3 rounded-full transition-colors"
