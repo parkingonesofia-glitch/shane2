@@ -64,7 +64,7 @@ export function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F6] shadow-lg">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20 md:h-[110px]">
+          <div className="flex items-center justify-between h-[120px] md:h-[180px]">
             {/* Hamburger Menu Button - Left */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -86,7 +86,7 @@ export function Header() {
               <img
                 src="/logo-desktop.png"
                 alt="Parking One Logo"
-                className="h-[90px] w-auto object-contain hidden md:block"
+                className="h-[180px] w-auto object-contain hidden md:block"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   const parent = e.currentTarget.parentElement;
@@ -102,7 +102,7 @@ export function Header() {
               <img
                 src="/logo-mobile.png"
                 alt="Parking One Logo"
-                className="h-[60px] w-auto object-contain md:hidden"
+                className="h-[120px] w-auto object-contain md:hidden"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   const parent = e.currentTarget.parentElement;
