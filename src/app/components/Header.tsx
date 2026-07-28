@@ -79,14 +79,14 @@ export function Header() {
             {/* Logo - Center */}
             <button
               onClick={handleLogoClick}
-              className="absolute left-1/2 transform -translate-x-1/2 flex items-center transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#0073AC] rounded-lg z-10 overflow-visible"
+              className="absolute left-1/2 transform -translate-x-1/2 flex items-center transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#0073AC] rounded-lg z-10"
               aria-label="Return to homepage"
             >
               {/* Desktop Logo */}
               <img
                 src="/logo-desktop.png"
                 alt="Parking One Logo"
-                className="h-[360px] w-auto hidden md:block"
+                className="h-[90px] w-auto object-contain hidden md:block"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   const parent = e.currentTarget.parentElement;
@@ -102,7 +102,7 @@ export function Header() {
               <img
                 src="/logo-mobile.png"
                 alt="Parking One Logo"
-                className="w-[125px] h-auto md:hidden max-w-none"
+                className="h-[60px] w-auto object-contain md:hidden"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   const parent = e.currentTarget.parentElement;
