@@ -64,7 +64,7 @@ export function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F6] shadow-lg">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-[150px] md:h-[225px]">
+          <div className="flex items-center justify-between h-[120px] md:h-[180px]">
             {/* Hamburger Menu Button - Left */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
