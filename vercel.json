@@ -18,20 +18,7 @@
       ]
     }
   ],
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.parkingone.bg"
-        }
-      ],
-      "destination": "https://parkingone.bg/:path*",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
+"rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.html"
