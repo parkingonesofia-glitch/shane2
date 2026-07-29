@@ -72,7 +72,7 @@ export function TermsAndConditions() {
               <section>
                 <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">3. ДАННИ ЗА ПРОДАВАЧА</h2>
                 <p className="text-justify mb-4">
-                  "Ю Транс" Еоод е дружество, регистрирано в Република България, със седалище и адрес на управление: БЪЛГАРИЯ, гр. София (1330), р-н Красна поляна, жк. Разсадника, блок 28, вход А, етаж 1, апартамент 1, вписано в Търговския регистър с ЕИК 208627398.
+                  "Ю Транс" Еоод е дружество, регистрирано в Република България, със седалище и адрес на управление: БЪЛГАРИЯ, гр. София (1330), р-н Красна поляна, жк. Разсадника, блок 28, вход А, етаж 1, апартамент 1, вписано в Търговския регистър с ЕИК 207838282.
                 </p>
                 <p className="text-justify">
                   Данни за кореспонденция: БЪЛГАРИЯ, гр. София (1330), р-н Красна поляна, жк. Разсадника, блок 28, вход А, етаж 1, апартамент 1 и електронна поща: info@parkingone.bg
@@ -314,7 +314,7 @@ export function TermsAndConditions() {
                   „Ю Транс" Еоод
                 </p>
                 <p className="text-gray-700 mt-1">
-                  ЕИК: 208627398
+                  ЕИК: 207838282
                 </p>
               </div>
             </div>
@@ -356,7 +356,7 @@ export function TermsAndConditions() {
               <section>
                 <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">3. SELLER INFORMATION</h2>
                 <p className="text-justify mb-4">
-                  "A-Park 98" Ltd. is a company registered in the Republic of Bulgaria, with headquarters and management address: BULGARIA, Sofia (1330), Krasna Polyana district, Razsadnika residential complex, Block 28, Entrance A, Floor 1, Apartment 1, registered in the Commercial Register with UIC 208627398.
+                  "A-Park 98" Ltd. is a company registered in the Republic of Bulgaria, with headquarters and management address: BULGARIA, Sofia (1330), Krasna Polyana district, Razsadnika residential complex, Block 28, Entrance A, Floor 1, Apartment 1, registered in the Commercial Register with UIC 207838282.
                 </p>
                 <p className="text-justify">
                   Correspondence details: BULGARIA, Sofia (1330), Krasna Polyana district, Razsadnika residential complex, Block 28, Entrance A, Floor 1, Apartment 1 and email: info@parkingone.bg
@@ -598,7 +598,7 @@ export function TermsAndConditions() {
                   "A-Park 98" Ltd.
                 </p>
                 <p className="text-gray-700 mt-1">
-                  UIC: 208627398
+                  UIC: 207838282
                 </p>
               </div>
             </div>
