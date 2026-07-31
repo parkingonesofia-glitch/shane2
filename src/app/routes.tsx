@@ -10,6 +10,9 @@ import { HowItWorksPage } from "./pages/HowItWorksPage";
 import { BookingPage } from "./pages/BookingPage";
 import { FAQPage } from "./pages/FAQPage";
 import { AboutPage } from "./pages/AboutPage";
+import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage";
+import { CookiePolicyPage } from "./pages/CookiePolicyPage";
+import { CancellationPage } from "./pages/CancellationPage";
 import { LanguageProvider } from "./components/LanguageContext";
 
 // Root layout that wraps all routes with LanguageProvider
@@ -100,6 +103,18 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutPage />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicyPage />,
+      },
+      {
+        path: "/cookie-policy",
+        element: <CookiePolicyPage />,
+      },
+      {
+        path: "/cancellation",
+        element: <CancellationPage />,
       },
       {
         path: "*",

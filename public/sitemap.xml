@@ -62,8 +62,26 @@
   </url>
   <url>
     <loc>https://parkingone.bg/terms</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://parkingone.bg/privacy-policy</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://parkingone.bg/cookie-policy</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://parkingone.bg/cancellation</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

@@ -8,9 +8,11 @@ import { MapSection } from "../components/MapSection";
 import { useLanguage } from "../components/LanguageContext";
 import { SEO } from "../components/SEO";
 import { useEffect } from "react";
+import { useNavigate } from "react-router";
 
 export function HomePage() {
   const { t, language } = useLanguage();
+  const navigate = useNavigate();
 
   // Set favicon once on mount (not dependent on language changes)
   useEffect(() => {
@@ -292,6 +294,13 @@ export function HomePage() {
           </div>
           
           <div className="mt-8 pt-8 border-t border-gray-300 text-sm text-gray-500">
+            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-4">
+              <button onClick={() => navigate("/terms")} className="hover:underline hover:text-[#0073AC]">Общи условия</button>
+              <button onClick={() => navigate("/privacy-policy")} className="hover:underline hover:text-[#0073AC]">Политика за поверителност</button>
+              <button onClick={() => navigate("/cookie-policy")} className="hover:underline hover:text-[#0073AC]">Политика за бисквитки</button>
+              <button onClick={() => navigate("/cancellation")} className="hover:underline hover:text-[#0073AC]">Условия за отмяна</button>
+              <button onClick={() => navigate("/contact")} className="hover:underline hover:text-[#0073AC]">Контакти</button>
+            </div>
             {t("footerRights")}
           </div>
         </div>
