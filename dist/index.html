@@ -41,11 +41,11 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://parkingone.bg/" />
     
-    <!-- Structured Data - Local Business Schema -->
+    <!-- Structured Data - LocalBusiness + ParkingFacility Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ParkingFacility",
+      "@type": ["LocalBusiness", "ParkingFacility"],
       "name": "Parking One",
       "image": "https://parkingone.bg/og-image.jpg",
       "url": "https://parkingone.bg/",
@@ -53,43 +53,33 @@
       "email": "parking.one.sofia@gmail.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Ulitsa Iztochna Tangeta 23",
-        "addressLocality": "Sofia",
+        "streetAddress": "Улица Източна Тангента 23",
+        "addressLocality": "София",
+        "addressRegion": "Sofia-grad",
+        "postalCode": "1540",
         "addressCountry": "BG"
       },
-      "areaServed": {
-        "@type": "Place",
-        "name": "Sofia Airport"
-      },
-      "priceRange": "€",
-      "description": "Сигурен и достъпен паркинг на 5 минути от Летище София Терминал 1 и 2. Безплатен трансфер, видеонаблюдение 24/7.",
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 42.6977,
-        "longitude": 23.3219
+        "latitude": 42.6832,
+        "longitude": 23.3928
       },
-      "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
+      "hasMap": "https://maps.app.goo.gl/Kt5uvoMzhEzprwYq6",
+      "openingHours": "Mo-Su 00:00-24:00",
+      "priceRange": "€€",
+      "description": "Охраняем паркинг на 5 минути от Летище София. Безплатен трансфер до Терминал 1 и Терминал 2. Видеонаблюдение 24/7, без предплащане.",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Летище София"
+      },
       "sameAs": [
-        "FACEBOOK_LINK_HERE",
         "https://www.instagram.com/parkingone.bg"
       ],
       "amenityFeature": [
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "24/7 Security"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Free Shuttle Service"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Video Surveillance"
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Online Booking"
-        }
+        { "@type": "LocationFeatureSpecification", "name": "24/7 охрана" },
+        { "@type": "LocationFeatureSpecification", "name": "Безплатен трансфер" },
+        { "@type": "LocationFeatureSpecification", "name": "Видеонаблюдение 24/7" },
+        { "@type": "LocationFeatureSpecification", "name": "Онлайн резервация" }
       ]
     }
     </script>
