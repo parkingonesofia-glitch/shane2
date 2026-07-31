@@ -27,7 +27,7 @@ export function PrivacyPolicyPage() {
               </p>
               <p>Контакт за въпроси, свързани с личните данни:</p>
               <ul className="list-disc pl-6 space-y-1">
-                <li>Имейл: <a href="mailto:parking.one.sofia@gmail.com" className="text-[#0073AC] underline">parking.one.sofia@gmail.com</a></li>
+                <li>Имейл: <a href="mailto:info@parkingone.bg" className="text-[#0073AC] underline">info@parkingone.bg</a></li>
                 <li>Телефон: <a href="tel:+359877109788" className="text-[#0073AC] underline">+359 877 109 788</a></li>
               </ul>
             </section>
@@ -72,7 +72,7 @@ export function PrivacyPolicyPage() {
                 <li><strong>Възражение</strong> — срещу обработката въз основа на легитимен интерес</li>
               </ul>
               <p className="mt-3">
-                За упражняване на правата си, моля свържете се с нас на <a href="mailto:parking.one.sofia@gmail.com" className="text-[#0073AC] underline">parking.one.sofia@gmail.com</a>.
+                За упражняване на правата си, моля свържете се с нас на <a href="mailto:info@parkingone.bg" className="text-[#0073AC] underline">info@parkingone.bg</a>.
                 Имате право и да подадете жалба до <strong>Комисия за защита на личните данни (КЗЛД)</strong> на адрес: гр. София, бул. „Цветан Лазаров" № 2.
               </p>
             </section>

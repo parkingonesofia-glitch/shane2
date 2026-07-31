@@ -53,7 +53,7 @@ export function CancellationPage() {
               </p>
               <ul className="list-disc pl-6 space-y-1">
                 <li>Телефон: <a href="tel:+359877109788" className="text-[#0073AC] underline">+359 877 109 788</a></li>
-                <li>Имейл: <a href="mailto:parking.one.sofia@gmail.com" className="text-[#0073AC] underline">parking.one.sofia@gmail.com</a></li>
+                <li>Имейл: <a href="mailto:info@parkingone.bg" className="text-[#0073AC] underline">info@parkingone.bg</a></li>
               </ul>
               <p className="mt-3">
                 При закъснение автомобилът остава в паркинга и ще бъде таксуван за реалното време на престой съгласно действащите тарифи.
@@ -65,7 +65,7 @@ export function CancellationPage() {
               <p>Резервацията може да бъде отменена по следните начини:</p>
               <ul className="list-disc pl-6 space-y-1">
                 <li><strong>Телефон:</strong> <a href="tel:+359877109788" className="text-[#0073AC] underline">+359 877 109 788</a> (24/7)</li>
-                <li><strong>Имейл:</strong> <a href="mailto:parking.one.sofia@gmail.com" className="text-[#0073AC] underline">parking.one.sofia@gmail.com</a></li>
+                <li><strong>Имейл:</strong> <a href="mailto:info@parkingone.bg" className="text-[#0073AC] underline">info@parkingone.bg</a></li>
               </ul>
               <p className="mt-3">Моля, посочете вашето име и датата на резервацията при контакт.</p>
             </section>
