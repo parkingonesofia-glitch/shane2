@@ -112,6 +112,46 @@ export function PricingPage() {
             </div>
           </div>
 
+          {/* Full Day-by-Day Pricing Table */}
+          <div className="bg-white rounded-lg shadow-lg p-8 border-2 border-gray-200 mb-8">
+            <h2 className="text-2xl font-bold mb-6 text-center text-gray-900">
+              {language === 'bg' ? 'Ценоразпис по брой дни' : 'Price list by number of days'}
+            </h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b-2 border-gray-200">
+                    <th className="text-left py-2 px-3 text-gray-700">{language === 'bg' ? 'Брой дни' : 'Days'}</th>
+                    <th className="text-right py-2 px-3 text-gray-700">{language === 'bg' ? 'Обща цена' : 'Total price'}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    [1,10],[2,18],[3,21],[4,24],[5,27],[6,30],[7,33],
+                    [8,37],[9,40],[10,43],[11,46],[12,49],[13,52],[14,55],
+                    [15,58],[16,61],[17,64],[18,67],[19,70],[20,73],[21,76],
+                    [22,79],[23,82],[24,85],[25,88],[26,91],[27,94],[28,97],
+                    [29,100],[30,103]
+                  ].map(([days, price]) => (
+                    <tr key={days} className="border-b border-gray-100 hover:bg-gray-50">
+                      <td className="py-1.5 px-3 text-gray-700">{days} {language === 'bg' ? (days === 1 ? 'ден' : 'дни') : (days === 1 ? 'day' : 'days')}</td>
+                      <td className="py-1.5 px-3 text-right font-semibold" style={{ color: '#0073AC' }}>{price} €</td>
+                    </tr>
+                  ))}
+                  <tr className="border-b border-gray-100 hover:bg-gray-50">
+                    <td className="py-1.5 px-3 text-gray-700">31+ {language === 'bg' ? 'дни' : 'days'}</td>
+                    <td className="py-1.5 px-3 text-right font-semibold" style={{ color: '#0073AC' }}>103 € + 2.80 € / {language === 'bg' ? 'ден' : 'day'}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-gray-500 mt-4 text-center">
+              {language === 'bg'
+                ? 'Цените са в евро. Плащане на място при напускане — в брой или с карта.'
+                : 'Prices in EUR. Payment on departure — cash or card.'}
+            </p>
+          </div>
+
           {/* Features Section */}
           <div className="bg-white rounded-lg shadow-lg p-8 border-2 border-gray-200 mb-8">
             <h3 className="text-2xl font-bold mb-6 text-center" style={{ color: '#FAF9F6' }}>
