@@ -38,13 +38,14 @@ export function PricingPage() {
                   {t('pricingWeekend3days')}
                 </div>
                 <div className="mb-4">
+                  <div className="text-xs text-gray-500 mb-1">{language === 'bg' ? 'обща цена' : 'total price'}</div>
                   <div className="text-4xl font-bold mb-1" style={{ color: '#0073AC' }}>
                     25€
                   </div>
                   <div className="text-xs text-gray-500 mt-1">
                     (48.89 {t('pricingCurrencyBGN')})
                   </div>
-                  <div className="text-xs font-semibold mt-2" style={{ color: '#FAF9F6' }}>
+                  <div className="text-xs font-semibold mt-2 text-gray-500">
                     {t('pricingWeekendPerDay')}
                   </div>
                 </div>
@@ -69,13 +70,14 @@ export function PricingPage() {
                   {t('pricingWeekly7days')}
                 </div>
                 <div className="mb-4">
+                  <div className="text-xs text-gray-500 mb-1">{language === 'bg' ? 'обща цена' : 'total price'}</div>
                   <div className="text-5xl font-bold mb-1" style={{ color: '#0073AC' }}>
                     38€
                   </div>
                   <div className="text-xs text-gray-500 mt-1">
                     (74.32 {t('pricingCurrencyBGN')})
                   </div>
-                  <div className="text-xs font-semibold mt-2" style={{ color: '#FAF9F6' }}>
+                  <div className="text-xs font-semibold mt-2 text-gray-500">
                     {t('pricingWeeklyPerDay')}
                   </div>
                 </div>
@@ -95,13 +97,14 @@ export function PricingPage() {
                   {t('pricingMonthly30days')}
                 </div>
                 <div className="mb-4">
+                  <div className="text-xs text-gray-500 mb-1">{language === 'bg' ? 'обща цена' : 'total price'}</div>
                   <div className="text-4xl font-bold mb-1" style={{ color: '#0073AC' }}>
                     87€*
                   </div>
                   <div className="text-xs text-gray-500 mt-1">
                     (170.15 {t('pricingCurrencyBGN')})
                   </div>
-                  <div className="text-xs font-semibold mt-2" style={{ color: '#FAF9F6' }}>
+                  <div className="text-xs font-semibold mt-2 text-gray-500">
                     {t('pricingMonthlyPerDay')}
                   </div>
                 </div>
