@@ -150,7 +150,7 @@ export function PricingPage() {
             </div>
             <p className="text-xs text-gray-500 mt-4 text-center">
               {language === 'bg'
-                ? 'Цените са в евро. Плащане на място при напускане — в брой или с карта.'
+                ? 'Цените са в евро. Плащане на място при пристигане — в брой или с карта.'
                 : 'Prices in EUR. Payment on departure — cash or card.'}
             </p>
           </div>
