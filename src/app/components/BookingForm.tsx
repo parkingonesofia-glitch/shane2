@@ -15,8 +15,8 @@ import { TimePicker } from "./TimePicker";
 import { NumberPicker } from "./NumberPicker";
 import { eurToBgn } from "../utils/currency";
 
-const projectId = "dbybybmjjeeocoecaewv";
-const publicAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRieWJ5Ym1qamVlb2NvZWNhZXd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY0ODgxMzAsImV4cCI6MjA4MjA2NDEzMH0.fMZ3Yi5gZpE6kBBz-y1x0FKZcGczxSJZ9jL-Zeau340";
+const projectId = "dpvdmwekrxvqdswziasc";
+const publicAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwdmRtd2Vrcnh2cWRzd3ppYXNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU5MTcxMzMsImV4cCI6MjEwMTQ5MzEzM30.CNq1zeqPxFIludOp3DBLHUPo928cNLqLKZwBPW98mWI";
 
 interface BookingFormData {
   arrivalDate: string;
