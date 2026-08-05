@@ -1,4 +1,5 @@
 {
+  "cleanUrls": true,
   "headers": [
     {
       "source": "/(.*)",
@@ -19,9 +20,17 @@
     }
   ],
 "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/pricing", "destination": "/pricing/index.html" },
+    { "source": "/terms", "destination": "/terms/index.html" },
+    { "source": "/booking", "destination": "/booking/index.html" },
+    { "source": "/contact", "destination": "/contact/index.html" },
+    { "source": "/services", "destination": "/services/index.html" },
+    { "source": "/how-it-works", "destination": "/how-it-works/index.html" },
+    { "source": "/about", "destination": "/about/index.html" },
+    { "source": "/faq", "destination": "/faq/index.html" },
+    { "source": "/privacy-policy", "destination": "/privacy-policy/index.html" },
+    { "source": "/cookie-policy", "destination": "/cookie-policy/index.html" },
+    { "source": "/cancellation", "destination": "/cancellation/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
