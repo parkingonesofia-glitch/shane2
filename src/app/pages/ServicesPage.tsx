@@ -110,6 +110,45 @@ export function ServicesPage() {
             ))}
           </div>
 
+          {/* Transfer Conditions */}
+          <div className="bg-white rounded-lg shadow-lg p-8 border-2 border-gray-200 mb-16">
+            <h2 className="text-2xl font-bold mb-8 text-center" style={{ color: '#0073AC' }}>
+              {t('transferConditionsTitle')}
+            </h2>
+            <div className="divide-y divide-gray-100">
+              {[
+                ['transferConditionsHoursLabel', 'transferConditionsHours'],
+                ['transferConditionsCapacityLabel', 'transferConditionsCapacity'],
+                ['transferConditionsLuggageLabel', 'transferConditionsLuggage'],
+                ['transferConditionsChildSeatsLabel', 'transferConditionsChildSeats'],
+                ['transferConditionsDisabledLabel', 'transferConditionsDisabled'],
+                ['transferConditionsWaitLabel', 'transferConditionsWait'],
+              ].map(([labelKey, textKey]) => (
+                <div key={labelKey} className="flex gap-3 py-3">
+                  <span className="font-semibold text-gray-900 shrink-0 min-w-[160px]">{t(labelKey)}</span>
+                  <span className="text-gray-700">{t(textKey)}</span>
+                </div>
+              ))}
+              <div className="flex gap-3 py-3">
+                <span className="font-semibold text-gray-900 shrink-0 min-w-[160px]">{t('transferConditionsPickupLabel')}</span>
+                <span className="text-gray-700">
+                  <span className="block">{t('transferConditionsPickupT1')}</span>
+                  <span className="block">{t('transferConditionsPickupT2')}</span>
+                </span>
+              </div>
+              {[
+                ['transferConditionsAfterLandingLabel', 'transferConditionsAfterLanding'],
+                ['transferConditionsDelayedLabel', 'transferConditionsDelayed'],
+                ['transferConditionsIncludedLabel', 'transferConditionsIncluded'],
+              ].map(([labelKey, textKey]) => (
+                <div key={labelKey} className="flex gap-3 py-3">
+                  <span className="font-semibold text-gray-900 shrink-0 min-w-[160px]">{t(labelKey)}</span>
+                  <span className="text-gray-700">{t(textKey)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Additional Benefits */}
           <div className="mb-16">
             <h2 className="text-4xl font-bold text-center mb-12" style={{ color: '#FAF9F6' }}>
